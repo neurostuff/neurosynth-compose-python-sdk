@@ -63,16 +63,16 @@ configuration = neurosynth_compose_sdk.Configuration(
 
 
 # Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = annotation_api.AnnotationApi(api_client)
+client = neurosynth_compose_sdk.ApiClient(configuration)
+
+try:
+    # Your GET endpoint
+    api_response = client.annotation.get(
     
-    try:
-        # Your GET endpoint
-        api_response = api_instance.annotations_get()
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling AnnotationApi->annotations_get: %s\n" % e)
+    )
+    pprint(api_response)
+except neurosynth_compose_sdk.ApiException as e:
+    print("Exception when calling AnnotationApi->annotations_get: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
