@@ -182,13 +182,15 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     specification = Specification(
         type="type_example",
         estimator=Estimator(
-            algorithm="algorithm_example",
+            type="type_example",
+            args={},
         ),
         mask="mask_example",
         contrast="contrast_example",
         transformer="transformer_example",
         corrector=Corrector(
             type="type_example",
+            args={},
         ),
     ) # Specification |  (optional)
 
@@ -281,13 +283,15 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     specification = Specification(
         type="type_example",
         estimator=Estimator(
-            algorithm="algorithm_example",
+            type="type_example",
+            args={},
         ),
         mask="mask_example",
         contrast="contrast_example",
         transformer="transformer_example",
         corrector=Corrector(
             type="type_example",
+            args={},
         ),
     ) # Specification |  (optional)
 

@@ -69,7 +69,7 @@ class Corrector(ModelNormal):
         """
         return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -83,6 +83,7 @@ class Corrector(ModelNormal):
         """
         return {
             'type': (str,),  # noqa: E501
+            'args': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
         }
 
     @cached_property
@@ -92,6 +93,7 @@ class Corrector(ModelNormal):
 
     attribute_map = {
         'type': 'type',  # noqa: E501
+        'args': 'args',  # noqa: E501
     }
 
     read_only_vars = {
@@ -136,6 +138,7 @@ class Corrector(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str): [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -218,6 +221,7 @@ class Corrector(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str): [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
