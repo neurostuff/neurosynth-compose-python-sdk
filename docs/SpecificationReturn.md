@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **contrast** | **str, none_type** |  | [optional] 
 **transformer** | **str, none_type** |  | [optional] 
 **corrector** | [**Corrector**](Corrector.md) |  | [optional] 
+**filter** | **str, none_type** |  | [optional] 
 **id** | **str** |  | [optional] 
 **updated_at** | **datetime, none_type** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 

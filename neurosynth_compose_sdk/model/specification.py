@@ -96,6 +96,7 @@ class Specification(ModelNormal):
             'contrast': (str, none_type,),  # noqa: E501
             'transformer': (str, none_type,),  # noqa: E501
             'corrector': (Corrector,),  # noqa: E501
+            'filter': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -110,6 +111,7 @@ class Specification(ModelNormal):
         'contrast': 'contrast',  # noqa: E501
         'transformer': 'transformer',  # noqa: E501
         'corrector': 'corrector',  # noqa: E501
+        'filter': 'filter',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +161,7 @@ class Specification(ModelNormal):
             contrast (str, none_type): [optional]  # noqa: E501
             transformer (str, none_type): [optional]  # noqa: E501
             corrector (Corrector): [optional]  # noqa: E501
+            filter (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -246,6 +249,7 @@ class Specification(ModelNormal):
             contrast (str, none_type): [optional]  # noqa: E501
             transformer (str, none_type): [optional]  # noqa: E501
             corrector (Corrector): [optional]  # noqa: E501
+            filter (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
