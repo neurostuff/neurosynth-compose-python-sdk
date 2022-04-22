@@ -100,6 +100,7 @@ class SpecificationReturn(ModelComposed):
             'contrast': (str, none_type,),  # noqa: E501
             'transformer': (str, none_type,),  # noqa: E501
             'corrector': (Corrector,),  # noqa: E501
+            'filter': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -118,6 +119,7 @@ class SpecificationReturn(ModelComposed):
         'contrast': 'contrast',  # noqa: E501
         'transformer': 'transformer',  # noqa: E501
         'corrector': 'corrector',  # noqa: E501
+        'filter': 'filter',  # noqa: E501
         'id': 'id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
@@ -171,6 +173,7 @@ class SpecificationReturn(ModelComposed):
             contrast (str, none_type): [optional]  # noqa: E501
             transformer (str, none_type): [optional]  # noqa: E501
             corrector (Corrector): [optional]  # noqa: E501
+            filter (str, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
@@ -280,6 +283,7 @@ class SpecificationReturn(ModelComposed):
             contrast (str, none_type): [optional]  # noqa: E501
             transformer (str, none_type): [optional]  # noqa: E501
             corrector (Corrector): [optional]  # noqa: E501
+            filter (str, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501

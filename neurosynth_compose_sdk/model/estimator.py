@@ -69,7 +69,7 @@ class Estimator(ModelNormal):
         """
         return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -82,7 +82,8 @@ class Estimator(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'algorithm': (str,),  # noqa: E501
+            'type': (str,),  # noqa: E501
+            'args': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
         }
 
     @cached_property
@@ -91,7 +92,8 @@ class Estimator(ModelNormal):
 
 
     attribute_map = {
-        'algorithm': 'algorithm',  # noqa: E501
+        'type': 'type',  # noqa: E501
+        'args': 'args',  # noqa: E501
     }
 
     read_only_vars = {
@@ -135,7 +137,8 @@ class Estimator(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            algorithm (str): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -217,7 +220,8 @@ class Estimator(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            algorithm (str): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

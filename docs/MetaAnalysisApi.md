@@ -182,14 +182,17 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     specification = Specification(
         type="type_example",
         estimator=Estimator(
-            algorithm="algorithm_example",
+            type="type_example",
+            args={},
         ),
         mask="mask_example",
         contrast="contrast_example",
         transformer="transformer_example",
         corrector=Corrector(
             type="type_example",
+            args={},
         ),
+        filter="filter_example",
     ) # Specification |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -281,14 +284,17 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     specification = Specification(
         type="type_example",
         estimator=Estimator(
-            algorithm="algorithm_example",
+            type="type_example",
+            args={},
         ),
         mask="mask_example",
         contrast="contrast_example",
         transformer="transformer_example",
         corrector=Corrector(
             type="type_example",
+            args={},
         ),
+        filter="filter_example",
     ) # Specification |  (optional)
 
     # example passing only required values which don't have defaults set
