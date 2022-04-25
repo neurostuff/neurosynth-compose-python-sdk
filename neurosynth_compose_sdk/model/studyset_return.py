@@ -91,7 +91,7 @@ class StudysetReturn(ModelComposed):
         lazy_import()
         return {
             'neurostore_id': (str,),  # noqa: E501
-            'studyset': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'studyset': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -154,7 +154,7 @@ class StudysetReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            studyset ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            studyset ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
@@ -259,7 +259,7 @@ class StudysetReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            studyset ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            studyset ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501

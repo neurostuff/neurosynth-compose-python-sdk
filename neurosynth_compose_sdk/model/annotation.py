@@ -83,7 +83,7 @@ class Annotation(ModelNormal):
         """
         return {
             'neurostore_id': (str,),  # noqa: E501
-            'annotation': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'annotation': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'studyset': (str,),  # noqa: E501
         }
 
@@ -140,7 +140,7 @@ class Annotation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            annotation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            annotation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             studyset (str): [optional]  # noqa: E501
         """
 
@@ -224,7 +224,7 @@ class Annotation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            annotation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            annotation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             studyset (str): [optional]  # noqa: E501
         """
 
