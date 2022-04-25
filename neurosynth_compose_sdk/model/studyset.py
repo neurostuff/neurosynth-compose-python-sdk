@@ -83,7 +83,7 @@ class Studyset(ModelNormal):
         """
         return {
             'neurostore_id': (str,),  # noqa: E501
-            'studyset': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'snapshot': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -93,7 +93,7 @@ class Studyset(ModelNormal):
 
     attribute_map = {
         'neurostore_id': 'neurostore_id',  # noqa: E501
-        'studyset': 'studyset',  # noqa: E501
+        'snapshot': 'snapshot',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,7 +138,7 @@ class Studyset(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            studyset ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,7 +221,7 @@ class Studyset(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            studyset ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

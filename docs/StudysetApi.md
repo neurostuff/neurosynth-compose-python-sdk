@@ -181,7 +181,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     id = "id_example" # str | 
     studyset = Studyset(
         neurostore_id="neurostore_id_example",
-        studyset={},
+        snapshot={},
     ) # Studyset |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -272,7 +272,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = studyset_api.StudysetApi(api_client)
     studyset = Studyset(
         neurostore_id="neurostore_id_example",
-        studyset={},
+        snapshot={},
     ) # Studyset |  (optional)
 
     # example passing only required values which don't have defaults set
