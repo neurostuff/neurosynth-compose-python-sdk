@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** |  | [optional] 
-**annotation** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**snapshot** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** |  | [optional] 
+**studyset** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **updated_at** | **datetime, none_type** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 

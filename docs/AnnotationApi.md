@@ -181,7 +181,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     id = "id_example" # str | 
     annotation = Annotation(
         neurostore_id="neurostore_id_example",
-        annotation={},
+        snapshot={},
+        studyset="studyset_example",
     ) # Annotation |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -272,7 +273,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = annotation_api.AnnotationApi(api_client)
     annotation = Annotation(
         neurostore_id="neurostore_id_example",
-        annotation={},
+        snapshot={},
+        studyset="studyset_example",
     ) # Annotation |  (optional)
 
     # example passing only required values which don't have defaults set

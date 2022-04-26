@@ -31,10 +31,16 @@ from neurosynth_compose_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from neurosynth_compose_sdk.model.annotation import Annotation
     from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
     from neurosynth_compose_sdk.model.read_only import ReadOnly
+    from neurosynth_compose_sdk.model.specification import Specification
+    from neurosynth_compose_sdk.model.studyset import Studyset
+    globals()['Annotation'] = Annotation
     globals()['MetaAnalysis'] = MetaAnalysis
     globals()['ReadOnly'] = ReadOnly
+    globals()['Specification'] = Specification
+    globals()['Studyset'] = Studyset
 
 
 class MetaAnalysisReturn(ModelComposed):

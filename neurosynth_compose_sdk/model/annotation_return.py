@@ -91,7 +91,8 @@ class AnnotationReturn(ModelComposed):
         lazy_import()
         return {
             'neurostore_id': (str,),  # noqa: E501
-            'annotation': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'snapshot': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'studyset': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -105,7 +106,8 @@ class AnnotationReturn(ModelComposed):
 
     attribute_map = {
         'neurostore_id': 'neurostore_id',  # noqa: E501
-        'annotation': 'annotation',  # noqa: E501
+        'snapshot': 'snapshot',  # noqa: E501
+        'studyset': 'studyset',  # noqa: E501
         'id': 'id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
@@ -154,7 +156,8 @@ class AnnotationReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            annotation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            studyset (str): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
@@ -259,7 +262,8 @@ class AnnotationReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             neurostore_id (str): [optional]  # noqa: E501
-            annotation ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            studyset (str): [optional]  # noqa: E501
             id (str): [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
