@@ -95,8 +95,8 @@ class MetaAnalysis(ModelNormal):
             'specification': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'studyset': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'annotation': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'internal_studyset_id': (str,),  # noqa: E501
             'internal_annotation_id': (str,),  # noqa: E501
         }
@@ -160,8 +160,8 @@ class MetaAnalysis(ModelNormal):
             specification (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            description (str): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
             internal_studyset_id (str): [optional]  # noqa: E501
             internal_annotation_id (str): [optional]  # noqa: E501
         """
@@ -248,8 +248,8 @@ class MetaAnalysis(ModelNormal):
             specification (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            description (str): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
             internal_studyset_id (str): [optional]  # noqa: E501
             internal_annotation_id (str): [optional]  # noqa: E501
         """
