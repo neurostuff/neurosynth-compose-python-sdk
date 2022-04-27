@@ -97,6 +97,8 @@ class MetaAnalysis(ModelNormal):
             'annotation': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'internal_studyset_id': (str,),  # noqa: E501
+            'internal_annotation_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -110,6 +112,8 @@ class MetaAnalysis(ModelNormal):
         'annotation': 'annotation',  # noqa: E501
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'internal_studyset_id': 'internal_studyset_id',  # noqa: E501
+        'internal_annotation_id': 'internal_annotation_id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -158,6 +162,8 @@ class MetaAnalysis(ModelNormal):
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
+            internal_studyset_id (str): [optional]  # noqa: E501
+            internal_annotation_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,6 +250,8 @@ class MetaAnalysis(ModelNormal):
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
+            internal_studyset_id (str): [optional]  # noqa: E501
+            internal_annotation_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **annotation** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**internal_studyset_id** | **str** |  | [optional] 
+**internal_annotation_id** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **updated_at** | **datetime, none_type** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
