@@ -73,7 +73,8 @@ class MetaAnalysisApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },
@@ -122,7 +123,8 @@ class MetaAnalysisApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },
@@ -177,7 +179,8 @@ class MetaAnalysisApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'
@@ -227,7 +230,8 @@ class MetaAnalysisApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'

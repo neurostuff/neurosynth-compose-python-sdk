@@ -68,5 +68,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_inline_response400.py
 tox.ini
