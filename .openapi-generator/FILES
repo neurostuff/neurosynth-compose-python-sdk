@@ -7,6 +7,8 @@ docs/Annotation.md
 docs/AnnotationApi.md
 docs/AnnotationList.md
 docs/AnnotationReturn.md
+docs/AnnotationUpdate.md
+docs/AnnotationUpdateAllOf.md
 docs/BundleApi.md
 docs/Corrector.md
 docs/Estimator.md
@@ -44,6 +46,8 @@ neurosynth_compose_sdk/model/__init__.py
 neurosynth_compose_sdk/model/annotation.py
 neurosynth_compose_sdk/model/annotation_list.py
 neurosynth_compose_sdk/model/annotation_return.py
+neurosynth_compose_sdk/model/annotation_update.py
+neurosynth_compose_sdk/model/annotation_update_all_of.py
 neurosynth_compose_sdk/model/corrector.py
 neurosynth_compose_sdk/model/estimator.py
 neurosynth_compose_sdk/model/inline_response400.py
@@ -68,4 +72,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_annotation_update.py
+test/test_annotation_update_all_of.py
 tox.ini

@@ -115,6 +115,7 @@ class AnnotationReturn(ModelComposed):
     }
 
     read_only_vars = {
+        'studyset',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
     }
