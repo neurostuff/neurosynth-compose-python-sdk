@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
  - [AnnotationReturn](docs/AnnotationReturn.md)
  - [Corrector](docs/Corrector.md)
  - [Estimator](docs/Estimator.md)
+ - [InlineResponse400](docs/InlineResponse400.md)
  - [MetaAnalysis](docs/MetaAnalysis.md)
  - [MetaAnalysisList](docs/MetaAnalysisList.md)
  - [MetaAnalysisReturn](docs/MetaAnalysisReturn.md)

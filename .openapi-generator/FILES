@@ -10,6 +10,7 @@ docs/AnnotationReturn.md
 docs/BundleApi.md
 docs/Corrector.md
 docs/Estimator.md
+docs/InlineResponse400.md
 docs/MetaAnalysis.md
 docs/MetaAnalysisApi.md
 docs/MetaAnalysisList.md
@@ -45,6 +46,7 @@ neurosynth_compose_sdk/model/annotation_list.py
 neurosynth_compose_sdk/model/annotation_return.py
 neurosynth_compose_sdk/model/corrector.py
 neurosynth_compose_sdk/model/estimator.py
+neurosynth_compose_sdk/model/inline_response400.py
 neurosynth_compose_sdk/model/meta_analysis.py
 neurosynth_compose_sdk/model/meta_analysis_list.py
 neurosynth_compose_sdk/model/meta_analysis_return.py
@@ -66,4 +68,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_inline_response400.py
 tox.ini

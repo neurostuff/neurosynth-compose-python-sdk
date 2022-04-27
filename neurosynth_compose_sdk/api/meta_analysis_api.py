@@ -22,6 +22,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_list import SpecificationList
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
