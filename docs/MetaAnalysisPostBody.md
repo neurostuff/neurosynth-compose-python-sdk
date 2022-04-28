@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**specification** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | 
 **internal_studyset_id** | **str** |  | 
 **internal_annotation_id** | **str** |  | 
-**specification** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **studyset** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **annotation** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **name** | **str, none_type** |  | [optional] 

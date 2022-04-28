@@ -94,9 +94,9 @@ class MetaAnalysisPostBody(ModelComposed):
         """
         lazy_import()
         return {
+            'specification': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'internal_studyset_id': (str,),  # noqa: E501
             'internal_annotation_id': (str,),  # noqa: E501
-            'specification': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'studyset': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'annotation': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
@@ -109,9 +109,9 @@ class MetaAnalysisPostBody(ModelComposed):
 
 
     attribute_map = {
+        'specification': 'specification',  # noqa: E501
         'internal_studyset_id': 'internal_studyset_id',  # noqa: E501
         'internal_annotation_id': 'internal_annotation_id',  # noqa: E501
-        'specification': 'specification',  # noqa: E501
         'studyset': 'studyset',  # noqa: E501
         'annotation': 'annotation',  # noqa: E501
         'name': 'name',  # noqa: E501
@@ -127,6 +127,7 @@ class MetaAnalysisPostBody(ModelComposed):
         """MetaAnalysisPostBody - a model defined in OpenAPI
 
         Keyword Args:
+            specification (bool, date, datetime, dict, float, int, list, str, none_type):
             internal_studyset_id (str):
             internal_annotation_id (str):
             _check_type (bool): if True, values for parameters in openapi_types
@@ -159,7 +160,6 @@ class MetaAnalysisPostBody(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            specification (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
@@ -233,6 +233,7 @@ class MetaAnalysisPostBody(ModelComposed):
         """MetaAnalysisPostBody - a model defined in OpenAPI
 
         Keyword Args:
+            specification (bool, date, datetime, dict, float, int, list, str, none_type):
             internal_studyset_id (str):
             internal_annotation_id (str):
             _check_type (bool): if True, values for parameters in openapi_types
@@ -265,7 +266,6 @@ class MetaAnalysisPostBody(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            specification (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
