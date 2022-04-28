@@ -79,7 +79,8 @@ class BundleApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },
@@ -133,7 +134,8 @@ class BundleApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },

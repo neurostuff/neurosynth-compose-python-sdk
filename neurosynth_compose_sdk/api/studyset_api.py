@@ -74,7 +74,8 @@ class StudysetApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },
@@ -123,7 +124,8 @@ class StudysetApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },

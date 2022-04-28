@@ -25,6 +25,7 @@ import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import bundle_api
 from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -67,7 +68,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -75,6 +76,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -93,6 +95,7 @@ import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import bundle_api
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -145,7 +148,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -153,6 +156,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
