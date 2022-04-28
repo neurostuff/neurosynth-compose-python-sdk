@@ -111,7 +111,7 @@ class StudysetPostBody(ModelComposed):
         """StudysetPostBody - a model defined in OpenAPI
 
         Keyword Args:
-            neurostore_id (str):
+            neurostore_id (str): The id of the studyset on neurostore.
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -142,7 +142,7 @@ class StudysetPostBody(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): The snapshot of the studyset pending a successful run of the meta-analysis.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -212,7 +212,7 @@ class StudysetPostBody(ModelComposed):
         """StudysetPostBody - a model defined in OpenAPI
 
         Keyword Args:
-            neurostore_id (str):
+            neurostore_id (str): The id of the studyset on neurostore.
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -243,7 +243,7 @@ class StudysetPostBody(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): The snapshot of the studyset pending a successful run of the meta-analysis.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

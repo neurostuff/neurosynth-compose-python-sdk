@@ -119,6 +119,8 @@ class MetaAnalysisPostBody(ModelComposed):
     }
 
     read_only_vars = {
+        'studyset',  # noqa: E501
+        'annotation',  # noqa: E501
     }
 
     @classmethod
@@ -127,9 +129,9 @@ class MetaAnalysisPostBody(ModelComposed):
         """MetaAnalysisPostBody - a model defined in OpenAPI
 
         Keyword Args:
-            specification (bool, date, datetime, dict, float, int, list, str, none_type):
-            internal_studyset_id (str):
-            internal_annotation_id (str):
+            specification (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the specification (nested=False) or a JSON representation of the specification itself (nested=True).
+            internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.
+            internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -160,10 +162,10 @@ class MetaAnalysisPostBody(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
+            studyset (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the studyset (nested=False) or a JSON representation of the studyset itself (nested=True).. [optional]  # noqa: E501
+            annotation (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the annotation (nested=False) or a JSON representation of the annotation itself (nested=True).. [optional]  # noqa: E501
+            name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
+            description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,9 +235,9 @@ class MetaAnalysisPostBody(ModelComposed):
         """MetaAnalysisPostBody - a model defined in OpenAPI
 
         Keyword Args:
-            specification (bool, date, datetime, dict, float, int, list, str, none_type):
-            internal_studyset_id (str):
-            internal_annotation_id (str):
+            specification (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the specification (nested=False) or a JSON representation of the specification itself (nested=True).
+            internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.
+            internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -266,10 +268,10 @@ class MetaAnalysisPostBody(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
-            description (str, none_type): [optional]  # noqa: E501
+            studyset (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the studyset (nested=False) or a JSON representation of the studyset itself (nested=True).. [optional]  # noqa: E501
+            annotation (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the annotation (nested=False) or a JSON representation of the annotation itself (nested=True).. [optional]  # noqa: E501
+            name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
+            description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

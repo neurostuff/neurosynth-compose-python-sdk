@@ -245,9 +245,9 @@ class StudysetApi(object):
         self,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """Get a list of Studysets  # noqa: E501
 
-        get a list of serialized studyset  # noqa: E501
+        get a list of serialized/referenced studysets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -319,9 +319,9 @@ class StudysetApi(object):
         id,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """Get information about a Studyset  # noqa: E501
 
-        get a single serialized studyset  # noqa: E501
+        get a single serialized/referenced studyset  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -397,9 +397,9 @@ class StudysetApi(object):
         id,
         **kwargs
     ):
-        """Update Studyset  # noqa: E501
+        """Update a Studyset  # noqa: E501
 
-        update an existing serialized studyset  # noqa: E501
+        update an existing serialized/referenced studyset  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -475,9 +475,9 @@ class StudysetApi(object):
         self,
         **kwargs
     ):
-        """Create Studyset  # noqa: E501
+        """Create a new Studyset  # noqa: E501
 
-        create a new serialized studyset  # noqa: E501
+        create a new serialized/referenced studyset  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

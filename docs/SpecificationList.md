@@ -1,5 +1,6 @@
 # SpecificationList
 
+The representation of a list of specifications.
 
 ## Properties
 Name | Type | Description | Notes

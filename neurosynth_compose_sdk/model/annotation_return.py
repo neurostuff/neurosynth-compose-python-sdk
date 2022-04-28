@@ -156,13 +156,13 @@ class AnnotationReturn(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            neurostore_id (str): [optional]  # noqa: E501
-            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            studyset (str): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
-            updated_at (datetime, none_type): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
-            user (str, none_type): [optional]  # noqa: E501
+            neurostore_id (str): the id of the annotation on neurostore. [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm. [optional]  # noqa: E501
+            studyset (str): The related studyset to this annotation.. [optional]  # noqa: E501
+            id (str): the identifier for the resource.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
+            created_at (datetime): When the resource was created.. [optional]  # noqa: E501
+            user (str, none_type): Who owns the resource.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -262,13 +262,13 @@ class AnnotationReturn(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            neurostore_id (str): [optional]  # noqa: E501
-            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            studyset (str): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
-            updated_at (datetime, none_type): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
-            user (str, none_type): [optional]  # noqa: E501
+            neurostore_id (str): the id of the annotation on neurostore. [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm. [optional]  # noqa: E501
+            studyset (str): The related studyset to this annotation.. [optional]  # noqa: E501
+            id (str): the identifier for the resource.. [optional]  # noqa: E501
+            updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
+            created_at (datetime): When the resource was created.. [optional]  # noqa: E501
+            user (str, none_type): Who owns the resource.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

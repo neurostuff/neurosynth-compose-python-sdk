@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**annotations_get**](AnnotationApi.md#annotations_get) | **GET** /annotations | Your GET endpoint
-[**annotations_id_get**](AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | Your GET endpoint
-[**annotations_id_put**](AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update Annotation
-[**annotations_post**](AnnotationApi.md#annotations_post) | **POST** /annotations | Create Annotation
+[**annotations_get**](AnnotationApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
+[**annotations_id_get**](AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
+[**annotations_id_put**](AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
+[**annotations_post**](AnnotationApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
 
 
 # **annotations_get**
 > AnnotationList annotations_get()
 
-Your GET endpoint
+GET a list of annotations
 
-get a list of serialized annotations
+get a list of serialized/referenced annotations
 
 ### Example
 
@@ -41,7 +41,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Your GET endpoint
+        # GET a list of annotations
         api_response = api_instance.annotations_get()
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -78,7 +78,7 @@ No authorization required
 # **annotations_id_get**
 > AnnotationReturn annotations_id_get(id)
 
-Your GET endpoint
+GET information about an annotation
 
 get a single annotation
 
@@ -107,7 +107,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Your GET endpoint
+        # GET information about an annotation
         api_response = api_instance.annotations_id_get(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -148,7 +148,7 @@ No authorization required
 # **annotations_id_put**
 > AnnotationReturn annotations_id_put(id)
 
-Update Annotation
+Update an Annotation
 
 update an existing annotation
 
@@ -189,7 +189,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update Annotation
+        # Update an Annotation
         api_response = api_instance.annotations_id_put(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -198,7 +198,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update Annotation
+        # Update an Annotation
         api_response = api_instance.annotations_id_put(id, annotation_update=annotation_update)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -242,9 +242,9 @@ Name | Type | Description  | Notes
 # **annotations_post**
 > AnnotationReturn annotations_post()
 
-Create Annotation
+Create a new Annotation
 
-create a new serialized annotation
+create a new serialized/referenced annotation
 
 ### Example
 
@@ -283,7 +283,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create Annotation
+        # Create a new Annotation
         api_response = api_instance.annotations_post(annotation_post_body=annotation_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:

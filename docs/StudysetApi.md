@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**studysets_get**](StudysetApi.md#studysets_get) | **GET** /studysets | Your GET endpoint
-[**studysets_id_get**](StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Your GET endpoint
-[**studysets_id_put**](StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update Studyset
-[**studysets_post**](StudysetApi.md#studysets_post) | **POST** /studysets | Create Studyset
+[**studysets_get**](StudysetApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
+[**studysets_id_get**](StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
+[**studysets_id_put**](StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
+[**studysets_post**](StudysetApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
 
 
 # **studysets_get**
 > StudysetList studysets_get()
 
-Your GET endpoint
+Get a list of Studysets
 
-get a list of serialized studyset
+get a list of serialized/referenced studysets
 
 ### Example
 
@@ -41,7 +41,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Your GET endpoint
+        # Get a list of Studysets
         api_response = api_instance.studysets_get()
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -78,9 +78,9 @@ No authorization required
 # **studysets_id_get**
 > StudysetReturn studysets_id_get(id)
 
-Your GET endpoint
+Get information about a Studyset
 
-get a single serialized studyset
+get a single serialized/referenced studyset
 
 ### Example
 
@@ -107,7 +107,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Your GET endpoint
+        # Get information about a Studyset
         api_response = api_instance.studysets_id_get(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -148,9 +148,9 @@ No authorization required
 # **studysets_id_put**
 > StudysetReturn studysets_id_put(id)
 
-Update Studyset
+Update a Studyset
 
-update an existing serialized studyset
+update an existing serialized/referenced studyset
 
 ### Example
 
@@ -192,7 +192,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update Studyset
+        # Update a Studyset
         api_response = api_instance.studysets_id_put(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -201,7 +201,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update Studyset
+        # Update a Studyset
         api_response = api_instance.studysets_id_put(id, studyset=studyset)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -245,9 +245,9 @@ Name | Type | Description  | Notes
 # **studysets_post**
 > StudysetReturn studysets_post()
 
-Create Studyset
+Create a new Studyset
 
-create a new serialized studyset
+create a new serialized/referenced studyset
 
 ### Example
 
@@ -286,7 +286,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create Studyset
+        # Create a new Studyset
         api_response = api_instance.studysets_post(studyset_post_body=studyset_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:

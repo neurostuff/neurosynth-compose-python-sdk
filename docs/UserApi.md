@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**users_get**](UserApi.md#users_get) | **GET** /users | 
+[**users_get**](UserApi.md#users_get) | **GET** /users | GET list of Users
 [**users_id_get**](UserApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
 [**users_id_put**](UserApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
 [**users_post**](UserApi.md#users_post) | **POST** /users | Create A New User
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 # **users_get**
 > UserList users_get()
 
-
+GET list of Users
 
 List all users
 
@@ -40,6 +40,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
+        # GET list of Users
         api_response = api_instance.users_get()
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:

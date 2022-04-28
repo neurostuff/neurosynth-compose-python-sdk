@@ -245,9 +245,9 @@ class AnnotationApi(object):
         self,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """GET a list of annotations  # noqa: E501
 
-        get a list of serialized annotations  # noqa: E501
+        get a list of serialized/referenced annotations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -319,7 +319,7 @@ class AnnotationApi(object):
         id,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """GET information about an annotation  # noqa: E501
 
         get a single annotation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -397,7 +397,7 @@ class AnnotationApi(object):
         id,
         **kwargs
     ):
-        """Update Annotation  # noqa: E501
+        """Update an Annotation  # noqa: E501
 
         update an existing annotation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -475,9 +475,9 @@ class AnnotationApi(object):
         self,
         **kwargs
     ):
-        """Create Annotation  # noqa: E501
+        """Create a new Annotation  # noqa: E501
 
-        create a new serialized annotation  # noqa: E501
+        create a new serialized/referenced annotation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

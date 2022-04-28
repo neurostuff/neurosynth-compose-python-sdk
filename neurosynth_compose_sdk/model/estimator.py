@@ -59,6 +59,9 @@ class Estimator(ModelNormal):
     }
 
     validations = {
+        ('type',): {
+            'min_length': 1,
+        },
     }
 
     @cached_property
@@ -137,8 +140,8 @@ class Estimator(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
-            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            type (str): the meta-analytic algorithm applied to the data. Currently this should be directly tied to the function/class running the meta-analysis. For example, ALE, or MKDADensity are valid NiMARE classes to put here.. [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): arbitrary keyword arguments to be passed into the function/class to modify default functionality, this could modify the kernel, resampling methods, or any other behavior defined in the function/class (like MKDADensity).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,8 +223,8 @@ class Estimator(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
-            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            type (str): the meta-analytic algorithm applied to the data. Currently this should be directly tied to the function/class running the meta-analysis. For example, ALE, or MKDADensity are valid NiMARE classes to put here.. [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): arbitrary keyword arguments to be passed into the function/class to modify default functionality, this could modify the kernel, resampling methods, or any other behavior defined in the function/class (like MKDADensity).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

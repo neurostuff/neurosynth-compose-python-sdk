@@ -149,9 +149,9 @@ class AnnotationUpdate(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             internal_studyset_id (str): [optional]  # noqa: E501
-            neurostore_id (str): [optional]  # noqa: E501
-            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            studyset (str): [optional]  # noqa: E501
+            neurostore_id (str): the id of the annotation on neurostore. [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm. [optional]  # noqa: E501
+            studyset (str): The related studyset to this annotation.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -252,9 +252,9 @@ class AnnotationUpdate(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             internal_studyset_id (str): [optional]  # noqa: E501
-            neurostore_id (str): [optional]  # noqa: E501
-            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            studyset (str): [optional]  # noqa: E501
+            neurostore_id (str): the id of the annotation on neurostore. [optional]  # noqa: E501
+            snapshot ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm. [optional]  # noqa: E501
+            studyset (str): The related studyset to this annotation.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

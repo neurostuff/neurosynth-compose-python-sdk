@@ -155,13 +155,13 @@ class Specification(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
+            type (str): the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future.. [optional]  # noqa: E501
             estimator (Estimator): [optional]  # noqa: E501
-            mask (str, none_type): [optional]  # noqa: E501
-            contrast (str, none_type): [optional]  # noqa: E501
-            transformer (str, none_type): [optional]  # noqa: E501
+            mask (str, none_type): a string representing a binary nifti file to select which voxels a user wants to include in the analysis.. [optional]  # noqa: E501
+            contrast (str, none_type): underspecified selection of columns to contrast (TODO, make better).. [optional]  # noqa: E501
+            transformer (str, none_type): A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated.. [optional]  # noqa: E501
             corrector (Corrector): [optional]  # noqa: E501
-            filter (str, none_type): [optional]  # noqa: E501
+            filter (str, none_type): a boolean column from annotations selecting which analyses to include in the meta-analysis. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,13 +243,13 @@ class Specification(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
+            type (str): the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future.. [optional]  # noqa: E501
             estimator (Estimator): [optional]  # noqa: E501
-            mask (str, none_type): [optional]  # noqa: E501
-            contrast (str, none_type): [optional]  # noqa: E501
-            transformer (str, none_type): [optional]  # noqa: E501
+            mask (str, none_type): a string representing a binary nifti file to select which voxels a user wants to include in the analysis.. [optional]  # noqa: E501
+            contrast (str, none_type): underspecified selection of columns to contrast (TODO, make better).. [optional]  # noqa: E501
+            transformer (str, none_type): A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated.. [optional]  # noqa: E501
             corrector (Corrector): [optional]  # noqa: E501
-            filter (str, none_type): [optional]  # noqa: E501
+            filter (str, none_type): a boolean column from annotations selecting which analyses to include in the meta-analysis. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
