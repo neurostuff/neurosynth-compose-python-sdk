@@ -80,7 +80,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_annotation_post_body.py
-test/test_meta_analysis_post_body.py
-test/test_studyset_post_body.py
 tox.ini
