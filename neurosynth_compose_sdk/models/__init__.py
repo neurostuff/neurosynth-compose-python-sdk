@@ -23,6 +23,7 @@ from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.model.read_only import ReadOnly
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_list import SpecificationList
+from neurosynth_compose_sdk.model.specification_post_body import SpecificationPostBody
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from neurosynth_compose_sdk.model.studyset import Studyset
 from neurosynth_compose_sdk.model.studyset_list import StudysetList

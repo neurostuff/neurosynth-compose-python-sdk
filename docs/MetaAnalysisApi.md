@@ -268,8 +268,8 @@ create a new meta-analysis specification
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import meta_analysis_api
+from neurosynth_compose_sdk.model.specification_post_body import SpecificationPostBody
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
-from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
@@ -292,26 +292,12 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
-    specification = Specification(
-        type="type_example",
-        estimator=Estimator(
-            type="type_example",
-            args={},
-        ),
-        mask="mask_example",
-        contrast="contrast_example",
-        transformer="transformer_example",
-        corrector=Corrector(
-            type="type_example",
-            args={},
-        ),
-        filter="filter_example",
-    ) # Specification |  (optional)
+    specification_post_body = SpecificationPostBody(None) # SpecificationPostBody |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.specifications_post(specification=specification)
+        api_response = api_instance.specifications_post(specification_post_body=specification_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling MetaAnalysisApi->specifications_post: %s\n" % e)
@@ -322,7 +308,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **specification** | [**Specification**](Specification.md)|  | [optional]
+ **specification_post_body** | [**SpecificationPostBody**](SpecificationPostBody.md)|  | [optional]
 
 ### Return type
 

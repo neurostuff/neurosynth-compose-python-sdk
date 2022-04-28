@@ -20,6 +20,7 @@ docs/MetaAnalysisReturn.md
 docs/ReadOnly.md
 docs/Specification.md
 docs/SpecificationList.md
+docs/SpecificationPostBody.md
 docs/SpecificationReturn.md
 docs/Studyset.md
 docs/StudysetApi.md
@@ -57,6 +58,7 @@ neurosynth_compose_sdk/model/meta_analysis_return.py
 neurosynth_compose_sdk/model/read_only.py
 neurosynth_compose_sdk/model/specification.py
 neurosynth_compose_sdk/model/specification_list.py
+neurosynth_compose_sdk/model/specification_post_body.py
 neurosynth_compose_sdk/model/specification_return.py
 neurosynth_compose_sdk/model/studyset.py
 neurosynth_compose_sdk/model/studyset_list.py
@@ -72,4 +74,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_specification_post_body.py
 tox.ini

@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
  - [ReadOnly](docs/ReadOnly.md)
  - [Specification](docs/Specification.md)
  - [SpecificationList](docs/SpecificationList.md)
+ - [SpecificationPostBody](docs/SpecificationPostBody.md)
  - [SpecificationReturn](docs/SpecificationReturn.md)
  - [Studyset](docs/Studyset.md)
  - [StudysetList](docs/StudysetList.md)
