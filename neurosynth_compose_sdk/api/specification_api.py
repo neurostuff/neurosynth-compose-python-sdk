@@ -245,7 +245,7 @@ class SpecificationApi(object):
         self,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """Get a list of Specifications  # noqa: E501
 
         list of meta-analysis specifications  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -319,7 +319,7 @@ class SpecificationApi(object):
         id,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """Get information about a Specification  # noqa: E501
 
         get a meta-analysis specification  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -475,7 +475,7 @@ class SpecificationApi(object):
         self,
         **kwargs
     ):
-        """specifications_post  # noqa: E501
+        """Create a Specification  # noqa: E501
 
         create a new meta-analysis specification  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

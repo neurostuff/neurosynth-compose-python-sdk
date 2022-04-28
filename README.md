@@ -91,10 +91,10 @@ Class | Method | HTTP request | Description
 *MetaAnalysisApi* | [**meta_analyses_id_get**](docs/MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysisApi* | [**meta_analyses_id_put**](docs/MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
 *MetaAnalysisApi* | [**meta_analyses_post**](docs/MetaAnalysisApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
-*SpecificationApi* | [**specifications_get**](docs/SpecificationApi.md#specifications_get) | **GET** /specifications | Your GET endpoint
-*SpecificationApi* | [**specifications_id_get**](docs/SpecificationApi.md#specifications_id_get) | **GET** /specifications/{id} | Your GET endpoint
+*SpecificationApi* | [**specifications_get**](docs/SpecificationApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
+*SpecificationApi* | [**specifications_id_get**](docs/SpecificationApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
 *SpecificationApi* | [**specifications_id_put**](docs/SpecificationApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
-*SpecificationApi* | [**specifications_post**](docs/SpecificationApi.md#specifications_post) | **POST** /specifications | 
+*SpecificationApi* | [**specifications_post**](docs/SpecificationApi.md#specifications_post) | **POST** /specifications | Create a Specification
 *StudysetApi* | [**studysets_get**](docs/StudysetApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
 *StudysetApi* | [**studysets_id_get**](docs/StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
 *StudysetApi* | [**studysets_id_put**](docs/StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset

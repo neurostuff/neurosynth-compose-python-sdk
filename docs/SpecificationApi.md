@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**specifications_get**](SpecificationApi.md#specifications_get) | **GET** /specifications | Your GET endpoint
-[**specifications_id_get**](SpecificationApi.md#specifications_id_get) | **GET** /specifications/{id} | Your GET endpoint
+[**specifications_get**](SpecificationApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
+[**specifications_id_get**](SpecificationApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
 [**specifications_id_put**](SpecificationApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
-[**specifications_post**](SpecificationApi.md#specifications_post) | **POST** /specifications | 
+[**specifications_post**](SpecificationApi.md#specifications_post) | **POST** /specifications | Create a Specification
 
 
 # **specifications_get**
 > SpecificationList specifications_get()
 
-Your GET endpoint
+Get a list of Specifications
 
 list of meta-analysis specifications
 
@@ -41,7 +41,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Your GET endpoint
+        # Get a list of Specifications
         api_response = api_instance.specifications_get()
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -78,7 +78,7 @@ No authorization required
 # **specifications_id_get**
 > SpecificationReturn specifications_id_get(id)
 
-Your GET endpoint
+Get information about a Specification
 
 get a meta-analysis specification
 
@@ -107,7 +107,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Your GET endpoint
+        # Get information about a Specification
         api_response = api_instance.specifications_id_get(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 # **specifications_post**
 > SpecificationReturn specifications_post()
 
-
+Create a Specification
 
 create a new meta-analysis specification
 
@@ -297,6 +297,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # Create a Specification
         api_response = api_instance.specifications_post(specification_post_body=specification_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
