@@ -26,6 +26,7 @@ from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_list import SpecificationList
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
+from neurosynth_compose_sdk.model.unknownbasetype import UNKNOWNBASETYPE
 
 
 class MetaAnalysisApi(object):
@@ -201,10 +202,11 @@ class MetaAnalysisApi(object):
             },
             params_map={
                 'all': [
-                    'specification',
+                    'unknown_base_type',
                 ],
                 'required': [],
                 'nullable': [
+                    'unknown_base_type',
                 ],
                 'enum': [
                 ],
@@ -217,13 +219,13 @@ class MetaAnalysisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'specification':
-                        (Specification,),
+                    'unknown_base_type':
+                        (UNKNOWN_BASE_TYPE,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'specification': 'body',
+                    'unknown_base_type': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -485,7 +487,7 @@ class MetaAnalysisApi(object):
 
 
         Keyword Args:
-            specification (Specification): [optional]
+            unknown_base_type (UNKNOWN_BASE_TYPE): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
