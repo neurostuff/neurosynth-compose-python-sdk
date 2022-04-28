@@ -25,6 +25,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_list import SpecificationList
+from neurosynth_compose_sdk.model.specification_post_body import SpecificationPostBody
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 
 
@@ -201,7 +202,7 @@ class MetaAnalysisApi(object):
             },
             params_map={
                 'all': [
-                    'specification',
+                    'specification_post_body',
                 ],
                 'required': [],
                 'nullable': [
@@ -217,13 +218,13 @@ class MetaAnalysisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'specification':
-                        (Specification,),
+                    'specification_post_body':
+                        (SpecificationPostBody,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'specification': 'body',
+                    'specification_post_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -485,7 +486,7 @@ class MetaAnalysisApi(object):
 
 
         Keyword Args:
-            specification (Specification): [optional]
+            specification_post_body (SpecificationPostBody): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

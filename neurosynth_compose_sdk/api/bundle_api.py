@@ -22,8 +22,10 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
+from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
 
 
@@ -64,7 +66,7 @@ class BundleApi(object):
                 },
                 'openapi_types': {
                     'nested':
-                        (str,),
+                        (bool,),
                 },
                 'attribute_map': {
                     'nested': 'nested',
@@ -77,7 +79,8 @@ class BundleApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },
@@ -116,7 +119,7 @@ class BundleApi(object):
                     'id':
                         (str,),
                     'nested':
-                        (str,),
+                        (bool,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -131,7 +134,8 @@ class BundleApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [],
             },
@@ -186,7 +190,8 @@ class BundleApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'
@@ -207,7 +212,7 @@ class BundleApi(object):
             },
             params_map={
                 'all': [
-                    'meta_analysis',
+                    'meta_analysis_post_body',
                 ],
                 'required': [],
                 'nullable': [
@@ -223,20 +228,21 @@ class BundleApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'meta_analysis':
-                        (MetaAnalysis,),
+                    'meta_analysis_post_body':
+                        (MetaAnalysisPostBody,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'meta_analysis': 'body',
+                    'meta_analysis_post_body': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'
@@ -260,7 +266,7 @@ class BundleApi(object):
 
 
         Keyword Args:
-            nested (str): show nested component instead of id. [optional]
+            nested (bool): show nested component instead of id. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -337,7 +343,7 @@ class BundleApi(object):
             id (str):
 
         Keyword Args:
-            nested (str): show nested component instead of id. [optional]
+            nested (bool): show nested component instead of id. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -492,7 +498,7 @@ class BundleApi(object):
 
 
         Keyword Args:
-            meta_analysis (MetaAnalysis): [optional]
+            meta_analysis_post_body (MetaAnalysisPostBody): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
