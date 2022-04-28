@@ -1,21 +1,21 @@
-# neurosynth_compose_sdk.MetaAnalysisApi
+# neurosynth_compose_sdk.SpecificationApi
 
 All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**meta_analyses_get**](MetaAnalysisApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
-[**meta_analyses_id_get**](MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
-[**meta_analyses_id_put**](MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
-[**meta_analyses_post**](MetaAnalysisApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
+[**specifications_get**](SpecificationApi.md#specifications_get) | **GET** /specifications | Your GET endpoint
+[**specifications_id_get**](SpecificationApi.md#specifications_id_get) | **GET** /specifications/{id} | Your GET endpoint
+[**specifications_id_put**](SpecificationApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
+[**specifications_post**](SpecificationApi.md#specifications_post) | **POST** /specifications | 
 
 
-# **meta_analyses_get**
-> MetaAnalysisList meta_analyses_get()
+# **specifications_get**
+> SpecificationList specifications_get()
 
-GET a list of meta-analyses
+Your GET endpoint
 
-list all runnable specification, studyset, annotation bundles
+list of meta-analysis specifications
 
 ### Example
 
@@ -23,8 +23,8 @@ list all runnable specification, studyset, annotation bundles
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
+from neurosynth_compose_sdk.api import specification_api
+from neurosynth_compose_sdk.model.specification_list import SpecificationList
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
@@ -37,29 +37,24 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
-    nested = True # bool | show nested component instead of id (optional)
+    api_instance = specification_api.SpecificationApi(api_client)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example, this endpoint has no required or optional parameters
     try:
-        # GET a list of meta-analyses
-        api_response = api_instance.meta_analyses_get(nested=nested)
+        # Your GET endpoint
+        api_response = api_instance.specifications_get()
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_get: %s\n" % e)
+        print("Exception when calling SpecificationApi->specifications_get: %s\n" % e)
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **nested** | **bool**| show nested component instead of id | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**MetaAnalysisList**](MetaAnalysisList.md)
+[**SpecificationList**](SpecificationList.md)
 
 ### Authorization
 
@@ -80,12 +75,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **meta_analyses_id_get**
-> MetaAnalysisReturn meta_analyses_id_get(id)
+# **specifications_id_get**
+> SpecificationReturn specifications_id_get(id)
 
-GET meta-analysis information
+Your GET endpoint
 
-get a meta-analysis (specification, annotation, and studyset)
+get a meta-analysis specification
 
 ### Example
 
@@ -93,9 +88,9 @@ get a meta-analysis (specification, annotation, and studyset)
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.api import specification_api
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
+from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -107,26 +102,16 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
+    api_instance = specification_api.SpecificationApi(api_client)
     id = "id_example" # str | 
-    nested = True # bool | show nested component instead of id (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # GET meta-analysis information
-        api_response = api_instance.meta_analyses_id_get(id)
+        # Your GET endpoint
+        api_response = api_instance.specifications_id_get(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_get: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # GET meta-analysis information
-        api_response = api_instance.meta_analyses_id_get(id, nested=nested)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_get: %s\n" % e)
+        print("Exception when calling SpecificationApi->specifications_id_get: %s\n" % e)
 ```
 
 
@@ -135,11 +120,10 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
- **nested** | **bool**| show nested component instead of id | [optional]
 
 ### Return type
 
-[**MetaAnalysisReturn**](MetaAnalysisReturn.md)
+[**SpecificationReturn**](SpecificationReturn.md)
 
 ### Authorization
 
@@ -161,12 +145,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **meta_analyses_id_put**
-> MetaAnalysisReturn meta_analyses_id_put(id)
+# **specifications_id_put**
+> SpecificationReturn specifications_id_put(id)
 
-Update a meta-analysis
+Update Meta-Analysis specification
 
-update an existing meta-analysis (that has not yet been run)
+update an existing meta analysis specification
 
 ### Example
 
@@ -175,10 +159,10 @@ update an existing meta-analysis (that has not yet been run)
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.api import specification_api
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
-from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
+from neurosynth_compose_sdk.model.specification import Specification
+from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -199,32 +183,40 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
+    api_instance = specification_api.SpecificationApi(api_client)
     id = "id_example" # str | 
-    meta_analysis = MetaAnalysis(
-        specification=None,
-        name="name_example",
-        description="description_example",
-        internal_studyset_id="internal_studyset_id_example",
-        internal_annotation_id="internal_annotation_id_example",
-    ) # MetaAnalysis |  (optional)
+    specification = Specification(
+        type="type_example",
+        estimator=Estimator(
+            type="MKDADensity",
+            args={},
+        ),
+        mask="mask_example",
+        contrast="contrast_example",
+        transformer="transformer_example",
+        corrector=Corrector(
+            type="FWECorrector",
+            args={},
+        ),
+        filter="filter_example",
+    ) # Specification |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # Update a meta-analysis
-        api_response = api_instance.meta_analyses_id_put(id)
+        # Update Meta-Analysis specification
+        api_response = api_instance.specifications_id_put(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_put: %s\n" % e)
+        print("Exception when calling SpecificationApi->specifications_id_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update a meta-analysis
-        api_response = api_instance.meta_analyses_id_put(id, meta_analysis=meta_analysis)
+        # Update Meta-Analysis specification
+        api_response = api_instance.specifications_id_put(id, specification=specification)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_put: %s\n" % e)
+        print("Exception when calling SpecificationApi->specifications_id_put: %s\n" % e)
 ```
 
 
@@ -233,11 +225,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
- **meta_analysis** | [**MetaAnalysis**](MetaAnalysis.md)|  | [optional]
+ **specification** | [**Specification**](Specification.md)|  | [optional]
 
 ### Return type
 
-[**MetaAnalysisReturn**](MetaAnalysisReturn.md)
+[**SpecificationReturn**](SpecificationReturn.md)
 
 ### Authorization
 
@@ -261,12 +253,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **meta_analyses_post**
-> MetaAnalysisReturn meta_analyses_post()
+# **specifications_post**
+> SpecificationReturn specifications_post()
 
-Create a new meta-analysis
 
-create a new specification, studyset, annotation bundle
+
+create a new meta-analysis specification
 
 ### Example
 
@@ -275,10 +267,10 @@ create a new specification, studyset, annotation bundle
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
-from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.api import specification_api
+from neurosynth_compose_sdk.model.specification_post_body import SpecificationPostBody
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
+from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -299,17 +291,16 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
-    meta_analysis_post_body = MetaAnalysisPostBody(None) # MetaAnalysisPostBody |  (optional)
+    api_instance = specification_api.SpecificationApi(api_client)
+    specification_post_body = SpecificationPostBody(None) # SpecificationPostBody |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create a new meta-analysis
-        api_response = api_instance.meta_analyses_post(meta_analysis_post_body=meta_analysis_post_body)
+        api_response = api_instance.specifications_post(specification_post_body=specification_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_post: %s\n" % e)
+        print("Exception when calling SpecificationApi->specifications_post: %s\n" % e)
 ```
 
 
@@ -317,11 +308,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **meta_analysis_post_body** | [**MetaAnalysisPostBody**](MetaAnalysisPostBody.md)|  | [optional]
+ **specification_post_body** | [**SpecificationPostBody**](SpecificationPostBody.md)|  | [optional]
 
 ### Return type
 
-[**MetaAnalysisReturn**](MetaAnalysisReturn.md)
+[**SpecificationReturn**](SpecificationReturn.md)
 
 ### Authorization
 
@@ -339,7 +330,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
+**422** | Unprocessable Entity (WebDAV) |  -  |
 **500** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
