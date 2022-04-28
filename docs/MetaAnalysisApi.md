@@ -186,7 +186,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
     id = "id_example" # str | 
     specification = Specification(
-        type="cbma",
+        type="type_example",
         estimator=Estimator(
             type="type_example",
             args={},
@@ -268,7 +268,6 @@ create a new meta-analysis specification
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.unknownbasetype import UNKNOWNBASETYPE
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
@@ -293,12 +292,26 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
-    unknown_base_type = None # UNKNOWN_BASE_TYPE |  (optional)
+    specification = Specification(
+        type="type_example",
+        estimator=Estimator(
+            type="type_example",
+            args={},
+        ),
+        mask="mask_example",
+        contrast="contrast_example",
+        transformer="transformer_example",
+        corrector=Corrector(
+            type="type_example",
+            args={},
+        ),
+        filter="filter_example",
+    ) # Specification |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.specifications_post(unknown_base_type=unknown_base_type)
+        api_response = api_instance.specifications_post(specification=specification)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling MetaAnalysisApi->specifications_post: %s\n" % e)
@@ -309,7 +322,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional]
+ **specification** | [**Specification**](Specification.md)|  | [optional]
 
 ### Return type
 
