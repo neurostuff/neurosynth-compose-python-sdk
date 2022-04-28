@@ -244,8 +244,8 @@ create a new serialized annotation
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import annotation_api
-from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -267,13 +267,13 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = annotation_api.AnnotationApi(api_client)
-    annotation_update = AnnotationUpdate(None) # AnnotationUpdate |  (optional)
+    annotation_post_body = AnnotationPostBody(None) # AnnotationPostBody |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Annotation
-        api_response = api_instance.annotations_post(annotation_update=annotation_update)
+        api_response = api_instance.annotations_post(annotation_post_body=annotation_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling AnnotationApi->annotations_post: %s\n" % e)
@@ -284,7 +284,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **annotation_update** | [**AnnotationUpdate**](AnnotationUpdate.md)|  | [optional]
+ **annotation_post_body** | [**AnnotationPostBody**](AnnotationPostBody.md)|  | [optional]
 
 ### Return type
 

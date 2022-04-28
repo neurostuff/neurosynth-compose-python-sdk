@@ -6,6 +6,7 @@ README.md
 docs/Annotation.md
 docs/AnnotationApi.md
 docs/AnnotationList.md
+docs/AnnotationPostBody.md
 docs/AnnotationReturn.md
 docs/AnnotationUpdate.md
 docs/AnnotationUpdateAllOf.md
@@ -16,6 +17,7 @@ docs/InlineResponse400.md
 docs/MetaAnalysis.md
 docs/MetaAnalysisApi.md
 docs/MetaAnalysisList.md
+docs/MetaAnalysisPostBody.md
 docs/MetaAnalysisReturn.md
 docs/ReadOnly.md
 docs/Specification.md
@@ -25,6 +27,7 @@ docs/SpecificationReturn.md
 docs/Studyset.md
 docs/StudysetApi.md
 docs/StudysetList.md
+docs/StudysetPostBody.md
 docs/StudysetReturn.md
 docs/User.md
 docs/UserApi.md
@@ -46,6 +49,7 @@ neurosynth_compose_sdk/exceptions.py
 neurosynth_compose_sdk/model/__init__.py
 neurosynth_compose_sdk/model/annotation.py
 neurosynth_compose_sdk/model/annotation_list.py
+neurosynth_compose_sdk/model/annotation_post_body.py
 neurosynth_compose_sdk/model/annotation_return.py
 neurosynth_compose_sdk/model/annotation_update.py
 neurosynth_compose_sdk/model/annotation_update_all_of.py
@@ -54,6 +58,7 @@ neurosynth_compose_sdk/model/estimator.py
 neurosynth_compose_sdk/model/inline_response400.py
 neurosynth_compose_sdk/model/meta_analysis.py
 neurosynth_compose_sdk/model/meta_analysis_list.py
+neurosynth_compose_sdk/model/meta_analysis_post_body.py
 neurosynth_compose_sdk/model/meta_analysis_return.py
 neurosynth_compose_sdk/model/read_only.py
 neurosynth_compose_sdk/model/specification.py
@@ -62,6 +67,7 @@ neurosynth_compose_sdk/model/specification_post_body.py
 neurosynth_compose_sdk/model/specification_return.py
 neurosynth_compose_sdk/model/studyset.py
 neurosynth_compose_sdk/model/studyset_list.py
+neurosynth_compose_sdk/model/studyset_post_body.py
 neurosynth_compose_sdk/model/studyset_return.py
 neurosynth_compose_sdk/model/user.py
 neurosynth_compose_sdk/model/user_list.py
@@ -74,5 +80,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_specification_post_body.py
+test/test_annotation_post_body.py
+test/test_meta_analysis_post_body.py
+test/test_studyset_post_body.py
 tox.ini

@@ -24,6 +24,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
 )
 from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
+from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
 
 
@@ -207,7 +208,7 @@ class BundleApi(object):
             },
             params_map={
                 'all': [
-                    'meta_analysis',
+                    'meta_analysis_post_body',
                 ],
                 'required': [],
                 'nullable': [
@@ -223,13 +224,13 @@ class BundleApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'meta_analysis':
-                        (MetaAnalysis,),
+                    'meta_analysis_post_body':
+                        (MetaAnalysisPostBody,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'meta_analysis': 'body',
+                    'meta_analysis_post_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -492,7 +493,7 @@ class BundleApi(object):
 
 
         Keyword Args:
-            meta_analysis (MetaAnalysis): [optional]
+            meta_analysis_post_body (MetaAnalysisPostBody): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

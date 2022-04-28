@@ -268,8 +268,8 @@ create a new specification, studyset, annotation bundle
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import bundle_api
+from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
-from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -291,21 +291,13 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = bundle_api.BundleApi(api_client)
-    meta_analysis = MetaAnalysis(
-        specification=None,
-        studyset=None,
-        annotation=None,
-        name="name_example",
-        description="description_example",
-        internal_studyset_id="internal_studyset_id_example",
-        internal_annotation_id="internal_annotation_id_example",
-    ) # MetaAnalysis |  (optional)
+    meta_analysis_post_body = MetaAnalysisPostBody(None) # MetaAnalysisPostBody |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Bundle
-        api_response = api_instance.meta_analyses_post(meta_analysis=meta_analysis)
+        api_response = api_instance.meta_analyses_post(meta_analysis_post_body=meta_analysis_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling BundleApi->meta_analyses_post: %s\n" % e)
@@ -316,7 +308,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **meta_analysis** | [**MetaAnalysis**](MetaAnalysis.md)|  | [optional]
+ **meta_analysis_post_body** | [**MetaAnalysisPostBody**](MetaAnalysisPostBody.md)|  | [optional]
 
 ### Return type
 

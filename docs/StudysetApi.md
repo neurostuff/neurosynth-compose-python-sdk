@@ -247,8 +247,8 @@ create a new serialized studyset
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import studyset_api
+from neurosynth_compose_sdk.model.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.model.studyset_return import StudysetReturn
-from neurosynth_compose_sdk.model.studyset import Studyset
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -270,16 +270,13 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = studyset_api.StudysetApi(api_client)
-    studyset = Studyset(
-        neurostore_id="neurostore_id_example",
-        snapshot={},
-    ) # Studyset |  (optional)
+    studyset_post_body = StudysetPostBody(None) # StudysetPostBody |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Studyset
-        api_response = api_instance.studysets_post(studyset=studyset)
+        api_response = api_instance.studysets_post(studyset_post_body=studyset_post_body)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling StudysetApi->studysets_post: %s\n" % e)
@@ -290,7 +287,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **studyset** | [**Studyset**](Studyset.md)|  | [optional]
+ **studyset_post_body** | [**StudysetPostBody**](StudysetPostBody.md)|  | [optional]
 
 ### Return type
 

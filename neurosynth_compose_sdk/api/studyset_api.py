@@ -24,6 +24,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
 )
 from neurosynth_compose_sdk.model.studyset import Studyset
 from neurosynth_compose_sdk.model.studyset_list import StudysetList
+from neurosynth_compose_sdk.model.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.model.studyset_return import StudysetReturn
 
 
@@ -197,7 +198,7 @@ class StudysetApi(object):
             },
             params_map={
                 'all': [
-                    'studyset',
+                    'studyset_post_body',
                 ],
                 'required': [],
                 'nullable': [
@@ -213,13 +214,13 @@ class StudysetApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'studyset':
-                        (Studyset,),
+                    'studyset_post_body':
+                        (StudysetPostBody,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'studyset': 'body',
+                    'studyset_post_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -480,7 +481,7 @@ class StudysetApi(object):
 
 
         Keyword Args:
-            studyset (Studyset): [optional]
+            studyset_post_body (StudysetPostBody): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

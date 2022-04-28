@@ -23,6 +23,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from neurosynth_compose_sdk.model.annotation_list import AnnotationList
+from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
 
@@ -197,7 +198,7 @@ class AnnotationApi(object):
             },
             params_map={
                 'all': [
-                    'annotation_update',
+                    'annotation_post_body',
                 ],
                 'required': [],
                 'nullable': [
@@ -213,13 +214,13 @@ class AnnotationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'annotation_update':
-                        (AnnotationUpdate,),
+                    'annotation_post_body':
+                        (AnnotationPostBody,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'annotation_update': 'body',
+                    'annotation_post_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -480,7 +481,7 @@ class AnnotationApi(object):
 
 
         Keyword Args:
-            annotation_update (AnnotationUpdate): [optional]
+            annotation_post_body (AnnotationPostBody): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
