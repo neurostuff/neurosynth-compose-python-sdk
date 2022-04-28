@@ -26,6 +26,7 @@ from neurosynth_compose_sdk.model.annotation_list import AnnotationList
 from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 
 
 class AnnotationApi(object):
@@ -177,7 +178,8 @@ class AnnotationApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'
@@ -227,7 +229,8 @@ class AnnotationApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'

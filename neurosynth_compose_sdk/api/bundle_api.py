@@ -22,6 +22,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
@@ -187,7 +188,8 @@ class BundleApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'
@@ -237,7 +239,8 @@ class BundleApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'application/json',
+                    'application/problem+json'
                 ],
                 'content_type': [
                     'application/json'

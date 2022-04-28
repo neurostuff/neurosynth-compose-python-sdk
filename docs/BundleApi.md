@@ -172,6 +172,7 @@ import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import bundle_api
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
@@ -242,7 +243,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -250,6 +251,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -270,6 +275,7 @@ import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import bundle_api
 from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -321,7 +327,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -329,6 +335,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
+**500** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

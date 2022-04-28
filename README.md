@@ -55,6 +55,7 @@ from neurosynth_compose_sdk.model.annotation_list import AnnotationList
 from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
