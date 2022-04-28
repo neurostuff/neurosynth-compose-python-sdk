@@ -59,6 +59,9 @@ class Corrector(ModelNormal):
     }
 
     validations = {
+        ('type',): {
+            'min_length': 1,
+        },
     }
 
     @cached_property
@@ -137,8 +140,8 @@ class Corrector(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
-            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            type (str): the name of the function/class performing the correction. For example FWECorrector from NiMARE would be valid.. [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): key word arguments passed to the corrector to modidy default functionality, such as number of iterations, or the particular method of correction being applied.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,8 +223,8 @@ class Corrector(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
-            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            type (str): the name of the function/class performing the correction. For example FWECorrector from NiMARE would be valid.. [optional]  # noqa: E501
+            args ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): key word arguments passed to the corrector to modidy default functionality, such as number of iterations, or the particular method of correction being applied.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

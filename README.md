@@ -68,7 +68,7 @@ configuration = neurosynth_compose_sdk.Configuration(
 client = neurosynth_compose_sdk.ApiClient(configuration)
 
 try:
-    # Your GET endpoint
+    # GET a list of annotations
     api_response = client.annotation.get(
     
     )
@@ -83,23 +83,23 @@ All URIs are relative to *http://localhost:81/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AnnotationApi* | [**annotations_get**](docs/AnnotationApi.md#annotations_get) | **GET** /annotations | Your GET endpoint
-*AnnotationApi* | [**annotations_id_get**](docs/AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | Your GET endpoint
-*AnnotationApi* | [**annotations_id_put**](docs/AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update Annotation
-*AnnotationApi* | [**annotations_post**](docs/AnnotationApi.md#annotations_post) | **POST** /annotations | Create Annotation
-*BundleApi* | [**meta_analyses_get**](docs/BundleApi.md#meta_analyses_get) | **GET** /meta-analyses | Your GET endpoint
-*BundleApi* | [**meta_analyses_id_get**](docs/BundleApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | Your GET endpoint
-*BundleApi* | [**meta_analyses_id_put**](docs/BundleApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update Bundle
-*BundleApi* | [**meta_analyses_post**](docs/BundleApi.md#meta_analyses_post) | **POST** /meta-analyses | Create Bundle
-*MetaAnalysisApi* | [**specifications_get**](docs/MetaAnalysisApi.md#specifications_get) | **GET** /specifications | Your GET endpoint
-*MetaAnalysisApi* | [**specifications_id_get**](docs/MetaAnalysisApi.md#specifications_id_get) | **GET** /specifications/{id} | Your GET endpoint
-*MetaAnalysisApi* | [**specifications_id_put**](docs/MetaAnalysisApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
-*MetaAnalysisApi* | [**specifications_post**](docs/MetaAnalysisApi.md#specifications_post) | **POST** /specifications | 
-*StudysetApi* | [**studysets_get**](docs/StudysetApi.md#studysets_get) | **GET** /studysets | Your GET endpoint
-*StudysetApi* | [**studysets_id_get**](docs/StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Your GET endpoint
-*StudysetApi* | [**studysets_id_put**](docs/StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update Studyset
-*StudysetApi* | [**studysets_post**](docs/StudysetApi.md#studysets_post) | **POST** /studysets | Create Studyset
-*UserApi* | [**users_get**](docs/UserApi.md#users_get) | **GET** /users | 
+*AnnotationApi* | [**annotations_get**](docs/AnnotationApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
+*AnnotationApi* | [**annotations_id_get**](docs/AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
+*AnnotationApi* | [**annotations_id_put**](docs/AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
+*AnnotationApi* | [**annotations_post**](docs/AnnotationApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
+*MetaAnalysisApi* | [**meta_analyses_get**](docs/MetaAnalysisApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
+*MetaAnalysisApi* | [**meta_analyses_id_get**](docs/MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
+*MetaAnalysisApi* | [**meta_analyses_id_put**](docs/MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
+*MetaAnalysisApi* | [**meta_analyses_post**](docs/MetaAnalysisApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
+*SpecificationApi* | [**specifications_get**](docs/SpecificationApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
+*SpecificationApi* | [**specifications_id_get**](docs/SpecificationApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
+*SpecificationApi* | [**specifications_id_put**](docs/SpecificationApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
+*SpecificationApi* | [**specifications_post**](docs/SpecificationApi.md#specifications_post) | **POST** /specifications | Create a Specification
+*StudysetApi* | [**studysets_get**](docs/StudysetApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
+*StudysetApi* | [**studysets_id_get**](docs/StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
+*StudysetApi* | [**studysets_id_put**](docs/StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
+*StudysetApi* | [**studysets_post**](docs/StudysetApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
+*UserApi* | [**users_get**](docs/UserApi.md#users_get) | **GET** /users | GET list of Users
 *UserApi* | [**users_id_get**](docs/UserApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
 *UserApi* | [**users_id_put**](docs/UserApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
 *UserApi* | [**users_post**](docs/UserApi.md#users_post) | **POST** /users | Create A New User

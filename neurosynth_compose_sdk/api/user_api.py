@@ -239,7 +239,7 @@ class UserApi(object):
         self,
         **kwargs
     ):
-        """users_get  # noqa: E501
+        """GET list of Users  # noqa: E501
 
         List all users  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

@@ -82,8 +82,8 @@ class ApiClient(object):
 
         # set convienent access to all apis
         self.annotation = apis.AnnotationApi(api_client=self)
-        self.bundle = apis.BundleApi(api_client=self)
         self.meta_analysis = apis.MetaAnalysisApi(api_client=self)
+        self.specification = apis.SpecificationApi(api_client=self)
         self.studyset = apis.StudysetApi(api_client=self)
         self.user = apis.UserApi(api_client=self)
 

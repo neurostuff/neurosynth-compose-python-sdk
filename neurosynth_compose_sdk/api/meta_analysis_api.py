@@ -23,10 +23,10 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
-from neurosynth_compose_sdk.model.specification import Specification
-from neurosynth_compose_sdk.model.specification_list import SpecificationList
-from neurosynth_compose_sdk.model.specification_post_body import SpecificationPostBody
-from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
+from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
+from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
+from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
+from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
 
 
 class MetaAnalysisApi(object):
@@ -38,17 +38,18 @@ class MetaAnalysisApi(object):
 
     def __init__(self, api_client):
         self.api_client = api_client
-        self.specifications_get_endpoint = _Endpoint(
+        self.meta_analyses_get_endpoint = _Endpoint(
             settings={
-                'response_type': (SpecificationList,),
+                'response_type': (MetaAnalysisList,),
                 'auth': [],
-                'endpoint_path': '/specifications',
-                'operation_id': 'specifications_get',
+                'endpoint_path': '/meta-analyses',
+                'operation_id': 'meta_analyses_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'nested',
                 ],
                 'required': [],
                 'nullable': [
@@ -64,10 +65,14 @@ class MetaAnalysisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'nested':
+                        (bool,),
                 },
                 'attribute_map': {
+                    'nested': 'nested',
                 },
                 'location_map': {
+                    'nested': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -81,18 +86,19 @@ class MetaAnalysisApi(object):
             },
             api_client=api_client
         )
-        self.specifications_id_get_endpoint = _Endpoint(
+        self.meta_analyses_id_get_endpoint = _Endpoint(
             settings={
-                'response_type': (SpecificationReturn,),
+                'response_type': (MetaAnalysisReturn,),
                 'auth': [],
-                'endpoint_path': '/specifications/{id}',
-                'operation_id': 'specifications_id_get',
+                'endpoint_path': '/meta-analyses/{id}',
+                'operation_id': 'meta_analyses_id_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'id',
+                    'nested',
                 ],
                 'required': [
                     'id',
@@ -112,12 +118,16 @@ class MetaAnalysisApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
+                    'nested':
+                        (bool,),
                 },
                 'attribute_map': {
                     'id': 'id',
+                    'nested': 'nested',
                 },
                 'location_map': {
                     'id': 'path',
+                    'nested': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -131,21 +141,21 @@ class MetaAnalysisApi(object):
             },
             api_client=api_client
         )
-        self.specifications_id_put_endpoint = _Endpoint(
+        self.meta_analyses_id_put_endpoint = _Endpoint(
             settings={
-                'response_type': (SpecificationReturn,),
+                'response_type': (MetaAnalysisReturn,),
                 'auth': [
                     'JSON-Web-Token'
                 ],
-                'endpoint_path': '/specifications/{id}',
-                'operation_id': 'specifications_id_put',
+                'endpoint_path': '/meta-analyses/{id}',
+                'operation_id': 'meta_analyses_id_put',
                 'http_method': 'PUT',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'id',
-                    'specification',
+                    'meta_analysis',
                 ],
                 'required': [
                     'id',
@@ -165,15 +175,15 @@ class MetaAnalysisApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
-                    'specification':
-                        (Specification,),
+                    'meta_analysis':
+                        (MetaAnalysis,),
                 },
                 'attribute_map': {
                     'id': 'id',
                 },
                 'location_map': {
                     'id': 'path',
-                    'specification': 'body',
+                    'meta_analysis': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -189,20 +199,20 @@ class MetaAnalysisApi(object):
             },
             api_client=api_client
         )
-        self.specifications_post_endpoint = _Endpoint(
+        self.meta_analyses_post_endpoint = _Endpoint(
             settings={
-                'response_type': (SpecificationReturn,),
+                'response_type': (MetaAnalysisReturn,),
                 'auth': [
                     'JSON-Web-Token'
                 ],
-                'endpoint_path': '/specifications',
-                'operation_id': 'specifications_post',
+                'endpoint_path': '/meta-analyses',
+                'operation_id': 'meta_analyses_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'specification_post_body',
+                    'meta_analysis_post_body',
                 ],
                 'required': [],
                 'nullable': [
@@ -218,13 +228,13 @@ class MetaAnalysisApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'specification_post_body':
-                        (SpecificationPostBody,),
+                    'meta_analysis_post_body':
+                        (MetaAnalysisPostBody,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'specification_post_body': 'body',
+                    'meta_analysis_post_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -245,17 +255,18 @@ class MetaAnalysisApi(object):
         self,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """GET a list of meta-analyses  # noqa: E501
 
-        list of meta-analysis specifications  # noqa: E501
+        list all runnable specification, studyset, annotation bundles  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.specifications_get(async_req=True)
+        >>> thread = api.meta_analyses_get(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
+            nested (bool): show nested component instead of id. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -284,7 +295,7 @@ class MetaAnalysisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SpecificationList
+            MetaAnalysisList
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -312,26 +323,27 @@ class MetaAnalysisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.specifications_get_endpoint.call_with_http_info(**kwargs)
+        return self.meta_analyses_get_endpoint.call_with_http_info(**kwargs)
 
     def get_id(
         self,
         id,
         **kwargs
     ):
-        """Your GET endpoint  # noqa: E501
+        """GET meta-analysis information  # noqa: E501
 
-        get a meta-analysis specification  # noqa: E501
+        get a meta-analysis (specification, annotation, and studyset)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.specifications_id_get(id, async_req=True)
+        >>> thread = api.meta_analyses_id_get(id, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (str):
 
         Keyword Args:
+            nested (bool): show nested component instead of id. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -360,7 +372,7 @@ class MetaAnalysisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SpecificationReturn
+            MetaAnalysisReturn
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -390,27 +402,27 @@ class MetaAnalysisApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
-        return self.specifications_id_get_endpoint.call_with_http_info(**kwargs)
+        return self.meta_analyses_id_get_endpoint.call_with_http_info(**kwargs)
 
     def put_id(
         self,
         id,
         **kwargs
     ):
-        """Update Meta-Analysis specification  # noqa: E501
+        """Update a meta-analysis  # noqa: E501
 
-        update an existing meta analysis specification  # noqa: E501
+        update an existing meta-analysis (that has not yet been run)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.specifications_id_put(id, async_req=True)
+        >>> thread = api.meta_analyses_id_put(id, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (str):
 
         Keyword Args:
-            specification (Specification): [optional]
+            meta_analysis (MetaAnalysis): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -439,7 +451,7 @@ class MetaAnalysisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SpecificationReturn
+            MetaAnalysisReturn
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -469,24 +481,24 @@ class MetaAnalysisApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['id'] = \
             id
-        return self.specifications_id_put_endpoint.call_with_http_info(**kwargs)
+        return self.meta_analyses_id_put_endpoint.call_with_http_info(**kwargs)
 
     def post(
         self,
         **kwargs
     ):
-        """specifications_post  # noqa: E501
+        """Create a new meta-analysis  # noqa: E501
 
-        create a new meta-analysis specification  # noqa: E501
+        create a new specification, studyset, annotation bundle  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.specifications_post(async_req=True)
+        >>> thread = api.meta_analyses_post(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
-            specification_post_body (SpecificationPostBody): [optional]
+            meta_analysis_post_body (MetaAnalysisPostBody): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -515,7 +527,7 @@ class MetaAnalysisApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SpecificationReturn
+            MetaAnalysisReturn
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -543,5 +555,5 @@ class MetaAnalysisApi(object):
         kwargs['_content_type'] = kwargs.get(
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.specifications_post_endpoint.call_with_http_info(**kwargs)
+        return self.meta_analyses_post_endpoint.call_with_http_info(**kwargs)
 

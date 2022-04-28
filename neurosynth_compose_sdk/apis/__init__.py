@@ -15,7 +15,7 @@
 
 # Import APIs into API package:
 from neurosynth_compose_sdk.api.annotation_api import AnnotationApi
-from neurosynth_compose_sdk.api.bundle_api import BundleApi
 from neurosynth_compose_sdk.api.meta_analysis_api import MetaAnalysisApi
+from neurosynth_compose_sdk.api.specification_api import SpecificationApi
 from neurosynth_compose_sdk.api.studyset_api import StudysetApi
 from neurosynth_compose_sdk.api.user_api import UserApi
