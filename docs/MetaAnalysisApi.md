@@ -25,6 +25,7 @@ import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import meta_analysis_api
 from neurosynth_compose_sdk.model.specification_list import SpecificationList
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -62,7 +63,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -70,6 +71,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -87,6 +89,7 @@ get a meta-analysis specification
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import meta_analysis_api
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
@@ -129,7 +132,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -137,6 +140,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -155,6 +160,7 @@ update an existing meta analysis specification
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import meta_analysis_api
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from pprint import pprint
@@ -232,7 +238,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -240,6 +246,9 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -258,6 +267,7 @@ create a new meta-analysis specification
 import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import meta_analysis_api
+from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
 from pprint import pprint
@@ -324,7 +334,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, application/problem+json
 
 
 ### HTTP response details
@@ -332,6 +342,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

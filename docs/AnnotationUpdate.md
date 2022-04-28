@@ -1,9 +1,10 @@
-# Annotation
+# AnnotationUpdate
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**internal_studyset_id** | **str** |  | [optional] 
 **neurostore_id** | **str** |  | [optional] 
 **snapshot** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** |  | [optional] 
 **studyset** | **str** |  | [optional] [readonly] 

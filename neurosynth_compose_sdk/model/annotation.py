@@ -99,6 +99,7 @@ class Annotation(ModelNormal):
     }
 
     read_only_vars = {
+        'studyset',  # noqa: E501
     }
 
     _composed_schemas = {}

@@ -22,9 +22,9 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from neurosynth_compose_sdk.model.annotation import Annotation
 from neurosynth_compose_sdk.model.annotation_list import AnnotationList
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
 
 
 class AnnotationApi(object):
@@ -141,7 +141,7 @@ class AnnotationApi(object):
             params_map={
                 'all': [
                     'id',
-                    'annotation',
+                    'annotation_update',
                 ],
                 'required': [
                     'id',
@@ -161,15 +161,15 @@ class AnnotationApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
-                    'annotation':
-                        (Annotation,),
+                    'annotation_update':
+                        (AnnotationUpdate,),
                 },
                 'attribute_map': {
                     'id': 'id',
                 },
                 'location_map': {
                     'id': 'path',
-                    'annotation': 'body',
+                    'annotation_update': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -197,7 +197,7 @@ class AnnotationApi(object):
             },
             params_map={
                 'all': [
-                    'annotation',
+                    'annotation_update',
                 ],
                 'required': [],
                 'nullable': [
@@ -213,13 +213,13 @@ class AnnotationApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'annotation':
-                        (Annotation,),
+                    'annotation_update':
+                        (AnnotationUpdate,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'annotation': 'body',
+                    'annotation_update': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -404,7 +404,7 @@ class AnnotationApi(object):
             id (str):
 
         Keyword Args:
-            annotation (Annotation): [optional]
+            annotation_update (AnnotationUpdate): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -480,7 +480,7 @@ class AnnotationApi(object):
 
 
         Keyword Args:
-            annotation (Annotation): [optional]
+            annotation_update (AnnotationUpdate): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

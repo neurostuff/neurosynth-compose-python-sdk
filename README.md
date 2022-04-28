@@ -51,9 +51,9 @@ import time
 import neurosynth_compose_sdk
 from pprint import pprint
 from neurosynth_compose_sdk.api import annotation_api
-from neurosynth_compose_sdk.model.annotation import Annotation
 from neurosynth_compose_sdk.model.annotation_list import AnnotationList
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
@@ -108,8 +108,11 @@ Class | Method | HTTP request | Description
  - [Annotation](docs/Annotation.md)
  - [AnnotationList](docs/AnnotationList.md)
  - [AnnotationReturn](docs/AnnotationReturn.md)
+ - [AnnotationUpdate](docs/AnnotationUpdate.md)
+ - [AnnotationUpdateAllOf](docs/AnnotationUpdateAllOf.md)
  - [Corrector](docs/Corrector.md)
  - [Estimator](docs/Estimator.md)
+ - [InlineResponse400](docs/InlineResponse400.md)
  - [MetaAnalysis](docs/MetaAnalysis.md)
  - [MetaAnalysisList](docs/MetaAnalysisList.md)
  - [MetaAnalysisReturn](docs/MetaAnalysisReturn.md)
