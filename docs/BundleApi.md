@@ -38,7 +38,7 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bundle_api.BundleApi(api_client)
-    nested = "nested_example" # str | show nested component instead of id (optional)
+    nested = True # bool | show nested component instead of id (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -55,7 +55,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nested** | **str**| show nested component instead of id | [optional]
+ **nested** | **bool**| show nested component instead of id | [optional]
 
 ### Return type
 
@@ -109,7 +109,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = bundle_api.BundleApi(api_client)
     id = "id_example" # str | 
-    nested = "nested_example" # str | show nested component instead of id (optional)
+    nested = True # bool | show nested component instead of id (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -135,7 +135,7 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
- **nested** | **str**| show nested component instead of id | [optional]
+ **nested** | **bool**| show nested component instead of id | [optional]
 
 ### Return type
 

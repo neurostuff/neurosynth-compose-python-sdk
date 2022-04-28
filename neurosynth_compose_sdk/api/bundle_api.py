@@ -66,7 +66,7 @@ class BundleApi(object):
                 },
                 'openapi_types': {
                     'nested':
-                        (str,),
+                        (bool,),
                 },
                 'attribute_map': {
                     'nested': 'nested',
@@ -119,7 +119,7 @@ class BundleApi(object):
                     'id':
                         (str,),
                     'nested':
-                        (str,),
+                        (bool,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -266,7 +266,7 @@ class BundleApi(object):
 
 
         Keyword Args:
-            nested (str): show nested component instead of id. [optional]
+            nested (bool): show nested component instead of id. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -343,7 +343,7 @@ class BundleApi(object):
             id (str):
 
         Keyword Args:
-            nested (str): show nested component instead of id. [optional]
+            nested (bool): show nested component instead of id. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
