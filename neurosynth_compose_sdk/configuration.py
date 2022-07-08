@@ -400,6 +400,14 @@ class Configuration(object):
             {
                 'url': "http://localhost:81/api",
                 'description': "testing",
+            },
+            {
+                'url': "https://synth.neurostore.org/api",
+                'description': "staging",
+            },
+            {
+                'url': "https://compose.neurosynth.org/api",
+                'description': "production",
             }
         ]
 
