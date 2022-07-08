@@ -101,6 +101,7 @@ class MetaAnalysisPostBody(ModelComposed):
             'annotation': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'results': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -116,6 +117,7 @@ class MetaAnalysisPostBody(ModelComposed):
         'annotation': 'annotation',  # noqa: E501
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'results': 'results',  # noqa: E501
     }
 
     read_only_vars = {
@@ -166,6 +168,7 @@ class MetaAnalysisPostBody(ModelComposed):
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the annotation (nested=False) or a JSON representation of the annotation itself (nested=True).. [optional]  # noqa: E501
             name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
+            results ([str]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -272,6 +275,7 @@ class MetaAnalysisPostBody(ModelComposed):
             annotation (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the annotation (nested=False) or a JSON representation of the annotation itself (nested=True).. [optional]  # noqa: E501
             name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
+            results ([str]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

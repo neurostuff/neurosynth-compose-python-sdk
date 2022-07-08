@@ -103,6 +103,7 @@ class MetaAnalysisReturn(ModelComposed):
             'description': (str, none_type,),  # noqa: E501
             'internal_studyset_id': (str,),  # noqa: E501
             'internal_annotation_id': (str,),  # noqa: E501
+            'results': ([str],),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -122,6 +123,7 @@ class MetaAnalysisReturn(ModelComposed):
         'description': 'description',  # noqa: E501
         'internal_studyset_id': 'internal_studyset_id',  # noqa: E501
         'internal_annotation_id': 'internal_annotation_id',  # noqa: E501
+        'results': 'results',  # noqa: E501
         'id': 'id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
@@ -178,6 +180,7 @@ class MetaAnalysisReturn(ModelComposed):
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
+            results ([str]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -288,6 +291,7 @@ class MetaAnalysisReturn(ModelComposed):
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
+            results ([str]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
