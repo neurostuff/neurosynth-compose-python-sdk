@@ -23,6 +23,9 @@ from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.model.read_only import ReadOnly
+from neurosynth_compose_sdk.model.result import Result
+from neurosynth_compose_sdk.model.result_list import ResultList
+from neurosynth_compose_sdk.model.result_return import ResultReturn
 from neurosynth_compose_sdk.model.specification import Specification
 from neurosynth_compose_sdk.model.specification_list import SpecificationList
 from neurosynth_compose_sdk.model.specification_post_body import SpecificationPostBody
