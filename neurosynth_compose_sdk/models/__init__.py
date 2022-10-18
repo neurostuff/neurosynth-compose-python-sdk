@@ -22,6 +22,12 @@ from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
+from neurosynth_compose_sdk.model.neurovault_collection_return import NeurovaultCollectionReturn
+from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
+from neurosynth_compose_sdk.model.neurovault_file_list import NeurovaultFileList
+from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
+from neurosynth_compose_sdk.model.neurovault_list import NeurovaultList
 from neurosynth_compose_sdk.model.read_only import ReadOnly
 from neurosynth_compose_sdk.model.result import Result
 from neurosynth_compose_sdk.model.result_list import ResultList

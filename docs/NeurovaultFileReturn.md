@@ -1,14 +1,15 @@
-# ResultReturn
+# NeurovaultFileReturn
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**images** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
-**meta_analysis_id** | **str** |  | [optional] 
-**cli_version** | **str** |  | [optional] 
-**estimator** | **str** |  | [optional] 
-**neurovault_collection_id** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**collection_id** | **str** |  | [optional] 
+**path** | **str** |  | [optional] 
+**exception** | **str** |  | [optional] 
+**traceback** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**file** | **str** |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
