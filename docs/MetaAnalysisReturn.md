@@ -4,13 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**specification** | **bool, date, datetime, dict, float, int, list, str, none_type** | Either a string representation of the id of the specification (nested&#x3D;False) or a JSON representation of the specification itself (nested&#x3D;True). | [optional] 
-**studyset** | **bool, date, datetime, dict, float, int, list, str, none_type** | Either a string representation of the id of the studyset (nested&#x3D;False) or a JSON representation of the studyset itself (nested&#x3D;True). | [optional] [readonly] 
-**annotation** | **bool, date, datetime, dict, float, int, list, str, none_type** | Either a string representation of the id of the annotation (nested&#x3D;False) or a JSON representation of the annotation itself (nested&#x3D;True). | [optional] [readonly] 
+**specification** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**studyset** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**annotation** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **name** | **str, none_type** | Human-readable name of the meta-analysis. | [optional] 
 **description** | **str, none_type** | Long form description of the meta-analysis. | [optional] 
 **internal_studyset_id** | **str** | The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | [optional] 
 **internal_annotation_id** | **str** | The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | [optional] 
+**provenance** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
