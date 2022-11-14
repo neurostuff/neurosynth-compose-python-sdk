@@ -91,10 +91,10 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**neurovault_collections_id_get**](docs/DefaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
 *DefaultApi* | [**neurovault_collections_id_put**](docs/DefaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
 *DefaultApi* | [**neurovault_collections_post**](docs/DefaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | 
-*DefaultApi* | [**neurovault_files_get**](docs/DefaultApi.md#neurovault_files_get) | **GET** /neurovault-files/ | Your GET endpoint
+*DefaultApi* | [**neurovault_files_get**](docs/DefaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
 *DefaultApi* | [**neurovault_files_id_get**](docs/DefaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
-*DefaultApi* | [**neurovault_files_post**](docs/DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files/ | 
-*DefaultApi* | [**put_neurovault_files_id**](docs/DefaultApi.md#put_neurovault_files_id) | **PUT** /neurovault-files/{id} | 
+*DefaultApi* | [**neurovault_files_id_put**](docs/DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
+*DefaultApi* | [**neurovault_files_post**](docs/DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 *DefaultApi* | [**results_get**](docs/DefaultApi.md#results_get) | **GET** /results | Your GET endpoint
 *DefaultApi* | [**results_id_get**](docs/DefaultApi.md#results_id_get) | **GET** /results/{id} | Your GET endpoint
 *DefaultApi* | [**results_id_put**](docs/DefaultApi.md#results_id_put) | **PUT** /results/{id} | 

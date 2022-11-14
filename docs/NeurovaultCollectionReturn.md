@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**collection_id** | **str** |  | [optional] 
+**collection_id** | **str** |  | [optional] [readonly] 
 **meta_analysis_id** | **str** |  | [optional] 
 **files** | **[{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]** |  | [optional] 
 **result** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

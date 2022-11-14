@@ -8,10 +8,10 @@ Method | HTTP request | Description
 [**neurovault_collections_id_get**](DefaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
 [**neurovault_collections_id_put**](DefaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
 [**neurovault_collections_post**](DefaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | 
-[**neurovault_files_get**](DefaultApi.md#neurovault_files_get) | **GET** /neurovault-files/ | Your GET endpoint
+[**neurovault_files_get**](DefaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
 [**neurovault_files_id_get**](DefaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
-[**neurovault_files_post**](DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files/ | 
-[**put_neurovault_files_id**](DefaultApi.md#put_neurovault_files_id) | **PUT** /neurovault-files/{id} | 
+[**neurovault_files_id_put**](DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
+[**neurovault_files_post**](DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 [**results_get**](DefaultApi.md#results_get) | **GET** /results | Your GET endpoint
 [**results_id_get**](DefaultApi.md#results_id_get) | **GET** /results/{id} | Your GET endpoint
 [**results_id_put**](DefaultApi.md#results_id_put) | **PUT** /results/{id} | 
@@ -223,6 +223,7 @@ Name | Type | Description  | Notes
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import time
@@ -235,9 +236,18 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "http://localhost:81/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 
 # Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient() as api_client:
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
 
@@ -258,7 +268,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -400,6 +410,100 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **neurovault_files_id_put**
+> NeurovaultFileReturn neurovault_files_id_put(id)
+
+
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import time
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:81/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "http://localhost:81/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = default_api.DefaultApi(api_client)
+    id = "id_example" # str | 
+    collection_id = "collection_id_example" # str |  (optional)
+    path = "path_example" # str |  (optional)
+    exception = "exception_example" # str |  (optional)
+    traceback = "traceback_example" # str |  (optional)
+    status = "status_example" # str |  (optional)
+    file = 'YQ==' # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.neurovault_files_id_put(id)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->neurovault_files_id_put: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->neurovault_files_id_put: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  |
+ **collection_id** | **str**|  | [optional]
+ **path** | **str**|  | [optional]
+ **exception** | **str**|  | [optional]
+ **traceback** | **str**|  | [optional]
+ **status** | **str**|  | [optional]
+ **file** | **str**|  | [optional]
+
+### Return type
+
+[**NeurovaultFileReturn**](NeurovaultFileReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **neurovault_files_post**
 > NeurovaultFileReturn neurovault_files_post()
 
@@ -456,100 +560,6 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collection_id** | **str**|  | [optional]
- **path** | **str**|  | [optional]
- **exception** | **str**|  | [optional]
- **traceback** | **str**|  | [optional]
- **status** | **str**|  | [optional]
- **file** | **str**|  | [optional]
-
-### Return type
-
-[**NeurovaultFileReturn**](NeurovaultFileReturn.md)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **put_neurovault_files_id**
-> NeurovaultFileReturn put_neurovault_files_id(id)
-
-
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-
-```python
-import time
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import default_api
-from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
-    id = "id_example" # str | 
-    collection_id = "collection_id_example" # str |  (optional)
-    path = "path_example" # str |  (optional)
-    exception = "exception_example" # str |  (optional)
-    traceback = "traceback_example" # str |  (optional)
-    status = "status_example" # str |  (optional)
-    file = 'YQ==' # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.put_neurovault_files_id(id)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->put_neurovault_files_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_neurovault_files_id(id, collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->put_neurovault_files_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
  **collection_id** | **str**|  | [optional]
  **path** | **str**|  | [optional]
  **exception** | **str**|  | [optional]
