@@ -520,6 +520,7 @@ import time
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.api import default_api
 from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
+from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -541,18 +542,20 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
-    collection_id = "collection_id_example" # str |  (optional)
-    path = "path_example" # str |  (optional)
-    exception = "exception_example" # str |  (optional)
-    traceback = "traceback_example" # str |  (optional)
-    status = "status_example" # str |  (optional)
-    file = 'YQ==' # str |  (optional)
-    image_id = "image_id_example" # str |  (optional)
+    neurovault_file = NeurovaultFile(
+        collection_id="collection_id_example",
+        path="path_example",
+        exception="exception_example",
+        traceback="traceback_example",
+        status="status_example",
+        file='YQ==',
+        image_id="image_id_example",
+    ) # NeurovaultFile |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.neurovault_files_post(collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id)
+        api_response = api_instance.neurovault_files_post(neurovault_file=neurovault_file)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling DefaultApi->neurovault_files_post: %s\n" % e)
@@ -563,13 +566,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collection_id** | **str**|  | [optional]
- **path** | **str**|  | [optional]
- **exception** | **str**|  | [optional]
- **traceback** | **str**|  | [optional]
- **status** | **str**|  | [optional]
- **file** | **str**|  | [optional]
- **image_id** | **str**|  | [optional]
+ **neurovault_file** | [**NeurovaultFile**](NeurovaultFile.md)|  | [optional]
 
 ### Return type
 
@@ -581,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

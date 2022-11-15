@@ -23,6 +23,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from neurosynth_compose_sdk.model.neurovault_collection_return import NeurovaultCollectionReturn
+from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
 from neurosynth_compose_sdk.model.neurovault_file_list import NeurovaultFileList
 from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
 from neurosynth_compose_sdk.model.result import Result
@@ -413,13 +414,7 @@ class DefaultApi(object):
             },
             params_map={
                 'all': [
-                    'collection_id',
-                    'path',
-                    'exception',
-                    'traceback',
-                    'status',
-                    'file',
-                    'image_id',
+                    'neurovault_file',
                 ],
                 'required': [],
                 'nullable': [
@@ -435,38 +430,13 @@ class DefaultApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'collection_id':
-                        (str,),
-                    'path':
-                        (str,),
-                    'exception':
-                        (str,),
-                    'traceback':
-                        (str,),
-                    'status':
-                        (str,),
-                    'file':
-                        (str,),
-                    'image_id':
-                        (str,),
+                    'neurovault_file':
+                        (NeurovaultFile,),
                 },
                 'attribute_map': {
-                    'collection_id': 'collection_id',
-                    'path': 'path',
-                    'exception': 'exception',
-                    'traceback': 'traceback',
-                    'status': 'status',
-                    'file': 'file',
-                    'image_id': 'image_id',
                 },
                 'location_map': {
-                    'collection_id': 'form',
-                    'path': 'form',
-                    'exception': 'form',
-                    'traceback': 'form',
-                    'status': 'form',
-                    'file': 'form',
-                    'image_id': 'form',
+                    'neurovault_file': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -476,7 +446,7 @@ class DefaultApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'multipart/form-data'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1228,13 +1198,7 @@ class DefaultApi(object):
 
 
         Keyword Args:
-            collection_id (str): [optional]
-            path (str): [optional]
-            exception (str): [optional]
-            traceback (str): [optional]
-            status (str): [optional]
-            file (str): [optional]
-            image_id (str): [optional]
+            neurovault_file (NeurovaultFile): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
