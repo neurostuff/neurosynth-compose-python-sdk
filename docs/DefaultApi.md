@@ -452,6 +452,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     traceback = "traceback_example" # str |  (optional)
     status = "status_example" # str |  (optional)
     file = 'YQ==' # str |  (optional)
+    image_id = "image_id_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -463,7 +464,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file)
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling DefaultApi->neurovault_files_id_put: %s\n" % e)
@@ -481,6 +482,7 @@ Name | Type | Description  | Notes
  **traceback** | **str**|  | [optional]
  **status** | **str**|  | [optional]
  **file** | **str**|  | [optional]
+ **image_id** | **str**|  | [optional]
 
 ### Return type
 
@@ -545,11 +547,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     traceback = "traceback_example" # str |  (optional)
     status = "status_example" # str |  (optional)
     file = 'YQ==' # str |  (optional)
+    image_id = "image_id_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.neurovault_files_post(collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file)
+        api_response = api_instance.neurovault_files_post(collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling DefaultApi->neurovault_files_post: %s\n" % e)
@@ -566,6 +569,7 @@ Name | Type | Description  | Notes
  **traceback** | **str**|  | [optional]
  **status** | **str**|  | [optional]
  **file** | **str**|  | [optional]
+ **image_id** | **str**|  | [optional]
 
 ### Return type
 

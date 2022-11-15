@@ -332,6 +332,7 @@ class DefaultApi(object):
                     'traceback',
                     'status',
                     'file',
+                    'image_id',
                 ],
                 'required': [
                     'id',
@@ -363,6 +364,8 @@ class DefaultApi(object):
                         (str,),
                     'file':
                         (str,),
+                    'image_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -372,6 +375,7 @@ class DefaultApi(object):
                     'traceback': 'traceback',
                     'status': 'status',
                     'file': 'file',
+                    'image_id': 'image_id',
                 },
                 'location_map': {
                     'id': 'path',
@@ -381,6 +385,7 @@ class DefaultApi(object):
                     'traceback': 'form',
                     'status': 'form',
                     'file': 'form',
+                    'image_id': 'form',
                 },
                 'collection_format_map': {
                 }
@@ -414,6 +419,7 @@ class DefaultApi(object):
                     'traceback',
                     'status',
                     'file',
+                    'image_id',
                 ],
                 'required': [],
                 'nullable': [
@@ -441,6 +447,8 @@ class DefaultApi(object):
                         (str,),
                     'file':
                         (str,),
+                    'image_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'collection_id': 'collection_id',
@@ -449,6 +457,7 @@ class DefaultApi(object):
                     'traceback': 'traceback',
                     'status': 'status',
                     'file': 'file',
+                    'image_id': 'image_id',
                 },
                 'location_map': {
                     'collection_id': 'form',
@@ -457,6 +466,7 @@ class DefaultApi(object):
                     'traceback': 'form',
                     'status': 'form',
                     'file': 'form',
+                    'image_id': 'form',
                 },
                 'collection_format_map': {
                 }
@@ -1143,6 +1153,7 @@ class DefaultApi(object):
             traceback (str): [optional]
             status (str): [optional]
             file (str): [optional]
+            image_id (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1223,6 +1234,7 @@ class DefaultApi(object):
             traceback (str): [optional]
             status (str): [optional]
             file (str): [optional]
+            image_id (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

@@ -96,6 +96,7 @@ class NeurovaultFileReturn(ModelComposed):
             'traceback': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'file': (str,),  # noqa: E501
+            'image_id': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -114,6 +115,7 @@ class NeurovaultFileReturn(ModelComposed):
         'traceback': 'traceback',  # noqa: E501
         'status': 'status',  # noqa: E501
         'file': 'file',  # noqa: E501
+        'image_id': 'image_id',  # noqa: E501
         'id': 'id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
@@ -167,6 +169,7 @@ class NeurovaultFileReturn(ModelComposed):
             traceback (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
+            image_id (str): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -276,6 +279,7 @@ class NeurovaultFileReturn(ModelComposed):
             traceback (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
+            image_id (str): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501

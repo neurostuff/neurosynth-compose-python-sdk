@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **traceback** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **file** | **str** |  | [optional] 
+**image_id** | **str** |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

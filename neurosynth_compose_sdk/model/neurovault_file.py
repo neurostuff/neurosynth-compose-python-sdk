@@ -88,6 +88,7 @@ class NeurovaultFile(ModelNormal):
             'traceback': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'file': (str,),  # noqa: E501
+            'image_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -102,6 +103,7 @@ class NeurovaultFile(ModelNormal):
         'traceback': 'traceback',  # noqa: E501
         'status': 'status',  # noqa: E501
         'file': 'file',  # noqa: E501
+        'image_id': 'image_id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,6 +153,7 @@ class NeurovaultFile(ModelNormal):
             traceback (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
+            image_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,6 +241,7 @@ class NeurovaultFile(ModelNormal):
             traceback (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
+            image_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
