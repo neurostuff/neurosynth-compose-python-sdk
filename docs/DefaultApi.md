@@ -4,6 +4,10 @@ All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**meta_analysis_results_get**](DefaultApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
+[**meta_analysis_results_id_get**](DefaultApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+[**meta_analysis_results_id_put**](DefaultApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
+[**meta_analysis_results_post**](DefaultApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
 [**neurovault_collections_get**](DefaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Your GET endpoint
 [**neurovault_collections_id_get**](DefaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
 [**neurovault_collections_id_put**](DefaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
@@ -12,11 +16,301 @@ Method | HTTP request | Description
 [**neurovault_files_id_get**](DefaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
 [**neurovault_files_id_put**](DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
 [**neurovault_files_post**](DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
-[**results_get**](DefaultApi.md#results_get) | **GET** /results | Your GET endpoint
-[**results_id_get**](DefaultApi.md#results_id_get) | **GET** /results/{id} | Your GET endpoint
-[**results_id_put**](DefaultApi.md#results_id_put) | **PUT** /results/{id} | 
-[**results_post**](DefaultApi.md#results_post) | **POST** /results | 
 
+
+# **meta_analysis_results_get**
+> ResultList meta_analysis_results_get()
+
+Your GET endpoint
+
+### Example
+
+
+```python
+import time
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.result_list import ResultList
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:81/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "http://localhost:81/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = default_api.DefaultApi(api_client)
+    meta_analysis_id = "meta_analysis_id_example" # str | search for results with this meta-analysis id (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Your GET endpoint
+        api_response = api_instance.meta_analysis_results_get(meta_analysis_id=meta_analysis_id)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->meta_analysis_results_get: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **meta_analysis_id** | **str**| search for results with this meta-analysis id | [optional]
+
+### Return type
+
+[**ResultList**](ResultList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **meta_analysis_results_id_get**
+> ResultReturn meta_analysis_results_id_get(id)
+
+Your GET endpoint
+
+### Example
+
+
+```python
+import time
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.result_return import ResultReturn
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:81/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "http://localhost:81/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = default_api.DefaultApi(api_client)
+    id = "id_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Your GET endpoint
+        api_response = api_instance.meta_analysis_results_id_get(id)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->meta_analysis_results_id_get: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  |
+
+### Return type
+
+[**ResultReturn**](ResultReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **meta_analysis_results_id_put**
+> ResultReturn meta_analysis_results_id_put(id)
+
+
+
+### Example
+
+
+```python
+import time
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.result_return import ResultReturn
+from neurosynth_compose_sdk.model.result import Result
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:81/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "http://localhost:81/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = default_api.DefaultApi(api_client)
+    id = "id_example" # str | 
+    result = Result(
+        images={},
+        meta_analysis_id="meta_analysis_id_example",
+        cli_version="cli_version_example",
+        estimator="estimator_example",
+        neurovault_collection_id=None,
+    ) # Result |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.meta_analysis_results_id_put(id)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->meta_analysis_results_id_put: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.meta_analysis_results_id_put(id, result=result)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->meta_analysis_results_id_put: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  |
+ **result** | [**Result**](Result.md)|  | [optional]
+
+### Return type
+
+[**ResultReturn**](ResultReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **meta_analysis_results_post**
+> ResultReturn meta_analysis_results_post()
+
+
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import time
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.result_return import ResultReturn
+from neurosynth_compose_sdk.model.result import Result
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:81/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "http://localhost:81/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = default_api.DefaultApi(api_client)
+    result = Result(
+        images={},
+        meta_analysis_id="meta_analysis_id_example",
+        cli_version="cli_version_example",
+        estimator="estimator_example",
+        neurovault_collection_id=None,
+    ) # Result |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.meta_analysis_results_post(result=result)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->meta_analysis_results_post: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **result** | [**Result**](Result.md)|  | [optional]
+
+### Return type
+
+[**ResultReturn**](ResultReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **neurovault_collections_get**
 > neurovault_collections_get()
@@ -571,300 +865,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NeurovaultFileReturn**](NeurovaultFileReturn.md)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **results_get**
-> ResultList results_get()
-
-Your GET endpoint
-
-### Example
-
-
-```python
-import time
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import default_api
-from neurosynth_compose_sdk.model.result_list import ResultList
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
-    meta_analysis_id = "meta_analysis_id_example" # str | search for results with this meta-analysis id (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Your GET endpoint
-        api_response = api_instance.results_get(meta_analysis_id=meta_analysis_id)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->results_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **meta_analysis_id** | **str**| search for results with this meta-analysis id | [optional]
-
-### Return type
-
-[**ResultList**](ResultList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **results_id_get**
-> ResultReturn results_id_get(id)
-
-Your GET endpoint
-
-### Example
-
-
-```python
-import time
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import default_api
-from neurosynth_compose_sdk.model.result_return import ResultReturn
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
-    id = "id_example" # str | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Your GET endpoint
-        api_response = api_instance.results_id_get(id)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->results_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
-
-### Return type
-
-[**ResultReturn**](ResultReturn.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **results_id_put**
-> ResultReturn results_id_put(id)
-
-
-
-### Example
-
-
-```python
-import time
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import default_api
-from neurosynth_compose_sdk.model.result_return import ResultReturn
-from neurosynth_compose_sdk.model.result import Result
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
-    id = "id_example" # str | 
-    result = Result(
-        images={},
-        meta_analysis_id="meta_analysis_id_example",
-        cli_version="cli_version_example",
-        estimator="estimator_example",
-        neurovault_collection_id=None,
-    ) # Result |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.results_id_put(id)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->results_id_put: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.results_id_put(id, result=result)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->results_id_put: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  |
- **result** | [**Result**](Result.md)|  | [optional]
-
-### Return type
-
-[**ResultReturn**](ResultReturn.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **results_post**
-> ResultReturn results_post()
-
-
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-
-```python
-import time
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import default_api
-from neurosynth_compose_sdk.model.result_return import ResultReturn
-from neurosynth_compose_sdk.model.result import Result
-from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
-    result = Result(
-        images={},
-        meta_analysis_id="meta_analysis_id_example",
-        cli_version="cli_version_example",
-        estimator="estimator_example",
-        neurovault_collection_id=None,
-    ) # Result |  (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.results_post(result=result)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->results_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **result** | [**Result**](Result.md)|  | [optional]
-
-### Return type
-
-[**ResultReturn**](ResultReturn.md)
 
 ### Authorization
 

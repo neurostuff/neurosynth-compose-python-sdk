@@ -87,6 +87,10 @@ Class | Method | HTTP request | Description
 *AnnotationApi* | [**annotations_id_get**](docs/AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
 *AnnotationApi* | [**annotations_id_put**](docs/AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
 *AnnotationApi* | [**annotations_post**](docs/AnnotationApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
+*DefaultApi* | [**meta_analysis_results_get**](docs/DefaultApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
+*DefaultApi* | [**meta_analysis_results_id_get**](docs/DefaultApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+*DefaultApi* | [**meta_analysis_results_id_put**](docs/DefaultApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
+*DefaultApi* | [**meta_analysis_results_post**](docs/DefaultApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
 *DefaultApi* | [**neurovault_collections_get**](docs/DefaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Your GET endpoint
 *DefaultApi* | [**neurovault_collections_id_get**](docs/DefaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
 *DefaultApi* | [**neurovault_collections_id_put**](docs/DefaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
@@ -95,10 +99,6 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**neurovault_files_id_get**](docs/DefaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
 *DefaultApi* | [**neurovault_files_id_put**](docs/DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
 *DefaultApi* | [**neurovault_files_post**](docs/DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
-*DefaultApi* | [**results_get**](docs/DefaultApi.md#results_get) | **GET** /results | Your GET endpoint
-*DefaultApi* | [**results_id_get**](docs/DefaultApi.md#results_id_get) | **GET** /results/{id} | Your GET endpoint
-*DefaultApi* | [**results_id_put**](docs/DefaultApi.md#results_id_put) | **PUT** /results/{id} | 
-*DefaultApi* | [**results_post**](docs/DefaultApi.md#results_post) | **POST** /results | 
 *MetaAnalysisApi* | [**meta_analyses_get**](docs/MetaAnalysisApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 *MetaAnalysisApi* | [**meta_analyses_id_get**](docs/MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysisApi* | [**meta_analyses_id_put**](docs/MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
