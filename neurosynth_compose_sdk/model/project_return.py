@@ -98,6 +98,8 @@ class ProjectReturn(ModelComposed):
             'user': (str, none_type,),  # noqa: E501
             'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'meta_analyses': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'description': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -112,6 +114,8 @@ class ProjectReturn(ModelComposed):
         'user': 'user',  # noqa: E501
         'provenance': 'provenance',  # noqa: E501
         'meta_analyses': 'meta_analyses',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'description': 'description',  # noqa: E501
     }
 
     read_only_vars = {
@@ -161,6 +165,8 @@ class ProjectReturn(ModelComposed):
             user (str, none_type): Who owns the resource.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analyses ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
+            description (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -266,6 +272,8 @@ class ProjectReturn(ModelComposed):
             user (str, none_type): Who owns the resource.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analyses ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
+            description (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

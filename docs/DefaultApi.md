@@ -168,6 +168,8 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
         meta_analyses=[
             None,
         ],
+        name="name_example",
+        description="description_example",
     ) # Project |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -247,6 +249,8 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
         meta_analyses=[
             None,
         ],
+        name="name_example",
+        description="description_example",
     ) # Project |  (optional)
 
     # example passing only required values which don't have defaults set
