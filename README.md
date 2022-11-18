@@ -87,6 +87,10 @@ Class | Method | HTTP request | Description
 *AnnotationApi* | [**annotations_id_get**](docs/AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
 *AnnotationApi* | [**annotations_id_put**](docs/AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
 *AnnotationApi* | [**annotations_post**](docs/AnnotationApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
+*DefaultApi* | [**projects_get**](docs/DefaultApi.md#projects_get) | **GET** /projects | Your GET endpoint
+*DefaultApi* | [**projects_id_get**](docs/DefaultApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
+*DefaultApi* | [**projects_id_put**](docs/DefaultApi.md#projects_id_put) | **PUT** /projects/{id} | 
+*DefaultApi* | [**projects_post**](docs/DefaultApi.md#projects_post) | **POST** /projects | 
 *MetaAnalysisApi* | [**meta_analyses_get**](docs/MetaAnalysisApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 *MetaAnalysisApi* | [**meta_analyses_id_get**](docs/MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysisApi* | [**meta_analyses_id_put**](docs/MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
@@ -120,6 +124,9 @@ Class | Method | HTTP request | Description
  - [MetaAnalysisList](docs/MetaAnalysisList.md)
  - [MetaAnalysisPostBody](docs/MetaAnalysisPostBody.md)
  - [MetaAnalysisReturn](docs/MetaAnalysisReturn.md)
+ - [Project](docs/Project.md)
+ - [ProjectList](docs/ProjectList.md)
+ - [ProjectReturn](docs/ProjectReturn.md)
  - [ReadOnly](docs/ReadOnly.md)
  - [Specification](docs/Specification.md)
  - [SpecificationList](docs/SpecificationList.md)
