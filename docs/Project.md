@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**provenance** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**provenance** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** |  | [optional] 
 **meta_analyses** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 

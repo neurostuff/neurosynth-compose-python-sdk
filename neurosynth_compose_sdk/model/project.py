@@ -88,7 +88,7 @@ class Project(ModelNormal):
         """
         lazy_import()
         return {
-            'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'meta_analyses': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
@@ -147,7 +147,7 @@ class Project(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             meta_analyses ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
@@ -232,7 +232,7 @@ class Project(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             meta_analyses ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501

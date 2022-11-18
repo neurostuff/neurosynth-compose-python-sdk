@@ -96,7 +96,7 @@ class ProjectReturn(ModelComposed):
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'user': (str, none_type,),  # noqa: E501
-            'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'meta_analyses': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
@@ -163,7 +163,7 @@ class ProjectReturn(ModelComposed):
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
             user (str, none_type): Who owns the resource.. [optional]  # noqa: E501
-            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             meta_analyses ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
@@ -270,7 +270,7 @@ class ProjectReturn(ModelComposed):
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
             user (str, none_type): Who owns the resource.. [optional]  # noqa: E501
-            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
             meta_analyses ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501

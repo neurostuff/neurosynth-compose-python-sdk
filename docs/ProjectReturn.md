@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
 **user** | **str, none_type** | Who owns the resource. | [optional] 
-**provenance** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**provenance** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** |  | [optional] 
 **meta_analyses** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
