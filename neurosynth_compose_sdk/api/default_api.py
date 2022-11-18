@@ -130,7 +130,9 @@ class DefaultApi(object):
         self.projects_id_put_endpoint = _Endpoint(
             settings={
                 'response_type': (ProjectReturn,),
-                'auth': [],
+                'auth': [
+                    'JSON-Web-Token'
+                ],
                 'endpoint_path': '/projects/{id}',
                 'operation_id': 'projects_id_put',
                 'http_method': 'PUT',
@@ -185,7 +187,9 @@ class DefaultApi(object):
         self.projects_post_endpoint = _Endpoint(
             settings={
                 'response_type': (ProjectReturn,),
-                'auth': [],
+                'auth': [
+                    'JSON-Web-Token'
+                ],
                 'endpoint_path': '/projects',
                 'operation_id': 'projects_post',
                 'http_method': 'POST',
