@@ -1,21 +1,19 @@
-# neurosynth_compose_sdk.MetaAnalysisApi
+# neurosynth_compose_sdk.DefaultApi
 
 All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**meta_analyses_get**](MetaAnalysisApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
-[**meta_analyses_id_get**](MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
-[**meta_analyses_id_put**](MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
-[**meta_analyses_post**](MetaAnalysisApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
+[**projects_get**](DefaultApi.md#projects_get) | **GET** /projects | Your GET endpoint
+[**projects_id_get**](DefaultApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
+[**projects_id_put**](DefaultApi.md#projects_id_put) | **PUT** /projects/{id} | 
+[**projects_post**](DefaultApi.md#projects_post) | **POST** /projects | 
 
 
-# **meta_analyses_get**
-> MetaAnalysisList meta_analyses_get()
+# **projects_get**
+> ProjectList projects_get()
 
-GET a list of meta-analyses
-
-list all runnable specification, studyset, annotation bundles
+Your GET endpoint
 
 ### Example
 
@@ -23,9 +21,8 @@ list all runnable specification, studyset, annotation bundles
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
-from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.project_list import ProjectList
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -37,29 +34,24 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
-    nested = True # bool | show nested component instead of id (optional)
+    api_instance = default_api.DefaultApi(api_client)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example, this endpoint has no required or optional parameters
     try:
-        # GET a list of meta-analyses
-        api_response = api_instance.meta_analyses_get(nested=nested)
+        # Your GET endpoint
+        api_response = api_instance.projects_get()
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_get: %s\n" % e)
+        print("Exception when calling DefaultApi->projects_get: %s\n" % e)
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **nested** | **bool**| show nested component instead of id | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**MetaAnalysisList**](MetaAnalysisList.md)
+[**ProjectList**](ProjectList.md)
 
 ### Authorization
 
@@ -68,7 +60,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -76,16 +68,13 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **meta_analyses_id_get**
-> MetaAnalysisReturn meta_analyses_id_get(id)
+# **projects_id_get**
+> ProjectReturn projects_id_get(id)
 
-GET meta-analysis information
-
-get a meta-analysis (specification, annotation, and studyset)
+Your GET endpoint
 
 ### Example
 
@@ -93,9 +82,8 @@ get a meta-analysis (specification, annotation, and studyset)
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
-from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -107,26 +95,16 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
+    api_instance = default_api.DefaultApi(api_client)
     id = "id_example" # str | 
-    nested = True # bool | show nested component instead of id (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # GET meta-analysis information
-        api_response = api_instance.meta_analyses_id_get(id)
+        # Your GET endpoint
+        api_response = api_instance.projects_id_get(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_get: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # GET meta-analysis information
-        api_response = api_instance.meta_analyses_id_get(id, nested=nested)
-        pprint(api_response)
-    except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_get: %s\n" % e)
+        print("Exception when calling DefaultApi->projects_id_get: %s\n" % e)
 ```
 
 
@@ -135,11 +113,10 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
- **nested** | **bool**| show nested component instead of id | [optional]
 
 ### Return type
 
-[**MetaAnalysisReturn**](MetaAnalysisReturn.md)
+[**ProjectReturn**](ProjectReturn.md)
 
 ### Authorization
 
@@ -148,7 +125,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -156,17 +133,13 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**401** | form when a request goes wrong |  -  |
-**404** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **meta_analyses_id_put**
-> MetaAnalysisReturn meta_analyses_id_put(id)
+# **projects_id_put**
+> ProjectReturn projects_id_put(id)
 
-Update a meta-analysis
 
-update an existing meta-analysis (that has not yet been run)
 
 ### Example
 
@@ -175,10 +148,9 @@ update an existing meta-analysis (that has not yet been run)
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
-from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
-from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.project import Project
+from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -199,36 +171,31 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
+    api_instance = default_api.DefaultApi(api_client)
     id = "id_example" # str | 
-    meta_analysis = MetaAnalysis(
-        specification=None,
-        studyset=None,
-        annotation=None,
+    project = Project(
+        provenance={},
+        meta_analyses=[
+            None,
+        ],
         name="name_example",
         description="description_example",
-        internal_studyset_id="internal_studyset_id_example",
-        internal_annotation_id="internal_annotation_id_example",
-        provenance={},
-        project="project_example",
-    ) # MetaAnalysis |  (optional)
+    ) # Project |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # Update a meta-analysis
-        api_response = api_instance.meta_analyses_id_put(id)
+        api_response = api_instance.projects_id_put(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_put: %s\n" % e)
+        print("Exception when calling DefaultApi->projects_id_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update a meta-analysis
-        api_response = api_instance.meta_analyses_id_put(id, meta_analysis=meta_analysis)
+        api_response = api_instance.projects_id_put(id, project=project)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_id_put: %s\n" % e)
+        print("Exception when calling DefaultApi->projects_id_put: %s\n" % e)
 ```
 
 
@@ -237,11 +204,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
- **meta_analysis** | [**MetaAnalysis**](MetaAnalysis.md)|  | [optional]
+ **project** | [**Project**](Project.md)|  | [optional]
 
 ### Return type
 
-[**MetaAnalysisReturn**](MetaAnalysisReturn.md)
+[**ProjectReturn**](ProjectReturn.md)
 
 ### Authorization
 
@@ -250,7 +217,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json, application/problem+json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -258,19 +225,13 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
-**401** | form when a request goes wrong |  -  |
-**404** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **meta_analyses_post**
-> MetaAnalysisReturn meta_analyses_post()
+# **projects_post**
+> ProjectReturn projects_post()
 
-Create a new meta-analysis
 
-create a new specification, studyset, annotation bundle
 
 ### Example
 
@@ -279,10 +240,9 @@ create a new specification, studyset, annotation bundle
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import meta_analysis_api
-from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
-from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
-from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
+from neurosynth_compose_sdk.api import default_api
+from neurosynth_compose_sdk.model.project import Project
+from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -303,17 +263,23 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = meta_analysis_api.MetaAnalysisApi(api_client)
-    meta_analysis_post_body = MetaAnalysisPostBody(None) # MetaAnalysisPostBody |  (optional)
+    api_instance = default_api.DefaultApi(api_client)
+    project = Project(
+        provenance={},
+        meta_analyses=[
+            None,
+        ],
+        name="name_example",
+        description="description_example",
+    ) # Project |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create a new meta-analysis
-        api_response = api_instance.meta_analyses_post(meta_analysis_post_body=meta_analysis_post_body)
+        api_response = api_instance.projects_post(project=project)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling MetaAnalysisApi->meta_analyses_post: %s\n" % e)
+        print("Exception when calling DefaultApi->projects_post: %s\n" % e)
 ```
 
 
@@ -321,11 +287,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **meta_analysis_post_body** | [**MetaAnalysisPostBody**](MetaAnalysisPostBody.md)|  | [optional]
+ **project** | [**Project**](Project.md)|  | [optional]
 
 ### Return type
 
-[**MetaAnalysisReturn**](MetaAnalysisReturn.md)
+[**ProjectReturn**](ProjectReturn.md)
 
 ### Authorization
 
@@ -334,7 +300,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json, application/problem+json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -342,9 +308,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
-**500** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

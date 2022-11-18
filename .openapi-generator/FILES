@@ -11,6 +11,7 @@ docs/AnnotationReturn.md
 docs/AnnotationUpdate.md
 docs/AnnotationUpdateAllOf.md
 docs/Corrector.md
+docs/DefaultApi.md
 docs/Estimator.md
 docs/InlineResponse400.md
 docs/MetaAnalysis.md
@@ -18,6 +19,9 @@ docs/MetaAnalysisApi.md
 docs/MetaAnalysisList.md
 docs/MetaAnalysisPostBody.md
 docs/MetaAnalysisReturn.md
+docs/Project.md
+docs/ProjectList.md
+docs/ProjectReturn.md
 docs/ReadOnly.md
 docs/Specification.md
 docs/SpecificationApi.md
@@ -37,6 +41,7 @@ git_push.sh
 neurosynth_compose_sdk/__init__.py
 neurosynth_compose_sdk/api/__init__.py
 neurosynth_compose_sdk/api/annotation_api.py
+neurosynth_compose_sdk/api/default_api.py
 neurosynth_compose_sdk/api/meta_analysis_api.py
 neurosynth_compose_sdk/api/specification_api.py
 neurosynth_compose_sdk/api/studyset_api.py
@@ -60,6 +65,9 @@ neurosynth_compose_sdk/model/meta_analysis.py
 neurosynth_compose_sdk/model/meta_analysis_list.py
 neurosynth_compose_sdk/model/meta_analysis_post_body.py
 neurosynth_compose_sdk/model/meta_analysis_return.py
+neurosynth_compose_sdk/model/project.py
+neurosynth_compose_sdk/model/project_list.py
+neurosynth_compose_sdk/model/project_return.py
 neurosynth_compose_sdk/model/read_only.py
 neurosynth_compose_sdk/model/specification.py
 neurosynth_compose_sdk/model/specification_list.py
@@ -80,4 +88,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_default_api.py
+test/test_project.py
+test/test_project_list.py
+test/test_project_return.py
 tox.ini

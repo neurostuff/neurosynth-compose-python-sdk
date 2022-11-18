@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **internal_studyset_id** | **str** | The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | [optional] 
 **internal_annotation_id** | **str** | The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | [optional] 
 **provenance** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** |  | [optional] 
+**project** | **str** |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

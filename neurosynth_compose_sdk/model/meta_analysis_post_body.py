@@ -102,6 +102,7 @@ class MetaAnalysisPostBody(ModelComposed):
             'name': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
+            'project': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -118,6 +119,7 @@ class MetaAnalysisPostBody(ModelComposed):
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
         'provenance': 'provenance',  # noqa: E501
+        'project': 'project',  # noqa: E501
     }
 
     read_only_vars = {
@@ -167,6 +169,7 @@ class MetaAnalysisPostBody(ModelComposed):
             name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            project (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -274,6 +277,7 @@ class MetaAnalysisPostBody(ModelComposed):
             name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
+            project (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
