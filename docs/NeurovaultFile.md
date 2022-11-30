@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **collection_id** | **str** |  | [optional] 
-**path** | **str** |  | [optional] 
 **exception** | **str** |  | [optional] 
 **traceback** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 

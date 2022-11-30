@@ -529,7 +529,6 @@ class DefaultApi(object):
                 'all': [
                     'id',
                     'collection_id',
-                    'path',
                     'exception',
                     'traceback',
                     'status',
@@ -556,8 +555,6 @@ class DefaultApi(object):
                         (str,),
                     'collection_id':
                         (str,),
-                    'path':
-                        (str,),
                     'exception':
                         (str,),
                     'traceback':
@@ -572,7 +569,6 @@ class DefaultApi(object):
                 'attribute_map': {
                     'id': 'id',
                     'collection_id': 'collection_id',
-                    'path': 'path',
                     'exception': 'exception',
                     'traceback': 'traceback',
                     'status': 'status',
@@ -582,7 +578,6 @@ class DefaultApi(object):
                 'location_map': {
                     'id': 'path',
                     'collection_id': 'form',
-                    'path': 'form',
                     'exception': 'form',
                     'traceback': 'form',
                     'status': 'form',
@@ -1419,7 +1414,6 @@ class DefaultApi(object):
 
         Keyword Args:
             collection_id (str): [optional]
-            path (str): [optional]
             exception (str): [optional]
             traceback (str): [optional]
             status (str): [optional]

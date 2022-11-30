@@ -34,11 +34,9 @@ def lazy_import():
     from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
     from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
     from neurosynth_compose_sdk.model.read_only import ReadOnly
-    from neurosynth_compose_sdk.model.result import Result
     globals()['NeurovaultCollection'] = NeurovaultCollection
     globals()['NeurovaultFile'] = NeurovaultFile
     globals()['ReadOnly'] = ReadOnly
-    globals()['Result'] = Result
 
 
 class NeurovaultCollectionReturn(ModelComposed):
@@ -95,9 +93,8 @@ class NeurovaultCollectionReturn(ModelComposed):
         lazy_import()
         return {
             'collection_id': (str,),  # noqa: E501
-            'meta_analysis_id': (str,),  # noqa: E501
-            'files': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
-            'result': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'files': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'result': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -111,7 +108,6 @@ class NeurovaultCollectionReturn(ModelComposed):
 
     attribute_map = {
         'collection_id': 'collection_id',  # noqa: E501
-        'meta_analysis_id': 'meta_analysis_id',  # noqa: E501
         'files': 'files',  # noqa: E501
         'result': 'result',  # noqa: E501
         'id': 'id',  # noqa: E501
@@ -163,9 +159,8 @@ class NeurovaultCollectionReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            meta_analysis_id (str): [optional]  # noqa: E501
-            files ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
-            result (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            files ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            result (str): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -270,9 +265,8 @@ class NeurovaultCollectionReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            meta_analysis_id (str): [optional]  # noqa: E501
-            files ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
-            result (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            files ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            result (str): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501

@@ -32,9 +32,7 @@ from neurosynth_compose_sdk.exceptions import ApiAttributeError
 
 def lazy_import():
     from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
-    from neurosynth_compose_sdk.model.result import Result
     globals()['NeurovaultFile'] = NeurovaultFile
-    globals()['Result'] = Result
 
 
 class NeurovaultCollection(ModelNormal):
@@ -91,9 +89,8 @@ class NeurovaultCollection(ModelNormal):
         lazy_import()
         return {
             'collection_id': (str,),  # noqa: E501
-            'meta_analysis_id': (str,),  # noqa: E501
-            'files': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
-            'result': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'files': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
+            'result': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -103,7 +100,6 @@ class NeurovaultCollection(ModelNormal):
 
     attribute_map = {
         'collection_id': 'collection_id',  # noqa: E501
-        'meta_analysis_id': 'meta_analysis_id',  # noqa: E501
         'files': 'files',  # noqa: E501
         'result': 'result',  # noqa: E501
     }
@@ -151,9 +147,8 @@ class NeurovaultCollection(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            meta_analysis_id (str): [optional]  # noqa: E501
-            files ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
-            result (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            files ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            result (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,9 +231,8 @@ class NeurovaultCollection(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            meta_analysis_id (str): [optional]  # noqa: E501
-            files ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
-            result (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            files ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
+            result (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -91,7 +91,6 @@ class NeurovaultFileReturn(ModelComposed):
         lazy_import()
         return {
             'collection_id': (str,),  # noqa: E501
-            'path': (str,),  # noqa: E501
             'exception': (str,),  # noqa: E501
             'traceback': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
@@ -110,7 +109,6 @@ class NeurovaultFileReturn(ModelComposed):
 
     attribute_map = {
         'collection_id': 'collection_id',  # noqa: E501
-        'path': 'path',  # noqa: E501
         'exception': 'exception',  # noqa: E501
         'traceback': 'traceback',  # noqa: E501
         'status': 'status',  # noqa: E501
@@ -164,7 +162,6 @@ class NeurovaultFileReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            path (str): [optional]  # noqa: E501
             exception (str): [optional]  # noqa: E501
             traceback (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
@@ -274,7 +271,6 @@ class NeurovaultFileReturn(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            path (str): [optional]  # noqa: E501
             exception (str): [optional]  # noqa: E501
             traceback (str): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501

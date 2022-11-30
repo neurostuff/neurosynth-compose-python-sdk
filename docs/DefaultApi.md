@@ -741,7 +741,6 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = default_api.DefaultApi(api_client)
     id = "id_example" # str | 
     collection_id = "collection_id_example" # str |  (optional)
-    path = "path_example" # str |  (optional)
     exception = "exception_example" # str |  (optional)
     traceback = "traceback_example" # str |  (optional)
     status = "status_example" # str |  (optional)
@@ -758,7 +757,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, path=path, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id)
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling DefaultApi->neurovault_files_id_put: %s\n" % e)
@@ -771,7 +770,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
  **collection_id** | **str**|  | [optional]
- **path** | **str**|  | [optional]
  **exception** | **str**|  | [optional]
  **traceback** | **str**|  | [optional]
  **status** | **str**|  | [optional]
@@ -838,7 +836,6 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = default_api.DefaultApi(api_client)
     neurovault_file = NeurovaultFile(
         collection_id="collection_id_example",
-        path="path_example",
         exception="exception_example",
         traceback="traceback_example",
         status="status_example",
