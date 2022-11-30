@@ -180,8 +180,17 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
         images={},
         meta_analysis_id="meta_analysis_id_example",
         cli_version="cli_version_example",
-        estimator="estimator_example",
-        neurovault_collection_id=None,
+        estimator=Estimator(
+            type="MKDADensity",
+            args={},
+        ),
+        neurostore_id="neurostore_id_example",
+        neurovault_collection=NeurovaultCollection(
+            files=[
+                None,
+            ],
+            result="result_example",
+        ),
     ) # Result |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -270,8 +279,17 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         images={},
         meta_analysis_id="meta_analysis_id_example",
         cli_version="cli_version_example",
-        estimator="estimator_example",
-        neurovault_collection_id=None,
+        estimator=Estimator(
+            type="MKDADensity",
+            args={},
+        ),
+        neurostore_id="neurostore_id_example",
+        neurovault_collection=NeurovaultCollection(
+            files=[
+                None,
+            ],
+            result="result_example",
+        ),
     ) # Result |  (optional)
 
     # example passing only required values which don't have defaults set

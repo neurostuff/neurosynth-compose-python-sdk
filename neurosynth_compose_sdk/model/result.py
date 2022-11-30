@@ -31,7 +31,9 @@ from neurosynth_compose_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from neurosynth_compose_sdk.model.estimator import Estimator
     from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
+    globals()['Estimator'] = Estimator
     globals()['NeurovaultCollection'] = NeurovaultCollection
 
 
@@ -91,8 +93,9 @@ class Result(ModelNormal):
             'images': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'meta_analysis_id': (str,),  # noqa: E501
             'cli_version': (str,),  # noqa: E501
-            'estimator': (str,),  # noqa: E501
-            'neurovault_collection_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'estimator': (Estimator,),  # noqa: E501
+            'neurostore_id': (str,),  # noqa: E501
+            'neurovault_collection': (NeurovaultCollection,),  # noqa: E501
         }
 
     @cached_property
@@ -105,7 +108,8 @@ class Result(ModelNormal):
         'meta_analysis_id': 'meta_analysis_id',  # noqa: E501
         'cli_version': 'cli_version',  # noqa: E501
         'estimator': 'estimator',  # noqa: E501
-        'neurovault_collection_id': 'neurovault_collection_id',  # noqa: E501
+        'neurostore_id': 'neurostore_id',  # noqa: E501
+        'neurovault_collection': 'neurovault_collection',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,8 +156,9 @@ class Result(ModelNormal):
             images ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analysis_id (str): [optional]  # noqa: E501
             cli_version (str): [optional]  # noqa: E501
-            estimator (str): [optional]  # noqa: E501
-            neurovault_collection_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            estimator (Estimator): [optional]  # noqa: E501
+            neurostore_id (str): [optional]  # noqa: E501
+            neurovault_collection (NeurovaultCollection): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,8 +243,9 @@ class Result(ModelNormal):
             images ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analysis_id (str): [optional]  # noqa: E501
             cli_version (str): [optional]  # noqa: E501
-            estimator (str): [optional]  # noqa: E501
-            neurovault_collection_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            estimator (Estimator): [optional]  # noqa: E501
+            neurostore_id (str): [optional]  # noqa: E501
+            neurovault_collection (NeurovaultCollection): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

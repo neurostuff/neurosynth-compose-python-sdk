@@ -31,9 +31,11 @@ from neurosynth_compose_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from neurosynth_compose_sdk.model.estimator import Estimator
     from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
     from neurosynth_compose_sdk.model.read_only import ReadOnly
     from neurosynth_compose_sdk.model.result import Result
+    globals()['Estimator'] = Estimator
     globals()['NeurovaultCollection'] = NeurovaultCollection
     globals()['ReadOnly'] = ReadOnly
     globals()['Result'] = Result
@@ -95,8 +97,9 @@ class ResultReturn(ModelComposed):
             'images': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'meta_analysis_id': (str,),  # noqa: E501
             'cli_version': (str,),  # noqa: E501
-            'estimator': (str,),  # noqa: E501
-            'neurovault_collection_id': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'estimator': (Estimator,),  # noqa: E501
+            'neurostore_id': (str,),  # noqa: E501
+            'neurovault_collection': (NeurovaultCollection,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -113,7 +116,8 @@ class ResultReturn(ModelComposed):
         'meta_analysis_id': 'meta_analysis_id',  # noqa: E501
         'cli_version': 'cli_version',  # noqa: E501
         'estimator': 'estimator',  # noqa: E501
-        'neurovault_collection_id': 'neurovault_collection_id',  # noqa: E501
+        'neurostore_id': 'neurostore_id',  # noqa: E501
+        'neurovault_collection': 'neurovault_collection',  # noqa: E501
         'id': 'id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
@@ -164,8 +168,9 @@ class ResultReturn(ModelComposed):
             images ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analysis_id (str): [optional]  # noqa: E501
             cli_version (str): [optional]  # noqa: E501
-            estimator (str): [optional]  # noqa: E501
-            neurovault_collection_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            estimator (Estimator): [optional]  # noqa: E501
+            neurostore_id (str): [optional]  # noqa: E501
+            neurovault_collection (NeurovaultCollection): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -272,8 +277,9 @@ class ResultReturn(ModelComposed):
             images ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analysis_id (str): [optional]  # noqa: E501
             cli_version (str): [optional]  # noqa: E501
-            estimator (str): [optional]  # noqa: E501
-            neurovault_collection_id (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            estimator (Estimator): [optional]  # noqa: E501
+            neurostore_id (str): [optional]  # noqa: E501
+            neurovault_collection (NeurovaultCollection): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
