@@ -96,6 +96,12 @@ class NeurovaultFileReturn(ModelComposed):
             'status': (str,),  # noqa: E501
             'file': (str,),  # noqa: E501
             'image_id': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'map_type': (str,),  # noqa: E501
+            'cognitive_contrast_cogatlas': (str,),  # noqa: E501
+            'cognitive_contrast_cogatlas_id': (str,),  # noqa: E501
+            'cognitive_paradigm_cogatlas': (str,),  # noqa: E501
+            'cognitive_paradigm_cogatlas_id': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -114,6 +120,12 @@ class NeurovaultFileReturn(ModelComposed):
         'status': 'status',  # noqa: E501
         'file': 'file',  # noqa: E501
         'image_id': 'image_id',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'map_type': 'map_type',  # noqa: E501
+        'cognitive_contrast_cogatlas': 'cognitive_contrast_cogatlas',  # noqa: E501
+        'cognitive_contrast_cogatlas_id': 'cognitive_contrast_cogatlas_id',  # noqa: E501
+        'cognitive_paradigm_cogatlas': 'cognitive_paradigm_cogatlas',  # noqa: E501
+        'cognitive_paradigm_cogatlas_id': 'cognitive_paradigm_cogatlas_id',  # noqa: E501
         'id': 'id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
@@ -167,6 +179,12 @@ class NeurovaultFileReturn(ModelComposed):
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
             image_id (str): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
+            map_type (str): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas (str): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas_id (str): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas (str): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas_id (str): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -276,6 +294,12 @@ class NeurovaultFileReturn(ModelComposed):
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
             image_id (str): [optional]  # noqa: E501
+            name (str): [optional]  # noqa: E501
+            map_type (str): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas (str): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas_id (str): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas (str): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas_id (str): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501

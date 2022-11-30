@@ -534,6 +534,12 @@ class DefaultApi(object):
                     'status',
                     'file',
                     'image_id',
+                    'name',
+                    'map_type',
+                    'cognitive_contrast_cogatlas',
+                    'cognitive_contrast_cogatlas_id',
+                    'cognitive_paradigm_cogatlas',
+                    'cognitive_paradigm_cogatlas_id',
                 ],
                 'required': [
                     'id',
@@ -565,6 +571,18 @@ class DefaultApi(object):
                         (str,),
                     'image_id':
                         (str,),
+                    'name':
+                        (str,),
+                    'map_type':
+                        (str,),
+                    'cognitive_contrast_cogatlas':
+                        (str,),
+                    'cognitive_contrast_cogatlas_id':
+                        (str,),
+                    'cognitive_paradigm_cogatlas':
+                        (str,),
+                    'cognitive_paradigm_cogatlas_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -574,6 +592,12 @@ class DefaultApi(object):
                     'status': 'status',
                     'file': 'file',
                     'image_id': 'image_id',
+                    'name': 'name',
+                    'map_type': 'map_type',
+                    'cognitive_contrast_cogatlas': 'cognitive_contrast_cogatlas',
+                    'cognitive_contrast_cogatlas_id': 'cognitive_contrast_cogatlas_id',
+                    'cognitive_paradigm_cogatlas': 'cognitive_paradigm_cogatlas',
+                    'cognitive_paradigm_cogatlas_id': 'cognitive_paradigm_cogatlas_id',
                 },
                 'location_map': {
                     'id': 'path',
@@ -583,6 +607,12 @@ class DefaultApi(object):
                     'status': 'form',
                     'file': 'form',
                     'image_id': 'form',
+                    'name': 'form',
+                    'map_type': 'form',
+                    'cognitive_contrast_cogatlas': 'form',
+                    'cognitive_contrast_cogatlas_id': 'form',
+                    'cognitive_paradigm_cogatlas': 'form',
+                    'cognitive_paradigm_cogatlas_id': 'form',
                 },
                 'collection_format_map': {
                 }
@@ -1419,6 +1449,12 @@ class DefaultApi(object):
             status (str): [optional]
             file (str): [optional]
             image_id (str): [optional]
+            name (str): [optional]
+            map_type (str): [optional]
+            cognitive_contrast_cogatlas (str): [optional]
+            cognitive_contrast_cogatlas_id (str): [optional]
+            cognitive_paradigm_cogatlas (str): [optional]
+            cognitive_paradigm_cogatlas_id (str): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

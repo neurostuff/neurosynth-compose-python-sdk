@@ -764,6 +764,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     status = "status_example" # str |  (optional)
     file = 'YQ==' # str |  (optional)
     image_id = "image_id_example" # str |  (optional)
+    name = "name_example" # str |  (optional)
+    map_type = "map_type_example" # str |  (optional)
+    cognitive_contrast_cogatlas = "cognitive_contrast_cogatlas_example" # str |  (optional)
+    cognitive_contrast_cogatlas_id = "cognitive_contrast_cogatlas_id_example" # str |  (optional)
+    cognitive_paradigm_cogatlas = "cognitive_paradigm_cogatlas_example" # str |  (optional)
+    cognitive_paradigm_cogatlas_id = "cognitive_paradigm_cogatlas_id_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -775,7 +781,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id)
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id, name=name, map_type=map_type, cognitive_contrast_cogatlas=cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id=cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas=cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id=cognitive_paradigm_cogatlas_id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling DefaultApi->neurovault_files_id_put: %s\n" % e)
@@ -793,6 +799,12 @@ Name | Type | Description  | Notes
  **status** | **str**|  | [optional]
  **file** | **str**|  | [optional]
  **image_id** | **str**|  | [optional]
+ **name** | **str**|  | [optional]
+ **map_type** | **str**|  | [optional]
+ **cognitive_contrast_cogatlas** | **str**|  | [optional]
+ **cognitive_contrast_cogatlas_id** | **str**|  | [optional]
+ **cognitive_paradigm_cogatlas** | **str**|  | [optional]
+ **cognitive_paradigm_cogatlas_id** | **str**|  | [optional]
 
 ### Return type
 
@@ -859,6 +871,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         status="status_example",
         file='YQ==',
         image_id="image_id_example",
+        name="name_example",
+        map_type="map_type_example",
+        cognitive_contrast_cogatlas="cognitive_contrast_cogatlas_example",
+        cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
+        cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
+        cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
     ) # NeurovaultFile |  (optional)
 
     # example passing only required values which don't have defaults set
