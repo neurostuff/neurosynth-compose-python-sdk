@@ -34,11 +34,13 @@ def lazy_import():
     from neurosynth_compose_sdk.model.annotation import Annotation
     from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
     from neurosynth_compose_sdk.model.read_only import ReadOnly
+    from neurosynth_compose_sdk.model.result_return import ResultReturn
     from neurosynth_compose_sdk.model.specification import Specification
     from neurosynth_compose_sdk.model.studyset import Studyset
     globals()['Annotation'] = Annotation
     globals()['MetaAnalysis'] = MetaAnalysis
     globals()['ReadOnly'] = ReadOnly
+    globals()['ResultReturn'] = ResultReturn
     globals()['Specification'] = Specification
     globals()['Studyset'] = Studyset
 
@@ -103,7 +105,7 @@ class MetaAnalysisReturn(ModelComposed):
             'description': (str, none_type,),  # noqa: E501
             'internal_studyset_id': (str,),  # noqa: E501
             'internal_annotation_id': (str,),  # noqa: E501
-            'results': ([str],),  # noqa: E501
+            'results': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -131,8 +133,6 @@ class MetaAnalysisReturn(ModelComposed):
     }
 
     read_only_vars = {
-        'studyset',  # noqa: E501
-        'annotation',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
     }
@@ -173,14 +173,14 @@ class MetaAnalysisReturn(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            specification (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the specification (nested=False) or a JSON representation of the specification itself (nested=True).. [optional]  # noqa: E501
-            studyset (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the studyset (nested=False) or a JSON representation of the studyset itself (nested=True).. [optional]  # noqa: E501
-            annotation (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the annotation (nested=False) or a JSON representation of the annotation itself (nested=True).. [optional]  # noqa: E501
+            specification (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
-            results ([str]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
+            results ([bool, date, datetime, dict, float, int, list, str, none_type]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -284,14 +284,14 @@ class MetaAnalysisReturn(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            specification (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the specification (nested=False) or a JSON representation of the specification itself (nested=True).. [optional]  # noqa: E501
-            studyset (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the studyset (nested=False) or a JSON representation of the studyset itself (nested=True).. [optional]  # noqa: E501
-            annotation (bool, date, datetime, dict, float, int, list, str, none_type): Either a string representation of the id of the annotation (nested=False) or a JSON representation of the annotation itself (nested=True).. [optional]  # noqa: E501
+            specification (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            studyset (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             name (str, none_type): Human-readable name of the meta-analysis.. [optional]  # noqa: E501
             description (str, none_type): Long form description of the meta-analysis.. [optional]  # noqa: E501
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
-            results ([str]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
+            results ([bool, date, datetime, dict, float, int, list, str, none_type]): array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result.. [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501

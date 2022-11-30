@@ -88,7 +88,7 @@ class ResultList(ModelNormal):
         """
         lazy_import()
         return {
-            'results': (ResultReturn,),  # noqa: E501
+            'results': ([bool, date, datetime, dict, float, int, list, str, none_type],),  # noqa: E501
             'metadata': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
         }
 
@@ -143,7 +143,7 @@ class ResultList(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            results (ResultReturn): [optional]  # noqa: E501
+            results ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 
@@ -226,7 +226,7 @@ class ResultList(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            results (ResultReturn): [optional]  # noqa: E501
+            results ([bool, date, datetime, dict, float, int, list, str, none_type]): [optional]  # noqa: E501
             metadata ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
         """
 

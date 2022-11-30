@@ -203,12 +203,14 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     id = "id_example" # str | 
     meta_analysis = MetaAnalysis(
         specification=None,
+        studyset=None,
+        annotation=None,
         name="name_example",
         description="description_example",
         internal_studyset_id="internal_studyset_id_example",
         internal_annotation_id="internal_annotation_id_example",
         results=[
-            "results_example",
+            None,
         ],
     ) # MetaAnalysis |  (optional)
 
