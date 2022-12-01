@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **collection_id** | **str** |  | [optional] [readonly] 
 **files** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | [optional] 
-**result** | **str** |  | [optional] 
+**result** | **str** |  | [optional] [readonly] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

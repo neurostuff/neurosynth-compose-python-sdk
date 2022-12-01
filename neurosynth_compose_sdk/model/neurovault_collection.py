@@ -106,6 +106,7 @@ class NeurovaultCollection(ModelNormal):
 
     read_only_vars = {
         'collection_id',  # noqa: E501
+        'result',  # noqa: E501
     }
 
     _composed_schemas = {}

@@ -118,6 +118,7 @@ class NeurovaultCollectionReturn(ModelComposed):
 
     read_only_vars = {
         'collection_id',  # noqa: E501
+        'result',  # noqa: E501
         'updated_at',  # noqa: E501
         'created_at',  # noqa: E501
     }

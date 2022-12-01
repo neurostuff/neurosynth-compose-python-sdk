@@ -189,7 +189,6 @@ with neurosynth_compose_sdk.ApiClient() as api_client:
             files=[
                 None,
             ],
-            result="result_example",
         ),
     ) # Result |  (optional)
 
@@ -288,7 +287,6 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
             files=[
                 None,
             ],
-            result="result_example",
         ),
     ) # Result |  (optional)
 
