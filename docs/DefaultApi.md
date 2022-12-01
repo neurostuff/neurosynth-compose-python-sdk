@@ -759,17 +759,17 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = default_api.DefaultApi(api_client)
     id = "id_example" # str | 
     collection_id = "collection_id_example" # str |  (optional)
-    exception = "exception_example" # str |  (optional)
-    traceback = "traceback_example" # str |  (optional)
+    exception = "exception_example" # str, none_type |  (optional)
+    traceback = "traceback_example" # str, none_type |  (optional)
     status = "status_example" # str |  (optional)
     file = 'YQ==' # str |  (optional)
     image_id = "image_id_example" # str |  (optional)
-    name = "name_example" # str |  (optional)
-    map_type = "map_type_example" # str |  (optional)
-    cognitive_contrast_cogatlas = "cognitive_contrast_cogatlas_example" # str |  (optional)
-    cognitive_contrast_cogatlas_id = "cognitive_contrast_cogatlas_id_example" # str |  (optional)
-    cognitive_paradigm_cogatlas = "cognitive_paradigm_cogatlas_example" # str |  (optional)
-    cognitive_paradigm_cogatlas_id = "cognitive_paradigm_cogatlas_id_example" # str |  (optional)
+    name = "name_example" # str, none_type |  (optional)
+    map_type = "map_type_example" # str, none_type |  (optional)
+    cognitive_contrast_cogatlas = "cognitive_contrast_cogatlas_example" # str, none_type |  (optional)
+    cognitive_contrast_cogatlas_id = "cognitive_contrast_cogatlas_id_example" # str, none_type |  (optional)
+    cognitive_paradigm_cogatlas = "cognitive_paradigm_cogatlas_example" # str, none_type |  (optional)
+    cognitive_paradigm_cogatlas_id = "cognitive_paradigm_cogatlas_id_example" # str, none_type |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -794,17 +794,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
  **collection_id** | **str**|  | [optional]
- **exception** | **str**|  | [optional]
- **traceback** | **str**|  | [optional]
+ **exception** | **str, none_type**|  | [optional]
+ **traceback** | **str, none_type**|  | [optional]
  **status** | **str**|  | [optional]
  **file** | **str**|  | [optional]
  **image_id** | **str**|  | [optional]
- **name** | **str**|  | [optional]
- **map_type** | **str**|  | [optional]
- **cognitive_contrast_cogatlas** | **str**|  | [optional]
- **cognitive_contrast_cogatlas_id** | **str**|  | [optional]
- **cognitive_paradigm_cogatlas** | **str**|  | [optional]
- **cognitive_paradigm_cogatlas_id** | **str**|  | [optional]
+ **name** | **str, none_type**|  | [optional]
+ **map_type** | **str, none_type**|  | [optional]
+ **cognitive_contrast_cogatlas** | **str, none_type**|  | [optional]
+ **cognitive_contrast_cogatlas_id** | **str, none_type**|  | [optional]
+ **cognitive_paradigm_cogatlas** | **str, none_type**|  | [optional]
+ **cognitive_paradigm_cogatlas_id** | **str, none_type**|  | [optional]
 
 ### Return type
 

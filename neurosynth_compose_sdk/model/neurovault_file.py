@@ -83,17 +83,17 @@ class NeurovaultFile(ModelNormal):
         """
         return {
             'collection_id': (str,),  # noqa: E501
-            'exception': (str,),  # noqa: E501
-            'traceback': (str,),  # noqa: E501
+            'exception': (str, none_type,),  # noqa: E501
+            'traceback': (str, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'file': (str,),  # noqa: E501
             'image_id': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'map_type': (str,),  # noqa: E501
-            'cognitive_contrast_cogatlas': (str,),  # noqa: E501
-            'cognitive_contrast_cogatlas_id': (str,),  # noqa: E501
-            'cognitive_paradigm_cogatlas': (str,),  # noqa: E501
-            'cognitive_paradigm_cogatlas_id': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'map_type': (str, none_type,),  # noqa: E501
+            'cognitive_contrast_cogatlas': (str, none_type,),  # noqa: E501
+            'cognitive_contrast_cogatlas_id': (str, none_type,),  # noqa: E501
+            'cognitive_paradigm_cogatlas': (str, none_type,),  # noqa: E501
+            'cognitive_paradigm_cogatlas_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -158,17 +158,17 @@ class NeurovaultFile(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            exception (str): [optional]  # noqa: E501
-            traceback (str): [optional]  # noqa: E501
+            exception (str, none_type): [optional]  # noqa: E501
+            traceback (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
             image_id (str): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            map_type (str): [optional]  # noqa: E501
-            cognitive_contrast_cogatlas (str): [optional]  # noqa: E501
-            cognitive_contrast_cogatlas_id (str): [optional]  # noqa: E501
-            cognitive_paradigm_cogatlas (str): [optional]  # noqa: E501
-            cognitive_paradigm_cogatlas_id (str): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            map_type (str, none_type): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas (str, none_type): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas_id (str, none_type): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas (str, none_type): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas_id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,17 +251,17 @@ class NeurovaultFile(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             collection_id (str): [optional]  # noqa: E501
-            exception (str): [optional]  # noqa: E501
-            traceback (str): [optional]  # noqa: E501
+            exception (str, none_type): [optional]  # noqa: E501
+            traceback (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
             image_id (str): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            map_type (str): [optional]  # noqa: E501
-            cognitive_contrast_cogatlas (str): [optional]  # noqa: E501
-            cognitive_contrast_cogatlas_id (str): [optional]  # noqa: E501
-            cognitive_paradigm_cogatlas (str): [optional]  # noqa: E501
-            cognitive_paradigm_cogatlas_id (str): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            map_type (str, none_type): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas (str, none_type): [optional]  # noqa: E501
+            cognitive_contrast_cogatlas_id (str, none_type): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas (str, none_type): [optional]  # noqa: E501
+            cognitive_paradigm_cogatlas_id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

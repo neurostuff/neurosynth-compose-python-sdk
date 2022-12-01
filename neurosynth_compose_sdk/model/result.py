@@ -92,9 +92,9 @@ class Result(ModelNormal):
         return {
             'images': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'meta_analysis_id': (str,),  # noqa: E501
-            'cli_version': (str,),  # noqa: E501
+            'cli_version': (str, none_type,),  # noqa: E501
             'estimator': (Estimator,),  # noqa: E501
-            'neurostore_id': (str,),  # noqa: E501
+            'neurostore_id': (str, none_type,),  # noqa: E501
             'neurovault_collection': (NeurovaultCollection,),  # noqa: E501
         }
 
@@ -155,9 +155,9 @@ class Result(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             images ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analysis_id (str): [optional]  # noqa: E501
-            cli_version (str): [optional]  # noqa: E501
+            cli_version (str, none_type): [optional]  # noqa: E501
             estimator (Estimator): [optional]  # noqa: E501
-            neurostore_id (str): [optional]  # noqa: E501
+            neurostore_id (str, none_type): [optional]  # noqa: E501
             neurovault_collection (NeurovaultCollection): [optional]  # noqa: E501
         """
 
@@ -242,9 +242,9 @@ class Result(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             images ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             meta_analysis_id (str): [optional]  # noqa: E501
-            cli_version (str): [optional]  # noqa: E501
+            cli_version (str, none_type): [optional]  # noqa: E501
             estimator (Estimator): [optional]  # noqa: E501
-            neurostore_id (str): [optional]  # noqa: E501
+            neurostore_id (str, none_type): [optional]  # noqa: E501
             neurovault_collection (NeurovaultCollection): [optional]  # noqa: E501
         """
 

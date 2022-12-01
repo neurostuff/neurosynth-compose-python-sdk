@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **images** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
 **meta_analysis_id** | **str** |  | [optional] 
-**cli_version** | **str** |  | [optional] 
+**cli_version** | **str, none_type** |  | [optional] 
 **estimator** | [**Estimator**](Estimator.md) |  | [optional] 
-**neurostore_id** | **str** |  | [optional] 
+**neurostore_id** | **str, none_type** |  | [optional] 
 **neurovault_collection** | [**NeurovaultCollection**](NeurovaultCollection.md) |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 

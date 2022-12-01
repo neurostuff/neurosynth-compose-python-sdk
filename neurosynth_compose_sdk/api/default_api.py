@@ -545,6 +545,14 @@ class DefaultApi(object):
                     'id',
                 ],
                 'nullable': [
+                    'exception',
+                    'traceback',
+                    'name',
+                    'map_type',
+                    'cognitive_contrast_cogatlas',
+                    'cognitive_contrast_cogatlas_id',
+                    'cognitive_paradigm_cogatlas',
+                    'cognitive_paradigm_cogatlas_id',
                 ],
                 'enum': [
                 ],
@@ -562,9 +570,9 @@ class DefaultApi(object):
                     'collection_id':
                         (str,),
                     'exception':
-                        (str,),
+                        (str, none_type,),
                     'traceback':
-                        (str,),
+                        (str, none_type,),
                     'status':
                         (str,),
                     'file':
@@ -572,17 +580,17 @@ class DefaultApi(object):
                     'image_id':
                         (str,),
                     'name':
-                        (str,),
+                        (str, none_type,),
                     'map_type':
-                        (str,),
+                        (str, none_type,),
                     'cognitive_contrast_cogatlas':
-                        (str,),
+                        (str, none_type,),
                     'cognitive_contrast_cogatlas_id':
-                        (str,),
+                        (str, none_type,),
                     'cognitive_paradigm_cogatlas':
-                        (str,),
+                        (str, none_type,),
                     'cognitive_paradigm_cogatlas_id':
-                        (str,),
+                        (str, none_type,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -1444,17 +1452,17 @@ class DefaultApi(object):
 
         Keyword Args:
             collection_id (str): [optional]
-            exception (str): [optional]
-            traceback (str): [optional]
+            exception (str, none_type): [optional]
+            traceback (str, none_type): [optional]
             status (str): [optional]
             file (str): [optional]
             image_id (str): [optional]
-            name (str): [optional]
-            map_type (str): [optional]
-            cognitive_contrast_cogatlas (str): [optional]
-            cognitive_contrast_cogatlas_id (str): [optional]
-            cognitive_paradigm_cogatlas (str): [optional]
-            cognitive_paradigm_cogatlas_id (str): [optional]
+            name (str, none_type): [optional]
+            map_type (str, none_type): [optional]
+            cognitive_contrast_cogatlas (str, none_type): [optional]
+            cognitive_contrast_cogatlas_id (str, none_type): [optional]
+            cognitive_paradigm_cogatlas (str, none_type): [optional]
+            cognitive_paradigm_cogatlas_id (str, none_type): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
