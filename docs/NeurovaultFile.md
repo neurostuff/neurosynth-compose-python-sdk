@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **traceback** | **str, none_type** |  | [optional] 
 **status** | **str** |  | [optional] 
 **file** | **str** |  | [optional] 
-**image_id** | **str** |  | [optional] 
+**image_id** | **str, none_type** |  | [optional] 
 **name** | **str, none_type** |  | [optional] 
 **map_type** | **str, none_type** |  | [optional] 
 **cognitive_contrast_cogatlas** | **str, none_type** |  | [optional] 

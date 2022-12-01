@@ -547,6 +547,7 @@ class DefaultApi(object):
                 'nullable': [
                     'exception',
                     'traceback',
+                    'image_id',
                     'name',
                     'map_type',
                     'cognitive_contrast_cogatlas',
@@ -578,7 +579,7 @@ class DefaultApi(object):
                     'file':
                         (str,),
                     'image_id':
-                        (str,),
+                        (str, none_type,),
                     'name':
                         (str, none_type,),
                     'map_type':
@@ -1456,7 +1457,7 @@ class DefaultApi(object):
             traceback (str, none_type): [optional]
             status (str): [optional]
             file (str): [optional]
-            image_id (str): [optional]
+            image_id (str, none_type): [optional]
             name (str, none_type): [optional]
             map_type (str, none_type): [optional]
             cognitive_contrast_cogatlas (str, none_type): [optional]

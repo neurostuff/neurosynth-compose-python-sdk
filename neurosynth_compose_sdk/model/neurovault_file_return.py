@@ -95,7 +95,7 @@ class NeurovaultFileReturn(ModelComposed):
             'traceback': (str, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'file': (str,),  # noqa: E501
-            'image_id': (str,),  # noqa: E501
+            'image_id': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'map_type': (str, none_type,),  # noqa: E501
             'cognitive_contrast_cogatlas': (str, none_type,),  # noqa: E501
@@ -178,7 +178,7 @@ class NeurovaultFileReturn(ModelComposed):
             traceback (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
-            image_id (str): [optional]  # noqa: E501
+            image_id (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             map_type (str, none_type): [optional]  # noqa: E501
             cognitive_contrast_cogatlas (str, none_type): [optional]  # noqa: E501
@@ -293,7 +293,7 @@ class NeurovaultFileReturn(ModelComposed):
             traceback (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             file (str): [optional]  # noqa: E501
-            image_id (str): [optional]  # noqa: E501
+            image_id (str, none_type): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             map_type (str, none_type): [optional]  # noqa: E501
             cognitive_contrast_cogatlas (str, none_type): [optional]  # noqa: E501
