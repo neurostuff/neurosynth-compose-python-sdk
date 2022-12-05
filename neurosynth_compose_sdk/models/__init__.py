@@ -28,6 +28,9 @@ from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
 from neurosynth_compose_sdk.model.neurovault_file_list import NeurovaultFileList
 from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
 from neurosynth_compose_sdk.model.neurovault_list import NeurovaultList
+from neurosynth_compose_sdk.model.project import Project
+from neurosynth_compose_sdk.model.project_list import ProjectList
+from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from neurosynth_compose_sdk.model.read_only import ReadOnly
 from neurosynth_compose_sdk.model.result import Result
 from neurosynth_compose_sdk.model.result_list import ResultList

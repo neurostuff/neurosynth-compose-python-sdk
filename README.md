@@ -99,6 +99,10 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**neurovault_files_id_get**](docs/DefaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
 *DefaultApi* | [**neurovault_files_id_put**](docs/DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
 *DefaultApi* | [**neurovault_files_post**](docs/DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
+*DefaultApi* | [**projects_get**](docs/DefaultApi.md#projects_get) | **GET** /projects | Your GET endpoint
+*DefaultApi* | [**projects_id_get**](docs/DefaultApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
+*DefaultApi* | [**projects_id_put**](docs/DefaultApi.md#projects_id_put) | **PUT** /projects/{id} | 
+*DefaultApi* | [**projects_post**](docs/DefaultApi.md#projects_post) | **POST** /projects | 
 *MetaAnalysisApi* | [**meta_analyses_get**](docs/MetaAnalysisApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 *MetaAnalysisApi* | [**meta_analyses_id_get**](docs/MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysisApi* | [**meta_analyses_id_put**](docs/MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
@@ -138,6 +142,9 @@ Class | Method | HTTP request | Description
  - [NeurovaultFileList](docs/NeurovaultFileList.md)
  - [NeurovaultFileReturn](docs/NeurovaultFileReturn.md)
  - [NeurovaultList](docs/NeurovaultList.md)
+ - [Project](docs/Project.md)
+ - [ProjectList](docs/ProjectList.md)
+ - [ProjectReturn](docs/ProjectReturn.md)
  - [ReadOnly](docs/ReadOnly.md)
  - [Result](docs/Result.md)
  - [ResultList](docs/ResultList.md)
