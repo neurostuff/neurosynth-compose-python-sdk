@@ -9,6 +9,11 @@
 """
 
 
+from neurosynth_compose_sdk.exceptions import (
+    ApiTypeError
+    ApiValueError
+)
+
 from neurosynth_compose_sdk.model_utils import (
     ModelNormal,
     ModelSimple,
