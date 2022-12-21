@@ -100,7 +100,7 @@ class MetaAnalysis(ModelNormal):
             'internal_studyset_id': (str,),  # noqa: E501
             'internal_annotation_id': (str,),  # noqa: E501
             'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
-            'project': (str,),  # noqa: E501
+            'project': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -169,7 +169,7 @@ class MetaAnalysis(ModelNormal):
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            project (str): [optional]  # noqa: E501
+            project (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -259,7 +259,7 @@ class MetaAnalysis(ModelNormal):
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            project (str): [optional]  # noqa: E501
+            project (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

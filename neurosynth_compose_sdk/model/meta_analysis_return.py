@@ -104,7 +104,7 @@ class MetaAnalysisReturn(ModelComposed):
             'internal_studyset_id': (str,),  # noqa: E501
             'internal_annotation_id': (str,),  # noqa: E501
             'provenance': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
-            'project': (str,),  # noqa: E501
+            'project': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -181,7 +181,7 @@ class MetaAnalysisReturn(ModelComposed):
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            project (str): [optional]  # noqa: E501
+            project (str, none_type): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -293,7 +293,7 @@ class MetaAnalysisReturn(ModelComposed):
             internal_studyset_id (str): The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             internal_annotation_id (str): The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.. [optional]  # noqa: E501
             provenance ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): [optional]  # noqa: E501
-            project (str): [optional]  # noqa: E501
+            project (str, none_type): [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
