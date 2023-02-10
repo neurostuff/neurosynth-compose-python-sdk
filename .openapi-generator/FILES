@@ -106,7 +106,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_project.py
-test/test_project_list.py
-test/test_project_return.py
 tox.ini

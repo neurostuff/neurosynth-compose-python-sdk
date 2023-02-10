@@ -212,6 +212,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         results=[
             None,
         ],
+        provenance={},
+        project="project_example",
     ) # MetaAnalysis |  (optional)
 
     # example passing only required values which don't have defaults set

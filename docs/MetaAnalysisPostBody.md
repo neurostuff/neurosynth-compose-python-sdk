@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **name** | **str, none_type** | Human-readable name of the meta-analysis. | [optional] 
 **description** | **str, none_type** | Long form description of the meta-analysis. | [optional] 
 **results** | **[bool, date, datetime, dict, float, int, list, str, none_type]** | array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result. | [optional] 
+**provenance** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** |  | [optional] 
+**project** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
