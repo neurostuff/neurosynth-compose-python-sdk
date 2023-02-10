@@ -87,6 +87,18 @@ Class | Method | HTTP request | Description
 *AnnotationApi* | [**annotations_id_get**](docs/AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
 *AnnotationApi* | [**annotations_id_put**](docs/AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
 *AnnotationApi* | [**annotations_post**](docs/AnnotationApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
+*DefaultApi* | [**meta_analysis_results_get**](docs/DefaultApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
+*DefaultApi* | [**meta_analysis_results_id_get**](docs/DefaultApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+*DefaultApi* | [**meta_analysis_results_id_put**](docs/DefaultApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
+*DefaultApi* | [**meta_analysis_results_post**](docs/DefaultApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
+*DefaultApi* | [**neurovault_collections_get**](docs/DefaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Your GET endpoint
+*DefaultApi* | [**neurovault_collections_id_get**](docs/DefaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
+*DefaultApi* | [**neurovault_collections_id_put**](docs/DefaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
+*DefaultApi* | [**neurovault_collections_post**](docs/DefaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | 
+*DefaultApi* | [**neurovault_files_get**](docs/DefaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
+*DefaultApi* | [**neurovault_files_id_get**](docs/DefaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
+*DefaultApi* | [**neurovault_files_id_put**](docs/DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
+*DefaultApi* | [**neurovault_files_post**](docs/DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 *DefaultApi* | [**projects_get**](docs/DefaultApi.md#projects_get) | **GET** /projects | Your GET endpoint
 *DefaultApi* | [**projects_id_get**](docs/DefaultApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 *DefaultApi* | [**projects_id_put**](docs/DefaultApi.md#projects_id_put) | **PUT** /projects/{id} | 
@@ -124,10 +136,19 @@ Class | Method | HTTP request | Description
  - [MetaAnalysisList](docs/MetaAnalysisList.md)
  - [MetaAnalysisPostBody](docs/MetaAnalysisPostBody.md)
  - [MetaAnalysisReturn](docs/MetaAnalysisReturn.md)
+ - [NeurovaultCollection](docs/NeurovaultCollection.md)
+ - [NeurovaultCollectionReturn](docs/NeurovaultCollectionReturn.md)
+ - [NeurovaultFile](docs/NeurovaultFile.md)
+ - [NeurovaultFileList](docs/NeurovaultFileList.md)
+ - [NeurovaultFileReturn](docs/NeurovaultFileReturn.md)
+ - [NeurovaultList](docs/NeurovaultList.md)
  - [Project](docs/Project.md)
  - [ProjectList](docs/ProjectList.md)
  - [ProjectReturn](docs/ProjectReturn.md)
  - [ReadOnly](docs/ReadOnly.md)
+ - [Result](docs/Result.md)
+ - [ResultList](docs/ResultList.md)
+ - [ResultReturn](docs/ResultReturn.md)
  - [Specification](docs/Specification.md)
  - [SpecificationList](docs/SpecificationList.md)
  - [SpecificationPostBody](docs/SpecificationPostBody.md)
