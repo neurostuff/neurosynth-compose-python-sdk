@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **cognitive_contrast_cogatlas_id** | **str, none_type** |  | [optional] 
 **cognitive_paradigm_cogatlas** | **str, none_type** |  | [optional] 
 **cognitive_paradigm_cogatlas_id** | **str, none_type** |  | [optional] 
+**modality** | **str, none_type** | the modality of the component images that went into generating this statistical map | [optional] 
+**space** | **str, none_type** | the template space the statistical image is reported in. | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime, none_type** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

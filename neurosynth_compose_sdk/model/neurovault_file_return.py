@@ -102,6 +102,8 @@ class NeurovaultFileReturn(ModelComposed):
             'cognitive_contrast_cogatlas_id': (str, none_type,),  # noqa: E501
             'cognitive_paradigm_cogatlas': (str, none_type,),  # noqa: E501
             'cognitive_paradigm_cogatlas_id': (str, none_type,),  # noqa: E501
+            'modality': (str, none_type,),  # noqa: E501
+            'space': (str, none_type,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
@@ -126,6 +128,8 @@ class NeurovaultFileReturn(ModelComposed):
         'cognitive_contrast_cogatlas_id': 'cognitive_contrast_cogatlas_id',  # noqa: E501
         'cognitive_paradigm_cogatlas': 'cognitive_paradigm_cogatlas',  # noqa: E501
         'cognitive_paradigm_cogatlas_id': 'cognitive_paradigm_cogatlas_id',  # noqa: E501
+        'modality': 'modality',  # noqa: E501
+        'space': 'space',  # noqa: E501
         'id': 'id',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
@@ -185,6 +189,8 @@ class NeurovaultFileReturn(ModelComposed):
             cognitive_contrast_cogatlas_id (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas_id (str, none_type): [optional]  # noqa: E501
+            modality (str, none_type): the modality of the component images that went into generating this statistical map. [optional]  # noqa: E501
+            space (str, none_type): the template space the statistical image is reported in.. [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501
@@ -300,6 +306,8 @@ class NeurovaultFileReturn(ModelComposed):
             cognitive_contrast_cogatlas_id (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas_id (str, none_type): [optional]  # noqa: E501
+            modality (str, none_type): the modality of the component images that went into generating this statistical map. [optional]  # noqa: E501
+            space (str, none_type): the template space the statistical image is reported in.. [optional]  # noqa: E501
             id (str): the identifier for the resource.. [optional]  # noqa: E501
             updated_at (datetime, none_type): when the resource was last modified.. [optional]  # noqa: E501
             created_at (datetime): When the resource was created.. [optional]  # noqa: E501

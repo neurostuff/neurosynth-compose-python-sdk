@@ -543,6 +543,8 @@ class DefaultApi(object):
                     'cognitive_contrast_cogatlas_id',
                     'cognitive_paradigm_cogatlas',
                     'cognitive_paradigm_cogatlas_id',
+                    'modality',
+                    'space',
                 ],
                 'required': [
                     'id',
@@ -557,6 +559,8 @@ class DefaultApi(object):
                     'cognitive_contrast_cogatlas_id',
                     'cognitive_paradigm_cogatlas',
                     'cognitive_paradigm_cogatlas_id',
+                    'modality',
+                    'space',
                 ],
                 'enum': [
                 ],
@@ -595,6 +599,10 @@ class DefaultApi(object):
                         (str, none_type,),
                     'cognitive_paradigm_cogatlas_id':
                         (str, none_type,),
+                    'modality':
+                        (str, none_type,),
+                    'space':
+                        (str, none_type,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -610,6 +618,8 @@ class DefaultApi(object):
                     'cognitive_contrast_cogatlas_id': 'cognitive_contrast_cogatlas_id',
                     'cognitive_paradigm_cogatlas': 'cognitive_paradigm_cogatlas',
                     'cognitive_paradigm_cogatlas_id': 'cognitive_paradigm_cogatlas_id',
+                    'modality': 'modality',
+                    'space': 'space',
                 },
                 'location_map': {
                     'id': 'path',
@@ -625,6 +635,8 @@ class DefaultApi(object):
                     'cognitive_contrast_cogatlas_id': 'form',
                     'cognitive_paradigm_cogatlas': 'form',
                     'cognitive_paradigm_cogatlas_id': 'form',
+                    'modality': 'form',
+                    'space': 'form',
                 },
                 'collection_format_map': {
                 }
@@ -1665,6 +1677,8 @@ class DefaultApi(object):
             cognitive_contrast_cogatlas_id (str, none_type): [optional]
             cognitive_paradigm_cogatlas (str, none_type): [optional]
             cognitive_paradigm_cogatlas_id (str, none_type): [optional]
+            modality (str, none_type): the modality of the component images that went into generating this statistical map. [optional]
+            space (str, none_type): the template space the statistical image is reported in.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

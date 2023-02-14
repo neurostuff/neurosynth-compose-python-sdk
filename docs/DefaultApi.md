@@ -772,6 +772,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     cognitive_contrast_cogatlas_id = "cognitive_contrast_cogatlas_id_example" # str, none_type |  (optional)
     cognitive_paradigm_cogatlas = "cognitive_paradigm_cogatlas_example" # str, none_type |  (optional)
     cognitive_paradigm_cogatlas_id = "cognitive_paradigm_cogatlas_id_example" # str, none_type |  (optional)
+    modality = "modality_example" # str, none_type | the modality of the component images that went into generating this statistical map (optional)
+    space = "space_example" # str, none_type | the template space the statistical image is reported in. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -783,7 +785,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id, name=name, map_type=map_type, cognitive_contrast_cogatlas=cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id=cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas=cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id=cognitive_paradigm_cogatlas_id)
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id, name=name, map_type=map_type, cognitive_contrast_cogatlas=cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id=cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas=cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id=cognitive_paradigm_cogatlas_id, modality=modality, space=space)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling DefaultApi->neurovault_files_id_put: %s\n" % e)
@@ -807,6 +809,8 @@ Name | Type | Description  | Notes
  **cognitive_contrast_cogatlas_id** | **str, none_type**|  | [optional]
  **cognitive_paradigm_cogatlas** | **str, none_type**|  | [optional]
  **cognitive_paradigm_cogatlas_id** | **str, none_type**|  | [optional]
+ **modality** | **str, none_type**| the modality of the component images that went into generating this statistical map | [optional]
+ **space** | **str, none_type**| the template space the statistical image is reported in. | [optional]
 
 ### Return type
 
@@ -879,6 +883,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
         cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
         cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
+        modality="modality_example",
+        space="space_example",
     ) # NeurovaultFile |  (optional)
 
     # example passing only required values which don't have defaults set

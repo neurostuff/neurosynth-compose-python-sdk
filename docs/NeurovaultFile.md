@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **cognitive_contrast_cogatlas_id** | **str, none_type** |  | [optional] 
 **cognitive_paradigm_cogatlas** | **str, none_type** |  | [optional] 
 **cognitive_paradigm_cogatlas_id** | **str, none_type** |  | [optional] 
+**modality** | **str, none_type** | the modality of the component images that went into generating this statistical map | [optional] 
+**space** | **str, none_type** | the template space the statistical image is reported in. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

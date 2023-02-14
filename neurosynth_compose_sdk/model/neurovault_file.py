@@ -94,6 +94,8 @@ class NeurovaultFile(ModelNormal):
             'cognitive_contrast_cogatlas_id': (str, none_type,),  # noqa: E501
             'cognitive_paradigm_cogatlas': (str, none_type,),  # noqa: E501
             'cognitive_paradigm_cogatlas_id': (str, none_type,),  # noqa: E501
+            'modality': (str, none_type,),  # noqa: E501
+            'space': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -114,6 +116,8 @@ class NeurovaultFile(ModelNormal):
         'cognitive_contrast_cogatlas_id': 'cognitive_contrast_cogatlas_id',  # noqa: E501
         'cognitive_paradigm_cogatlas': 'cognitive_paradigm_cogatlas',  # noqa: E501
         'cognitive_paradigm_cogatlas_id': 'cognitive_paradigm_cogatlas_id',  # noqa: E501
+        'modality': 'modality',  # noqa: E501
+        'space': 'space',  # noqa: E501
     }
 
     read_only_vars = {
@@ -169,6 +173,8 @@ class NeurovaultFile(ModelNormal):
             cognitive_contrast_cogatlas_id (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas_id (str, none_type): [optional]  # noqa: E501
+            modality (str, none_type): the modality of the component images that went into generating this statistical map. [optional]  # noqa: E501
+            space (str, none_type): the template space the statistical image is reported in.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -262,6 +268,8 @@ class NeurovaultFile(ModelNormal):
             cognitive_contrast_cogatlas_id (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas (str, none_type): [optional]  # noqa: E501
             cognitive_paradigm_cogatlas_id (str, none_type): [optional]  # noqa: E501
+            modality (str, none_type): the modality of the component images that went into generating this statistical map. [optional]  # noqa: E501
+            space (str, none_type): the template space the statistical image is reported in.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
