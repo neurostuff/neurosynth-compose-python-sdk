@@ -106,13 +106,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_neurovault_collection.py
-test/test_neurovault_collection_return.py
-test/test_neurovault_file.py
-test/test_neurovault_file_list.py
-test/test_neurovault_file_return.py
-test/test_neurovault_list.py
-test/test_result.py
-test/test_result_list.py
-test/test_result_return.py
 tox.ini
