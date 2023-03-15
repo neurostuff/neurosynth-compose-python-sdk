@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.annotation_api import AnnotationApi
+#   from .api.annotations_api import AnnotationsApi
 #
 # or import this package, but before doing it, use:
 #
@@ -14,9 +14,11 @@
 #   sys.setrecursionlimit(n)
 
 # Import APIs into API package:
-from neurosynth_compose_sdk.api.annotation_api import AnnotationApi
+from neurosynth_compose_sdk.api.annotations_api import AnnotationsApi
 from neurosynth_compose_sdk.api.default_api import DefaultApi
-from neurosynth_compose_sdk.api.meta_analysis_api import MetaAnalysisApi
-from neurosynth_compose_sdk.api.specification_api import SpecificationApi
+from neurosynth_compose_sdk.api.meta_analyses_api import MetaAnalysesApi
+from neurosynth_compose_sdk.api.neurovault_api import NeurovaultApi
+from neurosynth_compose_sdk.api.projects_api import ProjectsApi
+from neurosynth_compose_sdk.api.specifications_api import SpecificationsApi
 from neurosynth_compose_sdk.api.studyset_api import StudysetApi
 from neurosynth_compose_sdk.api.user_api import UserApi

@@ -50,7 +50,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import time
 import neurosynth_compose_sdk
 from pprint import pprint
-from neurosynth_compose_sdk.api import annotation_api
+from neurosynth_compose_sdk.api import annotations_api
 from neurosynth_compose_sdk.model.annotation_list import AnnotationList
 from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
@@ -69,12 +69,12 @@ client = neurosynth_compose_sdk.ApiClient(configuration)
 
 try:
     # GET a list of annotations
-    api_response = client.annotation.get(
+    api_response = client.annotations.get(
     
     )
     pprint(api_response)
 except neurosynth_compose_sdk.ApiException as e:
-    print("Exception when calling AnnotationApi->annotations_get: %s\n" % e)
+    print("Exception when calling AnnotationsApi->annotations_get: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -83,34 +83,34 @@ All URIs are relative to *http://localhost:81/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AnnotationApi* | [**annotations_get**](docs/AnnotationApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
-*AnnotationApi* | [**annotations_id_get**](docs/AnnotationApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
-*AnnotationApi* | [**annotations_id_put**](docs/AnnotationApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
-*AnnotationApi* | [**annotations_post**](docs/AnnotationApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
-*DefaultApi* | [**meta_analysis_results_get**](docs/DefaultApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
-*DefaultApi* | [**meta_analysis_results_id_get**](docs/DefaultApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+*AnnotationsApi* | [**annotations_get**](docs/AnnotationsApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
+*AnnotationsApi* | [**annotations_id_get**](docs/AnnotationsApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
+*AnnotationsApi* | [**annotations_id_put**](docs/AnnotationsApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
+*AnnotationsApi* | [**annotations_post**](docs/AnnotationsApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
 *DefaultApi* | [**meta_analysis_results_id_put**](docs/DefaultApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
 *DefaultApi* | [**meta_analysis_results_post**](docs/DefaultApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
-*DefaultApi* | [**neurovault_collections_get**](docs/DefaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Your GET endpoint
-*DefaultApi* | [**neurovault_collections_id_get**](docs/DefaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
 *DefaultApi* | [**neurovault_collections_id_put**](docs/DefaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
 *DefaultApi* | [**neurovault_collections_post**](docs/DefaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | 
-*DefaultApi* | [**neurovault_files_get**](docs/DefaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
-*DefaultApi* | [**neurovault_files_id_get**](docs/DefaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
 *DefaultApi* | [**neurovault_files_id_put**](docs/DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
 *DefaultApi* | [**neurovault_files_post**](docs/DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
-*DefaultApi* | [**projects_get**](docs/DefaultApi.md#projects_get) | **GET** /projects | Your GET endpoint
-*DefaultApi* | [**projects_id_get**](docs/DefaultApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 *DefaultApi* | [**projects_id_put**](docs/DefaultApi.md#projects_id_put) | **PUT** /projects/{id} | 
 *DefaultApi* | [**projects_post**](docs/DefaultApi.md#projects_post) | **POST** /projects | 
-*MetaAnalysisApi* | [**meta_analyses_get**](docs/MetaAnalysisApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
-*MetaAnalysisApi* | [**meta_analyses_id_get**](docs/MetaAnalysisApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
-*MetaAnalysisApi* | [**meta_analyses_id_put**](docs/MetaAnalysisApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
-*MetaAnalysisApi* | [**meta_analyses_post**](docs/MetaAnalysisApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
-*SpecificationApi* | [**specifications_get**](docs/SpecificationApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
-*SpecificationApi* | [**specifications_id_get**](docs/SpecificationApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
-*SpecificationApi* | [**specifications_id_put**](docs/SpecificationApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
-*SpecificationApi* | [**specifications_post**](docs/SpecificationApi.md#specifications_post) | **POST** /specifications | Create a Specification
+*MetaAnalysesApi* | [**meta_analyses_get**](docs/MetaAnalysesApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
+*MetaAnalysesApi* | [**meta_analyses_id_get**](docs/MetaAnalysesApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
+*MetaAnalysesApi* | [**meta_analyses_id_put**](docs/MetaAnalysesApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
+*MetaAnalysesApi* | [**meta_analyses_post**](docs/MetaAnalysesApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
+*MetaAnalysesApi* | [**meta_analysis_results_get**](docs/MetaAnalysesApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
+*MetaAnalysesApi* | [**meta_analysis_results_id_get**](docs/MetaAnalysesApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+*NeurovaultApi* | [**neurovault_collections_get**](docs/NeurovaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Your GET endpoint
+*NeurovaultApi* | [**neurovault_collections_id_get**](docs/NeurovaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
+*NeurovaultApi* | [**neurovault_files_get**](docs/NeurovaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
+*NeurovaultApi* | [**neurovault_files_id_get**](docs/NeurovaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
+*ProjectsApi* | [**projects_get**](docs/ProjectsApi.md#projects_get) | **GET** /projects | Your GET endpoint
+*ProjectsApi* | [**projects_id_get**](docs/ProjectsApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
+*SpecificationsApi* | [**specifications_get**](docs/SpecificationsApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
+*SpecificationsApi* | [**specifications_id_get**](docs/SpecificationsApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
+*SpecificationsApi* | [**specifications_id_put**](docs/SpecificationsApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
+*SpecificationsApi* | [**specifications_post**](docs/SpecificationsApi.md#specifications_post) | **POST** /specifications | Create a Specification
 *StudysetApi* | [**studysets_get**](docs/StudysetApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
 *StudysetApi* | [**studysets_id_get**](docs/StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
 *StudysetApi* | [**studysets_id_put**](docs/StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset

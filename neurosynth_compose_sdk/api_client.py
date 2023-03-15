@@ -81,10 +81,12 @@ class ApiClient(object):
         self.user_agent = 'OpenAPI-Generator/0.0.1/python'
 
         # set convienent access to all apis
-        self.annotation = apis.AnnotationApi(api_client=self)
+        self.annotations = apis.AnnotationsApi(api_client=self)
         self.default = apis.DefaultApi(api_client=self)
-        self.meta_analysis = apis.MetaAnalysisApi(api_client=self)
-        self.specification = apis.SpecificationApi(api_client=self)
+        self.meta_analyses = apis.MetaAnalysesApi(api_client=self)
+        self.neurovault = apis.NeurovaultApi(api_client=self)
+        self.projects = apis.ProjectsApi(api_client=self)
+        self.specifications = apis.SpecificationsApi(api_client=self)
         self.studyset = apis.StudysetApi(api_client=self)
         self.user = apis.UserApi(api_client=self)
 
