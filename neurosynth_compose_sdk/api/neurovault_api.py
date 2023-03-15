@@ -23,6 +23,7 @@ from neurosynth_compose_sdk.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from neurosynth_compose_sdk.model.neurovault_collection_return import NeurovaultCollectionReturn
+from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
 from neurosynth_compose_sdk.model.neurovault_file_list import NeurovaultFileList
 from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
 
@@ -125,6 +126,99 @@ class NeurovaultApi(object):
             },
             api_client=api_client
         )
+        self.neurovault_collections_id_put_endpoint = _Endpoint(
+            settings={
+                'response_type': (NeurovaultCollectionReturn,),
+                'auth': [
+                    'JSON-Web-Token'
+                ],
+                'endpoint_path': '/neurovault-collections/{id}',
+                'operation_id': 'neurovault_collections_id_put',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                },
+                'location_map': {
+                    'id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.neurovault_collections_post_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'JSON-Web-Token'
+                ],
+                'endpoint_path': '/neurovault-collections',
+                'operation_id': 'neurovault_collections_post',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.neurovault_files_get_endpoint = _Endpoint(
             settings={
                 'response_type': (NeurovaultFileList,),
@@ -213,6 +307,178 @@ class NeurovaultApi(object):
                     'application/json'
                 ],
                 'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.neurovault_files_id_put_endpoint = _Endpoint(
+            settings={
+                'response_type': (NeurovaultFileReturn,),
+                'auth': [
+                    'JSON-Web-Token'
+                ],
+                'endpoint_path': '/neurovault-files/{id}',
+                'operation_id': 'neurovault_files_id_put',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'collection_id',
+                    'exception',
+                    'traceback',
+                    'status',
+                    'file',
+                    'image_id',
+                    'name',
+                    'map_type',
+                    'cognitive_contrast_cogatlas',
+                    'cognitive_contrast_cogatlas_id',
+                    'cognitive_paradigm_cogatlas',
+                    'cognitive_paradigm_cogatlas_id',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                    'exception',
+                    'traceback',
+                    'image_id',
+                    'name',
+                    'map_type',
+                    'cognitive_contrast_cogatlas',
+                    'cognitive_contrast_cogatlas_id',
+                    'cognitive_paradigm_cogatlas',
+                    'cognitive_paradigm_cogatlas_id',
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'collection_id':
+                        (str,),
+                    'exception':
+                        (str, none_type,),
+                    'traceback':
+                        (str, none_type,),
+                    'status':
+                        (str,),
+                    'file':
+                        (str,),
+                    'image_id':
+                        (str, none_type,),
+                    'name':
+                        (str, none_type,),
+                    'map_type':
+                        (str, none_type,),
+                    'cognitive_contrast_cogatlas':
+                        (str, none_type,),
+                    'cognitive_contrast_cogatlas_id':
+                        (str, none_type,),
+                    'cognitive_paradigm_cogatlas':
+                        (str, none_type,),
+                    'cognitive_paradigm_cogatlas_id':
+                        (str, none_type,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'collection_id': 'collection_id',
+                    'exception': 'exception',
+                    'traceback': 'traceback',
+                    'status': 'status',
+                    'file': 'file',
+                    'image_id': 'image_id',
+                    'name': 'name',
+                    'map_type': 'map_type',
+                    'cognitive_contrast_cogatlas': 'cognitive_contrast_cogatlas',
+                    'cognitive_contrast_cogatlas_id': 'cognitive_contrast_cogatlas_id',
+                    'cognitive_paradigm_cogatlas': 'cognitive_paradigm_cogatlas',
+                    'cognitive_paradigm_cogatlas_id': 'cognitive_paradigm_cogatlas_id',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'collection_id': 'form',
+                    'exception': 'form',
+                    'traceback': 'form',
+                    'status': 'form',
+                    'file': 'form',
+                    'image_id': 'form',
+                    'name': 'form',
+                    'map_type': 'form',
+                    'cognitive_contrast_cogatlas': 'form',
+                    'cognitive_contrast_cogatlas_id': 'form',
+                    'cognitive_paradigm_cogatlas': 'form',
+                    'cognitive_paradigm_cogatlas_id': 'form',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'multipart/form-data'
+                ]
+            },
+            api_client=api_client
+        )
+        self.neurovault_files_post_endpoint = _Endpoint(
+            settings={
+                'response_type': (NeurovaultFileReturn,),
+                'auth': [
+                    'JSON-Web-Token'
+                ],
+                'endpoint_path': '/neurovault-files',
+                'operation_id': 'neurovault_files_post',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'neurovault_file',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'neurovault_file':
+                        (NeurovaultFile,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'neurovault_file': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
@@ -366,6 +632,155 @@ class NeurovaultApi(object):
             id
         return self.neurovault_collections_id_get_endpoint.call_with_http_info(**kwargs)
 
+    def put_id(
+        self,
+        id,
+        **kwargs
+    ):
+        """neurovault_collections_id_put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.neurovault_collections_id_put(id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            NeurovaultCollectionReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        return self.neurovault_collections_id_put_endpoint.call_with_http_info(**kwargs)
+
+    def post(
+        self,
+        **kwargs
+    ):
+        """neurovault_collections_post  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.neurovault_collections_post(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.neurovault_collections_post_endpoint.call_with_http_info(**kwargs)
+
     def get(
         self,
         **kwargs
@@ -514,4 +929,166 @@ class NeurovaultApi(object):
         kwargs['id'] = \
             id
         return self.neurovault_files_id_get_endpoint.call_with_http_info(**kwargs)
+
+    def put_id(
+        self,
+        id,
+        **kwargs
+    ):
+        """neurovault_files_id_put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.neurovault_files_id_put(id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (str):
+
+        Keyword Args:
+            collection_id (str): [optional]
+            exception (str, none_type): [optional]
+            traceback (str, none_type): [optional]
+            status (str): [optional]
+            file (str): [optional]
+            image_id (str, none_type): [optional]
+            name (str, none_type): [optional]
+            map_type (str, none_type): [optional]
+            cognitive_contrast_cogatlas (str, none_type): [optional]
+            cognitive_contrast_cogatlas_id (str, none_type): [optional]
+            cognitive_paradigm_cogatlas (str, none_type): [optional]
+            cognitive_paradigm_cogatlas_id (str, none_type): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            NeurovaultFileReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['id'] = \
+            id
+        return self.neurovault_files_id_put_endpoint.call_with_http_info(**kwargs)
+
+    def post(
+        self,
+        **kwargs
+    ):
+        """neurovault_files_post  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.neurovault_files_post(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            neurovault_file (NeurovaultFile): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            NeurovaultFileReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.neurovault_files_post_endpoint.call_with_http_info(**kwargs)
 

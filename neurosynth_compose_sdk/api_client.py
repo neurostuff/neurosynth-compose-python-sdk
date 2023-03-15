@@ -82,13 +82,12 @@ class ApiClient(object):
 
         # set convienent access to all apis
         self.annotations = apis.AnnotationsApi(api_client=self)
-        self.default = apis.DefaultApi(api_client=self)
         self.meta_analyses = apis.MetaAnalysesApi(api_client=self)
         self.neurovault = apis.NeurovaultApi(api_client=self)
         self.projects = apis.ProjectsApi(api_client=self)
         self.specifications = apis.SpecificationsApi(api_client=self)
         self.studyset = apis.StudysetApi(api_client=self)
-        self.user = apis.UserApi(api_client=self)
+        self.users = apis.UsersApi(api_client=self)
 
 
     def __enter__(self):
