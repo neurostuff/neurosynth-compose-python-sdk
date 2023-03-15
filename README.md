@@ -87,26 +87,26 @@ Class | Method | HTTP request | Description
 *AnnotationsApi* | [**annotations_id_get**](docs/AnnotationsApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
 *AnnotationsApi* | [**annotations_id_put**](docs/AnnotationsApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
 *AnnotationsApi* | [**annotations_post**](docs/AnnotationsApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
-*DefaultApi* | [**meta_analysis_results_id_put**](docs/DefaultApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
-*DefaultApi* | [**meta_analysis_results_post**](docs/DefaultApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
-*DefaultApi* | [**neurovault_collections_id_put**](docs/DefaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
-*DefaultApi* | [**neurovault_collections_post**](docs/DefaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | 
-*DefaultApi* | [**neurovault_files_id_put**](docs/DefaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
-*DefaultApi* | [**neurovault_files_post**](docs/DefaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
-*DefaultApi* | [**projects_id_put**](docs/DefaultApi.md#projects_id_put) | **PUT** /projects/{id} | 
-*DefaultApi* | [**projects_post**](docs/DefaultApi.md#projects_post) | **POST** /projects | 
 *MetaAnalysesApi* | [**meta_analyses_get**](docs/MetaAnalysesApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 *MetaAnalysesApi* | [**meta_analyses_id_get**](docs/MetaAnalysesApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysesApi* | [**meta_analyses_id_put**](docs/MetaAnalysesApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
 *MetaAnalysesApi* | [**meta_analyses_post**](docs/MetaAnalysesApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
 *MetaAnalysesApi* | [**meta_analysis_results_get**](docs/MetaAnalysesApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
 *MetaAnalysesApi* | [**meta_analysis_results_id_get**](docs/MetaAnalysesApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+*MetaAnalysesApi* | [**meta_analysis_results_id_put**](docs/MetaAnalysesApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
+*MetaAnalysesApi* | [**meta_analysis_results_post**](docs/MetaAnalysesApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
 *NeurovaultApi* | [**neurovault_collections_get**](docs/NeurovaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Your GET endpoint
 *NeurovaultApi* | [**neurovault_collections_id_get**](docs/NeurovaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
+*NeurovaultApi* | [**neurovault_collections_id_put**](docs/NeurovaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
+*NeurovaultApi* | [**neurovault_collections_post**](docs/NeurovaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | 
 *NeurovaultApi* | [**neurovault_files_get**](docs/NeurovaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
 *NeurovaultApi* | [**neurovault_files_id_get**](docs/NeurovaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
+*NeurovaultApi* | [**neurovault_files_id_put**](docs/NeurovaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
+*NeurovaultApi* | [**neurovault_files_post**](docs/NeurovaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 *ProjectsApi* | [**projects_get**](docs/ProjectsApi.md#projects_get) | **GET** /projects | Your GET endpoint
 *ProjectsApi* | [**projects_id_get**](docs/ProjectsApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
+*ProjectsApi* | [**projects_id_put**](docs/ProjectsApi.md#projects_id_put) | **PUT** /projects/{id} | 
+*ProjectsApi* | [**projects_post**](docs/ProjectsApi.md#projects_post) | **POST** /projects | 
 *SpecificationsApi* | [**specifications_get**](docs/SpecificationsApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
 *SpecificationsApi* | [**specifications_id_get**](docs/SpecificationsApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
 *SpecificationsApi* | [**specifications_id_put**](docs/SpecificationsApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
@@ -115,10 +115,10 @@ Class | Method | HTTP request | Description
 *StudysetApi* | [**studysets_id_get**](docs/StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
 *StudysetApi* | [**studysets_id_put**](docs/StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
 *StudysetApi* | [**studysets_post**](docs/StudysetApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
-*UserApi* | [**users_get**](docs/UserApi.md#users_get) | **GET** /users | GET list of Users
-*UserApi* | [**users_id_get**](docs/UserApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
-*UserApi* | [**users_id_put**](docs/UserApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
-*UserApi* | [**users_post**](docs/UserApi.md#users_post) | **POST** /users | Create A New User
+*UsersApi* | [**users_get**](docs/UsersApi.md#users_get) | **GET** /users | GET list of Users
+*UsersApi* | [**users_id_get**](docs/UsersApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
+*UsersApi* | [**users_id_put**](docs/UsersApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
+*UsersApi* | [**users_post**](docs/UsersApi.md#users_post) | **POST** /users | Create A New User
 
 
 ## Documentation For Models

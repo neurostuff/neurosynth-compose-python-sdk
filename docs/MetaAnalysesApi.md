@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**meta_analyses_post**](MetaAnalysesApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
 [**meta_analysis_results_get**](MetaAnalysesApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
 [**meta_analysis_results_id_get**](MetaAnalysesApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+[**meta_analysis_results_id_put**](MetaAnalysesApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
+[**meta_analysis_results_post**](MetaAnalysesApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
 
 
 # **meta_analyses_get**
@@ -473,6 +475,185 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **meta_analysis_results_id_put**
+> ResultReturn meta_analysis_results_id_put(id)
+
+
+
+### Example
+
+
+```python
+import time
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.api import meta_analyses_api
+from neurosynth_compose_sdk.model.result_return import ResultReturn
+from neurosynth_compose_sdk.model.result import Result
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:81/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "http://localhost:81/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = meta_analyses_api.MetaAnalysesApi(api_client)
+    id = "id_example" # str | 
+    result = Result(
+        images={},
+        meta_analysis_id="meta_analysis_id_example",
+        cli_version="cli_version_example",
+        estimator=Estimator(
+            type="MKDADensity",
+            args={},
+        ),
+        neurostore_id="neurostore_id_example",
+        neurovault_collection=NeurovaultCollection(
+            files=[
+                None,
+            ],
+        ),
+    ) # Result |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.meta_analysis_results_id_put(id)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling MetaAnalysesApi->meta_analysis_results_id_put: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.meta_analysis_results_id_put(id, result=result)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling MetaAnalysesApi->meta_analysis_results_id_put: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  |
+ **result** | [**Result**](Result.md)|  | [optional]
+
+### Return type
+
+[**ResultReturn**](ResultReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **meta_analysis_results_post**
+> ResultReturn meta_analysis_results_post()
+
+
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import time
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.api import meta_analyses_api
+from neurosynth_compose_sdk.model.result_return import ResultReturn
+from neurosynth_compose_sdk.model.result import Result
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:81/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "http://localhost:81/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = meta_analyses_api.MetaAnalysesApi(api_client)
+    result = Result(
+        images={},
+        meta_analysis_id="meta_analysis_id_example",
+        cli_version="cli_version_example",
+        estimator=Estimator(
+            type="MKDADensity",
+            args={},
+        ),
+        neurostore_id="neurostore_id_example",
+        neurovault_collection=NeurovaultCollection(
+            files=[
+                None,
+            ],
+        ),
+    ) # Result |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.meta_analysis_results_post(result=result)
+        pprint(api_response)
+    except neurosynth_compose_sdk.ApiException as e:
+        print("Exception when calling MetaAnalysesApi->meta_analysis_results_post: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **result** | [**Result**](Result.md)|  | [optional]
+
+### Return type
+
+[**ResultReturn**](ResultReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

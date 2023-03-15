@@ -1,19 +1,21 @@
-# neurosynth_compose_sdk.ProjectsApi
+# neurosynth_compose_sdk.UsersApi
 
 All URIs are relative to *http://localhost:81/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**projects_get**](ProjectsApi.md#projects_get) | **GET** /projects | Your GET endpoint
-[**projects_id_get**](ProjectsApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
-[**projects_id_put**](ProjectsApi.md#projects_id_put) | **PUT** /projects/{id} | 
-[**projects_post**](ProjectsApi.md#projects_post) | **POST** /projects | 
+[**users_get**](UsersApi.md#users_get) | **GET** /users | GET list of Users
+[**users_id_get**](UsersApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
+[**users_id_put**](UsersApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
+[**users_post**](UsersApi.md#users_post) | **POST** /users | Create A New User
 
 
-# **projects_get**
-> ProjectList projects_get()
+# **users_get**
+> UserList users_get()
 
-Your GET endpoint
+GET list of Users
+
+List all users
 
 ### Example
 
@@ -21,8 +23,8 @@ Your GET endpoint
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import projects_api
-from neurosynth_compose_sdk.model.project_list import ProjectList
+from neurosynth_compose_sdk.api import users_api
+from neurosynth_compose_sdk.model.user_list import UserList
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -34,15 +36,15 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
+    api_instance = users_api.UsersApi(api_client)
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Your GET endpoint
-        api_response = api_instance.projects_get()
+        # GET list of Users
+        api_response = api_instance.users_get()
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->projects_get: %s\n" % e)
+        print("Exception when calling UsersApi->users_get: %s\n" % e)
 ```
 
 
@@ -51,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ProjectList**](ProjectList.md)
+[**UserList**](UserList.md)
 
 ### Authorization
 
@@ -71,10 +73,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **projects_id_get**
-> ProjectReturn projects_id_get(id)
+# **users_id_get**
+> UserReturn users_id_get(id)
 
-Your GET endpoint
+Get User Info by User ID
+
+Retrieve the information of the user with the matching user ID.
 
 ### Example
 
@@ -82,8 +86,8 @@ Your GET endpoint
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import projects_api
-from neurosynth_compose_sdk.model.project_return import ProjectReturn
+from neurosynth_compose_sdk.api import users_api
+from neurosynth_compose_sdk.model.user_return import UserReturn
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -95,16 +99,16 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
+    api_instance = users_api.UsersApi(api_client)
     id = "id_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
-        # Your GET endpoint
-        api_response = api_instance.projects_id_get(id)
+        # Get User Info by User ID
+        api_response = api_instance.users_id_get(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->projects_id_get: %s\n" % e)
+        print("Exception when calling UsersApi->users_id_get: %s\n" % e)
 ```
 
 
@@ -116,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectReturn**](ProjectReturn.md)
+[**UserReturn**](UserReturn.md)
 
 ### Authorization
 
@@ -136,10 +140,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **projects_id_put**
-> ProjectReturn projects_id_put(id)
+# **users_id_put**
+> UserReturn users_id_put(id)
 
+Update User Information
 
+update information about a user
 
 ### Example
 
@@ -148,9 +154,9 @@ No authorization required
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import projects_api
-from neurosynth_compose_sdk.model.project import Project
-from neurosynth_compose_sdk.model.project_return import ProjectReturn
+from neurosynth_compose_sdk.api import users_api
+from neurosynth_compose_sdk.model.user_return import UserReturn
+from neurosynth_compose_sdk.model.user import User
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -171,31 +177,28 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
+    api_instance = users_api.UsersApi(api_client)
     id = "id_example" # str | 
-    project = Project(
-        provenance={},
-        meta_analyses=[
-            None,
-        ],
-        name="name_example",
-        description="description_example",
-    ) # Project |  (optional)
+    user = User(
+        external_id="external_id_example",
+    ) # User |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.projects_id_put(id)
+        # Update User Information
+        api_response = api_instance.users_id_put(id)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->projects_id_put: %s\n" % e)
+        print("Exception when calling UsersApi->users_id_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.projects_id_put(id, project=project)
+        # Update User Information
+        api_response = api_instance.users_id_put(id, user=user)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->projects_id_put: %s\n" % e)
+        print("Exception when calling UsersApi->users_id_put: %s\n" % e)
 ```
 
 
@@ -204,11 +207,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  |
- **project** | [**Project**](Project.md)|  | [optional]
+ **user** | [**User**](User.md)|  | [optional]
 
 ### Return type
 
-[**ProjectReturn**](ProjectReturn.md)
+[**UserReturn**](UserReturn.md)
 
 ### Authorization
 
@@ -228,10 +231,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **projects_post**
-> ProjectReturn projects_post()
+# **users_post**
+> UserReturn users_post()
 
+Create A New User
 
+create a single user
 
 ### Example
 
@@ -240,9 +245,9 @@ Name | Type | Description  | Notes
 ```python
 import time
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.api import projects_api
-from neurosynth_compose_sdk.model.project import Project
-from neurosynth_compose_sdk.model.project_return import ProjectReturn
+from neurosynth_compose_sdk.api import users_api
+from neurosynth_compose_sdk.model.user_return import UserReturn
+from neurosynth_compose_sdk.model.user import User
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -263,23 +268,19 @@ configuration = neurosynth_compose_sdk.Configuration(
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
-    project = Project(
-        provenance={},
-        meta_analyses=[
-            None,
-        ],
-        name="name_example",
-        description="description_example",
-    ) # Project |  (optional)
+    api_instance = users_api.UsersApi(api_client)
+    user = User(
+        external_id="external_id_example",
+    ) # User |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.projects_post(project=project)
+        # Create A New User
+        api_response = api_instance.users_post(user=user)
         pprint(api_response)
     except neurosynth_compose_sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->projects_post: %s\n" % e)
+        print("Exception when calling UsersApi->users_post: %s\n" % e)
 ```
 
 
@@ -287,11 +288,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | [**Project**](Project.md)|  | [optional]
+ **user** | [**User**](User.md)|  | [optional]
 
 ### Return type
 
-[**ProjectReturn**](ProjectReturn.md)
+[**UserReturn**](UserReturn.md)
 
 ### Authorization
 
