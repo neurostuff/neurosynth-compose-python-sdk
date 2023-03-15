@@ -176,7 +176,7 @@ class Endpoint(object):
         """ This method is invoked when endpoints are called
         Example:
 
-        api_instance = AnnotationApi()
+        api_instance = AnnotationsApi()
         api_instance.annotations_get  # this is an instance of the class Endpoint
         api_instance.annotations_get()  # this invokes api_instance.annotations_get.__call__()
         which then invokes the callable functions stored in that endpoint at
