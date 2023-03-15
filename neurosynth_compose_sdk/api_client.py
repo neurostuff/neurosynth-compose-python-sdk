@@ -86,7 +86,7 @@ class ApiClient(object):
         self.neurovault = apis.NeurovaultApi(api_client=self)
         self.projects = apis.ProjectsApi(api_client=self)
         self.specifications = apis.SpecificationsApi(api_client=self)
-        self.studyset = apis.StudysetApi(api_client=self)
+        self.studysets = apis.StudysetsApi(api_client=self)
         self.users = apis.UsersApi(api_client=self)
 
 

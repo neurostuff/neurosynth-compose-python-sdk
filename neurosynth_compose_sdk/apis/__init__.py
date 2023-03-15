@@ -19,5 +19,5 @@ from neurosynth_compose_sdk.api.meta_analyses_api import MetaAnalysesApi
 from neurosynth_compose_sdk.api.neurovault_api import NeurovaultApi
 from neurosynth_compose_sdk.api.projects_api import ProjectsApi
 from neurosynth_compose_sdk.api.specifications_api import SpecificationsApi
-from neurosynth_compose_sdk.api.studyset_api import StudysetApi
+from neurosynth_compose_sdk.api.studysets_api import StudysetsApi
 from neurosynth_compose_sdk.api.users_api import UsersApi

@@ -39,10 +39,10 @@ docs/SpecificationPostBody.md
 docs/SpecificationReturn.md
 docs/SpecificationsApi.md
 docs/Studyset.md
-docs/StudysetApi.md
 docs/StudysetList.md
 docs/StudysetPostBody.md
 docs/StudysetReturn.md
+docs/StudysetsApi.md
 docs/User.md
 docs/UserList.md
 docs/UserReturn.md
@@ -55,7 +55,7 @@ neurosynth_compose_sdk/api/meta_analyses_api.py
 neurosynth_compose_sdk/api/neurovault_api.py
 neurosynth_compose_sdk/api/projects_api.py
 neurosynth_compose_sdk/api/specifications_api.py
-neurosynth_compose_sdk/api/studyset_api.py
+neurosynth_compose_sdk/api/studysets_api.py
 neurosynth_compose_sdk/api/users_api.py
 neurosynth_compose_sdk/api_client.py
 neurosynth_compose_sdk/apis/__init__.py
@@ -108,5 +108,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_users_api.py
+test/test_studysets_api.py
 tox.ini

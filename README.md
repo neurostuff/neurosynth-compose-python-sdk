@@ -111,10 +111,10 @@ Class | Method | HTTP request | Description
 *SpecificationsApi* | [**specifications_id_get**](docs/SpecificationsApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
 *SpecificationsApi* | [**specifications_id_put**](docs/SpecificationsApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
 *SpecificationsApi* | [**specifications_post**](docs/SpecificationsApi.md#specifications_post) | **POST** /specifications | Create a Specification
-*StudysetApi* | [**studysets_get**](docs/StudysetApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
-*StudysetApi* | [**studysets_id_get**](docs/StudysetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
-*StudysetApi* | [**studysets_id_put**](docs/StudysetApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
-*StudysetApi* | [**studysets_post**](docs/StudysetApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
+*StudysetsApi* | [**studysets_get**](docs/StudysetsApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
+*StudysetsApi* | [**studysets_id_get**](docs/StudysetsApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
+*StudysetsApi* | [**studysets_id_put**](docs/StudysetsApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
+*StudysetsApi* | [**studysets_post**](docs/StudysetsApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
 *UsersApi* | [**users_get**](docs/UsersApi.md#users_get) | **GET** /users | GET list of Users
 *UsersApi* | [**users_id_get**](docs/UsersApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
 *UsersApi* | [**users_id_put**](docs/UsersApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
