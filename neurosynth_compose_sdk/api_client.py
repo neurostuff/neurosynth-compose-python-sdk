@@ -123,6 +123,7 @@ class ParameterSerializerBase:
     def _get_default_explode(cls, style: ParameterStyle) -> bool:
         return False
 
+    # https://github.com/OpenAPITools/openapi-generator/issues/13686
     @staticmethod
     def __ref6570_item_value(in_data: typing.Any, percent_encode: bool):
         """
@@ -138,6 +139,8 @@ class ParameterSerializerBase:
             if percent_encode:
                 return quote(str(in_data))
             return str(in_data)
+        elif isinstance(in_data, bool): # HERE
+            return "true" if in_data else "false" # HERE
         elif isinstance(in_data, none_type):
             # ignored by the expansion process https://datatracker.ietf.org/doc/html/rfc6570#section-3.2.1
             return None
@@ -231,6 +234,7 @@ class ParameterSerializerBase:
             [key + '=' + val for key, val in in_data_transformed.items()]
         )
 
+    # https://github.com/OpenAPITools/openapi-generator/issues/13686
     @classmethod
     def _ref6570_expansion(
         cls,
@@ -245,7 +249,7 @@ class ParameterSerializerBase:
         """
         named_parameter_expansion = prefix_separator_iterator.separator in {'&', ';'}
         var_name_piece = variable_name if named_parameter_expansion else ''
-        if type(in_data) in {str, float, int}:
+        if type(in_data) in {str, float, int, bool}:  # add ", bool" here.
             return cls.__ref6570_str_float_int_expansion(
                 variable_name,
                 in_data,
