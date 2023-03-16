@@ -116,8 +116,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_compose_api.py
-test/test_get_api.py
-test/test_post_api.py
-test/test_put_api.py
 tox.ini
