@@ -1,48 +1,91 @@
-# flake8: noqa
+""" Contains all the data models used in inputs/outputs """
 
-# import all models into this package
-# if you have many models here with many references from one model to another this may
-# raise a RecursionError
-# to avoid this, import only the models that you directly need like:
-# from from neurosynth_compose_sdk.model.pet import Pet
-# or import this package, but before doing it, use:
-# import sys
-# sys.setrecursionlimit(n)
+from .annotation import Annotation
+from .annotation_list import AnnotationList
+from .annotation_post import AnnotationPost
+from .annotation_post_body import AnnotationPostBody
+from .annotation_return import AnnotationReturn
+from .annotation_snapshot import AnnotationSnapshot
+from .corrector import Corrector
+from .corrector_args import CorrectorArgs
+from .estimator import Estimator
+from .estimator_args import EstimatorArgs
+from .meta_analysis import MetaAnalysis
+from .meta_analysis_list import MetaAnalysisList
+from .meta_analysis_post_body import MetaAnalysisPostBody
+from .meta_analysis_provenance import MetaAnalysisProvenance
+from .meta_analysis_return import MetaAnalysisReturn
+from .metadata import Metadata
+from .neurovault_collection import NeurovaultCollection
+from .neurovault_collection_return import NeurovaultCollectionReturn
+from .neurovault_file import NeurovaultFile
+from .neurovault_file_list import NeurovaultFileList
+from .neurovault_file_return import NeurovaultFileReturn
+from .neurovault_list import NeurovaultList
+from .project import Project
+from .project_list import ProjectList
+from .project_provenance import ProjectProvenance
+from .project_return import ProjectReturn
+from .read_only import ReadOnly
+from .result import Result
+from .result_images import ResultImages
+from .result_list import ResultList
+from .result_return import ResultReturn
+from .specification import Specification
+from .specification_list import SpecificationList
+from .specification_post_body import SpecificationPostBody
+from .specification_return import SpecificationReturn
+from .studyset import Studyset
+from .studyset_list import StudysetList
+from .studyset_post_body import StudysetPostBody
+from .studyset_return import StudysetReturn
+from .studyset_snapshot import StudysetSnapshot
+from .user import User
+from .user_list import UserList
+from .user_return import UserReturn
 
-from neurosynth_compose_sdk.model.annotation import Annotation
-from neurosynth_compose_sdk.model.annotation_list import AnnotationList
-from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
-from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
-from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
-from neurosynth_compose_sdk.model.annotation_update_all_of import AnnotationUpdateAllOf
-from neurosynth_compose_sdk.model.corrector import Corrector
-from neurosynth_compose_sdk.model.estimator import Estimator
-from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
-from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
-from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
-from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
-from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
-from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
-from neurosynth_compose_sdk.model.neurovault_collection_return import NeurovaultCollectionReturn
-from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
-from neurosynth_compose_sdk.model.neurovault_file_list import NeurovaultFileList
-from neurosynth_compose_sdk.model.neurovault_file_return import NeurovaultFileReturn
-from neurosynth_compose_sdk.model.neurovault_list import NeurovaultList
-from neurosynth_compose_sdk.model.project import Project
-from neurosynth_compose_sdk.model.project_list import ProjectList
-from neurosynth_compose_sdk.model.project_return import ProjectReturn
-from neurosynth_compose_sdk.model.read_only import ReadOnly
-from neurosynth_compose_sdk.model.result import Result
-from neurosynth_compose_sdk.model.result_list import ResultList
-from neurosynth_compose_sdk.model.result_return import ResultReturn
-from neurosynth_compose_sdk.model.specification import Specification
-from neurosynth_compose_sdk.model.specification_list import SpecificationList
-from neurosynth_compose_sdk.model.specification_post_body import SpecificationPostBody
-from neurosynth_compose_sdk.model.specification_return import SpecificationReturn
-from neurosynth_compose_sdk.model.studyset import Studyset
-from neurosynth_compose_sdk.model.studyset_list import StudysetList
-from neurosynth_compose_sdk.model.studyset_post_body import StudysetPostBody
-from neurosynth_compose_sdk.model.studyset_return import StudysetReturn
-from neurosynth_compose_sdk.model.user import User
-from neurosynth_compose_sdk.model.user_list import UserList
-from neurosynth_compose_sdk.model.user_return import UserReturn
+__all__ = (
+    "Annotation",
+    "AnnotationList",
+    "AnnotationPost",
+    "AnnotationPostBody",
+    "AnnotationReturn",
+    "AnnotationSnapshot",
+    "Corrector",
+    "CorrectorArgs",
+    "Estimator",
+    "EstimatorArgs",
+    "MetaAnalysis",
+    "MetaAnalysisList",
+    "MetaAnalysisPostBody",
+    "MetaAnalysisProvenance",
+    "MetaAnalysisReturn",
+    "Metadata",
+    "NeurovaultCollection",
+    "NeurovaultCollectionReturn",
+    "NeurovaultFile",
+    "NeurovaultFileList",
+    "NeurovaultFileReturn",
+    "NeurovaultList",
+    "Project",
+    "ProjectList",
+    "ProjectProvenance",
+    "ProjectReturn",
+    "ReadOnly",
+    "Result",
+    "ResultImages",
+    "ResultList",
+    "ResultReturn",
+    "Specification",
+    "SpecificationList",
+    "SpecificationPostBody",
+    "SpecificationReturn",
+    "Studyset",
+    "StudysetList",
+    "StudysetPostBody",
+    "StudysetReturn",
+    "StudysetSnapshot",
+    "User",
+    "UserList",
+    "UserReturn",
+)
