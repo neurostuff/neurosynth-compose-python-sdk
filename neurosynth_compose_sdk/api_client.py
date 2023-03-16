@@ -82,9 +82,13 @@ class ApiClient(object):
 
         # set convienent access to all apis
         self.annotations = apis.AnnotationsApi(api_client=self)
+        self.compose = apis.ComposeApi(api_client=self)
+        self.get = apis.GetApi(api_client=self)
         self.meta_analyses = apis.MetaAnalysesApi(api_client=self)
         self.neurovault = apis.NeurovaultApi(api_client=self)
+        self.post = apis.PostApi(api_client=self)
         self.projects = apis.ProjectsApi(api_client=self)
+        self.put = apis.PutApi(api_client=self)
         self.specifications = apis.SpecificationsApi(api_client=self)
         self.studysets = apis.StudysetsApi(api_client=self)
         self.users = apis.UsersApi(api_client=self)

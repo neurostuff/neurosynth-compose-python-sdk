@@ -10,8 +10,10 @@ docs/AnnotationReturn.md
 docs/AnnotationUpdate.md
 docs/AnnotationUpdateAllOf.md
 docs/AnnotationsApi.md
+docs/ComposeApi.md
 docs/Corrector.md
 docs/Estimator.md
+docs/GetApi.md
 docs/InlineResponse400.md
 docs/MetaAnalysesApi.md
 docs/MetaAnalysis.md
@@ -25,10 +27,12 @@ docs/NeurovaultFile.md
 docs/NeurovaultFileList.md
 docs/NeurovaultFileReturn.md
 docs/NeurovaultList.md
+docs/PostApi.md
 docs/Project.md
 docs/ProjectList.md
 docs/ProjectReturn.md
 docs/ProjectsApi.md
+docs/PutApi.md
 docs/ReadOnly.md
 docs/Result.md
 docs/ResultList.md
@@ -51,9 +55,13 @@ git_push.sh
 neurosynth_compose_sdk/__init__.py
 neurosynth_compose_sdk/api/__init__.py
 neurosynth_compose_sdk/api/annotations_api.py
+neurosynth_compose_sdk/api/compose_api.py
+neurosynth_compose_sdk/api/get_api.py
 neurosynth_compose_sdk/api/meta_analyses_api.py
 neurosynth_compose_sdk/api/neurovault_api.py
+neurosynth_compose_sdk/api/post_api.py
 neurosynth_compose_sdk/api/projects_api.py
+neurosynth_compose_sdk/api/put_api.py
 neurosynth_compose_sdk/api/specifications_api.py
 neurosynth_compose_sdk/api/studysets_api.py
 neurosynth_compose_sdk/api/users_api.py
@@ -108,4 +116,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_compose_api.py
+test/test_get_api.py
+test/test_post_api.py
+test/test_put_api.py
 tox.ini

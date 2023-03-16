@@ -402,7 +402,7 @@ class Configuration(object):
                 'description': "testing",
             },
             {
-                'url': "https://synth.neurostore.org/api",
+                'url': "https://synth.neurostore.xyz/api",
                 'description': "staging",
             },
             {
