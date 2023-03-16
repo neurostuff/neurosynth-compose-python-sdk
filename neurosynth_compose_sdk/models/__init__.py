@@ -1,10 +1,12 @@
+# coding: utf-8
+
 # flake8: noqa
 
 # import all models into this package
 # if you have many models here with many references from one model to another this may
 # raise a RecursionError
 # to avoid this, import only the models that you directly need like:
-# from from neurosynth_compose_sdk.model.pet import Pet
+# from neurosynth_compose_sdk.model.pet import Pet
 # or import this package, but before doing it, use:
 # import sys
 # sys.setrecursionlimit(n)
@@ -14,10 +16,8 @@ from neurosynth_compose_sdk.model.annotation_list import AnnotationList
 from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
-from neurosynth_compose_sdk.model.annotation_update_all_of import AnnotationUpdateAllOf
 from neurosynth_compose_sdk.model.corrector import Corrector
 from neurosynth_compose_sdk.model.estimator import Estimator
-from neurosynth_compose_sdk.model.inline_response400 import InlineResponse400
 from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
