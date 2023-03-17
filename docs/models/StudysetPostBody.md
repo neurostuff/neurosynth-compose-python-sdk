@@ -9,10 +9,20 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 #### allOf
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+[all_of_0](#all_of_0) | bool,  | BoolClass,  | Whether the resource is public or private | if omitted the server will use the default value of False
 [Studyset](Studyset.md) | [**Studyset**](Studyset.md) | [**Studyset**](Studyset.md) |  | 
-[all_of_1](#all_of_1) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+[all_of_2](#all_of_2) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-# all_of_1
+# all_of_0
+
+Whether the resource is public or private
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+bool,  | BoolClass,  | Whether the resource is public or private | if omitted the server will use the default value of False
+
+# all_of_2
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

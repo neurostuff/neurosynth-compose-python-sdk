@@ -20,6 +20,7 @@ Key | Input Type | Accessed Type | Description | Notes
 **[results](#results)** | list, tuple,  | tuple,  | array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result. | [optional] 
 **[provenance](#provenance)** | dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  |  | [optional] 
 **project** | None, str,  | NoneClass, str,  |  | [optional] 
+**run_key** | str,  | str,  | a special key used to upload the results of this meta analysis. Can be used as an alternative to using your auth token from login.  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # specification

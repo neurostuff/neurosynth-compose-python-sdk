@@ -1002,6 +1002,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         ],
         provenance=dict(),
         project="project_example",
+        run_key="run_key_example",
     )
     try:
         # Update a meta-analysis

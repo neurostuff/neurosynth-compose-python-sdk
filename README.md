@@ -295,6 +295,7 @@ Class | Method | HTTP request | Description
  - [Project](docs/models/Project.md)
  - [ProjectList](docs/models/ProjectList.md)
  - [ProjectReturn](docs/models/ProjectReturn.md)
+ - [Public](docs/models/Public.md)
  - [ReadOnly](docs/models/ReadOnly.md)
  - [Result](docs/models/Result.md)
  - [ResultList](docs/models/ResultList.md)

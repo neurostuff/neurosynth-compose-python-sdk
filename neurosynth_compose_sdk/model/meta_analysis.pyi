@@ -335,6 +335,7 @@ class MetaAnalysis(
                         *_args,
                         _configuration=_configuration,
                     )
+            run_key = schemas.StrSchema
             __annotations__ = {
                 "specification": specification,
                 "studyset": studyset,
@@ -346,6 +347,7 @@ class MetaAnalysis(
                 "results": results,
                 "provenance": provenance,
                 "project": project,
+                "run_key": run_key,
             }
     
     @typing.overload
@@ -379,9 +381,12 @@ class MetaAnalysis(
     def __getitem__(self, name: typing_extensions.Literal["project"]) -> MetaOapg.properties.project: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["run_key"]) -> MetaOapg.properties.run_key: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "internal_studyset_id", "internal_annotation_id", "results", "provenance", "project", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "internal_studyset_id", "internal_annotation_id", "results", "provenance", "project", "run_key", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -417,9 +422,12 @@ class MetaAnalysis(
     def get_item_oapg(self, name: typing_extensions.Literal["project"]) -> typing.Union[MetaOapg.properties.project, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["run_key"]) -> typing.Union[MetaOapg.properties.run_key, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "internal_studyset_id", "internal_annotation_id", "results", "provenance", "project", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "internal_studyset_id", "internal_annotation_id", "results", "provenance", "project", "run_key", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -436,6 +444,7 @@ class MetaAnalysis(
         results: typing.Union[MetaOapg.properties.results, list, tuple, schemas.Unset] = schemas.unset,
         provenance: typing.Union[MetaOapg.properties.provenance, dict, frozendict.frozendict, None, schemas.Unset] = schemas.unset,
         project: typing.Union[MetaOapg.properties.project, None, str, schemas.Unset] = schemas.unset,
+        run_key: typing.Union[MetaOapg.properties.run_key, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'MetaAnalysis':
@@ -452,6 +461,7 @@ class MetaAnalysis(
             results=results,
             provenance=provenance,
             project=project,
+            run_key=run_key,
             _configuration=_configuration,
             **kwargs,
         )

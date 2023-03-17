@@ -34,6 +34,7 @@ docs/models/NeurovaultList.md
 docs/models/Project.md
 docs/models/ProjectList.md
 docs/models/ProjectReturn.md
+docs/models/Public.md
 docs/models/ReadOnly.md
 docs/models/Result.md
 docs/models/ResultList.md
@@ -107,6 +108,8 @@ neurosynth_compose_sdk/model/project_list.py
 neurosynth_compose_sdk/model/project_list.pyi
 neurosynth_compose_sdk/model/project_return.py
 neurosynth_compose_sdk/model/project_return.pyi
+neurosynth_compose_sdk/model/public.py
+neurosynth_compose_sdk/model/public.pyi
 neurosynth_compose_sdk/model/read_only.py
 neurosynth_compose_sdk/model/read_only.pyi
 neurosynth_compose_sdk/model/result.py
@@ -146,4 +149,5 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_models/__init__.py
+test/test_models/test_public.py
 tox.ini

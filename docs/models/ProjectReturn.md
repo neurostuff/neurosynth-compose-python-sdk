@@ -11,6 +11,16 @@ Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [ReadOnly](ReadOnly.md) | [**ReadOnly**](ReadOnly.md) | [**ReadOnly**](ReadOnly.md) |  | 
 [Project](Project.md) | [**Project**](Project.md) | [**Project**](Project.md) |  | 
+[all_of_2](#all_of_2) | bool,  | BoolClass,  | Whether the resource is public or private | if omitted the server will use the default value of False
+
+# all_of_2
+
+Whether the resource is public or private
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+bool,  | BoolClass,  | Whether the resource is public or private | if omitted the server will use the default value of False
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
