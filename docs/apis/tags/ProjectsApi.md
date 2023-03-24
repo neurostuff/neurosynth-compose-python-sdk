@@ -211,9 +211,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     }
     body = Project(
         provenance=dict(),
-        meta_analyses=[
-            None
-        ],
+        meta_analyses=None,
         name="name_example",
         description="description_example",
     )
@@ -324,9 +322,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only optional values
     body = Project(
         provenance=dict(),
-        meta_analyses=[
-            None
-        ],
+        meta_analyses=None,
         name="name_example",
         description="description_example",
     )

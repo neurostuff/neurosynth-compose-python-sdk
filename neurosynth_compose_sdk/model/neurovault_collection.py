@@ -41,64 +41,90 @@ class NeurovaultCollection(
             
             
             class files(
-                schemas.ListSchema
+                schemas.ComposedSchema,
             ):
             
             
                 class MetaOapg:
                     
                     
-                    class items(
-                        schemas.ComposedSchema,
+                    class one_of_0(
+                        schemas.ListSchema
                     ):
                     
                     
                         class MetaOapg:
-                            one_of_0 = schemas.StrSchema
-                            one_of_1 = schemas.DictSchema
+                            min_items = 1
                             
-                            @classmethod
-                            @functools.lru_cache()
-                            def one_of(cls):
-                                # we need this here to make our import statements work
-                                # we must store _composed_schemas in here so the code is only run
-                                # when we invoke this method. If we kept this at the class
-                                # level we would get an error because the class level
-                                # code would be run when this module is imported, and these composed
-                                # classes don't exist yet because their module has not finished
-                                # loading
-                                return [
-                                    cls.one_of_0,
-                                    cls.one_of_1,
-                                ]
-                    
+                            @staticmethod
+                            def items() -> typing.Type['NeurovaultFile']:
+                                return NeurovaultFile
                     
                         def __new__(
                             cls,
-                            *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+                            _arg: typing.Union[typing.Tuple['NeurovaultFile'], typing.List['NeurovaultFile']],
                             _configuration: typing.Optional[schemas.Configuration] = None,
-                            **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                        ) -> 'items':
+                        ) -> 'one_of_0':
                             return super().__new__(
                                 cls,
-                                *_args,
+                                _arg,
                                 _configuration=_configuration,
-                                **kwargs,
                             )
+                    
+                        def __getitem__(self, i: int) -> 'NeurovaultFile':
+                            return super().__getitem__(i)
+                    
+                    
+                    class one_of_1(
+                        schemas.ListSchema
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            items = schemas.StrSchema
+                    
+                        def __new__(
+                            cls,
+                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'one_of_1':
+                            return super().__new__(
+                                cls,
+                                _arg,
+                                _configuration=_configuration,
+                            )
+                    
+                        def __getitem__(self, i: int) -> MetaOapg.items:
+                            return super().__getitem__(i)
+                    
+                    @classmethod
+                    @functools.lru_cache()
+                    def one_of(cls):
+                        # we need this here to make our import statements work
+                        # we must store _composed_schemas in here so the code is only run
+                        # when we invoke this method. If we kept this at the class
+                        # level we would get an error because the class level
+                        # code would be run when this module is imported, and these composed
+                        # classes don't exist yet because their module has not finished
+                        # loading
+                        return [
+                            cls.one_of_0,
+                            cls.one_of_1,
+                        ]
+            
             
                 def __new__(
                     cls,
-                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]]],
+                    *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
                     _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                 ) -> 'files':
                     return super().__new__(
                         cls,
-                        _arg,
+                        *_args,
                         _configuration=_configuration,
+                        **kwargs,
                     )
-            
-                def __getitem__(self, i: int) -> MetaOapg.items:
-                    return super().__getitem__(i)
             result = schemas.StrSchema
             __annotations__ = {
                 "collection_id": collection_id,
@@ -143,7 +169,7 @@ class NeurovaultCollection(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
         collection_id: typing.Union[MetaOapg.properties.collection_id, str, schemas.Unset] = schemas.unset,
-        files: typing.Union[MetaOapg.properties.files, list, tuple, schemas.Unset] = schemas.unset,
+        files: typing.Union[MetaOapg.properties.files, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         result: typing.Union[MetaOapg.properties.result, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -157,3 +183,5 @@ class NeurovaultCollection(
             _configuration=_configuration,
             **kwargs,
         )
+
+from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile
