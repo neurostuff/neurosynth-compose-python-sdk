@@ -53,6 +53,7 @@ class ResultList(
                     
                     
                         class MetaOapg:
+                            min_items = 1
                             
                             @staticmethod
                             def items() -> typing.Type['ResultReturn']:
