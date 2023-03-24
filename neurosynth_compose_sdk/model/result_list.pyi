@@ -40,82 +40,89 @@ class ResultList(
             
             
             class results(
-                schemas.ListSchema
+                schemas.ComposedSchema,
             ):
             
             
                 class MetaOapg:
                     
                     
-                    class items(
-                        schemas.ComposedSchema,
+                    class one_of_0(
+                        schemas.ListSchema
                     ):
                     
                     
                         class MetaOapg:
                             
-                            
-                            class one_of_0(
-                                schemas.StrBase,
-                                schemas.NoneBase,
-                                schemas.Schema,
-                                schemas.NoneStrMixin
-                            ):
-                            
-                            
-                                def __new__(
-                                    cls,
-                                    *_args: typing.Union[None, str, ],
-                                    _configuration: typing.Optional[schemas.Configuration] = None,
-                                ) -> 'one_of_0':
-                                    return super().__new__(
-                                        cls,
-                                        *_args,
-                                        _configuration=_configuration,
-                                    )
-                            
-                            @classmethod
-                            @functools.lru_cache()
-                            def one_of(cls):
-                                # we need this here to make our import statements work
-                                # we must store _composed_schemas in here so the code is only run
-                                # when we invoke this method. If we kept this at the class
-                                # level we would get an error because the class level
-                                # code would be run when this module is imported, and these composed
-                                # classes don't exist yet because their module has not finished
-                                # loading
-                                return [
-                                    cls.one_of_0,
-                                    ResultReturn,
-                                ]
-                    
+                            @staticmethod
+                            def items() -> typing.Type['ResultReturn']:
+                                return ResultReturn
                     
                         def __new__(
                             cls,
-                            *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+                            _arg: typing.Union[typing.Tuple['ResultReturn'], typing.List['ResultReturn']],
                             _configuration: typing.Optional[schemas.Configuration] = None,
-                            **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                        ) -> 'items':
+                        ) -> 'one_of_0':
                             return super().__new__(
                                 cls,
-                                *_args,
+                                _arg,
                                 _configuration=_configuration,
-                                **kwargs,
                             )
+                    
+                        def __getitem__(self, i: int) -> 'ResultReturn':
+                            return super().__getitem__(i)
+                    
+                    
+                    class one_of_1(
+                        schemas.ListSchema
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            items = schemas.StrSchema
+                    
+                        def __new__(
+                            cls,
+                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'one_of_1':
+                            return super().__new__(
+                                cls,
+                                _arg,
+                                _configuration=_configuration,
+                            )
+                    
+                        def __getitem__(self, i: int) -> MetaOapg.items:
+                            return super().__getitem__(i)
+                    
+                    @classmethod
+                    @functools.lru_cache()
+                    def one_of(cls):
+                        # we need this here to make our import statements work
+                        # we must store _composed_schemas in here so the code is only run
+                        # when we invoke this method. If we kept this at the class
+                        # level we would get an error because the class level
+                        # code would be run when this module is imported, and these composed
+                        # classes don't exist yet because their module has not finished
+                        # loading
+                        return [
+                            cls.one_of_0,
+                            cls.one_of_1,
+                        ]
+            
             
                 def __new__(
                     cls,
-                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]]],
+                    *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
                     _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                 ) -> 'results':
                     return super().__new__(
                         cls,
-                        _arg,
+                        *_args,
                         _configuration=_configuration,
+                        **kwargs,
                     )
-            
-                def __getitem__(self, i: int) -> MetaOapg.items:
-                    return super().__getitem__(i)
             metadata = schemas.DictSchema
             __annotations__ = {
                 "results": results,
@@ -152,7 +159,7 @@ class ResultList(
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        results: typing.Union[MetaOapg.properties.results, list, tuple, schemas.Unset] = schemas.unset,
+        results: typing.Union[MetaOapg.properties.results, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         metadata: typing.Union[MetaOapg.properties.metadata, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
