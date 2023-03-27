@@ -1642,6 +1642,7 @@ No authorization required
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+* Api Key Authentication (run_key):
 ```python
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import compose_api
@@ -1663,6 +1664,12 @@ configuration = neurosynth_compose_sdk.Configuration(
 configuration = neurosynth_compose_sdk.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
+
+# Configure API key authorization: run_key
+configuration.api_key['run_key'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['run_key'] = 'Bearer'
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1733,7 +1740,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-[JSON-Web-Token](../../../README.md#JSON-Web-Token)
+[JSON-Web-Token](../../../README.md#JSON-Web-Token), [run_key](../../../README.md#run_key)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 

@@ -314,10 +314,17 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- Authentication schemes defined for the API:
+
 ## JSON-Web-Token
 
 - **Type**: Bearer authentication
+
+ Authentication schemes defined for the API:
+## run_key
+
+- **Type**: API key
+- **API key parameter name**: upload meta-analysis
+- **Location**: HTTP header
 
 
 ## Author

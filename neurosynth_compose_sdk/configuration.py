@@ -78,6 +78,25 @@ class Configuration(object):
       The validation of enums is performed for variables with defined enum values before.
 
     :Example:
+
+    API Key Authentication Example.
+    Given the following security scheme in the OpenAPI specification:
+      components:
+        securitySchemes:
+          cookieAuth:         # name for the security scheme
+            type: apiKey
+            in: cookie
+            name: JSESSIONID  # cookie name
+
+    You can programmatically set the cookie:
+
+conf = neurosynth_compose_sdk.Configuration(
+    api_key={'cookieAuth': 'abc123'}
+    api_key_prefix={'cookieAuth': 'JSESSIONID'}
+)
+
+    The following cookie will be added to the HTTP request:
+       Cookie: JSESSIONID abc123
     """
 
     _default = None
@@ -85,6 +104,8 @@ class Configuration(object):
     def __init__(
         self,
         host=None,
+        api_key=None,
+        api_key_prefix=None,
         discard_unknown_keys=False,
         disabled_client_side_validations="",
         server_index=None,
@@ -109,6 +130,19 @@ class Configuration(object):
         """Temp file folder for downloading files
         """
         # Authentication Settings
+        self.api_key = {}
+        if api_key:
+            self.api_key = api_key
+        """dict to store API key(s)
+        """
+        self.api_key_prefix = {}
+        if api_key_prefix:
+            self.api_key_prefix = api_key_prefix
+        """dict to store API prefix (e.g. Bearer)
+        """
+        self.refresh_api_key_hook = None
+        """function hook to refresh API key if expired
+        """
         self.disabled_client_side_validations = disabled_client_side_validations
         self.logger = {}
         """Logging Settings
@@ -353,6 +387,15 @@ class Configuration(object):
                 'in': 'header',
                 'key': 'Authorization',
                 'value': 'Bearer ' + self.access_token
+            }
+        if 'run_key' in self.api_key:
+            auth['run_key'] = {
+                'type': 'api_key',
+                'in': 'header',
+                'key': 'upload meta-analysis',
+                'value': self.get_api_key_with_prefix(
+                    'run_key',
+                ),
             }
         return auth
 
