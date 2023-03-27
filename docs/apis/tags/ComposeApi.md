@@ -997,9 +997,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         description="description_example",
         internal_studyset_id="internal_studyset_id_example",
         internal_annotation_id="internal_annotation_id_example",
-        results=[
-            None
-        ],
+        results=None,
         provenance=dict(),
         project="project_example",
         run_key="run_key_example",
@@ -1562,9 +1560,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         neurostore_id="neurostore_id_example",
         neurovault_collection=NeurovaultCollection(
             collection_id="collection_id_example",
-            files=[
-                None
-            ],
+            files=None,
             result="result_example",
         ),
     )
@@ -1684,9 +1680,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         neurostore_id="neurostore_id_example",
         neurovault_collection=NeurovaultCollection(
             collection_id="collection_id_example",
-            files=[
-                None
-            ],
+            files=None,
             result="result_example",
         ),
     )
@@ -2627,9 +2621,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     }
     body = Project(
         provenance=dict(),
-        meta_analyses=[
-            None
-        ],
+        meta_analyses=None,
         name="name_example",
         description="description_example",
     )
@@ -2740,9 +2732,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only optional values
     body = Project(
         provenance=dict(),
-        meta_analyses=[
-            None
-        ],
+        meta_analyses=None,
         name="name_example",
         description="description_example",
     )
