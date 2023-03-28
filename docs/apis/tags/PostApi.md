@@ -391,16 +391,15 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         images=dict(),
         meta_analysis_id="meta_analysis_id_example",
         cli_version="cli_version_example",
-        estimator=Estimator(
-            type="MKDADensity",
-            args=dict(),
-        ),
         neurostore_id="neurostore_id_example",
         neurovault_collection=NeurovaultCollection(
             collection_id="collection_id_example",
             files=None,
             result="result_example",
         ),
+        specification_snapshot=dict(),
+        studyset_snapshot=dict(),
+        annotation_snapshot=dict(),
     )
     try:
         api_response = api_instance.meta_analysis_results_post(
