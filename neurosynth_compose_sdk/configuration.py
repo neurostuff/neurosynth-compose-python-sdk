@@ -392,7 +392,7 @@ conf = neurosynth_compose_sdk.Configuration(
             auth['run_key'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'upload meta-analysis',
+                'key': 'run_key',
                 'value': self.get_api_key_with_prefix(
                     'run_key',
                 ),

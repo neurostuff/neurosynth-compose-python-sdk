@@ -323,7 +323,7 @@ Class | Method | HTTP request | Description
 ## run_key
 
 - **Type**: API key
-- **API key parameter name**: upload meta-analysis
+- **API key parameter name**: run_key
 - **Location**: HTTP header
 
 
