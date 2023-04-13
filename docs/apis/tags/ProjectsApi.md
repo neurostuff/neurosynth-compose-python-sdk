@@ -214,6 +214,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         meta_analyses=None,
         name="name_example",
         description="description_example",
+        public=True,
     )
     try:
         api_response = api_instance.projects_id_put(
@@ -325,6 +326,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         meta_analyses=None,
         name="name_example",
         description="description_example",
+        public=True,
     )
     try:
         api_response = api_instance.projects_post(

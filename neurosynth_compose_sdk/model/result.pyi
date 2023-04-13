@@ -88,6 +88,10 @@ class Result(
             specification_snapshot = schemas.DictSchema
             studyset_snapshot = schemas.DictSchema
             annotation_snapshot = schemas.DictSchema
+        
+            @staticmethod
+            def neurostore_study() -> typing.Type['NeurostoreStudy']:
+                return NeurostoreStudy
             __annotations__ = {
                 "images": images,
                 "meta_analysis_id": meta_analysis_id,
@@ -97,6 +101,7 @@ class Result(
                 "specification_snapshot": specification_snapshot,
                 "studyset_snapshot": studyset_snapshot,
                 "annotation_snapshot": annotation_snapshot,
+                "neurostore_study": neurostore_study,
             }
     
     @typing.overload
@@ -124,9 +129,12 @@ class Result(
     def __getitem__(self, name: typing_extensions.Literal["annotation_snapshot"]) -> MetaOapg.properties.annotation_snapshot: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["neurostore_study"]) -> 'NeurostoreStudy': ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["images", "meta_analysis_id", "cli_version", "neurostore_id", "neurovault_collection", "specification_snapshot", "studyset_snapshot", "annotation_snapshot", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["images", "meta_analysis_id", "cli_version", "neurostore_id", "neurovault_collection", "specification_snapshot", "studyset_snapshot", "annotation_snapshot", "neurostore_study", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -156,9 +164,12 @@ class Result(
     def get_item_oapg(self, name: typing_extensions.Literal["annotation_snapshot"]) -> typing.Union[MetaOapg.properties.annotation_snapshot, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["neurostore_study"]) -> typing.Union['NeurostoreStudy', schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["images", "meta_analysis_id", "cli_version", "neurostore_id", "neurovault_collection", "specification_snapshot", "studyset_snapshot", "annotation_snapshot", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["images", "meta_analysis_id", "cli_version", "neurostore_id", "neurovault_collection", "specification_snapshot", "studyset_snapshot", "annotation_snapshot", "neurostore_study", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -173,6 +184,7 @@ class Result(
         specification_snapshot: typing.Union[MetaOapg.properties.specification_snapshot, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         studyset_snapshot: typing.Union[MetaOapg.properties.studyset_snapshot, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         annotation_snapshot: typing.Union[MetaOapg.properties.annotation_snapshot, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        neurostore_study: typing.Union['NeurostoreStudy', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Result':
@@ -187,8 +199,10 @@ class Result(
             specification_snapshot=specification_snapshot,
             studyset_snapshot=studyset_snapshot,
             annotation_snapshot=annotation_snapshot,
+            neurostore_study=neurostore_study,
             _configuration=_configuration,
             **kwargs,
         )
 
+from neurosynth_compose_sdk.model.neurostore_study import NeurostoreStudy
 from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection

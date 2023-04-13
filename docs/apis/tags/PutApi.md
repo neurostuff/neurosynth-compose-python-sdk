@@ -289,19 +289,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = MetaAnalysis(
-        specification=None,
-        studyset=None,
-        annotation=None,
-        name="name_example",
-        description="description_example",
-        internal_studyset_id="internal_studyset_id_example",
-        internal_annotation_id="internal_annotation_id_example",
-        results=None,
-        provenance=dict(),
-        project="project_example",
-        run_key="run_key_example",
-    )
+    body = MetaAnalysis()
     try:
         # Update a meta-analysis
         api_response = api_instance.meta_analyses_id_put(
@@ -522,6 +510,10 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         specification_snapshot=dict(),
         studyset_snapshot=dict(),
         annotation_snapshot=dict(),
+        neurostore_study=NeurostoreStudy(
+            neurostore_id="neurostore_id_example",
+            table="table_example",
+        ),
     )
     try:
         api_response = api_instance.meta_analysis_results_id_put(
@@ -878,6 +870,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         meta_analyses=None,
         name="name_example",
         description="description_example",
+        public=True,
     )
     try:
         api_response = api_instance.projects_id_put(

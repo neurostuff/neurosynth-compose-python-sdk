@@ -35,36 +35,7 @@ class SpecificationPostBody(
 
 
     class MetaOapg:
-        all_of_0 = schemas.BoolSchema
-        
-        
-        class all_of_2(
-            schemas.AnyTypeSchema,
-        ):
-        
-        
-            class MetaOapg:
-                required = {
-                    "estimator",
-                    "type",
-                }
-        
-            
-            estimator: schemas.AnyTypeSchema
-            type: schemas.AnyTypeSchema
-        
-            def __new__(
-                cls,
-                *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-                _configuration: typing.Optional[schemas.Configuration] = None,
-                **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'all_of_2':
-                return super().__new__(
-                    cls,
-                    *_args,
-                    _configuration=_configuration,
-                    **kwargs,
-                )
+        all_of_1 = schemas.AnyTypeSchema
         
         @classmethod
         @functools.lru_cache()
@@ -77,9 +48,8 @@ class SpecificationPostBody(
             # classes don't exist yet because their module has not finished
             # loading
             return [
-                cls.all_of_0,
                 Specification,
-                cls.all_of_2,
+                cls.all_of_1,
             ]
 
 

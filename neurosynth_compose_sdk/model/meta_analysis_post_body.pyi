@@ -35,10 +35,9 @@ class MetaAnalysisPostBody(
 
 
     class MetaOapg:
-        all_of_0 = schemas.BoolSchema
         
         
-        class all_of_2(
+        class all_of_1(
             schemas.AnyTypeSchema,
         ):
         
@@ -60,7 +59,7 @@ class MetaAnalysisPostBody(
                 *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-            ) -> 'all_of_2':
+            ) -> 'all_of_1':
                 return super().__new__(
                     cls,
                     *_args,
@@ -79,9 +78,8 @@ class MetaAnalysisPostBody(
             # classes don't exist yet because their module has not finished
             # loading
             return [
-                cls.all_of_0,
                 MetaAnalysis,
-                cls.all_of_2,
+                cls.all_of_1,
             ]
 
 

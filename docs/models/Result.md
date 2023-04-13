@@ -18,6 +18,7 @@ Key | Input Type | Accessed Type | Description | Notes
 **[specification_snapshot](#specification_snapshot)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
 **[studyset_snapshot](#studyset_snapshot)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
 **[annotation_snapshot](#annotation_snapshot)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**neurostore_study** | [**NeurostoreStudy**](NeurostoreStudy.md) | [**NeurostoreStudy**](NeurostoreStudy.md) |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # images

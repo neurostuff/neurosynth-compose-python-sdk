@@ -17,3 +17,4 @@ class TagValues(str, enum.Enum):
     SPECIFICATIONS = "specifications"
     STUDYSETS = "studysets"
     USERS = "users"
+    DEFAULT = "default"

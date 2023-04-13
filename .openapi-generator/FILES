@@ -5,6 +5,7 @@
 README.md
 docs/apis/tags/AnnotationsApi.md
 docs/apis/tags/ComposeApi.md
+docs/apis/tags/DefaultApi.md
 docs/apis/tags/GetApi.md
 docs/apis/tags/MetaAnalysesApi.md
 docs/apis/tags/NeurovaultApi.md
@@ -25,6 +26,10 @@ docs/models/MetaAnalysis.md
 docs/models/MetaAnalysisList.md
 docs/models/MetaAnalysisPostBody.md
 docs/models/MetaAnalysisReturn.md
+docs/models/NeurostoreList.md
+docs/models/NeurostoreStudy.md
+docs/models/NeurostoreStudyList.md
+docs/models/NeurostoreStudyReturn.md
 docs/models/NeurovaultCollection.md
 docs/models/NeurovaultCollectionReturn.md
 docs/models/NeurovaultFile.md
@@ -34,7 +39,6 @@ docs/models/NeurovaultList.md
 docs/models/Project.md
 docs/models/ProjectList.md
 docs/models/ProjectReturn.md
-docs/models/Public.md
 docs/models/ReadOnly.md
 docs/models/Result.md
 docs/models/ResultList.md
@@ -56,6 +60,7 @@ neurosynth_compose_sdk/api_client.py
 neurosynth_compose_sdk/apis/__init__.py
 neurosynth_compose_sdk/apis/tags/annotations_api.py
 neurosynth_compose_sdk/apis/tags/compose_api.py
+neurosynth_compose_sdk/apis/tags/default_api.py
 neurosynth_compose_sdk/apis/tags/get_api.py
 neurosynth_compose_sdk/apis/tags/meta_analyses_api.py
 neurosynth_compose_sdk/apis/tags/neurovault_api.py
@@ -90,6 +95,14 @@ neurosynth_compose_sdk/model/meta_analysis_post_body.py
 neurosynth_compose_sdk/model/meta_analysis_post_body.pyi
 neurosynth_compose_sdk/model/meta_analysis_return.py
 neurosynth_compose_sdk/model/meta_analysis_return.pyi
+neurosynth_compose_sdk/model/neurostore_list.py
+neurosynth_compose_sdk/model/neurostore_list.pyi
+neurosynth_compose_sdk/model/neurostore_study.py
+neurosynth_compose_sdk/model/neurostore_study.pyi
+neurosynth_compose_sdk/model/neurostore_study_list.py
+neurosynth_compose_sdk/model/neurostore_study_list.pyi
+neurosynth_compose_sdk/model/neurostore_study_return.py
+neurosynth_compose_sdk/model/neurostore_study_return.pyi
 neurosynth_compose_sdk/model/neurovault_collection.py
 neurosynth_compose_sdk/model/neurovault_collection.pyi
 neurosynth_compose_sdk/model/neurovault_collection_return.py
@@ -108,8 +121,6 @@ neurosynth_compose_sdk/model/project_list.py
 neurosynth_compose_sdk/model/project_list.pyi
 neurosynth_compose_sdk/model/project_return.py
 neurosynth_compose_sdk/model/project_return.pyi
-neurosynth_compose_sdk/model/public.py
-neurosynth_compose_sdk/model/public.pyi
 neurosynth_compose_sdk/model/read_only.py
 neurosynth_compose_sdk/model/read_only.pyi
 neurosynth_compose_sdk/model/result.py
@@ -149,4 +160,8 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_models/__init__.py
+test/test_models/test_neurostore_list.py
+test/test_models/test_neurostore_study.py
+test/test_models/test_neurostore_study_list.py
+test/test_models/test_neurostore_study_return.py
 tox.ini

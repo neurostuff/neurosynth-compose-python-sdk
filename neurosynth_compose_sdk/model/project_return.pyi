@@ -35,7 +35,6 @@ class ProjectReturn(
 
 
     class MetaOapg:
-        all_of_2 = schemas.BoolSchema
         
         @classmethod
         @functools.lru_cache()
@@ -50,7 +49,6 @@ class ProjectReturn(
             return [
                 ReadOnly,
                 Project,
-                cls.all_of_2,
             ]
 
 
