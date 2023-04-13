@@ -22,7 +22,7 @@ from neurosynth_compose_sdk.model.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.model.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.model.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.model.meta_analysis_return import MetaAnalysisReturn
-from neurosynth_compose_sdk.model.neurostore_list import NeurostoreList
+from neurosynth_compose_sdk.model.neurostore_analysis import NeurostoreAnalysis
 from neurosynth_compose_sdk.model.neurostore_study import NeurostoreStudy
 from neurosynth_compose_sdk.model.neurostore_study_list import NeurostoreStudyList
 from neurosynth_compose_sdk.model.neurostore_study_return import NeurostoreStudyReturn

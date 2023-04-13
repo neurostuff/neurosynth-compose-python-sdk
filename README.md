@@ -290,7 +290,7 @@ Class | Method | HTTP request | Description
  - [MetaAnalysisList](docs/models/MetaAnalysisList.md)
  - [MetaAnalysisPostBody](docs/models/MetaAnalysisPostBody.md)
  - [MetaAnalysisReturn](docs/models/MetaAnalysisReturn.md)
- - [NeurostoreList](docs/models/NeurostoreList.md)
+ - [NeurostoreAnalysis](docs/models/NeurostoreAnalysis.md)
  - [NeurostoreStudy](docs/models/NeurostoreStudy.md)
  - [NeurostoreStudyList](docs/models/NeurostoreStudyList.md)
  - [NeurostoreStudyReturn](docs/models/NeurostoreStudyReturn.md)

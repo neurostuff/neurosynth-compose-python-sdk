@@ -38,22 +38,47 @@ class NeurostoreStudy(
         
         class properties:
             neurostore_id = schemas.StrSchema
-            table = schemas.StrSchema
+            
+            
+            class analyses(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    @staticmethod
+                    def items() -> typing.Type['NeurostoreAnalysis']:
+                        return NeurostoreAnalysis
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple['NeurostoreAnalysis'], typing.List['NeurostoreAnalysis']],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'analyses':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> 'NeurostoreAnalysis':
+                    return super().__getitem__(i)
             __annotations__ = {
                 "neurostore_id": neurostore_id,
-                "table": table,
+                "analyses": analyses,
             }
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["neurostore_id"]) -> MetaOapg.properties.neurostore_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["table"]) -> MetaOapg.properties.table: ...
+    def __getitem__(self, name: typing_extensions.Literal["analyses"]) -> MetaOapg.properties.analyses: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["neurostore_id", "table", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["neurostore_id", "analyses", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -62,12 +87,12 @@ class NeurostoreStudy(
     def get_item_oapg(self, name: typing_extensions.Literal["neurostore_id"]) -> typing.Union[MetaOapg.properties.neurostore_id, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["table"]) -> typing.Union[MetaOapg.properties.table, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["analyses"]) -> typing.Union[MetaOapg.properties.analyses, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["neurostore_id", "table", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["neurostore_id", "analyses", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -75,7 +100,7 @@ class NeurostoreStudy(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
         neurostore_id: typing.Union[MetaOapg.properties.neurostore_id, str, schemas.Unset] = schemas.unset,
-        table: typing.Union[MetaOapg.properties.table, str, schemas.Unset] = schemas.unset,
+        analyses: typing.Union[MetaOapg.properties.analyses, list, tuple, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'NeurostoreStudy':
@@ -83,7 +108,9 @@ class NeurostoreStudy(
             cls,
             *_args,
             neurostore_id=neurostore_id,
-            table=table,
+            analyses=analyses,
             _configuration=_configuration,
             **kwargs,
         )
+
+from neurosynth_compose_sdk.model.neurostore_analysis import NeurostoreAnalysis

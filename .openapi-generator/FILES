@@ -26,7 +26,7 @@ docs/models/MetaAnalysis.md
 docs/models/MetaAnalysisList.md
 docs/models/MetaAnalysisPostBody.md
 docs/models/MetaAnalysisReturn.md
-docs/models/NeurostoreList.md
+docs/models/NeurostoreAnalysis.md
 docs/models/NeurostoreStudy.md
 docs/models/NeurostoreStudyList.md
 docs/models/NeurostoreStudyReturn.md
@@ -95,8 +95,8 @@ neurosynth_compose_sdk/model/meta_analysis_post_body.py
 neurosynth_compose_sdk/model/meta_analysis_post_body.pyi
 neurosynth_compose_sdk/model/meta_analysis_return.py
 neurosynth_compose_sdk/model/meta_analysis_return.pyi
-neurosynth_compose_sdk/model/neurostore_list.py
-neurosynth_compose_sdk/model/neurostore_list.pyi
+neurosynth_compose_sdk/model/neurostore_analysis.py
+neurosynth_compose_sdk/model/neurostore_analysis.pyi
 neurosynth_compose_sdk/model/neurostore_study.py
 neurosynth_compose_sdk/model/neurostore_study.pyi
 neurosynth_compose_sdk/model/neurostore_study_list.py
@@ -160,4 +160,5 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_models/__init__.py
+test/test_models/test_neurostore_analysis.py
 tox.ini

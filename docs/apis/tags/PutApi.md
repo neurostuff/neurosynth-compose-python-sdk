@@ -512,7 +512,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         annotation_snapshot=dict(),
         neurostore_study=NeurostoreStudy(
             neurostore_id="neurostore_id_example",
-            table="table_example",
+            analyses=[
+                NeurostoreAnalysis(
+                    table="table_example",
+                    neurostore_id="neurostore_id_example",
+                )
+            ],
         ),
     )
     try:
