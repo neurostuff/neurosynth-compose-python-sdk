@@ -387,7 +387,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = post_api.PostApi(api_client)
 
     # example passing only optional values
-    body = Result(
+    body = dict(
         images=dict(),
         meta_analysis_id="meta_analysis_id_example",
         cli_version="cli_version_example",
@@ -422,8 +422,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+body | typing.Union[SchemaForRequestBodyMultipartFormData, Unset] | optional, default is unset |
+content_type | str | optional, default is 'multipart/form-data' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -431,7 +431,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 ### body
 
-# SchemaForRequestBodyApplicationJson
+# SchemaForRequestBodyMultipartFormData
 Type | Description  | Notes
 ------------- | ------------- | -------------
 [**Result**](../../models/Result.md) |  | 
