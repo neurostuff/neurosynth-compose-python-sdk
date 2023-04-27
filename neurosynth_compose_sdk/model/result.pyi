@@ -39,7 +39,6 @@ class Result(
     class MetaOapg:
         
         class properties:
-            images = schemas.DictSchema
             meta_analysis_id = schemas.StrSchema
             
             
@@ -63,7 +62,7 @@ class Result(
                     )
             
             
-            class neurostore_id(
+            class neurovault_collection_id(
                 schemas.StrBase,
                 schemas.NoneBase,
                 schemas.Schema,
@@ -75,37 +74,91 @@ class Result(
                     cls,
                     *_args: typing.Union[None, str, ],
                     _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'neurostore_id':
+                ) -> 'neurovault_collection_id':
                     return super().__new__(
                         cls,
                         *_args,
                         _configuration=_configuration,
                     )
-        
-            @staticmethod
-            def neurovault_collection() -> typing.Type['NeurovaultCollection']:
-                return NeurovaultCollection
-            specification_snapshot = schemas.DictSchema
-            studyset_snapshot = schemas.DictSchema
-            annotation_snapshot = schemas.DictSchema
-        
-            @staticmethod
-            def neurostore_study() -> typing.Type['NeurostoreStudy']:
-                return NeurostoreStudy
+            
+            
+            class methods_description(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'methods_description':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class neurovault_images(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    @staticmethod
+                    def items() -> typing.Type['NeurovaultFile']:
+                        return NeurovaultFile
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple['NeurovaultFile'], typing.List['NeurovaultFile']],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'neurovault_images':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> 'NeurovaultFile':
+                    return super().__getitem__(i)
+            
+            
+            class diagnostic_tables(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.StrSchema
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'diagnostic_tables':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
+             = schemas.StrSchema
             __annotations__ = {
-                "images": images,
                 "meta_analysis_id": meta_analysis_id,
                 "cli_version": cli_version,
-                "neurostore_id": neurostore_id,
-                "neurovault_collection": neurovault_collection,
-                "specification_snapshot": specification_snapshot,
-                "studyset_snapshot": studyset_snapshot,
-                "annotation_snapshot": annotation_snapshot,
-                "neurostore_study": neurostore_study,
+                "neurovault_collection_id": neurovault_collection_id,
+                "methods_description": methods_description,
+                "neurovault_images": neurovault_images,
+                "diagnostic_tables": diagnostic_tables,
+                "": ,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["images"]) -> MetaOapg.properties.images: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["meta_analysis_id"]) -> MetaOapg.properties.meta_analysis_id: ...
@@ -114,33 +167,27 @@ class Result(
     def __getitem__(self, name: typing_extensions.Literal["cli_version"]) -> MetaOapg.properties.cli_version: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["neurostore_id"]) -> MetaOapg.properties.neurostore_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["neurovault_collection_id"]) -> MetaOapg.properties.neurovault_collection_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["neurovault_collection"]) -> 'NeurovaultCollection': ...
+    def __getitem__(self, name: typing_extensions.Literal["methods_description"]) -> MetaOapg.properties.methods_description: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["specification_snapshot"]) -> MetaOapg.properties.specification_snapshot: ...
+    def __getitem__(self, name: typing_extensions.Literal["neurovault_images"]) -> MetaOapg.properties.neurovault_images: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["studyset_snapshot"]) -> MetaOapg.properties.studyset_snapshot: ...
+    def __getitem__(self, name: typing_extensions.Literal["diagnostic_tables"]) -> MetaOapg.properties.diagnostic_tables: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["annotation_snapshot"]) -> MetaOapg.properties.annotation_snapshot: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["neurostore_study"]) -> 'NeurostoreStudy': ...
+    def __getitem__(self, name: typing_extensions.Literal[""]) -> MetaOapg.properties.: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["images", "meta_analysis_id", "cli_version", "neurostore_id", "neurovault_collection", "specification_snapshot", "studyset_snapshot", "annotation_snapshot", "neurostore_study", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["meta_analysis_id", "cli_version", "neurovault_collection_id", "methods_description", "neurovault_images", "diagnostic_tables", "", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["images"]) -> typing.Union[MetaOapg.properties.images, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["meta_analysis_id"]) -> typing.Union[MetaOapg.properties.meta_analysis_id, schemas.Unset]: ...
@@ -149,60 +196,52 @@ class Result(
     def get_item_oapg(self, name: typing_extensions.Literal["cli_version"]) -> typing.Union[MetaOapg.properties.cli_version, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["neurostore_id"]) -> typing.Union[MetaOapg.properties.neurostore_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["neurovault_collection_id"]) -> typing.Union[MetaOapg.properties.neurovault_collection_id, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["neurovault_collection"]) -> typing.Union['NeurovaultCollection', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["methods_description"]) -> typing.Union[MetaOapg.properties.methods_description, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["specification_snapshot"]) -> typing.Union[MetaOapg.properties.specification_snapshot, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["neurovault_images"]) -> typing.Union[MetaOapg.properties.neurovault_images, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["studyset_snapshot"]) -> typing.Union[MetaOapg.properties.studyset_snapshot, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["diagnostic_tables"]) -> typing.Union[MetaOapg.properties.diagnostic_tables, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["annotation_snapshot"]) -> typing.Union[MetaOapg.properties.annotation_snapshot, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["neurostore_study"]) -> typing.Union['NeurostoreStudy', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal[""]) -> typing.Union[MetaOapg.properties., schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["images", "meta_analysis_id", "cli_version", "neurostore_id", "neurovault_collection", "specification_snapshot", "studyset_snapshot", "annotation_snapshot", "neurostore_study", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["meta_analysis_id", "cli_version", "neurovault_collection_id", "methods_description", "neurovault_images", "diagnostic_tables", "", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        images: typing.Union[MetaOapg.properties.images, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         meta_analysis_id: typing.Union[MetaOapg.properties.meta_analysis_id, str, schemas.Unset] = schemas.unset,
         cli_version: typing.Union[MetaOapg.properties.cli_version, None, str, schemas.Unset] = schemas.unset,
-        neurostore_id: typing.Union[MetaOapg.properties.neurostore_id, None, str, schemas.Unset] = schemas.unset,
-        neurovault_collection: typing.Union['NeurovaultCollection', schemas.Unset] = schemas.unset,
-        specification_snapshot: typing.Union[MetaOapg.properties.specification_snapshot, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        studyset_snapshot: typing.Union[MetaOapg.properties.studyset_snapshot, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        annotation_snapshot: typing.Union[MetaOapg.properties.annotation_snapshot, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        neurostore_study: typing.Union['NeurostoreStudy', schemas.Unset] = schemas.unset,
+        neurovault_collection_id: typing.Union[MetaOapg.properties.neurovault_collection_id, None, str, schemas.Unset] = schemas.unset,
+        methods_description: typing.Union[MetaOapg.properties.methods_description, None, str, schemas.Unset] = schemas.unset,
+        neurovault_images: typing.Union[MetaOapg.properties.neurovault_images, list, tuple, schemas.Unset] = schemas.unset,
+        diagnostic_tables: typing.Union[MetaOapg.properties.diagnostic_tables, list, tuple, schemas.Unset] = schemas.unset,
+        : typing.Union[MetaOapg.properties., str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Result':
         return super().__new__(
             cls,
             *_args,
-            images=images,
             meta_analysis_id=meta_analysis_id,
             cli_version=cli_version,
-            neurostore_id=neurostore_id,
-            neurovault_collection=neurovault_collection,
-            specification_snapshot=specification_snapshot,
-            studyset_snapshot=studyset_snapshot,
-            annotation_snapshot=annotation_snapshot,
-            neurostore_study=neurostore_study,
+            neurovault_collection_id=neurovault_collection_id,
+            methods_description=methods_description,
+            neurovault_images=neurovault_images,
+            diagnostic_tables=diagnostic_tables,
+            =,
             _configuration=_configuration,
             **kwargs,
         )
 
-from neurosynth_compose_sdk.model.neurostore_study import NeurostoreStudy
-from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
+from neurosynth_compose_sdk.model.neurovault_file import NeurovaultFile

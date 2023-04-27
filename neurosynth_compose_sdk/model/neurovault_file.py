@@ -79,7 +79,6 @@ class NeurovaultFile(
                         _configuration=_configuration,
                     )
             status = schemas.StrSchema
-            file = schemas.StrSchema
             
             
             class image_id(
@@ -120,119 +119,13 @@ class NeurovaultFile(
                         *_args,
                         _configuration=_configuration,
                     )
-            
-            
-            class map_type(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'map_type':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class cognitive_contrast_cogatlas(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'cognitive_contrast_cogatlas':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class cognitive_contrast_cogatlas_id(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'cognitive_contrast_cogatlas_id':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class cognitive_paradigm_cogatlas(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'cognitive_paradigm_cogatlas':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class cognitive_paradigm_cogatlas_id(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'cognitive_paradigm_cogatlas_id':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
             __annotations__ = {
                 "collection_id": collection_id,
                 "exception": exception,
                 "traceback": traceback,
                 "status": status,
-                "file": file,
                 "image_id": image_id,
                 "name": name,
-                "map_type": map_type,
-                "cognitive_contrast_cogatlas": cognitive_contrast_cogatlas,
-                "cognitive_contrast_cogatlas_id": cognitive_contrast_cogatlas_id,
-                "cognitive_paradigm_cogatlas": cognitive_paradigm_cogatlas,
-                "cognitive_paradigm_cogatlas_id": cognitive_paradigm_cogatlas_id,
             }
     
     @typing.overload
@@ -248,33 +141,15 @@ class NeurovaultFile(
     def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["file"]) -> MetaOapg.properties.file: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["image_id"]) -> MetaOapg.properties.image_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["map_type"]) -> MetaOapg.properties.map_type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas"]) -> MetaOapg.properties.cognitive_contrast_cogatlas: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas_id"]) -> MetaOapg.properties.cognitive_contrast_cogatlas_id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas"]) -> MetaOapg.properties.cognitive_paradigm_cogatlas: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas_id"]) -> MetaOapg.properties.cognitive_paradigm_cogatlas_id: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_id", "exception", "traceback", "status", "file", "image_id", "name", "map_type", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_id", "exception", "traceback", "status", "image_id", "name", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -292,33 +167,15 @@ class NeurovaultFile(
     def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["file"]) -> typing.Union[MetaOapg.properties.file, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["image_id"]) -> typing.Union[MetaOapg.properties.image_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["map_type"]) -> typing.Union[MetaOapg.properties.map_type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas"]) -> typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas_id"]) -> typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas"]) -> typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas_id"]) -> typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas_id, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_id", "exception", "traceback", "status", "file", "image_id", "name", "map_type", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_id", "exception", "traceback", "status", "image_id", "name", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -329,14 +186,8 @@ class NeurovaultFile(
         exception: typing.Union[MetaOapg.properties.exception, None, str, schemas.Unset] = schemas.unset,
         traceback: typing.Union[MetaOapg.properties.traceback, None, str, schemas.Unset] = schemas.unset,
         status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
-        file: typing.Union[MetaOapg.properties.file, str, schemas.Unset] = schemas.unset,
         image_id: typing.Union[MetaOapg.properties.image_id, None, str, schemas.Unset] = schemas.unset,
         name: typing.Union[MetaOapg.properties.name, None, str, schemas.Unset] = schemas.unset,
-        map_type: typing.Union[MetaOapg.properties.map_type, None, str, schemas.Unset] = schemas.unset,
-        cognitive_contrast_cogatlas: typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas, None, str, schemas.Unset] = schemas.unset,
-        cognitive_contrast_cogatlas_id: typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas_id, None, str, schemas.Unset] = schemas.unset,
-        cognitive_paradigm_cogatlas: typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas, None, str, schemas.Unset] = schemas.unset,
-        cognitive_paradigm_cogatlas_id: typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas_id, None, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'NeurovaultFile':
@@ -347,14 +198,8 @@ class NeurovaultFile(
             exception=exception,
             traceback=traceback,
             status=status,
-            file=file,
             image_id=image_id,
             name=name,
-            map_type=map_type,
-            cognitive_contrast_cogatlas=cognitive_contrast_cogatlas,
-            cognitive_contrast_cogatlas_id=cognitive_contrast_cogatlas_id,
-            cognitive_paradigm_cogatlas=cognitive_paradigm_cogatlas,
-            cognitive_paradigm_cogatlas_id=cognitive_paradigm_cogatlas_id,
             _configuration=_configuration,
             **kwargs,
         )

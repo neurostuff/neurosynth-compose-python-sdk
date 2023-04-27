@@ -188,10 +188,10 @@ Class | Method | HTTP request | Description
 *ComposeApi* | [**meta_analysis_results_id_get**](docs/apis/tags/ComposeApi.md#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
 *ComposeApi* | [**meta_analysis_results_id_put**](docs/apis/tags/ComposeApi.md#meta_analysis_results_id_put) | **put** /meta-analysis-results/{id} | 
 *ComposeApi* | [**meta_analysis_results_post**](docs/apis/tags/ComposeApi.md#meta_analysis_results_post) | **post** /meta-analysis-results | 
-*ComposeApi* | [**neurovault_collections_get**](docs/apis/tags/ComposeApi.md#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
+*ComposeApi* | [**neurovault_collections_get**](docs/apis/tags/ComposeApi.md#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
 *ComposeApi* | [**neurovault_collections_id_get**](docs/apis/tags/ComposeApi.md#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 *ComposeApi* | [**neurovault_collections_id_put**](docs/apis/tags/ComposeApi.md#neurovault_collections_id_put) | **put** /neurovault-collections/{id} | 
-*ComposeApi* | [**neurovault_collections_post**](docs/apis/tags/ComposeApi.md#neurovault_collections_post) | **post** /neurovault-collections | 
+*ComposeApi* | [**neurovault_collections_post**](docs/apis/tags/ComposeApi.md#neurovault_collections_post) | **post** /neurovault-collections | Create neurovault collection
 *ComposeApi* | [**neurovault_files_get**](docs/apis/tags/ComposeApi.md#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 *ComposeApi* | [**neurovault_files_id_get**](docs/apis/tags/ComposeApi.md#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
 *ComposeApi* | [**neurovault_files_id_put**](docs/apis/tags/ComposeApi.md#neurovault_files_id_put) | **put** /neurovault-files/{id} | 
@@ -218,7 +218,7 @@ Class | Method | HTTP request | Description
 *GetApi* | [**meta_analyses_id_get**](docs/apis/tags/GetApi.md#meta_analyses_id_get) | **get** /meta-analyses/{id} | GET meta-analysis information
 *GetApi* | [**meta_analysis_results_get**](docs/apis/tags/GetApi.md#meta_analysis_results_get) | **get** /meta-analysis-results | Your GET endpoint
 *GetApi* | [**meta_analysis_results_id_get**](docs/apis/tags/GetApi.md#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
-*GetApi* | [**neurovault_collections_get**](docs/apis/tags/GetApi.md#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
+*GetApi* | [**neurovault_collections_get**](docs/apis/tags/GetApi.md#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
 *GetApi* | [**neurovault_collections_id_get**](docs/apis/tags/GetApi.md#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 *GetApi* | [**neurovault_files_get**](docs/apis/tags/GetApi.md#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 *GetApi* | [**neurovault_files_id_get**](docs/apis/tags/GetApi.md#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
@@ -236,10 +236,10 @@ Class | Method | HTTP request | Description
 *MetaAnalysesApi* | [**meta_analysis_results_id_get**](docs/apis/tags/MetaAnalysesApi.md#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
 *MetaAnalysesApi* | [**meta_analysis_results_id_put**](docs/apis/tags/MetaAnalysesApi.md#meta_analysis_results_id_put) | **put** /meta-analysis-results/{id} | 
 *MetaAnalysesApi* | [**meta_analysis_results_post**](docs/apis/tags/MetaAnalysesApi.md#meta_analysis_results_post) | **post** /meta-analysis-results | 
-*NeurovaultApi* | [**neurovault_collections_get**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
+*NeurovaultApi* | [**neurovault_collections_get**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
 *NeurovaultApi* | [**neurovault_collections_id_get**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 *NeurovaultApi* | [**neurovault_collections_id_put**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_id_put) | **put** /neurovault-collections/{id} | 
-*NeurovaultApi* | [**neurovault_collections_post**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_post) | **post** /neurovault-collections | 
+*NeurovaultApi* | [**neurovault_collections_post**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_post) | **post** /neurovault-collections | Create neurovault collection
 *NeurovaultApi* | [**neurovault_files_get**](docs/apis/tags/NeurovaultApi.md#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 *NeurovaultApi* | [**neurovault_files_id_get**](docs/apis/tags/NeurovaultApi.md#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
 *NeurovaultApi* | [**neurovault_files_id_put**](docs/apis/tags/NeurovaultApi.md#neurovault_files_id_put) | **put** /neurovault-files/{id} | 
@@ -247,7 +247,7 @@ Class | Method | HTTP request | Description
 *PostApi* | [**annotations_post**](docs/apis/tags/PostApi.md#annotations_post) | **post** /annotations | Create a new Annotation
 *PostApi* | [**meta_analyses_post**](docs/apis/tags/PostApi.md#meta_analyses_post) | **post** /meta-analyses | Create a new meta-analysis
 *PostApi* | [**meta_analysis_results_post**](docs/apis/tags/PostApi.md#meta_analysis_results_post) | **post** /meta-analysis-results | 
-*PostApi* | [**neurovault_collections_post**](docs/apis/tags/PostApi.md#neurovault_collections_post) | **post** /neurovault-collections | 
+*PostApi* | [**neurovault_collections_post**](docs/apis/tags/PostApi.md#neurovault_collections_post) | **post** /neurovault-collections | Create neurovault collection
 *PostApi* | [**neurovault_files_post**](docs/apis/tags/PostApi.md#neurovault_files_post) | **post** /neurovault-files | 
 *PostApi* | [**projects_post**](docs/apis/tags/PostApi.md#projects_post) | **post** /projects | 
 *PostApi* | [**specifications_post**](docs/apis/tags/PostApi.md#specifications_post) | **post** /specifications | Create a Specification
@@ -305,6 +305,7 @@ Class | Method | HTTP request | Description
  - [ProjectReturn](docs/models/ProjectReturn.md)
  - [ReadOnly](docs/models/ReadOnly.md)
  - [Result](docs/models/Result.md)
+ - [ResultInit](docs/models/ResultInit.md)
  - [ResultList](docs/models/ResultList.md)
  - [ResultReturn](docs/models/ResultReturn.md)
  - [Specification](docs/models/Specification.md)

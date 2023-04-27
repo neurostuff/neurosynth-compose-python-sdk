@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**annotations_post**](#annotations_post) | **post** /annotations | Create a new Annotation
 [**meta_analyses_post**](#meta_analyses_post) | **post** /meta-analyses | Create a new meta-analysis
 [**meta_analysis_results_post**](#meta_analysis_results_post) | **post** /meta-analysis-results | 
-[**neurovault_collections_post**](#neurovault_collections_post) | **post** /neurovault-collections | 
+[**neurovault_collections_post**](#neurovault_collections_post) | **post** /neurovault-collections | Create neurovault collection
 [**neurovault_files_post**](#neurovault_files_post) | **post** /neurovault-files | 
 [**projects_post**](#projects_post) | **post** /projects | 
 [**specifications_post**](#specifications_post) | **post** /specifications | Create a Specification
@@ -357,8 +357,8 @@ Key | Input Type | Accessed Type | Description | Notes
 ```python
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import post_api
+from neurosynth_compose_sdk.model.result_init import ResultInit
 from neurosynth_compose_sdk.model.result_return import ResultReturn
-from neurosynth_compose_sdk.model.result import Result
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -387,28 +387,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = post_api.PostApi(api_client)
 
     # example passing only optional values
-    body = dict(
-        images=dict(),
+    body = ResultInit(
         meta_analysis_id="meta_analysis_id_example",
-        cli_version="cli_version_example",
-        neurostore_id="neurostore_id_example",
-        neurovault_collection=NeurovaultCollection(
-            collection_id="collection_id_example",
-            files=None,
-            result="result_example",
-        ),
-        specification_snapshot=dict(),
         studyset_snapshot=dict(),
         annotation_snapshot=dict(),
-        neurostore_study=NeurostoreStudy(
-            neurostore_id="neurostore_id_example",
-            analyses=[
-                NeurostoreAnalysis(
-                    table="table_example",
-                    neurostore_id="neurostore_id_example",
-                )
-            ],
-        ),
+        cli_version="cli_version_example",
     )
     try:
         api_response = api_instance.meta_analysis_results_post(
@@ -422,8 +405,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyMultipartFormData, Unset] | optional, default is unset |
-content_type | str | optional, default is 'multipart/form-data' | Selects the schema and serialization of the request body
+body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -431,10 +414,10 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 ### body
 
-# SchemaForRequestBodyMultipartFormData
+# SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Result**](../../models/Result.md) |  | 
+[**ResultInit**](../../models/ResultInit.md) |  | 
 
 
 ### Return Types, Responses
@@ -467,7 +450,7 @@ Type | Description  | Notes
 <a name="neurovault_collections_post"></a>
 > neurovault_collections_post()
 
-
+Create neurovault collection
 
 ### Example
 
@@ -475,6 +458,7 @@ Type | Description  | Notes
 ```python
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import post_api
+from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost:81/api
 # See configuration.py for a list of all supported configuration parameters.
@@ -496,14 +480,37 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = post_api.PostApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only optional values
+    body = NeurovaultCollection(
+        collection_id="collection_id_example",
+        files=None,
+        result="result_example",
+    )
     try:
-        api_response = api_instance.neurovault_collections_post()
+        # Create neurovault collection
+        api_response = api_instance.neurovault_collections_post(
+            body=body,
+        )
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling PostApi->neurovault_collections_post: %s\n" % e)
 ```
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NeurovaultCollection**](../../models/NeurovaultCollection.md) |  | 
+
 
 ### Return Types, Responses
 
@@ -566,14 +573,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         exception="exception_example",
         traceback="traceback_example",
         status="status_example",
-        file='YQ==',
         image_id="image_id_example",
         name="name_example",
-        map_type="map_type_example",
-        cognitive_contrast_cogatlas="cognitive_contrast_cogatlas_example",
-        cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
-        cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
-        cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
     )
     try:
         api_response = api_instance.neurovault_files_post(
@@ -670,6 +671,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         name="name_example",
         description="description_example",
         public=True,
+        neurostore_id="neurostore_id_example",
     )
     try:
         api_response = api_instance.projects_post(

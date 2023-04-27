@@ -289,7 +289,25 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = MetaAnalysis()
+    body = MetaAnalysis(
+        specification=None,
+        studyset=None,
+        annotation=None,
+        name="name_example",
+        description="description_example",
+        cached_studyset_id="cached_studyset_id_example",
+        cached_annotation_id="cached_annotation_id_example",
+        results=None,
+        provenance=dict(),
+        project="project_example",
+        run_key="run_key_example",
+        neurostore_analysis_id="neurostore_analysis_id_example",
+        hash="hash_example",
+        cognitive_contrast_cogatlas="cognitive_contrast_cogatlas_example",
+        cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
+        cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
+        cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
+    )
     try:
         # Update a meta-analysis
         api_response = api_instance.meta_analyses_id_put(
@@ -467,6 +485,7 @@ Key | Input Type | Accessed Type | Description | Notes
 ```python
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import put_api
+from neurosynth_compose_sdk.model.result_upload import ResultUpload
 from neurosynth_compose_sdk.model.result_return import ResultReturn
 from neurosynth_compose_sdk.model.result import Result
 from pprint import pprint
@@ -498,27 +517,24 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         'id': "id_example",
     }
     body = Result(
-        images=dict(),
         meta_analysis_id="meta_analysis_id_example",
         cli_version="cli_version_example",
-        neurostore_id="neurostore_id_example",
-        neurovault_collection=NeurovaultCollection(
-            collection_id="collection_id_example",
-            files=None,
-            result="result_example",
-        ),
-        specification_snapshot=dict(),
-        studyset_snapshot=dict(),
-        annotation_snapshot=dict(),
-        neurostore_study=NeurostoreStudy(
-            neurostore_id="neurostore_id_example",
-            analyses=[
-                NeurostoreAnalysis(
-                    table="table_example",
-                    neurostore_id="neurostore_id_example",
-                )
-            ],
-        ),
+        neurovault_collection_id="neurovault_collection_id_example",
+        methods_description="methods_description_example",
+        neurovault_images=[
+            NeurovaultFile(
+                collection_id="collection_id_example",
+                exception="exception_example",
+                traceback="traceback_example",
+                status="status_example",
+                image_id="image_id_example",
+                name="name_example",
+            )
+        ],
+        diagnostic_tables=[
+            'YQ=='
+        ],
+        ="_example",
     )
     try:
         api_response = api_instance.meta_analysis_results_id_put(
@@ -533,7 +549,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+body | typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, Unset] | optional, default is unset |
 path_params | RequestPathParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
@@ -547,6 +563,12 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 Type | Description  | Notes
 ------------- | ------------- | -------------
 [**Result**](../../models/Result.md) |  | 
+
+
+# SchemaForRequestBodyMultipartFormData
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResultUpload**](../../models/ResultUpload.md) |  | 
 
 
 ### path_params
@@ -741,14 +763,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         exception="exception_example",
         traceback="traceback_example",
         status="status_example",
-        file='YQ==',
         image_id="image_id_example",
         name="name_example",
-        map_type="map_type_example",
-        cognitive_contrast_cogatlas="cognitive_contrast_cogatlas_example",
-        cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
-        cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
-        cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
     )
     try:
         api_response = api_instance.neurovault_files_id_put(
@@ -876,6 +892,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         name="name_example",
         description="description_example",
         public=True,
+        neurostore_id="neurostore_id_example",
     )
     try:
         api_response = api_instance.projects_id_put(

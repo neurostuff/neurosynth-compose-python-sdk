@@ -37,53 +37,73 @@ class NeurostoreAnalysis(
     class MetaOapg:
         
         class properties:
-            table = schemas.StrSchema
             neurostore_id = schemas.StrSchema
+            exception = schemas.StrSchema
+            traceback = schemas.StrSchema
+            status = schemas.StrSchema
             __annotations__ = {
-                "table": table,
                 "neurostore_id": neurostore_id,
+                "exception": exception,
+                "traceback": traceback,
+                "status": status,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["table"]) -> MetaOapg.properties.table: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["neurostore_id"]) -> MetaOapg.properties.neurostore_id: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["exception"]) -> MetaOapg.properties.exception: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["traceback"]) -> MetaOapg.properties.traceback: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["table", "neurostore_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["neurostore_id", "exception", "traceback", "status", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["table"]) -> typing.Union[MetaOapg.properties.table, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["neurostore_id"]) -> typing.Union[MetaOapg.properties.neurostore_id, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["neurostore_id"]) -> typing.Union[MetaOapg.properties.neurostore_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["exception"]) -> typing.Union[MetaOapg.properties.exception, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["traceback"]) -> typing.Union[MetaOapg.properties.traceback, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["table", "neurostore_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["neurostore_id", "exception", "traceback", "status", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        table: typing.Union[MetaOapg.properties.table, str, schemas.Unset] = schemas.unset,
         neurostore_id: typing.Union[MetaOapg.properties.neurostore_id, str, schemas.Unset] = schemas.unset,
+        exception: typing.Union[MetaOapg.properties.exception, str, schemas.Unset] = schemas.unset,
+        traceback: typing.Union[MetaOapg.properties.traceback, str, schemas.Unset] = schemas.unset,
+        status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'NeurostoreAnalysis':
         return super().__new__(
             cls,
             *_args,
-            table=table,
             neurostore_id=neurostore_id,
+            exception=exception,
+            traceback=traceback,
+            status=status,
             _configuration=_configuration,
             **kwargs,
         )

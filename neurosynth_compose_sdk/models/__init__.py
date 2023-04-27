@@ -37,6 +37,7 @@ from neurosynth_compose_sdk.model.project_list import ProjectList
 from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from neurosynth_compose_sdk.model.read_only import ReadOnly
 from neurosynth_compose_sdk.model.result import Result
+from neurosynth_compose_sdk.model.result_init import ResultInit
 from neurosynth_compose_sdk.model.result_list import ResultList
 from neurosynth_compose_sdk.model.result_return import ResultReturn
 from neurosynth_compose_sdk.model.specification import Specification
