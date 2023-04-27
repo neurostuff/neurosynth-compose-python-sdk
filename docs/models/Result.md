@@ -14,9 +14,9 @@ Key | Input Type | Accessed Type | Description | Notes
 **cli_version** | None, str,  | NoneClass, str,  |  | [optional] 
 **neurovault_collection_id** | None, str,  | NoneClass, str,  |  | [optional] 
 **methods_description** | None, str,  | NoneClass, str,  |  | [optional] 
-**[neurovault_images](#neurovault_images)** | list, tuple,  | tuple,  |  | [optional] 
+**[neurovault_images](#neurovault_images)** | list, tuple, None,  | tuple, NoneClass,  |  | [optional] 
 **[diagnostic_tables](#diagnostic_tables)** | list, tuple,  | tuple,  |  | [optional] 
-**** | str,  | str,  |  | [optional] 
+**[cluster_tables](#cluster_tables)** | list, tuple,  | tuple,  |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # neurovault_images
@@ -24,7 +24,7 @@ Key | Input Type | Accessed Type | Description | Notes
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
+list, tuple, None,  | tuple, NoneClass,  |  | 
 
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
@@ -41,7 +41,19 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-items | str,  | str,  |  | 
+items | None, str,  | NoneClass, str,  |  | 
+
+# cluster_tables
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | None, str,  | NoneClass, str,  |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

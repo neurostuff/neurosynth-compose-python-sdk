@@ -940,7 +940,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         diagnostic_tables=[
             'YQ=='
         ],
-        ="_example",
+        cluster_tables=[
+            'YQ=='
+        ],
     )
     try:
         api_response = api_instance.meta_analysis_results_id_put(

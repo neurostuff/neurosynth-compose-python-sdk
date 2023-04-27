@@ -103,7 +103,10 @@ class Result(
             
             
             class neurovault_images(
-                schemas.ListSchema
+                schemas.ListBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneTupleMixin
             ):
             
             
@@ -113,19 +116,17 @@ class Result(
                     def items() -> typing.Type['NeurovaultFile']:
                         return NeurovaultFile
             
+            
                 def __new__(
                     cls,
-                    _arg: typing.Union[typing.Tuple['NeurovaultFile'], typing.List['NeurovaultFile']],
+                    *_args: typing.Union[list, tuple, None, ],
                     _configuration: typing.Optional[schemas.Configuration] = None,
                 ) -> 'neurovault_images':
                     return super().__new__(
                         cls,
-                        _arg,
+                        *_args,
                         _configuration=_configuration,
                     )
-            
-                def __getitem__(self, i: int) -> 'NeurovaultFile':
-                    return super().__getitem__(i)
             
             
             class diagnostic_tables(
@@ -134,11 +135,34 @@ class Result(
             
             
                 class MetaOapg:
-                    items = schemas.StrSchema
+                    
+                    
+                    class items(
+                        schemas.StrBase,
+                        schemas.NoneBase,
+                        schemas.Schema,
+                        schemas.NoneStrMixin
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            format = 'byte'
+                    
+                    
+                        def __new__(
+                            cls,
+                            *_args: typing.Union[None, str, ],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'items':
+                            return super().__new__(
+                                cls,
+                                *_args,
+                                _configuration=_configuration,
+                            )
             
                 def __new__(
                     cls,
-                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, None, str, ]], typing.List[typing.Union[MetaOapg.items, None, str, ]]],
                     _configuration: typing.Optional[schemas.Configuration] = None,
                 ) -> 'diagnostic_tables':
                     return super().__new__(
@@ -149,7 +173,52 @@ class Result(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
-             = schemas.StrSchema
+            
+            
+            class cluster_tables(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    
+                    class items(
+                        schemas.StrBase,
+                        schemas.NoneBase,
+                        schemas.Schema,
+                        schemas.NoneStrMixin
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            format = 'byte'
+                    
+                    
+                        def __new__(
+                            cls,
+                            *_args: typing.Union[None, str, ],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'items':
+                            return super().__new__(
+                                cls,
+                                *_args,
+                                _configuration=_configuration,
+                            )
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, None, str, ]], typing.List[typing.Union[MetaOapg.items, None, str, ]]],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'cluster_tables':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
             __annotations__ = {
                 "meta_analysis_id": meta_analysis_id,
                 "cli_version": cli_version,
@@ -157,7 +226,7 @@ class Result(
                 "methods_description": methods_description,
                 "neurovault_images": neurovault_images,
                 "diagnostic_tables": diagnostic_tables,
-                "": ,
+                "cluster_tables": cluster_tables,
             }
     
     @typing.overload
@@ -179,12 +248,12 @@ class Result(
     def __getitem__(self, name: typing_extensions.Literal["diagnostic_tables"]) -> MetaOapg.properties.diagnostic_tables: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal[""]) -> MetaOapg.properties.: ...
+    def __getitem__(self, name: typing_extensions.Literal["cluster_tables"]) -> MetaOapg.properties.cluster_tables: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["meta_analysis_id", "cli_version", "neurovault_collection_id", "methods_description", "neurovault_images", "diagnostic_tables", "", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["meta_analysis_id", "cli_version", "neurovault_collection_id", "methods_description", "neurovault_images", "diagnostic_tables", "cluster_tables", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -208,12 +277,12 @@ class Result(
     def get_item_oapg(self, name: typing_extensions.Literal["diagnostic_tables"]) -> typing.Union[MetaOapg.properties.diagnostic_tables, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal[""]) -> typing.Union[MetaOapg.properties., schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["cluster_tables"]) -> typing.Union[MetaOapg.properties.cluster_tables, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["meta_analysis_id", "cli_version", "neurovault_collection_id", "methods_description", "neurovault_images", "diagnostic_tables", "", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["meta_analysis_id", "cli_version", "neurovault_collection_id", "methods_description", "neurovault_images", "diagnostic_tables", "cluster_tables", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -224,9 +293,9 @@ class Result(
         cli_version: typing.Union[MetaOapg.properties.cli_version, None, str, schemas.Unset] = schemas.unset,
         neurovault_collection_id: typing.Union[MetaOapg.properties.neurovault_collection_id, None, str, schemas.Unset] = schemas.unset,
         methods_description: typing.Union[MetaOapg.properties.methods_description, None, str, schemas.Unset] = schemas.unset,
-        neurovault_images: typing.Union[MetaOapg.properties.neurovault_images, list, tuple, schemas.Unset] = schemas.unset,
+        neurovault_images: typing.Union[MetaOapg.properties.neurovault_images, list, tuple, None, schemas.Unset] = schemas.unset,
         diagnostic_tables: typing.Union[MetaOapg.properties.diagnostic_tables, list, tuple, schemas.Unset] = schemas.unset,
-        : typing.Union[MetaOapg.properties., str, schemas.Unset] = schemas.unset,
+        cluster_tables: typing.Union[MetaOapg.properties.cluster_tables, list, tuple, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Result':
@@ -239,7 +308,7 @@ class Result(
             methods_description=methods_description,
             neurovault_images=neurovault_images,
             diagnostic_tables=diagnostic_tables,
-            =,
+            cluster_tables=cluster_tables,
             _configuration=_configuration,
             **kwargs,
         )
