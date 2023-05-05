@@ -42,7 +42,7 @@ request_body_result_init = api_client.RequestBody(
 )
 _auth = [
     'JSON-Web-Token',
-    'run_key',
+    'upload_key',
 ]
 SchemaFor200ResponseBodyApplicationJson = ResultReturn
 

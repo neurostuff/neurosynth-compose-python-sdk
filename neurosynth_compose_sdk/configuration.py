@@ -388,13 +388,13 @@ conf = neurosynth_compose_sdk.Configuration(
                 'key': 'Authorization',
                 'value': 'Bearer ' + self.access_token
             }
-        if 'run_key' in self.api_key:
-            auth['run_key'] = {
+        if 'upload_key' in self.api_key:
+            auth['upload_key'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'run_key',
+                'key': 'compose_upload_key',
                 'value': self.get_api_key_with_prefix(
-                    'run_key',
+                    'upload_key',
                 ),
             }
         return auth

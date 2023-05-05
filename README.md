@@ -328,10 +328,10 @@ Class | Method | HTTP request | Description
 - **Type**: Bearer authentication
 
  Authentication schemes defined for the API:
-## run_key
+## upload_key
 
 - **Type**: API key
-- **API key parameter name**: run_key
+- **API key parameter name**: compose_upload_key
 - **Location**: HTTP header
 
 
