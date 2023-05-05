@@ -70,6 +70,10 @@ request_body_result = api_client.RequestBody(
             schema=SchemaForRequestBodyMultipartFormData),
     },
 )
+_auth = [
+    'JSON-Web-Token',
+    'run_key',
+]
 SchemaFor200ResponseBodyApplicationJson = ResultReturn
 
 
@@ -220,6 +224,7 @@ class BaseApi(api_client.Api):
             headers=_headers,
             fields=_fields,
             body=_body,
+            auth_settings=_auth,
             stream=stream,
             timeout=timeout,
         )
