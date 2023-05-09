@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**meta_analyses_id_get**](#meta_analyses_id_get) | **get** /meta-analyses/{id} | GET meta-analysis information
 [**meta_analysis_results_get**](#meta_analysis_results_get) | **get** /meta-analysis-results | Your GET endpoint
 [**meta_analysis_results_id_get**](#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
-[**neurovault_collections_get**](#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
+[**neurovault_collections_get**](#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
 [**neurovault_collections_id_get**](#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 [**neurovault_files_get**](#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 [**neurovault_files_id_get**](#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
@@ -712,7 +712,7 @@ No authorization required
 <a name="neurovault_collections_get"></a>
 > neurovault_collections_get()
 
-Your GET endpoint
+Get neurovault collections
 
 ### Example
 
@@ -733,7 +733,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Your GET endpoint
+        # Get neurovault collections
         api_response = api_instance.neurovault_collections_get()
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling GetApi->neurovault_collections_get: %s\n" % e)

@@ -212,8 +212,8 @@ class MetaAnalysis(
                         *_args,
                         _configuration=_configuration,
                     )
-            internal_studyset_id = schemas.StrSchema
-            internal_annotation_id = schemas.StrSchema
+            cached_studyset_id = schemas.StrSchema
+            cached_annotation_id = schemas.StrSchema
             
             
             class results(
@@ -342,17 +342,126 @@ class MetaAnalysis(
                         *_args,
                         _configuration=_configuration,
                     )
+            run_key = schemas.StrSchema
+            neurostore_analysis_id = schemas.StrSchema
+            
+            
+            class hash(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'hash':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class cognitive_contrast_cogatlas(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'cognitive_contrast_cogatlas':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class cognitive_contrast_cogatlas_id(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'cognitive_contrast_cogatlas_id':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class cognitive_paradigm_cogatlas(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'cognitive_paradigm_cogatlas':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class cognitive_paradigm_cogatlas_id(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'cognitive_paradigm_cogatlas_id':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
             __annotations__ = {
                 "specification": specification,
                 "studyset": studyset,
                 "annotation": annotation,
                 "name": name,
                 "description": description,
-                "internal_studyset_id": internal_studyset_id,
-                "internal_annotation_id": internal_annotation_id,
+                "cached_studyset_id": cached_studyset_id,
+                "cached_annotation_id": cached_annotation_id,
                 "results": results,
                 "provenance": provenance,
                 "project": project,
+                "run_key": run_key,
+                "neurostore_analysis_id": neurostore_analysis_id,
+                "hash": hash,
+                "cognitive_contrast_cogatlas": cognitive_contrast_cogatlas,
+                "cognitive_contrast_cogatlas_id": cognitive_contrast_cogatlas_id,
+                "cognitive_paradigm_cogatlas": cognitive_paradigm_cogatlas,
+                "cognitive_paradigm_cogatlas_id": cognitive_paradigm_cogatlas_id,
             }
     
     @typing.overload
@@ -371,10 +480,10 @@ class MetaAnalysis(
     def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["internal_studyset_id"]) -> MetaOapg.properties.internal_studyset_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["cached_studyset_id"]) -> MetaOapg.properties.cached_studyset_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["internal_annotation_id"]) -> MetaOapg.properties.internal_annotation_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["cached_annotation_id"]) -> MetaOapg.properties.cached_annotation_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["results"]) -> MetaOapg.properties.results: ...
@@ -386,9 +495,30 @@ class MetaAnalysis(
     def __getitem__(self, name: typing_extensions.Literal["project"]) -> MetaOapg.properties.project: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["run_key"]) -> MetaOapg.properties.run_key: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["neurostore_analysis_id"]) -> MetaOapg.properties.neurostore_analysis_id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["hash"]) -> MetaOapg.properties.hash: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas"]) -> MetaOapg.properties.cognitive_contrast_cogatlas: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas_id"]) -> MetaOapg.properties.cognitive_contrast_cogatlas_id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas"]) -> MetaOapg.properties.cognitive_paradigm_cogatlas: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas_id"]) -> MetaOapg.properties.cognitive_paradigm_cogatlas_id: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "internal_studyset_id", "internal_annotation_id", "results", "provenance", "project", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis_id", "hash", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -409,10 +539,10 @@ class MetaAnalysis(
     def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["internal_studyset_id"]) -> typing.Union[MetaOapg.properties.internal_studyset_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["cached_studyset_id"]) -> typing.Union[MetaOapg.properties.cached_studyset_id, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["internal_annotation_id"]) -> typing.Union[MetaOapg.properties.internal_annotation_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["cached_annotation_id"]) -> typing.Union[MetaOapg.properties.cached_annotation_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["results"]) -> typing.Union[MetaOapg.properties.results, schemas.Unset]: ...
@@ -424,9 +554,30 @@ class MetaAnalysis(
     def get_item_oapg(self, name: typing_extensions.Literal["project"]) -> typing.Union[MetaOapg.properties.project, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["run_key"]) -> typing.Union[MetaOapg.properties.run_key, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["neurostore_analysis_id"]) -> typing.Union[MetaOapg.properties.neurostore_analysis_id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["hash"]) -> typing.Union[MetaOapg.properties.hash, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas"]) -> typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_contrast_cogatlas_id"]) -> typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas_id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas"]) -> typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["cognitive_paradigm_cogatlas_id"]) -> typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas_id, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "internal_studyset_id", "internal_annotation_id", "results", "provenance", "project", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["specification", "studyset", "annotation", "name", "description", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis_id", "hash", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -438,11 +589,18 @@ class MetaAnalysis(
         annotation: typing.Union[MetaOapg.properties.annotation, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         name: typing.Union[MetaOapg.properties.name, None, str, schemas.Unset] = schemas.unset,
         description: typing.Union[MetaOapg.properties.description, None, str, schemas.Unset] = schemas.unset,
-        internal_studyset_id: typing.Union[MetaOapg.properties.internal_studyset_id, str, schemas.Unset] = schemas.unset,
-        internal_annotation_id: typing.Union[MetaOapg.properties.internal_annotation_id, str, schemas.Unset] = schemas.unset,
+        cached_studyset_id: typing.Union[MetaOapg.properties.cached_studyset_id, str, schemas.Unset] = schemas.unset,
+        cached_annotation_id: typing.Union[MetaOapg.properties.cached_annotation_id, str, schemas.Unset] = schemas.unset,
         results: typing.Union[MetaOapg.properties.results, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, schemas.Unset] = schemas.unset,
         provenance: typing.Union[MetaOapg.properties.provenance, dict, frozendict.frozendict, None, schemas.Unset] = schemas.unset,
         project: typing.Union[MetaOapg.properties.project, None, str, schemas.Unset] = schemas.unset,
+        run_key: typing.Union[MetaOapg.properties.run_key, str, schemas.Unset] = schemas.unset,
+        neurostore_analysis_id: typing.Union[MetaOapg.properties.neurostore_analysis_id, str, schemas.Unset] = schemas.unset,
+        hash: typing.Union[MetaOapg.properties.hash, None, str, schemas.Unset] = schemas.unset,
+        cognitive_contrast_cogatlas: typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas, None, str, schemas.Unset] = schemas.unset,
+        cognitive_contrast_cogatlas_id: typing.Union[MetaOapg.properties.cognitive_contrast_cogatlas_id, None, str, schemas.Unset] = schemas.unset,
+        cognitive_paradigm_cogatlas: typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas, None, str, schemas.Unset] = schemas.unset,
+        cognitive_paradigm_cogatlas_id: typing.Union[MetaOapg.properties.cognitive_paradigm_cogatlas_id, None, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'MetaAnalysis':
@@ -454,11 +612,18 @@ class MetaAnalysis(
             annotation=annotation,
             name=name,
             description=description,
-            internal_studyset_id=internal_studyset_id,
-            internal_annotation_id=internal_annotation_id,
+            cached_studyset_id=cached_studyset_id,
+            cached_annotation_id=cached_annotation_id,
             results=results,
             provenance=provenance,
             project=project,
+            run_key=run_key,
+            neurostore_analysis_id=neurostore_analysis_id,
+            hash=hash,
+            cognitive_contrast_cogatlas=cognitive_contrast_cogatlas,
+            cognitive_contrast_cogatlas_id=cognitive_contrast_cogatlas_id,
+            cognitive_paradigm_cogatlas=cognitive_paradigm_cogatlas,
+            cognitive_paradigm_cogatlas_id=cognitive_paradigm_cogatlas_id,
             _configuration=_configuration,
             **kwargs,
         )
