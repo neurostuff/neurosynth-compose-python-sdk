@@ -295,18 +295,13 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         annotation=None,
         name="name_example",
         description="description_example",
-        cached_studyset_id="cached_studyset_id_example",
-        cached_annotation_id="cached_annotation_id_example",
-        results=None,
+        internal_studyset_id="internal_studyset_id_example",
+        internal_annotation_id="internal_annotation_id_example",
+        results=[
+            None
+        ],
         provenance=dict(),
         project="project_example",
-        run_key="run_key_example",
-        neurostore_analysis_id="neurostore_analysis_id_example",
-        hash="hash_example",
-        cognitive_contrast_cogatlas="cognitive_contrast_cogatlas_example",
-        cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
-        cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
-        cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
     )
     try:
         # Update a meta-analysis
@@ -482,12 +477,9 @@ Key | Input Type | Accessed Type | Description | Notes
 
 ### Example
 
-* Bearer Authentication (JSON-Web-Token):
-* Api Key Authentication (upload_key):
 ```python
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import put_api
-from neurosynth_compose_sdk.model.result_upload import ResultUpload
 from neurosynth_compose_sdk.model.result_return import ResultReturn
 from neurosynth_compose_sdk.model.result import Result
 from pprint import pprint
@@ -497,21 +489,6 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "http://localhost:81/api"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-
-# Configure API key authorization: upload_key
-configuration.api_key['upload_key'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['upload_key'] = 'Bearer'
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -534,26 +511,21 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         'id': "id_example",
     }
     body = Result(
+        images=dict(),
         meta_analysis_id="meta_analysis_id_example",
         cli_version="cli_version_example",
-        neurovault_collection_id="neurovault_collection_id_example",
-        methods_description="methods_description_example",
-        neurovault_images=[
-            NeurovaultFile(
-                collection_id="collection_id_example",
-                exception="exception_example",
-                traceback="traceback_example",
-                status="status_example",
-                image_id="image_id_example",
-                name="name_example",
-            )
-        ],
-        diagnostic_tables=[
-            'YQ=='
-        ],
-        cluster_tables=[
-            'YQ=='
-        ],
+        estimator=Estimator(
+            type="MKDADensity",
+            args=dict(),
+        ),
+        neurostore_id="neurostore_id_example",
+        neurovault_collection=NeurovaultCollection(
+            collection_id="collection_id_example",
+            files=[
+                None
+            ],
+            result="result_example",
+        ),
     )
     try:
         api_response = api_instance.meta_analysis_results_id_put(
@@ -568,7 +540,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, Unset] | optional, default is unset |
+body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
 path_params | RequestPathParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
@@ -582,12 +554,6 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 Type | Description  | Notes
 ------------- | ------------- | -------------
 [**Result**](../../models/Result.md) |  | 
-
-
-# SchemaForRequestBodyMultipartFormData
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResultUpload**](../../models/ResultUpload.md) |  | 
 
 
 ### path_params
@@ -626,7 +592,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-[JSON-Web-Token](../../../README.md#JSON-Web-Token), [upload_key](../../../README.md#upload_key)
+No authorization required
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -782,8 +748,14 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         exception="exception_example",
         traceback="traceback_example",
         status="status_example",
+        file='YQ==',
         image_id="image_id_example",
         name="name_example",
+        map_type="map_type_example",
+        cognitive_contrast_cogatlas="cognitive_contrast_cogatlas_example",
+        cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
+        cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
+        cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
     )
     try:
         api_response = api_instance.neurovault_files_id_put(
@@ -907,11 +879,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     }
     body = Project(
         provenance=dict(),
-        meta_analyses=None,
+        meta_analyses=[
+            None
+        ],
         name="name_example",
         description="description_example",
-        public=True,
-        neurostore_id="neurostore_id_example",
     )
     try:
         api_response = api_instance.projects_id_put(

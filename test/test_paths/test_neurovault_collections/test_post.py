@@ -21,7 +21,6 @@ from .. import ApiTestMixin
 class TestNeurovaultCollections(ApiTestMixin, unittest.TestCase):
     """
     NeurovaultCollections unit test stubs
-        Create neurovault collection  # noqa: E501
     """
     _configuration = configuration.Configuration()
 

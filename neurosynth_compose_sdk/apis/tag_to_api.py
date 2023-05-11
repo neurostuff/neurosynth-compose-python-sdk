@@ -12,7 +12,6 @@ from neurosynth_compose_sdk.apis.tags.put_api import PutApi
 from neurosynth_compose_sdk.apis.tags.specifications_api import SpecificationsApi
 from neurosynth_compose_sdk.apis.tags.studysets_api import StudysetsApi
 from neurosynth_compose_sdk.apis.tags.users_api import UsersApi
-from neurosynth_compose_sdk.apis.tags.default_api import DefaultApi
 
 TagToApi = typing_extensions.TypedDict(
     'TagToApi',
@@ -28,7 +27,6 @@ TagToApi = typing_extensions.TypedDict(
         TagValues.SPECIFICATIONS: SpecificationsApi,
         TagValues.STUDYSETS: StudysetsApi,
         TagValues.USERS: UsersApi,
-        TagValues.DEFAULT: DefaultApi,
     }
 )
 
@@ -45,6 +43,5 @@ tag_to_api = TagToApi(
         TagValues.SPECIFICATIONS: SpecificationsApi,
         TagValues.STUDYSETS: StudysetsApi,
         TagValues.USERS: UsersApi,
-        TagValues.DEFAULT: DefaultApi,
     }
 )

@@ -44,15 +44,15 @@ class MetaAnalysisPostBody(
         
             class MetaOapg:
                 required = {
-                    "cached_annotation_id",
-                    "cached_studyset_id",
                     "specification",
+                    "internal_annotation_id",
+                    "internal_studyset_id",
                 }
         
             
-            cached_annotation_id: schemas.AnyTypeSchema
-            cached_studyset_id: schemas.AnyTypeSchema
             specification: schemas.AnyTypeSchema
+            internal_annotation_id: schemas.AnyTypeSchema
+            internal_studyset_id: schemas.AnyTypeSchema
         
             def __new__(
                 cls,

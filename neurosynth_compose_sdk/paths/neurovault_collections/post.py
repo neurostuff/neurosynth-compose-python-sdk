@@ -9,7 +9,6 @@
 from dataclasses import dataclass
 import typing_extensions
 import urllib3
-from urllib3._collections import HTTPHeaderDict
 
 from neurosynth_compose_sdk import api_client, exceptions
 from datetime import date, datetime  # noqa: F401
@@ -25,20 +24,8 @@ import frozendict  # noqa: F401
 
 from neurosynth_compose_sdk import schemas  # noqa: F401
 
-from neurosynth_compose_sdk.model.neurovault_collection import NeurovaultCollection
-
 from . import path
 
-# body param
-SchemaForRequestBodyApplicationJson = NeurovaultCollection
-
-
-request_body_neurovault_collection = api_client.RequestBody(
-    content={
-        'application/json': api_client.MediaType(
-            schema=SchemaForRequestBodyApplicationJson),
-    },
-)
 _auth = [
     'JSON-Web-Token',
 ]
@@ -63,34 +50,17 @@ class BaseApi(api_client.Api):
     @typing.overload
     def _neurovault_collections_post_oapg(
         self,
-        content_type: typing_extensions.Literal["application/json"] = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: typing_extensions.Literal[False] = ...,
     ) -> typing.Union[
         ApiResponseFor200,
     ]: ...
-
-    @typing.overload
-    def _neurovault_collections_post_oapg(
-        self,
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
-        stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
-        skip_deserialization: typing_extensions.Literal[False] = ...,
-    ) -> typing.Union[
-        ApiResponseFor200,
-    ]: ...
-
 
     @typing.overload
     def _neurovault_collections_post_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
     ) -> api_client.ApiResponseWithoutDeserialization: ...
@@ -98,8 +68,6 @@ class BaseApi(api_client.Api):
     @typing.overload
     def _neurovault_collections_post_oapg(
         self,
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = ...,
@@ -110,38 +78,21 @@ class BaseApi(api_client.Api):
 
     def _neurovault_collections_post_oapg(
         self,
-        content_type: str = 'application/json',
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
         """
-        Create neurovault collection
         :param skip_deserialization: If true then api_response.response will be set but
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
         used_path = path.value
-
-        _headers = HTTPHeaderDict()
         # TODO add cookie handling
 
-        _fields = None
-        _body = None
-        if body is not schemas.unset:
-            serialized_data = request_body_neurovault_collection.serialize(body, content_type)
-            _headers.add('Content-Type', content_type)
-            if 'fields' in serialized_data:
-                _fields = serialized_data['fields']
-            elif 'body' in serialized_data:
-                _body = serialized_data['body']
         response = self.api_client.call_api(
             resource_path=used_path,
             method='post'.upper(),
-            headers=_headers,
-            fields=_fields,
-            body=_body,
             auth_settings=_auth,
             stream=stream,
             timeout=timeout,
@@ -172,34 +123,17 @@ class NeurovaultCollectionsPost(BaseApi):
     @typing.overload
     def neurovault_collections_post(
         self,
-        content_type: typing_extensions.Literal["application/json"] = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: typing_extensions.Literal[False] = ...,
     ) -> typing.Union[
         ApiResponseFor200,
     ]: ...
-
-    @typing.overload
-    def neurovault_collections_post(
-        self,
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
-        stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
-        skip_deserialization: typing_extensions.Literal[False] = ...,
-    ) -> typing.Union[
-        ApiResponseFor200,
-    ]: ...
-
 
     @typing.overload
     def neurovault_collections_post(
         self,
         skip_deserialization: typing_extensions.Literal[True],
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
     ) -> api_client.ApiResponseWithoutDeserialization: ...
@@ -207,8 +141,6 @@ class NeurovaultCollectionsPost(BaseApi):
     @typing.overload
     def neurovault_collections_post(
         self,
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = ...,
@@ -219,15 +151,11 @@ class NeurovaultCollectionsPost(BaseApi):
 
     def neurovault_collections_post(
         self,
-        content_type: str = 'application/json',
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
         return self._neurovault_collections_post_oapg(
-            body=body,
-            content_type=content_type,
             stream=stream,
             timeout=timeout,
             skip_deserialization=skip_deserialization
@@ -240,34 +168,17 @@ class ApiForpost(BaseApi):
     @typing.overload
     def post(
         self,
-        content_type: typing_extensions.Literal["application/json"] = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: typing_extensions.Literal[False] = ...,
     ) -> typing.Union[
         ApiResponseFor200,
     ]: ...
-
-    @typing.overload
-    def post(
-        self,
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
-        stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
-        skip_deserialization: typing_extensions.Literal[False] = ...,
-    ) -> typing.Union[
-        ApiResponseFor200,
-    ]: ...
-
 
     @typing.overload
     def post(
         self,
         skip_deserialization: typing_extensions.Literal[True],
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
     ) -> api_client.ApiResponseWithoutDeserialization: ...
@@ -275,8 +186,6 @@ class ApiForpost(BaseApi):
     @typing.overload
     def post(
         self,
-        content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = ...,
@@ -287,15 +196,11 @@ class ApiForpost(BaseApi):
 
     def post(
         self,
-        content_type: str = 'application/json',
-        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
         return self._neurovault_collections_post_oapg(
-            body=body,
-            content_type=content_type,
             stream=stream,
             timeout=timeout,
             skip_deserialization=skip_deserialization

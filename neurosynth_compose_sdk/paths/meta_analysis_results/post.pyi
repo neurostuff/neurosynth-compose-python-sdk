@@ -25,14 +25,14 @@ import frozendict  # noqa: F401
 
 from neurosynth_compose_sdk import schemas  # noqa: F401
 
-from neurosynth_compose_sdk.model.result_init import ResultInit
 from neurosynth_compose_sdk.model.result_return import ResultReturn
+from neurosynth_compose_sdk.model.result import Result
 
 # body param
-SchemaForRequestBodyApplicationJson = ResultInit
+SchemaForRequestBodyApplicationJson = Result
 
 
-request_body_result_init = api_client.RequestBody(
+request_body_result = api_client.RequestBody(
     content={
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
@@ -140,7 +140,7 @@ class BaseApi(api_client.Api):
         _fields = None
         _body = None
         if body is not schemas.unset:
-            serialized_data = request_body_result_init.serialize(body, content_type)
+            serialized_data = request_body_result.serialize(body, content_type)
             _headers.add('Content-Type', content_type)
             if 'fields' in serialized_data:
                 _fields = serialized_data['fields']

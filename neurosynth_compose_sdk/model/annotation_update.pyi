@@ -45,43 +45,43 @@ class AnnotationUpdate(
             class MetaOapg:
                 
                 class properties:
-                    cached_studyset_id = schemas.StrSchema
+                    internal_studyset_id = schemas.StrSchema
                     __annotations__ = {
-                        "cached_studyset_id": cached_studyset_id,
+                        "internal_studyset_id": internal_studyset_id,
                     }
             
             @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["cached_studyset_id"]) -> MetaOapg.properties.cached_studyset_id: ...
+            def __getitem__(self, name: typing_extensions.Literal["internal_studyset_id"]) -> MetaOapg.properties.internal_studyset_id: ...
             
             @typing.overload
             def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
             
-            def __getitem__(self, name: typing.Union[typing_extensions.Literal["cached_studyset_id", ], str]):
+            def __getitem__(self, name: typing.Union[typing_extensions.Literal["internal_studyset_id", ], str]):
                 # dict_instance[name] accessor
                 return super().__getitem__(name)
             
             
             @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["cached_studyset_id"]) -> typing.Union[MetaOapg.properties.cached_studyset_id, schemas.Unset]: ...
+            def get_item_oapg(self, name: typing_extensions.Literal["internal_studyset_id"]) -> typing.Union[MetaOapg.properties.internal_studyset_id, schemas.Unset]: ...
             
             @typing.overload
             def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
             
-            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["cached_studyset_id", ], str]):
+            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["internal_studyset_id", ], str]):
                 return super().get_item_oapg(name)
             
         
             def __new__(
                 cls,
                 *_args: typing.Union[dict, frozendict.frozendict, ],
-                cached_studyset_id: typing.Union[MetaOapg.properties.cached_studyset_id, str, schemas.Unset] = schemas.unset,
+                internal_studyset_id: typing.Union[MetaOapg.properties.internal_studyset_id, str, schemas.Unset] = schemas.unset,
                 _configuration: typing.Optional[schemas.Configuration] = None,
                 **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
             ) -> 'all_of_0':
                 return super().__new__(
                     cls,
                     *_args,
-                    cached_studyset_id=cached_studyset_id,
+                    internal_studyset_id=internal_studyset_id,
                     _configuration=_configuration,
                     **kwargs,
                 )

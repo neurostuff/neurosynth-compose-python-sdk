@@ -18,7 +18,6 @@ Your GET endpoint
 
 ### Example
 
-* Bearer Authentication (JSON-Web-Token):
 ```python
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import projects_api
@@ -30,15 +29,6 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "http://localhost:81/api"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -77,7 +67,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-[JSON-Web-Token](../../../README.md#JSON-Web-Token)
+No authorization required
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
@@ -221,11 +211,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     }
     body = Project(
         provenance=dict(),
-        meta_analyses=None,
+        meta_analyses=[
+            None
+        ],
         name="name_example",
         description="description_example",
-        public=True,
-        neurostore_id="neurostore_id_example",
     )
     try:
         api_response = api_instance.projects_id_put(
@@ -334,11 +324,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # example passing only optional values
     body = Project(
         provenance=dict(),
-        meta_analyses=None,
+        meta_analyses=[
+            None
+        ],
         name="name_example",
         description="description_example",
-        public=True,
-        neurostore_id="neurostore_id_example",
     )
     try:
         api_response = api_instance.projects_post(

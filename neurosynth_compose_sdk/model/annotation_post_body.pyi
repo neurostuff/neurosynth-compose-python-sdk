@@ -44,11 +44,11 @@ class AnnotationPostBody(
         
             class MetaOapg:
                 required = {
-                    "cached_studyset_id",
+                    "internal_studyset_id",
                 }
         
             
-            cached_studyset_id: schemas.AnyTypeSchema
+            internal_studyset_id: schemas.AnyTypeSchema
         
             def __new__(
                 cls,

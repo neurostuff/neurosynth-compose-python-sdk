@@ -25,7 +25,6 @@ import frozendict  # noqa: F401
 
 from neurosynth_compose_sdk import schemas  # noqa: F401
 
-from neurosynth_compose_sdk.model.result_upload import ResultUpload
 from neurosynth_compose_sdk.model.result_return import ResultReturn
 from neurosynth_compose_sdk.model.result import Result
 
@@ -59,21 +58,14 @@ request_path_id = api_client.PathParameter(
 )
 # body param
 SchemaForRequestBodyApplicationJson = Result
-SchemaForRequestBodyMultipartFormData = ResultUpload
 
 
 request_body_result = api_client.RequestBody(
     content={
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
-        'multipart/form-data': api_client.MediaType(
-            schema=SchemaForRequestBodyMultipartFormData),
     },
 )
-_auth = [
-    'JSON-Web-Token',
-    'upload_key',
-]
 SchemaFor200ResponseBodyApplicationJson = ResultReturn
 
 
@@ -119,22 +111,8 @@ class BaseApi(api_client.Api):
     @typing.overload
     def _meta_analysis_results_id_put_oapg(
         self,
-        content_type: typing_extensions.Literal["multipart/form-data"],
-        body: typing.Union[SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
-        path_params: RequestPathParams = frozendict.frozendict(),
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
-        stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
-        skip_deserialization: typing_extensions.Literal[False] = ...,
-    ) -> typing.Union[
-        ApiResponseFor200,
-    ]: ...
-
-    @typing.overload
-    def _meta_analysis_results_id_put_oapg(
-        self,
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -150,7 +128,7 @@ class BaseApi(api_client.Api):
         self,
         skip_deserialization: typing_extensions.Literal[True],
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -161,7 +139,7 @@ class BaseApi(api_client.Api):
     def _meta_analysis_results_id_put_oapg(
         self,
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -175,7 +153,7 @@ class BaseApi(api_client.Api):
     def _meta_analysis_results_id_put_oapg(
         self,
         content_type: str = 'application/json',
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -224,7 +202,6 @@ class BaseApi(api_client.Api):
             headers=_headers,
             fields=_fields,
             body=_body,
-            auth_settings=_auth,
             stream=stream,
             timeout=timeout,
         )
@@ -268,22 +245,8 @@ class MetaAnalysisResultsIdPut(BaseApi):
     @typing.overload
     def meta_analysis_results_id_put(
         self,
-        content_type: typing_extensions.Literal["multipart/form-data"],
-        body: typing.Union[SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
-        path_params: RequestPathParams = frozendict.frozendict(),
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
-        stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
-        skip_deserialization: typing_extensions.Literal[False] = ...,
-    ) -> typing.Union[
-        ApiResponseFor200,
-    ]: ...
-
-    @typing.overload
-    def meta_analysis_results_id_put(
-        self,
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -299,7 +262,7 @@ class MetaAnalysisResultsIdPut(BaseApi):
         self,
         skip_deserialization: typing_extensions.Literal[True],
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -310,7 +273,7 @@ class MetaAnalysisResultsIdPut(BaseApi):
     def meta_analysis_results_id_put(
         self,
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -324,7 +287,7 @@ class MetaAnalysisResultsIdPut(BaseApi):
     def meta_analysis_results_id_put(
         self,
         content_type: str = 'application/json',
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -362,22 +325,8 @@ class ApiForput(BaseApi):
     @typing.overload
     def put(
         self,
-        content_type: typing_extensions.Literal["multipart/form-data"],
-        body: typing.Union[SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
-        path_params: RequestPathParams = frozendict.frozendict(),
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
-        stream: bool = False,
-        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
-        skip_deserialization: typing_extensions.Literal[False] = ...,
-    ) -> typing.Union[
-        ApiResponseFor200,
-    ]: ...
-
-    @typing.overload
-    def put(
-        self,
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -393,7 +342,7 @@ class ApiForput(BaseApi):
         self,
         skip_deserialization: typing_extensions.Literal[True],
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -404,7 +353,7 @@ class ApiForput(BaseApi):
     def put(
         self,
         content_type: str = ...,
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -418,7 +367,7 @@ class ApiForput(BaseApi):
     def put(
         self,
         content_type: str = 'application/json',
-        body: typing.Union[SchemaForRequestBodyApplicationJson, SchemaForRequestBodyMultipartFormData, schemas.Unset] = schemas.unset,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, schemas.Unset] = schemas.unset,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,

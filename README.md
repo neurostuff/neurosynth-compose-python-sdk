@@ -188,10 +188,10 @@ Class | Method | HTTP request | Description
 *ComposeApi* | [**meta_analysis_results_id_get**](docs/apis/tags/ComposeApi.md#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
 *ComposeApi* | [**meta_analysis_results_id_put**](docs/apis/tags/ComposeApi.md#meta_analysis_results_id_put) | **put** /meta-analysis-results/{id} | 
 *ComposeApi* | [**meta_analysis_results_post**](docs/apis/tags/ComposeApi.md#meta_analysis_results_post) | **post** /meta-analysis-results | 
-*ComposeApi* | [**neurovault_collections_get**](docs/apis/tags/ComposeApi.md#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
+*ComposeApi* | [**neurovault_collections_get**](docs/apis/tags/ComposeApi.md#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
 *ComposeApi* | [**neurovault_collections_id_get**](docs/apis/tags/ComposeApi.md#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 *ComposeApi* | [**neurovault_collections_id_put**](docs/apis/tags/ComposeApi.md#neurovault_collections_id_put) | **put** /neurovault-collections/{id} | 
-*ComposeApi* | [**neurovault_collections_post**](docs/apis/tags/ComposeApi.md#neurovault_collections_post) | **post** /neurovault-collections | Create neurovault collection
+*ComposeApi* | [**neurovault_collections_post**](docs/apis/tags/ComposeApi.md#neurovault_collections_post) | **post** /neurovault-collections | 
 *ComposeApi* | [**neurovault_files_get**](docs/apis/tags/ComposeApi.md#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 *ComposeApi* | [**neurovault_files_id_get**](docs/apis/tags/ComposeApi.md#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
 *ComposeApi* | [**neurovault_files_id_put**](docs/apis/tags/ComposeApi.md#neurovault_files_id_put) | **put** /neurovault-files/{id} | 
@@ -208,17 +208,13 @@ Class | Method | HTTP request | Description
 *ComposeApi* | [**studysets_id_get**](docs/apis/tags/ComposeApi.md#studysets_id_get) | **get** /studysets/{id} | Get information about a Studyset
 *ComposeApi* | [**studysets_id_put**](docs/apis/tags/ComposeApi.md#studysets_id_put) | **put** /studysets/{id} | Update a Studyset
 *ComposeApi* | [**studysets_post**](docs/apis/tags/ComposeApi.md#studysets_post) | **post** /studysets | Create a new Studyset
-*DefaultApi* | [**neurostore_studies_get**](docs/apis/tags/DefaultApi.md#neurostore_studies_get) | **get** /neurostore-studies | Your GET endpoint
-*DefaultApi* | [**neurostore_studies_id_get**](docs/apis/tags/DefaultApi.md#neurostore_studies_id_get) | **get** /neurostore-studies/{id} | Your GET endpoint
-*DefaultApi* | [**neurostore_studies_id_put**](docs/apis/tags/DefaultApi.md#neurostore_studies_id_put) | **put** /neurostore-studies/{id} | 
-*DefaultApi* | [**neurostore_studies_post**](docs/apis/tags/DefaultApi.md#neurostore_studies_post) | **post** /neurostore-studies | 
 *GetApi* | [**annotations_get**](docs/apis/tags/GetApi.md#annotations_get) | **get** /annotations | GET a list of annotations
 *GetApi* | [**annotations_id_get**](docs/apis/tags/GetApi.md#annotations_id_get) | **get** /annotations/{id} | GET information about an annotation
 *GetApi* | [**meta_analyses_get**](docs/apis/tags/GetApi.md#meta_analyses_get) | **get** /meta-analyses | GET a list of meta-analyses
 *GetApi* | [**meta_analyses_id_get**](docs/apis/tags/GetApi.md#meta_analyses_id_get) | **get** /meta-analyses/{id} | GET meta-analysis information
 *GetApi* | [**meta_analysis_results_get**](docs/apis/tags/GetApi.md#meta_analysis_results_get) | **get** /meta-analysis-results | Your GET endpoint
 *GetApi* | [**meta_analysis_results_id_get**](docs/apis/tags/GetApi.md#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
-*GetApi* | [**neurovault_collections_get**](docs/apis/tags/GetApi.md#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
+*GetApi* | [**neurovault_collections_get**](docs/apis/tags/GetApi.md#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
 *GetApi* | [**neurovault_collections_id_get**](docs/apis/tags/GetApi.md#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 *GetApi* | [**neurovault_files_get**](docs/apis/tags/GetApi.md#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 *GetApi* | [**neurovault_files_id_get**](docs/apis/tags/GetApi.md#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
@@ -236,10 +232,10 @@ Class | Method | HTTP request | Description
 *MetaAnalysesApi* | [**meta_analysis_results_id_get**](docs/apis/tags/MetaAnalysesApi.md#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
 *MetaAnalysesApi* | [**meta_analysis_results_id_put**](docs/apis/tags/MetaAnalysesApi.md#meta_analysis_results_id_put) | **put** /meta-analysis-results/{id} | 
 *MetaAnalysesApi* | [**meta_analysis_results_post**](docs/apis/tags/MetaAnalysesApi.md#meta_analysis_results_post) | **post** /meta-analysis-results | 
-*NeurovaultApi* | [**neurovault_collections_get**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
+*NeurovaultApi* | [**neurovault_collections_get**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
 *NeurovaultApi* | [**neurovault_collections_id_get**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 *NeurovaultApi* | [**neurovault_collections_id_put**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_id_put) | **put** /neurovault-collections/{id} | 
-*NeurovaultApi* | [**neurovault_collections_post**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_post) | **post** /neurovault-collections | Create neurovault collection
+*NeurovaultApi* | [**neurovault_collections_post**](docs/apis/tags/NeurovaultApi.md#neurovault_collections_post) | **post** /neurovault-collections | 
 *NeurovaultApi* | [**neurovault_files_get**](docs/apis/tags/NeurovaultApi.md#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 *NeurovaultApi* | [**neurovault_files_id_get**](docs/apis/tags/NeurovaultApi.md#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
 *NeurovaultApi* | [**neurovault_files_id_put**](docs/apis/tags/NeurovaultApi.md#neurovault_files_id_put) | **put** /neurovault-files/{id} | 
@@ -247,7 +243,7 @@ Class | Method | HTTP request | Description
 *PostApi* | [**annotations_post**](docs/apis/tags/PostApi.md#annotations_post) | **post** /annotations | Create a new Annotation
 *PostApi* | [**meta_analyses_post**](docs/apis/tags/PostApi.md#meta_analyses_post) | **post** /meta-analyses | Create a new meta-analysis
 *PostApi* | [**meta_analysis_results_post**](docs/apis/tags/PostApi.md#meta_analysis_results_post) | **post** /meta-analysis-results | 
-*PostApi* | [**neurovault_collections_post**](docs/apis/tags/PostApi.md#neurovault_collections_post) | **post** /neurovault-collections | Create neurovault collection
+*PostApi* | [**neurovault_collections_post**](docs/apis/tags/PostApi.md#neurovault_collections_post) | **post** /neurovault-collections | 
 *PostApi* | [**neurovault_files_post**](docs/apis/tags/PostApi.md#neurovault_files_post) | **post** /neurovault-files | 
 *PostApi* | [**projects_post**](docs/apis/tags/PostApi.md#projects_post) | **post** /projects | 
 *PostApi* | [**specifications_post**](docs/apis/tags/PostApi.md#specifications_post) | **post** /specifications | Create a Specification
@@ -290,10 +286,6 @@ Class | Method | HTTP request | Description
  - [MetaAnalysisList](docs/models/MetaAnalysisList.md)
  - [MetaAnalysisPostBody](docs/models/MetaAnalysisPostBody.md)
  - [MetaAnalysisReturn](docs/models/MetaAnalysisReturn.md)
- - [NeurostoreAnalysis](docs/models/NeurostoreAnalysis.md)
- - [NeurostoreStudy](docs/models/NeurostoreStudy.md)
- - [NeurostoreStudyList](docs/models/NeurostoreStudyList.md)
- - [NeurostoreStudyReturn](docs/models/NeurostoreStudyReturn.md)
  - [NeurovaultCollection](docs/models/NeurovaultCollection.md)
  - [NeurovaultCollectionReturn](docs/models/NeurovaultCollectionReturn.md)
  - [NeurovaultFile](docs/models/NeurovaultFile.md)
@@ -305,7 +297,6 @@ Class | Method | HTTP request | Description
  - [ProjectReturn](docs/models/ProjectReturn.md)
  - [ReadOnly](docs/models/ReadOnly.md)
  - [Result](docs/models/Result.md)
- - [ResultInit](docs/models/ResultInit.md)
  - [ResultList](docs/models/ResultList.md)
  - [ResultReturn](docs/models/ResultReturn.md)
  - [Specification](docs/models/Specification.md)
@@ -322,22 +313,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-
+ Authentication schemes defined for the API:
 ## JSON-Web-Token
 
 - **Type**: Bearer authentication
 
- Authentication schemes defined for the API:
-## upload_key
-
-- **Type**: API key
-- **API key parameter name**: compose_upload_key
-- **Location**: HTTP header
-
 
 ## Author
 
-jamesdkent21@gmail.com
 jamesdkent21@gmail.com
 jamesdkent21@gmail.com
 jamesdkent21@gmail.com

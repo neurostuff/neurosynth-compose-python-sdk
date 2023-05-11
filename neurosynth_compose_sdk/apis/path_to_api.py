@@ -19,8 +19,6 @@ from neurosynth_compose_sdk.apis.paths.neurovault_files import NeurovaultFiles
 from neurosynth_compose_sdk.apis.paths.neurovault_files_id import NeurovaultFilesId
 from neurosynth_compose_sdk.apis.paths.projects import Projects
 from neurosynth_compose_sdk.apis.paths.projects_id import ProjectsId
-from neurosynth_compose_sdk.apis.paths.neurostore_studies import NeurostoreStudies
-from neurosynth_compose_sdk.apis.paths.neurostore_studies_id import NeurostoreStudiesId
 
 PathToApi = typing_extensions.TypedDict(
     'PathToApi',
@@ -43,8 +41,6 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.NEUROVAULTFILES_ID: NeurovaultFilesId,
         PathValues.PROJECTS: Projects,
         PathValues.PROJECTS_ID: ProjectsId,
-        PathValues.NEUROSTORESTUDIES: NeurostoreStudies,
-        PathValues.NEUROSTORESTUDIES_ID: NeurostoreStudiesId,
     }
 )
 
@@ -68,7 +64,5 @@ path_to_api = PathToApi(
         PathValues.NEUROVAULTFILES_ID: NeurovaultFilesId,
         PathValues.PROJECTS: Projects,
         PathValues.PROJECTS_ID: ProjectsId,
-        PathValues.NEUROSTORESTUDIES: NeurostoreStudies,
-        PathValues.NEUROSTORESTUDIES_ID: NeurostoreStudiesId,
     }
 )
