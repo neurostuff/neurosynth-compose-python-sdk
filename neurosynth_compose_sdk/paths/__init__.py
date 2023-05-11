@@ -24,3 +24,5 @@ class PathValues(str, enum.Enum):
     NEUROVAULTFILES_ID = "/neurovault-files/{id}"
     PROJECTS = "/projects"
     PROJECTS_ID = "/projects/{id}"
+    NEUROSTORESTUDIES = "/neurostore-studies"
+    NEUROSTORESTUDIES_ID = "/neurostore-studies/{id}"

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**meta_analyses_id_get**](#meta_analyses_id_get) | **get** /meta-analyses/{id} | GET meta-analysis information
 [**meta_analysis_results_get**](#meta_analysis_results_get) | **get** /meta-analysis-results | Your GET endpoint
 [**meta_analysis_results_id_get**](#meta_analysis_results_id_get) | **get** /meta-analysis-results/{id} | Your GET endpoint
-[**neurovault_collections_get**](#neurovault_collections_get) | **get** /neurovault-collections | Your GET endpoint
+[**neurovault_collections_get**](#neurovault_collections_get) | **get** /neurovault-collections | Get neurovault collections
 [**neurovault_collections_id_get**](#neurovault_collections_id_get) | **get** /neurovault-collections/{id} | Your GET endpoint
 [**neurovault_files_get**](#neurovault_files_get) | **get** /neurovault-files | Your GET endpoint
 [**neurovault_files_id_get**](#neurovault_files_id_get) | **get** /neurovault-files/{id} | Your GET endpoint
@@ -712,7 +712,7 @@ No authorization required
 <a name="neurovault_collections_get"></a>
 > neurovault_collections_get()
 
-Your GET endpoint
+Get neurovault collections
 
 ### Example
 
@@ -733,7 +733,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Your GET endpoint
+        # Get neurovault collections
         api_response = api_instance.neurovault_collections_get()
     except neurosynth_compose_sdk.ApiException as e:
         print("Exception when calling GetApi->neurovault_collections_get: %s\n" % e)
@@ -1004,6 +1004,7 @@ Your GET endpoint
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 ```python
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import get_api
@@ -1015,6 +1016,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "http://localhost:81/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -1053,7 +1063,7 @@ Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../../../README.md#JSON-Web-Token)
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
