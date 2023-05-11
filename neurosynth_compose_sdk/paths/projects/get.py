@@ -29,6 +29,9 @@ from neurosynth_compose_sdk.model.project_list import ProjectList
 
 from . import path
 
+_auth = [
+    'JSON-Web-Token',
+]
 SchemaFor200ResponseBodyApplicationJson = ProjectList
 
 
@@ -114,6 +117,7 @@ class BaseApi(api_client.Api):
             resource_path=used_path,
             method='get'.upper(),
             headers=_headers,
+            auth_settings=_auth,
             stream=stream,
             timeout=timeout,
         )
