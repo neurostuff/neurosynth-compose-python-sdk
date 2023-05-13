@@ -208,10 +208,12 @@ Class | Method | HTTP request | Description
 *ComposeApi* | [**studysets_id_get**](docs/apis/tags/ComposeApi.md#studysets_id_get) | **get** /studysets/{id} | Get information about a Studyset
 *ComposeApi* | [**studysets_id_put**](docs/apis/tags/ComposeApi.md#studysets_id_put) | **put** /studysets/{id} | Update a Studyset
 *ComposeApi* | [**studysets_post**](docs/apis/tags/ComposeApi.md#studysets_post) | **post** /studysets | Create a new Studyset
+*DefaultApi* | [**meta_analyses_id_delete**](docs/apis/tags/DefaultApi.md#meta_analyses_id_delete) | **delete** /meta-analyses/{id} | 
 *DefaultApi* | [**neurostore_studies_get**](docs/apis/tags/DefaultApi.md#neurostore_studies_get) | **get** /neurostore-studies | Your GET endpoint
 *DefaultApi* | [**neurostore_studies_id_get**](docs/apis/tags/DefaultApi.md#neurostore_studies_id_get) | **get** /neurostore-studies/{id} | Your GET endpoint
 *DefaultApi* | [**neurostore_studies_id_put**](docs/apis/tags/DefaultApi.md#neurostore_studies_id_put) | **put** /neurostore-studies/{id} | 
 *DefaultApi* | [**neurostore_studies_post**](docs/apis/tags/DefaultApi.md#neurostore_studies_post) | **post** /neurostore-studies | 
+*DefaultApi* | [**projects_id_delete**](docs/apis/tags/DefaultApi.md#projects_id_delete) | **delete** /projects/{id} | 
 *GetApi* | [**annotations_get**](docs/apis/tags/GetApi.md#annotations_get) | **get** /annotations | GET a list of annotations
 *GetApi* | [**annotations_id_get**](docs/apis/tags/GetApi.md#annotations_id_get) | **get** /annotations/{id} | GET information about an annotation
 *GetApi* | [**meta_analyses_get**](docs/apis/tags/GetApi.md#meta_analyses_get) | **get** /meta-analyses | GET a list of meta-analyses
