@@ -392,7 +392,7 @@ conf = neurosynth_compose_sdk.Configuration(
             auth['upload_key'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'compose_upload_key',
+                'key': 'Compose-Upload-Key',
                 'value': self.get_api_key_with_prefix(
                     'upload_key',
                 ),
