@@ -333,7 +333,7 @@ Class | Method | HTTP request | Description
 ## upload_key
 
 - **Type**: API key
-- **API key parameter name**: compose_upload_key
+- **API key parameter name**: Compose-Upload-Key
 - **Location**: HTTP header
 
 
