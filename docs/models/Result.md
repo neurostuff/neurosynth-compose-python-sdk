@@ -15,7 +15,7 @@ Key | Input Type | Accessed Type | Description | Notes
 **neurovault_collection_id** | None, str,  | NoneClass, str,  |  | [optional] 
 **methods_description** | None, str,  | NoneClass, str,  |  | [optional] 
 **[neurovault_images](#neurovault_images)** | list, tuple, None,  | tuple, NoneClass,  |  | [optional] 
-**diagnostic_table** | str,  | str,  |  | [optional] 
+**diagnostic_table** | None, str,  | NoneClass, str,  |  | [optional] 
 **[cli_args](#cli_args)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
