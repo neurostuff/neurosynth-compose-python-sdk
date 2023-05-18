@@ -147,7 +147,28 @@ class Result(
                         *_args,
                         _configuration=_configuration,
                     )
-            cli_args = schemas.DictSchema
+            
+            
+            class cli_args(
+                schemas.DictBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneFrozenDictMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[dict, frozendict.frozendict, None, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'cli_args':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
             __annotations__ = {
                 "meta_analysis_id": meta_analysis_id,
                 "cli_version": cli_version,
@@ -224,7 +245,7 @@ class Result(
         methods_description: typing.Union[MetaOapg.properties.methods_description, None, str, schemas.Unset] = schemas.unset,
         neurovault_images: typing.Union[MetaOapg.properties.neurovault_images, list, tuple, None, schemas.Unset] = schemas.unset,
         diagnostic_table: typing.Union[MetaOapg.properties.diagnostic_table, None, str, schemas.Unset] = schemas.unset,
-        cli_args: typing.Union[MetaOapg.properties.cli_args, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        cli_args: typing.Union[MetaOapg.properties.cli_args, dict, frozendict.frozendict, None, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Result':
