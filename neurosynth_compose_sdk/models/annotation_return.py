@@ -28,7 +28,7 @@ class AnnotationReturn(BaseModel):
     """
     neurostore_id: Optional[StrictStr] = Field(None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
-    studyset: Optional[StrictStr] = Field(None, description="The related studyset to this annotation.")
+    studyset: Optional[StrictStr] = Field(None, description="The related cached studyset to this annotation.")
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")

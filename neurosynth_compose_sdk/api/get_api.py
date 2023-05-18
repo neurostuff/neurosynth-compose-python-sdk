@@ -898,7 +898,7 @@ class GetApi(object):
 
     @validate_arguments
     def neurovault_collections_get(self, **kwargs) -> None:  # noqa: E501
-        """Your GET endpoint  # noqa: E501
+        """Get neurovault collections  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -924,7 +924,7 @@ class GetApi(object):
 
     @validate_arguments
     def neurovault_collections_get_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
-        """Your GET endpoint  # noqa: E501
+        """Get neurovault collections  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1528,7 +1528,7 @@ class GetApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = []  # noqa: E501
+        _auth_settings = ['JSON-Web-Token']  # noqa: E501
 
         _response_types_map = {
             '200': "ProjectList",

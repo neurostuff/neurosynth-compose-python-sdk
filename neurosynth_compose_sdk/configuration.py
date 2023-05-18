@@ -55,6 +55,25 @@ class Configuration(object):
       in PEM format.
 
     :Example:
+
+    API Key Authentication Example.
+    Given the following security scheme in the OpenAPI specification:
+      components:
+        securitySchemes:
+          cookieAuth:         # name for the security scheme
+            type: apiKey
+            in: cookie
+            name: JSESSIONID  # cookie name
+
+    You can programmatically set the cookie:
+
+conf = neurosynth_compose_sdk.Configuration(
+    api_key={'cookieAuth': 'abc123'}
+    api_key_prefix={'cookieAuth': 'JSESSIONID'}
+)
+
+    The following cookie will be added to the HTTP request:
+       Cookie: JSESSIONID abc123
     """
 
     _default = None
@@ -69,7 +88,7 @@ class Configuration(object):
                  ):
         """Constructor
         """
-        self._base_path = "http://localhost:81/api" if host is None else host
+        self._base_path = "https://compose.neurosynth.org/api" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -369,6 +388,15 @@ class Configuration(object):
                 'key': 'Authorization',
                 'value': 'Bearer ' + self.access_token
             }
+        if 'upload_key' in self.api_key:
+            auth['upload_key'] = {
+                'type': 'api_key',
+                'in': 'header',
+                'key': 'Compose-Upload-Key',
+                'value': self.get_api_key_with_prefix(
+                    'upload_key',
+                ),
+            }
         return auth
 
     def to_debug_report(self):
@@ -390,16 +418,16 @@ class Configuration(object):
         """
         return [
             {
-                'url': "http://localhost:81/api",
-                'description': "testing",
+                'url': "https://compose.neurosynth.org/api",
+                'description': "production",
             },
             {
                 'url': "https://synth.neurostore.xyz/api",
                 'description': "staging",
             },
             {
-                'url': "https://compose.neurosynth.org/api",
-                'description': "production",
+                'url': "http://localhost:81/api",
+                'description': "testing",
             }
         ]
 

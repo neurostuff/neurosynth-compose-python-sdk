@@ -1,6 +1,6 @@
 # neurosynth_compose_sdk.MetaAnalysesApi
 
-All URIs are relative to *http://localhost:81/api*
+All URIs are relative to *https://compose.neurosynth.org/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,10 +31,10 @@ from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 
@@ -98,10 +98,10 @@ from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisRetur
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 
@@ -170,10 +170,10 @@ from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisRetur
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -253,10 +253,10 @@ from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisRetur
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -329,10 +329,10 @@ from neurosynth_compose_sdk.models.result_list import ResultList
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 
@@ -393,10 +393,10 @@ from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 
@@ -449,6 +449,8 @@ No authorization required
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
+* Api Key Authentication (upload_key):
 ```python
 import time
 import os
@@ -458,12 +460,27 @@ from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Configure API key authorization: upload_key
+configuration.api_key['upload_key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['upload_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -495,11 +512,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token), [upload_key](../README.md#upload_key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -510,26 +527,27 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **meta_analysis_results_post**
-> ResultReturn meta_analysis_results_post(result=result)
+> ResultReturn meta_analysis_results_post(result_init=result_init)
 
 
 
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+* Api Key Authentication (upload_key):
 ```python
 import time
 import os
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.result import Result
+from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -542,15 +560,21 @@ configuration = neurosynth_compose_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
+# Configure API key authorization: upload_key
+configuration.api_key['upload_key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['upload_key'] = 'Bearer'
+
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.MetaAnalysesApi(api_client)
-    result = neurosynth_compose_sdk.Result() # Result |  (optional)
+    result_init = neurosynth_compose_sdk.ResultInit() # ResultInit |  (optional)
 
     try:
         # 
-        api_response = api_instance.meta_analysis_results_post(result=result)
+        api_response = api_instance.meta_analysis_results_post(result_init=result_init)
         print("The response of MetaAnalysesApi->meta_analysis_results_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -562,7 +586,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **result** | [**Result**](Result.md)|  | [optional] 
+ **result_init** | [**ResultInit**](ResultInit.md)|  | [optional] 
 
 ### Return type
 
@@ -570,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JSON-Web-Token](../README.md#JSON-Web-Token)
+[JSON-Web-Token](../README.md#JSON-Web-Token), [upload_key](../README.md#upload_key)
 
 ### HTTP request headers
 

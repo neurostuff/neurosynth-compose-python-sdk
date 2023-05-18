@@ -8,14 +8,8 @@ Name | Type | Description | Notes
 **exception** | **str** |  | [optional] 
 **traceback** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
-**file** | **bytearray** |  | [optional] 
 **image_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**map_type** | **str** |  | [optional] 
-**cognitive_contrast_cogatlas** | **str** |  | [optional] 
-**cognitive_contrast_cogatlas_id** | **str** |  | [optional] 
-**cognitive_paradigm_cogatlas** | **str** |  | [optional] 
-**cognitive_paradigm_cogatlas_id** | **str** |  | [optional] 
 
 ## Example
 

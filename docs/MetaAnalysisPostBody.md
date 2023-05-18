@@ -9,11 +9,20 @@ Name | Type | Description | Notes
 **annotation** | [**MetaAnalysisAnnotation**](MetaAnalysisAnnotation.md) |  | [optional] 
 **name** | **str** | Human-readable name of the meta-analysis. | [optional] 
 **description** | **str** | Long form description of the meta-analysis. | [optional] 
-**internal_studyset_id** | **str** | The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | 
-**internal_annotation_id** | **str** | The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | 
-**results** | [**List[MetaAnalysisResultsInner]**](MetaAnalysisResultsInner.md) | array of neurostore ids representing the results of this meta-analysis (nominally all results should be the same, but machine architecture differences/algorithm stochastic-ness may lead to slightly different outcomes for each result. | [optional] 
+**cached_studyset_id** | **str** | The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | 
+**cached_annotation_id** | **str** | The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary. | 
+**results** | [**MetaAnalysisResults**](MetaAnalysisResults.md) |  | [optional] 
 **provenance** | **object** |  | [optional] 
 **project** | **str** |  | [optional] 
+**run_key** | **str** | a special key used to upload the results of this meta analysis. Can be used as an alternative to using your auth token from login.  | [optional] [readonly] 
+**neurostore_analysis_id** | **str** |  | [optional] [readonly] 
+**hash** | **str** | TODO: create hash of studyset and annotation and use that for the run_key | [optional] 
+**cognitive_contrast_cogatlas** | **str** |  | [optional] 
+**cognitive_contrast_cogatlas_id** | **str** |  | [optional] 
+**cognitive_paradigm_cogatlas** | **str** |  | [optional] 
+**cognitive_paradigm_cogatlas_id** | **str** |  | [optional] 
+**cached_studyset** | **str** |  | [optional] [readonly] 
+**cached_annotation** | **str** |  | [optional] [readonly] 
 
 ## Example
 

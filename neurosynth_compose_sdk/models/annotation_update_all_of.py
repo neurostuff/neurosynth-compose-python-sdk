@@ -26,8 +26,8 @@ class AnnotationUpdateAllOf(BaseModel):
     """
     AnnotationUpdateAllOf
     """
-    internal_studyset_id: Optional[StrictStr] = None
-    __properties = ["internal_studyset_id"]
+    cached_studyset_id: Optional[StrictStr] = None
+    __properties = ["cached_studyset_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -65,7 +65,7 @@ class AnnotationUpdateAllOf(BaseModel):
             return AnnotationUpdateAllOf.parse_obj(obj)
 
         _obj = AnnotationUpdateAllOf.parse_obj({
-            "internal_studyset_id": obj.get("internal_studyset_id")
+            "cached_studyset_id": obj.get("cached_studyset_id")
         })
         return _obj
 

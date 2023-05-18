@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **collection_id** | **str** |  | [optional] [readonly] 
-**files** | [**List[NeurovaultCollectionFilesInner]**](NeurovaultCollectionFilesInner.md) |  | [optional] 
+**files** | [**NeurovaultCollectionFiles**](NeurovaultCollectionFiles.md) |  | [optional] 
 **result** | **str** |  | [optional] [readonly] 
 
 ## Example

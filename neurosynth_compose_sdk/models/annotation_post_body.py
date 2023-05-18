@@ -26,11 +26,11 @@ class AnnotationPostBody(BaseModel):
     """
     AnnotationPostBody
     """
-    internal_studyset_id: StrictStr = Field(...)
+    cached_studyset_id: StrictStr = Field(...)
     neurostore_id: Optional[StrictStr] = Field(None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
-    studyset: Optional[StrictStr] = Field(None, description="The related studyset to this annotation.")
-    __properties = ["internal_studyset_id", "neurostore_id", "snapshot", "studyset"]
+    studyset: Optional[StrictStr] = Field(None, description="The related cached studyset to this annotation.")
+    __properties = ["cached_studyset_id", "neurostore_id", "snapshot", "studyset"]
 
     class Config:
         """Pydantic configuration"""
@@ -74,7 +74,7 @@ class AnnotationPostBody(BaseModel):
             return AnnotationPostBody.parse_obj(obj)
 
         _obj = AnnotationPostBody.parse_obj({
-            "internal_studyset_id": obj.get("internal_studyset_id"),
+            "cached_studyset_id": obj.get("cached_studyset_id"),
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
             "studyset": obj.get("studyset")

@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**internal_studyset_id** | **str** |  | [optional] 
+**cached_studyset_id** | **str** |  | [optional] 
 **neurostore_id** | **str** | the id of the annotation on neurostore | [optional] 
 **snapshot** | **object** | the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm | [optional] 
-**studyset** | **str** | The related studyset to this annotation. | [optional] [readonly] 
+**studyset** | **str** | The related cached studyset to this annotation. | [optional] [readonly] 
 
 ## Example
 

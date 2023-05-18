@@ -19,19 +19,21 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Dict, List, Optional
-from pydantic import BaseModel, StrictStr, conlist
-from neurosynth_compose_sdk.models.project_meta_analyses_inner import ProjectMetaAnalysesInner
+from typing import Any, Dict, Optional
+from pydantic import BaseModel, Field, StrictBool, StrictStr
+from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
 
 class Project(BaseModel):
     """
     Project
     """
     provenance: Optional[Dict[str, Any]] = None
-    meta_analyses: Optional[conlist(ProjectMetaAnalysesInner)] = None
+    meta_analyses: Optional[ProjectMetaAnalyses] = None
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    __properties = ["provenance", "meta_analyses", "name", "description"]
+    public: Optional[StrictBool] = Field(None, description="whether the project is public or private")
+    neurostore_id: Optional[StrictStr] = None
+    __properties = ["provenance", "meta_analyses", "name", "description", "public", "neurostore_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -55,15 +57,12 @@ class Project(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "neurostore_id",
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in meta_analyses (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of meta_analyses
         if self.meta_analyses:
-            for _item in self.meta_analyses:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['meta_analyses'] = _items
+            _dict['meta_analyses'] = self.meta_analyses.to_dict()
         # set to None if provenance (nullable) is None
         # and __fields_set__ contains the field
         if self.provenance is None and "provenance" in self.__fields_set__:
@@ -92,9 +91,11 @@ class Project(BaseModel):
 
         _obj = Project.parse_obj({
             "provenance": obj.get("provenance"),
-            "meta_analyses": [ProjectMetaAnalysesInner.from_dict(_item) for _item in obj.get("meta_analyses")] if obj.get("meta_analyses") is not None else None,
+            "meta_analyses": ProjectMetaAnalyses.from_dict(obj.get("meta_analyses")) if obj.get("meta_analyses") is not None else None,
             "name": obj.get("name"),
-            "description": obj.get("description")
+            "description": obj.get("description"),
+            "public": obj.get("public"),
+            "neurostore_id": obj.get("neurostore_id")
         })
         return _obj
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** | the id of the annotation on neurostore | [optional] 
 **snapshot** | **object** | the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm | [optional] 
-**studyset** | **str** | The related studyset to this annotation. | [optional] [readonly] 
+**studyset** | **str** | The related cached studyset to this annotation. | [optional] [readonly] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

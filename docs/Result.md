@@ -5,12 +5,13 @@ describes the output of a meta-analysis
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**images** | **object** |  | [optional] 
-**meta_analysis_id** | **str** |  | [optional] 
-**cli_version** | **str** |  | [optional] 
-**estimator** | [**Estimator**](Estimator.md) |  | [optional] 
-**neurostore_id** | **str** |  | [optional] 
-**neurovault_collection** | [**NeurovaultCollection**](NeurovaultCollection.md) |  | [optional] 
+**meta_analysis_id** | **str** | the meta analysis this result was derived from. | [optional] 
+**cli_version** | **str** | version of the command-line-tool that is uploading the results.  | [optional] 
+**neurovault_collection_id** | **str** | the specific neurovault collection associated with this result. | [optional] 
+**methods_description** | **str** | the description of the methods applied to create this result. | [optional] 
+**neurovault_images** | [**List[NeurovaultFile]**](NeurovaultFile.md) | the representation of the neurovault images associated with the result. | [optional] 
+**diagnostic_table** | **str** | a text representation of a tsv that marks the contribution of each study to each particular cluster. | [optional] 
+**cli_args** | **object** | additional parameters that were passed to the commandline tool at runtime.  | [optional] 
 
 ## Example
 

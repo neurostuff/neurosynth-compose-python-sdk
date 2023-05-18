@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictBytes, StrictStr
+from typing import Optional
+from pydantic import BaseModel, Field, StrictStr
 
 class NeurovaultFileReturn(BaseModel):
     """
@@ -30,19 +30,13 @@ class NeurovaultFileReturn(BaseModel):
     exception: Optional[StrictStr] = None
     traceback: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
-    file: Optional[Union[StrictBytes, StrictStr]] = None
     image_id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    map_type: Optional[StrictStr] = None
-    cognitive_contrast_cogatlas: Optional[StrictStr] = None
-    cognitive_contrast_cogatlas_id: Optional[StrictStr] = None
-    cognitive_paradigm_cogatlas: Optional[StrictStr] = None
-    cognitive_paradigm_cogatlas_id: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
-    __properties = ["collection_id", "exception", "traceback", "status", "file", "image_id", "name", "map_type", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "id", "updated_at", "created_at", "user"]
+    __properties = ["collection_id", "exception", "traceback", "status", "image_id", "name", "id", "updated_at", "created_at", "user"]
 
     class Config:
         """Pydantic configuration"""
@@ -90,31 +84,6 @@ class NeurovaultFileReturn(BaseModel):
         if self.name is None and "name" in self.__fields_set__:
             _dict['name'] = None
 
-        # set to None if map_type (nullable) is None
-        # and __fields_set__ contains the field
-        if self.map_type is None and "map_type" in self.__fields_set__:
-            _dict['map_type'] = None
-
-        # set to None if cognitive_contrast_cogatlas (nullable) is None
-        # and __fields_set__ contains the field
-        if self.cognitive_contrast_cogatlas is None and "cognitive_contrast_cogatlas" in self.__fields_set__:
-            _dict['cognitive_contrast_cogatlas'] = None
-
-        # set to None if cognitive_contrast_cogatlas_id (nullable) is None
-        # and __fields_set__ contains the field
-        if self.cognitive_contrast_cogatlas_id is None and "cognitive_contrast_cogatlas_id" in self.__fields_set__:
-            _dict['cognitive_contrast_cogatlas_id'] = None
-
-        # set to None if cognitive_paradigm_cogatlas (nullable) is None
-        # and __fields_set__ contains the field
-        if self.cognitive_paradigm_cogatlas is None and "cognitive_paradigm_cogatlas" in self.__fields_set__:
-            _dict['cognitive_paradigm_cogatlas'] = None
-
-        # set to None if cognitive_paradigm_cogatlas_id (nullable) is None
-        # and __fields_set__ contains the field
-        if self.cognitive_paradigm_cogatlas_id is None and "cognitive_paradigm_cogatlas_id" in self.__fields_set__:
-            _dict['cognitive_paradigm_cogatlas_id'] = None
-
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.updated_at is None and "updated_at" in self.__fields_set__:
@@ -141,14 +110,8 @@ class NeurovaultFileReturn(BaseModel):
             "exception": obj.get("exception"),
             "traceback": obj.get("traceback"),
             "status": obj.get("status"),
-            "file": obj.get("file"),
             "image_id": obj.get("image_id"),
             "name": obj.get("name"),
-            "map_type": obj.get("map_type"),
-            "cognitive_contrast_cogatlas": obj.get("cognitive_contrast_cogatlas"),
-            "cognitive_contrast_cogatlas_id": obj.get("cognitive_contrast_cogatlas_id"),
-            "cognitive_paradigm_cogatlas": obj.get("cognitive_paradigm_cogatlas"),
-            "cognitive_paradigm_cogatlas_id": obj.get("cognitive_paradigm_cogatlas_id"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

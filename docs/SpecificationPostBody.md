@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future. | 
-**estimator** | [**Estimator**](Estimator.md) |  | 
+**type** | **str** | the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future. | [optional] 
+**estimator** | [**Estimator**](Estimator.md) |  | [optional] 
 **mask** | **str** | a string representing a binary nifti file to select which voxels a user wants to include in the analysis. | [optional] 
 **contrast** | **str** | underspecified selection of columns to contrast (TODO, make better). | [optional] 
 **transformer** | **str** | A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated. | [optional] 

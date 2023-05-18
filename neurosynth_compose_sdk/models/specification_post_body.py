@@ -28,8 +28,8 @@ class SpecificationPostBody(BaseModel):
     """
     SpecificationPostBody
     """
-    type: StrictStr = Field(..., description="the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future.")
-    estimator: Estimator = Field(...)
+    type: Optional[StrictStr] = Field(None, description="the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future.")
+    estimator: Optional[Estimator] = None
     mask: Optional[StrictStr] = Field(None, description="a string representing a binary nifti file to select which voxels a user wants to include in the analysis.")
     contrast: Optional[StrictStr] = Field(None, description="underspecified selection of columns to contrast (TODO, make better).")
     transformer: Optional[StrictStr] = Field(None, description="A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated.")

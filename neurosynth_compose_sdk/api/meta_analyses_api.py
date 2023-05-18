@@ -29,6 +29,7 @@ from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.models.result import Result
+from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_list import ResultList
 from neurosynth_compose_sdk.models.result_return import ResultReturn
 
@@ -1046,12 +1047,12 @@ class MetaAnalysesApi(object):
         # set the HTTP header `Content-Type`
         _content_types_list = _params.get('_content_type',
             self.api_client.select_header_content_type(
-                ['application/json']))
+                ['application/json', 'multipart/form-data']))
         if _content_types_list:
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = []  # noqa: E501
+        _auth_settings = ['JSON-Web-Token', 'upload_key']  # noqa: E501
 
         _response_types_map = {
             '200': "ResultReturn",
@@ -1075,17 +1076,17 @@ class MetaAnalysesApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def meta_analysis_results_post(self, result : Optional[Result] = None, **kwargs) -> ResultReturn:  # noqa: E501
+    def meta_analysis_results_post(self, result_init : Optional[ResultInit] = None, **kwargs) -> ResultReturn:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analysis_results_post(result, async_req=True)
+        >>> thread = api.meta_analysis_results_post(result_init, async_req=True)
         >>> result = thread.get()
 
-        :param result:
-        :type result: Result
+        :param result_init:
+        :type result_init: ResultInit
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -1100,20 +1101,20 @@ class MetaAnalysesApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the meta_analysis_results_post_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.meta_analysis_results_post_with_http_info(result, **kwargs)  # noqa: E501
+        return self.meta_analysis_results_post_with_http_info(result_init, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def meta_analysis_results_post_with_http_info(self, result : Optional[Result] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def meta_analysis_results_post_with_http_info(self, result_init : Optional[ResultInit] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analysis_results_post_with_http_info(result, async_req=True)
+        >>> thread = api.meta_analysis_results_post_with_http_info(result_init, async_req=True)
         >>> result = thread.get()
 
-        :param result:
-        :type result: Result
+        :param result_init:
+        :type result_init: ResultInit
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -1142,7 +1143,7 @@ class MetaAnalysesApi(object):
         _params = locals()
 
         _all_params = [
-            'result'
+            'result_init'
         ]
         _all_params.extend(
             [
@@ -1180,8 +1181,8 @@ class MetaAnalysesApi(object):
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['result'] is not None:
-            _body_params = _params['result']
+        if _params['result_init'] is not None:
+            _body_params = _params['result_init']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1195,7 +1196,7 @@ class MetaAnalysesApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['JSON-Web-Token']  # noqa: E501
+        _auth_settings = ['JSON-Web-Token', 'upload_key']  # noqa: E501
 
         _response_types_map = {
             '200': "ResultReturn",

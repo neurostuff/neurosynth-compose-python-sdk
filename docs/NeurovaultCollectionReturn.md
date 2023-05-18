@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **collection_id** | **str** |  | [optional] [readonly] 
-**files** | [**List[NeurovaultCollectionFilesInner]**](NeurovaultCollectionFilesInner.md) |  | [optional] 
+**files** | [**NeurovaultCollectionFiles**](NeurovaultCollectionFiles.md) |  | [optional] 
 **result** | **str** |  | [optional] [readonly] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 

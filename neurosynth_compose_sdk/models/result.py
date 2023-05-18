@@ -19,22 +19,22 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Dict, Optional
-from pydantic import BaseModel, StrictStr
-from neurosynth_compose_sdk.models.estimator import Estimator
-from neurosynth_compose_sdk.models.neurovault_collection import NeurovaultCollection
+from typing import Any, Dict, List, Optional
+from pydantic import BaseModel, Field, StrictStr, conlist
+from neurosynth_compose_sdk.models.neurovault_file import NeurovaultFile
 
 class Result(BaseModel):
     """
     describes the output of a meta-analysis
     """
-    images: Optional[Dict[str, Any]] = None
-    meta_analysis_id: Optional[StrictStr] = None
-    cli_version: Optional[StrictStr] = None
-    estimator: Optional[Estimator] = None
-    neurostore_id: Optional[StrictStr] = None
-    neurovault_collection: Optional[NeurovaultCollection] = None
-    __properties = ["images", "meta_analysis_id", "cli_version", "estimator", "neurostore_id", "neurovault_collection"]
+    meta_analysis_id: Optional[StrictStr] = Field(None, description="the meta analysis this result was derived from.")
+    cli_version: Optional[StrictStr] = Field(None, description="version of the command-line-tool that is uploading the results. ")
+    neurovault_collection_id: Optional[StrictStr] = Field(None, description="the specific neurovault collection associated with this result.")
+    methods_description: Optional[StrictStr] = Field(None, description="the description of the methods applied to create this result.")
+    neurovault_images: Optional[conlist(NeurovaultFile)] = Field(None, description="the representation of the neurovault images associated with the result.")
+    diagnostic_table: Optional[StrictStr] = Field(None, description="a text representation of a tsv that marks the contribution of each study to each particular cluster.")
+    cli_args: Optional[Dict[str, Any]] = Field(None, description="additional parameters that were passed to the commandline tool at runtime. ")
+    __properties = ["meta_analysis_id", "cli_version", "neurovault_collection_id", "methods_description", "neurovault_images", "diagnostic_table", "cli_args"]
 
     class Config:
         """Pydantic configuration"""
@@ -60,21 +60,42 @@ class Result(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of estimator
-        if self.estimator:
-            _dict['estimator'] = self.estimator.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of neurovault_collection
-        if self.neurovault_collection:
-            _dict['neurovault_collection'] = self.neurovault_collection.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in neurovault_images (list)
+        _items = []
+        if self.neurovault_images:
+            for _item in self.neurovault_images:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['neurovault_images'] = _items
         # set to None if cli_version (nullable) is None
         # and __fields_set__ contains the field
         if self.cli_version is None and "cli_version" in self.__fields_set__:
             _dict['cli_version'] = None
 
-        # set to None if neurostore_id (nullable) is None
+        # set to None if neurovault_collection_id (nullable) is None
         # and __fields_set__ contains the field
-        if self.neurostore_id is None and "neurostore_id" in self.__fields_set__:
-            _dict['neurostore_id'] = None
+        if self.neurovault_collection_id is None and "neurovault_collection_id" in self.__fields_set__:
+            _dict['neurovault_collection_id'] = None
+
+        # set to None if methods_description (nullable) is None
+        # and __fields_set__ contains the field
+        if self.methods_description is None and "methods_description" in self.__fields_set__:
+            _dict['methods_description'] = None
+
+        # set to None if neurovault_images (nullable) is None
+        # and __fields_set__ contains the field
+        if self.neurovault_images is None and "neurovault_images" in self.__fields_set__:
+            _dict['neurovault_images'] = None
+
+        # set to None if diagnostic_table (nullable) is None
+        # and __fields_set__ contains the field
+        if self.diagnostic_table is None and "diagnostic_table" in self.__fields_set__:
+            _dict['diagnostic_table'] = None
+
+        # set to None if cli_args (nullable) is None
+        # and __fields_set__ contains the field
+        if self.cli_args is None and "cli_args" in self.__fields_set__:
+            _dict['cli_args'] = None
 
         return _dict
 
@@ -88,12 +109,13 @@ class Result(BaseModel):
             return Result.parse_obj(obj)
 
         _obj = Result.parse_obj({
-            "images": obj.get("images"),
             "meta_analysis_id": obj.get("meta_analysis_id"),
             "cli_version": obj.get("cli_version"),
-            "estimator": Estimator.from_dict(obj.get("estimator")) if obj.get("estimator") is not None else None,
-            "neurostore_id": obj.get("neurostore_id"),
-            "neurovault_collection": NeurovaultCollection.from_dict(obj.get("neurovault_collection")) if obj.get("neurovault_collection") is not None else None
+            "neurovault_collection_id": obj.get("neurovault_collection_id"),
+            "methods_description": obj.get("methods_description"),
+            "neurovault_images": [NeurovaultFile.from_dict(_item) for _item in obj.get("neurovault_images")] if obj.get("neurovault_images") is not None else None,
+            "diagnostic_table": obj.get("diagnostic_table"),
+            "cli_args": obj.get("cli_args")
         })
         return _obj
 
