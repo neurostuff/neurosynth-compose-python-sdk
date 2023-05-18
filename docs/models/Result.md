@@ -15,8 +15,8 @@ Key | Input Type | Accessed Type | Description | Notes
 **neurovault_collection_id** | None, str,  | NoneClass, str,  |  | [optional] 
 **methods_description** | None, str,  | NoneClass, str,  |  | [optional] 
 **[neurovault_images](#neurovault_images)** | list, tuple, None,  | tuple, NoneClass,  |  | [optional] 
-**[diagnostic_tables](#diagnostic_tables)** | list, tuple,  | tuple,  |  | [optional] 
-**[cluster_tables](#cluster_tables)** | list, tuple,  | tuple,  |  | [optional] 
+**diagnostic_table** | str,  | str,  |  | [optional] 
+**[cli_args](#cli_args)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # neurovault_images
@@ -31,29 +31,12 @@ Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [**NeurovaultFile**](NeurovaultFile.md) | [**NeurovaultFile**](NeurovaultFile.md) | [**NeurovaultFile**](NeurovaultFile.md) |  | 
 
-# diagnostic_tables
+# cli_args
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
-
-### Tuple Items
-Class Name | Input Type | Accessed Type | Description | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-items | None, str,  | NoneClass, str,  |  | 
-
-# cluster_tables
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
-
-### Tuple Items
-Class Name | Input Type | Accessed Type | Description | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-items | None, str,  | NoneClass, str,  |  | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

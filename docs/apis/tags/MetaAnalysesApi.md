@@ -956,12 +956,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
                 name="name_example",
             )
         ],
-        diagnostic_tables=[
-            'YQ=='
-        ],
-        cluster_tables=[
-            'YQ=='
-        ],
+        diagnostic_table="diagnostic_table_example",
+        cli_args=dict(),
     )
     try:
         api_response = api_instance.meta_analysis_results_id_put(
