@@ -1007,6 +1007,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
         cognitive_contrast_cogatlas_id="cognitive_contrast_cogatlas_id_example",
         cognitive_paradigm_cogatlas="cognitive_paradigm_cogatlas_example",
         cognitive_paradigm_cogatlas_id="cognitive_paradigm_cogatlas_id_example",
+        cached_studyset="cached_studyset_example",
+        cached_annotation="cached_annotation_example",
     )
     try:
         # Update a meta-analysis

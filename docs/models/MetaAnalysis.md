@@ -21,12 +21,14 @@ Key | Input Type | Accessed Type | Description | Notes
 **[provenance](#provenance)** | dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  |  | [optional] 
 **project** | None, str,  | NoneClass, str,  |  | [optional] 
 **run_key** | str,  | str,  | a special key used to upload the results of this meta analysis. Can be used as an alternative to using your auth token from login.  | [optional] 
-**neurostore_analysis_id** | str,  | str,  |  | [optional] 
-**hash** | None, str,  | NoneClass, str,  |  | [optional] 
+**neurostore_analysis_id** | None, str,  | NoneClass, str,  |  | [optional] 
+**hash** | None, str,  | NoneClass, str,  | TODO: create hash of studyset and annotation and use that for the run_key | [optional] 
 **cognitive_contrast_cogatlas** | None, str,  | NoneClass, str,  |  | [optional] 
 **cognitive_contrast_cogatlas_id** | None, str,  | NoneClass, str,  |  | [optional] 
 **cognitive_paradigm_cogatlas** | None, str,  | NoneClass, str,  |  | [optional] 
 **cognitive_paradigm_cogatlas_id** | None, str,  | NoneClass, str,  |  | [optional] 
+**cached_studyset** | None, str,  | NoneClass, str,  |  | [optional] 
+**cached_annotation** | None, str,  | NoneClass, str,  |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # specification
