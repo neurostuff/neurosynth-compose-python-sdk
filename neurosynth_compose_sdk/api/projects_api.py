@@ -154,7 +154,7 @@ class ProjectsApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = []  # noqa: E501
+        _auth_settings = ['JSON-Web-Token']  # noqa: E501
 
         _response_types_map = {
             '200': "ProjectList",

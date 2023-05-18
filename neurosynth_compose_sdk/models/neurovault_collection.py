@@ -19,16 +19,16 @@ import re  # noqa: F401
 import json
 
 
-from typing import List, Optional
-from pydantic import BaseModel, StrictStr, conlist
-from neurosynth_compose_sdk.models.neurovault_collection_files_inner import NeurovaultCollectionFilesInner
+from typing import Optional
+from pydantic import BaseModel, StrictStr
+from neurosynth_compose_sdk.models.neurovault_collection_files import NeurovaultCollectionFiles
 
 class NeurovaultCollection(BaseModel):
     """
     NeurovaultCollection
     """
     collection_id: Optional[StrictStr] = None
-    files: Optional[conlist(NeurovaultCollectionFilesInner)] = None
+    files: Optional[NeurovaultCollectionFiles] = None
     result: Optional[StrictStr] = None
     __properties = ["collection_id", "files", "result"]
 
@@ -58,13 +58,9 @@ class NeurovaultCollection(BaseModel):
                             "result",
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in files (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of files
         if self.files:
-            for _item in self.files:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['files'] = _items
+            _dict['files'] = self.files.to_dict()
         return _dict
 
     @classmethod
@@ -78,7 +74,7 @@ class NeurovaultCollection(BaseModel):
 
         _obj = NeurovaultCollection.parse_obj({
             "collection_id": obj.get("collection_id"),
-            "files": [NeurovaultCollectionFilesInner.from_dict(_item) for _item in obj.get("files")] if obj.get("files") is not None else None,
+            "files": NeurovaultCollectionFiles.from_dict(obj.get("files")) if obj.get("files") is not None else None,
             "result": obj.get("result")
         })
         return _obj

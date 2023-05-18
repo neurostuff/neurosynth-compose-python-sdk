@@ -1,6 +1,6 @@
 # neurosynth_compose_sdk.PutApi
 
-All URIs are relative to *http://localhost:81/api*
+All URIs are relative to *https://compose.neurosynth.org/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,10 +33,10 @@ from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -116,10 +116,10 @@ from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisRetur
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -187,6 +187,8 @@ Name | Type | Description  | Notes
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
+* Api Key Authentication (upload_key):
 ```python
 import time
 import os
@@ -196,12 +198,27 @@ from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Configure API key authorization: upload_key
+configuration.api_key['upload_key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['upload_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -233,11 +250,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token), [upload_key](../README.md#upload_key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, multipart/form-data
  - **Accept**: application/json
 
 ### HTTP response details
@@ -263,10 +280,10 @@ from neurosynth_compose_sdk.models.neurovault_collection_return import Neurovaul
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -322,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **neurovault_files_id_put**
-> NeurovaultFileReturn neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id, name=name, map_type=map_type, cognitive_contrast_cogatlas=cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id=cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas=cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id=cognitive_paradigm_cogatlas_id)
+> NeurovaultFileReturn neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name)
 
 
 
@@ -337,10 +354,10 @@ from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileR
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -362,18 +379,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     exception = 'exception_example' # str |  (optional)
     traceback = 'traceback_example' # str |  (optional)
     status = 'status_example' # str |  (optional)
-    file = None # bytearray |  (optional)
     image_id = 'image_id_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
-    map_type = 'map_type_example' # str |  (optional)
-    cognitive_contrast_cogatlas = 'cognitive_contrast_cogatlas_example' # str |  (optional)
-    cognitive_contrast_cogatlas_id = 'cognitive_contrast_cogatlas_id_example' # str |  (optional)
-    cognitive_paradigm_cogatlas = 'cognitive_paradigm_cogatlas_example' # str |  (optional)
-    cognitive_paradigm_cogatlas_id = 'cognitive_paradigm_cogatlas_id_example' # str |  (optional)
 
     try:
         # 
-        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, file=file, image_id=image_id, name=name, map_type=map_type, cognitive_contrast_cogatlas=cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id=cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas=cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id=cognitive_paradigm_cogatlas_id)
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name)
         print("The response of PutApi->neurovault_files_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -390,14 +401,8 @@ Name | Type | Description  | Notes
  **exception** | **str**|  | [optional] 
  **traceback** | **str**|  | [optional] 
  **status** | **str**|  | [optional] 
- **file** | **bytearray**|  | [optional] 
  **image_id** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
- **map_type** | **str**|  | [optional] 
- **cognitive_contrast_cogatlas** | **str**|  | [optional] 
- **cognitive_contrast_cogatlas_id** | **str**|  | [optional] 
- **cognitive_paradigm_cogatlas** | **str**|  | [optional] 
- **cognitive_paradigm_cogatlas_id** | **str**|  | [optional] 
 
 ### Return type
 
@@ -436,10 +441,10 @@ from neurosynth_compose_sdk.models.project_return import ProjectReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -515,10 +520,10 @@ from neurosynth_compose_sdk.models.specification_return import SpecificationRetu
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -598,10 +603,10 @@ from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters

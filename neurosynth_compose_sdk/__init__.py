@@ -20,6 +20,7 @@ __version__ = "0.0.1"
 # import apis into sdk package
 from neurosynth_compose_sdk.api.annotations_api import AnnotationsApi
 from neurosynth_compose_sdk.api.compose_api import ComposeApi
+from neurosynth_compose_sdk.api.default_api import DefaultApi
 from neurosynth_compose_sdk.api.get_api import GetApi
 from neurosynth_compose_sdk.api.meta_analyses_api import MetaAnalysesApi
 from neurosynth_compose_sdk.api.neurovault_api import NeurovaultApi
@@ -55,12 +56,16 @@ from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
-from neurosynth_compose_sdk.models.meta_analysis_results_inner import MetaAnalysisResultsInner
+from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
 from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
+from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
+from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
+from neurosynth_compose_sdk.models.neurostore_study_list import NeurostoreStudyList
+from neurosynth_compose_sdk.models.neurostore_study_return import NeurostoreStudyReturn
 from neurosynth_compose_sdk.models.neurovault_collection import NeurovaultCollection
-from neurosynth_compose_sdk.models.neurovault_collection_files_inner import NeurovaultCollectionFilesInner
+from neurosynth_compose_sdk.models.neurovault_collection_files import NeurovaultCollectionFiles
 from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
 from neurosynth_compose_sdk.models.neurovault_file import NeurovaultFile
 from neurosynth_compose_sdk.models.neurovault_file_list import NeurovaultFileList
@@ -68,11 +73,13 @@ from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileR
 from neurosynth_compose_sdk.models.neurovault_list import NeurovaultList
 from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_list import ProjectList
-from neurosynth_compose_sdk.models.project_meta_analyses_inner import ProjectMetaAnalysesInner
+from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
 from neurosynth_compose_sdk.models.read_only import ReadOnly
 from neurosynth_compose_sdk.models.result import Result
+from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_list import ResultList
+from neurosynth_compose_sdk.models.result_list_results import ResultListResults
 from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.models.specification import Specification
 from neurosynth_compose_sdk.models.specification_list import SpecificationList

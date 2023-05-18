@@ -19,15 +19,15 @@ import re  # noqa: F401
 import json
 
 
-from typing import Any, Dict, List, Optional
-from pydantic import BaseModel, conlist
-from neurosynth_compose_sdk.models.meta_analysis_results_inner import MetaAnalysisResultsInner
+from typing import Any, Dict, Optional
+from pydantic import BaseModel
+from neurosynth_compose_sdk.models.result_list_results import ResultListResults
 
 class ResultList(BaseModel):
     """
     ResultList
     """
-    results: Optional[conlist(MetaAnalysisResultsInner)] = None
+    results: Optional[ResultListResults] = None
     metadata: Optional[Dict[str, Any]] = None
     __properties = ["results", "metadata"]
 
@@ -55,13 +55,9 @@ class ResultList(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in results (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of results
         if self.results:
-            for _item in self.results:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['results'] = _items
+            _dict['results'] = self.results.to_dict()
         return _dict
 
     @classmethod
@@ -74,7 +70,7 @@ class ResultList(BaseModel):
             return ResultList.parse_obj(obj)
 
         _obj = ResultList.parse_obj({
-            "results": [MetaAnalysisResultsInner.from_dict(_item) for _item in obj.get("results")] if obj.get("results") is not None else None,
+            "results": ResultListResults.from_dict(obj.get("results")) if obj.get("results") is not None else None,
             "metadata": obj.get("metadata")
         })
         return _obj

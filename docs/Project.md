@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **provenance** | **object** |  | [optional] 
-**meta_analyses** | [**List[ProjectMetaAnalysesInner]**](ProjectMetaAnalysesInner.md) |  | [optional] 
+**meta_analyses** | [**ProjectMetaAnalyses**](ProjectMetaAnalyses.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**public** | **bool** | whether the project is public or private | [optional] 
+**neurostore_id** | **str** |  | [optional] [readonly] 
 
 ## Example
 

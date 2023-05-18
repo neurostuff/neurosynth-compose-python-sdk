@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**internal_studyset_id** | **str** |  | [optional] 
+**cached_studyset_id** | **str** |  | [optional] 
 
 ## Example
 

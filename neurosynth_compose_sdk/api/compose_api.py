@@ -20,9 +20,9 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictBytes, StrictStr
+from pydantic import Field, StrictBool, StrictStr
 
-from typing import Optional, Union
+from typing import Optional
 
 from neurosynth_compose_sdk.models.annotation_list import AnnotationList
 from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
@@ -32,6 +32,7 @@ from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
+from neurosynth_compose_sdk.models.neurovault_collection import NeurovaultCollection
 from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
 from neurosynth_compose_sdk.models.neurovault_file import NeurovaultFile
 from neurosynth_compose_sdk.models.neurovault_file_list import NeurovaultFileList
@@ -40,6 +41,7 @@ from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_list import ProjectList
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
 from neurosynth_compose_sdk.models.result import Result
+from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_list import ResultList
 from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.models.specification import Specification
@@ -1645,12 +1647,12 @@ class ComposeApi(object):
         # set the HTTP header `Content-Type`
         _content_types_list = _params.get('_content_type',
             self.api_client.select_header_content_type(
-                ['application/json']))
+                ['application/json', 'multipart/form-data']))
         if _content_types_list:
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = []  # noqa: E501
+        _auth_settings = ['JSON-Web-Token', 'upload_key']  # noqa: E501
 
         _response_types_map = {
             '200': "ResultReturn",
@@ -1674,17 +1676,17 @@ class ComposeApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def meta_analysis_results_post(self, result : Optional[Result] = None, **kwargs) -> ResultReturn:  # noqa: E501
+    def meta_analysis_results_post(self, result_init : Optional[ResultInit] = None, **kwargs) -> ResultReturn:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analysis_results_post(result, async_req=True)
+        >>> thread = api.meta_analysis_results_post(result_init, async_req=True)
         >>> result = thread.get()
 
-        :param result:
-        :type result: Result
+        :param result_init:
+        :type result_init: ResultInit
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -1699,20 +1701,20 @@ class ComposeApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the meta_analysis_results_post_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.meta_analysis_results_post_with_http_info(result, **kwargs)  # noqa: E501
+        return self.meta_analysis_results_post_with_http_info(result_init, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def meta_analysis_results_post_with_http_info(self, result : Optional[Result] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def meta_analysis_results_post_with_http_info(self, result_init : Optional[ResultInit] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analysis_results_post_with_http_info(result, async_req=True)
+        >>> thread = api.meta_analysis_results_post_with_http_info(result_init, async_req=True)
         >>> result = thread.get()
 
-        :param result:
-        :type result: Result
+        :param result_init:
+        :type result_init: ResultInit
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -1741,7 +1743,7 @@ class ComposeApi(object):
         _params = locals()
 
         _all_params = [
-            'result'
+            'result_init'
         ]
         _all_params.extend(
             [
@@ -1779,8 +1781,8 @@ class ComposeApi(object):
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['result'] is not None:
-            _body_params = _params['result']
+        if _params['result_init'] is not None:
+            _body_params = _params['result_init']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -1794,7 +1796,7 @@ class ComposeApi(object):
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = ['JSON-Web-Token']  # noqa: E501
+        _auth_settings = ['JSON-Web-Token', 'upload_key']  # noqa: E501
 
         _response_types_map = {
             '200': "ResultReturn",
@@ -1819,7 +1821,7 @@ class ComposeApi(object):
 
     @validate_arguments
     def neurovault_collections_get(self, **kwargs) -> None:  # noqa: E501
-        """Your GET endpoint  # noqa: E501
+        """Get neurovault collections  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1845,7 +1847,7 @@ class ComposeApi(object):
 
     @validate_arguments
     def neurovault_collections_get_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
-        """Your GET endpoint  # noqa: E501
+        """Get neurovault collections  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2215,16 +2217,18 @@ class ComposeApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def neurovault_collections_post(self, **kwargs) -> None:  # noqa: E501
-        """  # noqa: E501
+    def neurovault_collections_post(self, neurovault_collection : Optional[NeurovaultCollection] = None, **kwargs) -> None:  # noqa: E501
+        """Create neurovault collection  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_collections_post(async_req=True)
+        >>> thread = api.neurovault_collections_post(neurovault_collection, async_req=True)
         >>> result = thread.get()
 
+        :param neurovault_collection:
+        :type neurovault_collection: NeurovaultCollection
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -2239,19 +2243,21 @@ class ComposeApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the neurovault_collections_post_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.neurovault_collections_post_with_http_info(**kwargs)  # noqa: E501
+        return self.neurovault_collections_post_with_http_info(neurovault_collection, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def neurovault_collections_post_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
-        """  # noqa: E501
+    def neurovault_collections_post_with_http_info(self, neurovault_collection : Optional[NeurovaultCollection] = None, **kwargs) -> ApiResponse:  # noqa: E501
+        """Create neurovault collection  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_collections_post_with_http_info(async_req=True)
+        >>> thread = api.neurovault_collections_post_with_http_info(neurovault_collection, async_req=True)
         >>> result = thread.get()
 
+        :param neurovault_collection:
+        :type neurovault_collection: NeurovaultCollection
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -2280,6 +2286,7 @@ class ComposeApi(object):
         _params = locals()
 
         _all_params = [
+            'neurovault_collection'
         ]
         _all_params.extend(
             [
@@ -2317,6 +2324,16 @@ class ComposeApi(object):
         _files = {}
         # process the body parameter
         _body_params = None
+        if _params['neurovault_collection'] is not None:
+            _body_params = _params['neurovault_collection']
+
+        # set the HTTP header `Content-Type`
+        _content_types_list = _params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json']))
+        if _content_types_list:
+                _header_params['Content-Type'] = _content_types_list
+
         # authentication setting
         _auth_settings = ['JSON-Web-Token']  # noqa: E501
 
@@ -2606,13 +2623,13 @@ class ComposeApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def neurovault_files_id_put(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, file : Optional[Union[StrictBytes, StrictStr]] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, map_type : Optional[StrictStr] = None, cognitive_contrast_cogatlas : Optional[StrictStr] = None, cognitive_contrast_cogatlas_id : Optional[StrictStr] = None, cognitive_paradigm_cogatlas : Optional[StrictStr] = None, cognitive_paradigm_cogatlas_id : Optional[StrictStr] = None, **kwargs) -> NeurovaultFileReturn:  # noqa: E501
+    def neurovault_files_id_put(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, **kwargs) -> NeurovaultFileReturn:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_files_id_put(id, collection_id, exception, traceback, status, file, image_id, name, map_type, cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id, async_req=True)
+        >>> thread = api.neurovault_files_id_put(id, collection_id, exception, traceback, status, image_id, name, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
@@ -2625,22 +2642,10 @@ class ComposeApi(object):
         :type traceback: str
         :param status:
         :type status: str
-        :param file:
-        :type file: bytearray
         :param image_id:
         :type image_id: str
         :param name:
         :type name: str
-        :param map_type:
-        :type map_type: str
-        :param cognitive_contrast_cogatlas:
-        :type cognitive_contrast_cogatlas: str
-        :param cognitive_contrast_cogatlas_id:
-        :type cognitive_contrast_cogatlas_id: str
-        :param cognitive_paradigm_cogatlas:
-        :type cognitive_paradigm_cogatlas: str
-        :param cognitive_paradigm_cogatlas_id:
-        :type cognitive_paradigm_cogatlas_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -2655,16 +2660,16 @@ class ComposeApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the neurovault_files_id_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, file, image_id, name, map_type, cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id, **kwargs)  # noqa: E501
+        return self.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def neurovault_files_id_put_with_http_info(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, file : Optional[Union[StrictBytes, StrictStr]] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, map_type : Optional[StrictStr] = None, cognitive_contrast_cogatlas : Optional[StrictStr] = None, cognitive_contrast_cogatlas_id : Optional[StrictStr] = None, cognitive_paradigm_cogatlas : Optional[StrictStr] = None, cognitive_paradigm_cogatlas_id : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def neurovault_files_id_put_with_http_info(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, file, image_id, name, map_type, cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id, async_req=True)
+        >>> thread = api.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
@@ -2677,22 +2682,10 @@ class ComposeApi(object):
         :type traceback: str
         :param status:
         :type status: str
-        :param file:
-        :type file: bytearray
         :param image_id:
         :type image_id: str
         :param name:
         :type name: str
-        :param map_type:
-        :type map_type: str
-        :param cognitive_contrast_cogatlas:
-        :type cognitive_contrast_cogatlas: str
-        :param cognitive_contrast_cogatlas_id:
-        :type cognitive_contrast_cogatlas_id: str
-        :param cognitive_paradigm_cogatlas:
-        :type cognitive_paradigm_cogatlas: str
-        :param cognitive_paradigm_cogatlas_id:
-        :type cognitive_paradigm_cogatlas_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -2726,14 +2719,8 @@ class ComposeApi(object):
             'exception',
             'traceback',
             'status',
-            'file',
             'image_id',
-            'name',
-            'map_type',
-            'cognitive_contrast_cogatlas',
-            'cognitive_contrast_cogatlas_id',
-            'cognitive_paradigm_cogatlas',
-            'cognitive_paradigm_cogatlas_id'
+            'name'
         ]
         _all_params.extend(
             [
@@ -2784,29 +2771,11 @@ class ComposeApi(object):
         if _params['status']:
             _form_params.append(('status', _params['status']))
 
-        if _params['file']:
-            _form_params.append(('file', _params['file']))
-
         if _params['image_id']:
             _form_params.append(('image_id', _params['image_id']))
 
         if _params['name']:
             _form_params.append(('name', _params['name']))
-
-        if _params['map_type']:
-            _form_params.append(('map_type', _params['map_type']))
-
-        if _params['cognitive_contrast_cogatlas']:
-            _form_params.append(('cognitive_contrast_cogatlas', _params['cognitive_contrast_cogatlas']))
-
-        if _params['cognitive_contrast_cogatlas_id']:
-            _form_params.append(('cognitive_contrast_cogatlas_id', _params['cognitive_contrast_cogatlas_id']))
-
-        if _params['cognitive_paradigm_cogatlas']:
-            _form_params.append(('cognitive_paradigm_cogatlas', _params['cognitive_paradigm_cogatlas']))
-
-        if _params['cognitive_paradigm_cogatlas_id']:
-            _form_params.append(('cognitive_paradigm_cogatlas_id', _params['cognitive_paradigm_cogatlas_id']))
 
         # process the body parameter
         _body_params = None
@@ -3095,7 +3064,7 @@ class ComposeApi(object):
             ['application/json'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = []  # noqa: E501
+        _auth_settings = ['JSON-Web-Token']  # noqa: E501
 
         _response_types_map = {
             '200': "ProjectList",

@@ -19,9 +19,9 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional
-from pydantic import BaseModel, Field, StrictStr, conlist
-from neurosynth_compose_sdk.models.project_meta_analyses_inner import ProjectMetaAnalysesInner
+from typing import Any, Dict, Optional
+from pydantic import BaseModel, Field, StrictBool, StrictStr
+from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
 
 class ProjectReturn(BaseModel):
     """
@@ -32,10 +32,12 @@ class ProjectReturn(BaseModel):
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
     provenance: Optional[Dict[str, Any]] = None
-    meta_analyses: Optional[conlist(ProjectMetaAnalysesInner)] = None
+    meta_analyses: Optional[ProjectMetaAnalyses] = None
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    __properties = ["id", "updated_at", "created_at", "user", "provenance", "meta_analyses", "name", "description"]
+    public: Optional[StrictBool] = Field(None, description="whether the project is public or private")
+    neurostore_id: Optional[StrictStr] = None
+    __properties = ["id", "updated_at", "created_at", "user", "provenance", "meta_analyses", "name", "description", "public", "neurostore_id"]
 
     class Config:
         """Pydantic configuration"""
@@ -61,15 +63,12 @@ class ProjectReturn(BaseModel):
                           exclude={
                             "updated_at",
                             "created_at",
+                            "neurostore_id",
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in meta_analyses (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of meta_analyses
         if self.meta_analyses:
-            for _item in self.meta_analyses:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['meta_analyses'] = _items
+            _dict['meta_analyses'] = self.meta_analyses.to_dict()
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.updated_at is None and "updated_at" in self.__fields_set__:
@@ -112,9 +111,11 @@ class ProjectReturn(BaseModel):
             "created_at": obj.get("created_at"),
             "user": obj.get("user"),
             "provenance": obj.get("provenance"),
-            "meta_analyses": [ProjectMetaAnalysesInner.from_dict(_item) for _item in obj.get("meta_analyses")] if obj.get("meta_analyses") is not None else None,
+            "meta_analyses": ProjectMetaAnalyses.from_dict(obj.get("meta_analyses")) if obj.get("meta_analyses") is not None else None,
             "name": obj.get("name"),
-            "description": obj.get("description")
+            "description": obj.get("description"),
+            "public": obj.get("public"),
+            "neurostore_id": obj.get("neurostore_id")
         })
         return _obj
 

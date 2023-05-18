@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**results** | [**List[MetaAnalysisResultsInner]**](MetaAnalysisResultsInner.md) |  | [optional] 
+**results** | [**ResultListResults**](ResultListResults.md) |  | [optional] 
 **metadata** | **object** |  | [optional] 
 
 ## Example

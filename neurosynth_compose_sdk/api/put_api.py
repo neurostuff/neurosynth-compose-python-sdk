@@ -20,9 +20,9 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictBytes, StrictStr
+from pydantic import StrictStr
 
-from typing import Optional, Union
+from typing import Optional
 
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
@@ -499,12 +499,12 @@ class PutApi(object):
         # set the HTTP header `Content-Type`
         _content_types_list = _params.get('_content_type',
             self.api_client.select_header_content_type(
-                ['application/json']))
+                ['application/json', 'multipart/form-data']))
         if _content_types_list:
                 _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
-        _auth_settings = []  # noqa: E501
+        _auth_settings = ['JSON-Web-Token', 'upload_key']  # noqa: E501
 
         _response_types_map = {
             '200': "ResultReturn",
@@ -665,13 +665,13 @@ class PutApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def neurovault_files_id_put(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, file : Optional[Union[StrictBytes, StrictStr]] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, map_type : Optional[StrictStr] = None, cognitive_contrast_cogatlas : Optional[StrictStr] = None, cognitive_contrast_cogatlas_id : Optional[StrictStr] = None, cognitive_paradigm_cogatlas : Optional[StrictStr] = None, cognitive_paradigm_cogatlas_id : Optional[StrictStr] = None, **kwargs) -> NeurovaultFileReturn:  # noqa: E501
+    def neurovault_files_id_put(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, **kwargs) -> NeurovaultFileReturn:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_files_id_put(id, collection_id, exception, traceback, status, file, image_id, name, map_type, cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id, async_req=True)
+        >>> thread = api.neurovault_files_id_put(id, collection_id, exception, traceback, status, image_id, name, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
@@ -684,22 +684,10 @@ class PutApi(object):
         :type traceback: str
         :param status:
         :type status: str
-        :param file:
-        :type file: bytearray
         :param image_id:
         :type image_id: str
         :param name:
         :type name: str
-        :param map_type:
-        :type map_type: str
-        :param cognitive_contrast_cogatlas:
-        :type cognitive_contrast_cogatlas: str
-        :param cognitive_contrast_cogatlas_id:
-        :type cognitive_contrast_cogatlas_id: str
-        :param cognitive_paradigm_cogatlas:
-        :type cognitive_paradigm_cogatlas: str
-        :param cognitive_paradigm_cogatlas_id:
-        :type cognitive_paradigm_cogatlas_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -714,16 +702,16 @@ class PutApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the neurovault_files_id_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, file, image_id, name, map_type, cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id, **kwargs)  # noqa: E501
+        return self.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def neurovault_files_id_put_with_http_info(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, file : Optional[Union[StrictBytes, StrictStr]] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, map_type : Optional[StrictStr] = None, cognitive_contrast_cogatlas : Optional[StrictStr] = None, cognitive_contrast_cogatlas_id : Optional[StrictStr] = None, cognitive_paradigm_cogatlas : Optional[StrictStr] = None, cognitive_paradigm_cogatlas_id : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def neurovault_files_id_put_with_http_info(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, file, image_id, name, map_type, cognitive_contrast_cogatlas, cognitive_contrast_cogatlas_id, cognitive_paradigm_cogatlas, cognitive_paradigm_cogatlas_id, async_req=True)
+        >>> thread = api.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
@@ -736,22 +724,10 @@ class PutApi(object):
         :type traceback: str
         :param status:
         :type status: str
-        :param file:
-        :type file: bytearray
         :param image_id:
         :type image_id: str
         :param name:
         :type name: str
-        :param map_type:
-        :type map_type: str
-        :param cognitive_contrast_cogatlas:
-        :type cognitive_contrast_cogatlas: str
-        :param cognitive_contrast_cogatlas_id:
-        :type cognitive_contrast_cogatlas_id: str
-        :param cognitive_paradigm_cogatlas:
-        :type cognitive_paradigm_cogatlas: str
-        :param cognitive_paradigm_cogatlas_id:
-        :type cognitive_paradigm_cogatlas_id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -785,14 +761,8 @@ class PutApi(object):
             'exception',
             'traceback',
             'status',
-            'file',
             'image_id',
-            'name',
-            'map_type',
-            'cognitive_contrast_cogatlas',
-            'cognitive_contrast_cogatlas_id',
-            'cognitive_paradigm_cogatlas',
-            'cognitive_paradigm_cogatlas_id'
+            'name'
         ]
         _all_params.extend(
             [
@@ -843,29 +813,11 @@ class PutApi(object):
         if _params['status']:
             _form_params.append(('status', _params['status']))
 
-        if _params['file']:
-            _form_params.append(('file', _params['file']))
-
         if _params['image_id']:
             _form_params.append(('image_id', _params['image_id']))
 
         if _params['name']:
             _form_params.append(('name', _params['name']))
-
-        if _params['map_type']:
-            _form_params.append(('map_type', _params['map_type']))
-
-        if _params['cognitive_contrast_cogatlas']:
-            _form_params.append(('cognitive_contrast_cogatlas', _params['cognitive_contrast_cogatlas']))
-
-        if _params['cognitive_contrast_cogatlas_id']:
-            _form_params.append(('cognitive_contrast_cogatlas_id', _params['cognitive_contrast_cogatlas_id']))
-
-        if _params['cognitive_paradigm_cogatlas']:
-            _form_params.append(('cognitive_paradigm_cogatlas', _params['cognitive_paradigm_cogatlas']))
-
-        if _params['cognitive_paradigm_cogatlas_id']:
-            _form_params.append(('cognitive_paradigm_cogatlas_id', _params['cognitive_paradigm_cogatlas_id']))
 
         # process the body parameter
         _body_params = None

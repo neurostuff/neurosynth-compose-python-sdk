@@ -19,16 +19,16 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import List, Optional
-from pydantic import BaseModel, Field, StrictStr, conlist
-from neurosynth_compose_sdk.models.neurovault_collection_files_inner import NeurovaultCollectionFilesInner
+from typing import Optional
+from pydantic import BaseModel, Field, StrictStr
+from neurosynth_compose_sdk.models.neurovault_collection_files import NeurovaultCollectionFiles
 
 class NeurovaultCollectionReturn(BaseModel):
     """
     NeurovaultCollectionReturn
     """
     collection_id: Optional[StrictStr] = None
-    files: Optional[conlist(NeurovaultCollectionFilesInner)] = None
+    files: Optional[NeurovaultCollectionFiles] = None
     result: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
@@ -64,13 +64,9 @@ class NeurovaultCollectionReturn(BaseModel):
                             "created_at",
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in files (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of files
         if self.files:
-            for _item in self.files:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['files'] = _items
+            _dict['files'] = self.files.to_dict()
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.updated_at is None and "updated_at" in self.__fields_set__:
@@ -94,7 +90,7 @@ class NeurovaultCollectionReturn(BaseModel):
 
         _obj = NeurovaultCollectionReturn.parse_obj({
             "collection_id": obj.get("collection_id"),
-            "files": [NeurovaultCollectionFilesInner.from_dict(_item) for _item in obj.get("files")] if obj.get("files") is not None else None,
+            "files": NeurovaultCollectionFiles.from_dict(obj.get("files")) if obj.get("files") is not None else None,
             "result": obj.get("result"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
