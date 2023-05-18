@@ -146,10 +146,10 @@ from neurosynth_compose_sdk.model.annotation_list import AnnotationList
 from neurosynth_compose_sdk.model.annotation_post_body import AnnotationPostBody
 from neurosynth_compose_sdk.model.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.model.annotation_update import AnnotationUpdate
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 
@@ -168,7 +168,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:81/api*
+All URIs are relative to *https://compose.neurosynth.org/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

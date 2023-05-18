@@ -1,7 +1,7 @@
 <a name="__pageTop"></a>
 # neurosynth_compose_sdk.apis.tags.projects_api.ProjectsApi
 
-All URIs are relative to *http://localhost:81/api*
+All URIs are relative to *https://compose.neurosynth.org/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,10 +24,10 @@ import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import projects_api
 from neurosynth_compose_sdk.model.project_list import ProjectList
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -94,10 +94,10 @@ import neurosynth_compose_sdk
 from neurosynth_compose_sdk.apis.tags import projects_api
 from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # Enter a context with an instance of the API client
@@ -183,10 +183,10 @@ from neurosynth_compose_sdk.apis.tags import projects_api
 from neurosynth_compose_sdk.model.project import Project
 from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -311,10 +311,10 @@ from neurosynth_compose_sdk.apis.tags import projects_api
 from neurosynth_compose_sdk.model.project import Project
 from neurosynth_compose_sdk.model.project_return import ProjectReturn
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:81/api
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
 # See configuration.py for a list of all supported configuration parameters.
 configuration = neurosynth_compose_sdk.Configuration(
-    host = "http://localhost:81/api"
+    host = "https://compose.neurosynth.org/api"
 )
 
 # The client must configure the authentication and authorization parameters

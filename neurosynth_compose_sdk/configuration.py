@@ -115,7 +115,7 @@ conf = neurosynth_compose_sdk.Configuration(
     ):
         """Constructor
         """
-        self._base_path = "http://localhost:81/api" if host is None else host
+        self._base_path = "https://compose.neurosynth.org/api" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -418,16 +418,16 @@ conf = neurosynth_compose_sdk.Configuration(
         """
         return [
             {
-                'url': "http://localhost:81/api",
-                'description': "testing",
+                'url': "https://compose.neurosynth.org/api",
+                'description': "production",
             },
             {
                 'url': "https://synth.neurostore.xyz/api",
                 'description': "staging",
             },
             {
-                'url': "https://compose.neurosynth.org/api",
-                'description': "production",
+                'url': "http://localhost:81/api",
+                'description': "testing",
             }
         ]
 
