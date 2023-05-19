@@ -140,14 +140,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_default_api.py
-test/test_meta_analysis_results.py
-test/test_neurostore_analysis.py
-test/test_neurostore_study.py
-test/test_neurostore_study_list.py
-test/test_neurostore_study_return.py
-test/test_neurovault_collection_files.py
-test/test_project_meta_analyses.py
-test/test_result_init.py
-test/test_result_list_results.py
 tox.ini
