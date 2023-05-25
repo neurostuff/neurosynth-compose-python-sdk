@@ -1320,7 +1320,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **neurovault_files_id_put**
-> NeurovaultFileReturn neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name)
+> NeurovaultFileReturn neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url)
 
 
 
@@ -1362,10 +1362,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     status = 'status_example' # str |  (optional)
     image_id = 'image_id_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
+    url = 'url_example' # str |  (optional)
 
     try:
         # 
-        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name)
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url)
         print("The response of ComposeApi->neurovault_files_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -1384,6 +1385,7 @@ Name | Type | Description  | Notes
  **status** | **str**|  | [optional] 
  **image_id** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
+ **url** | **str**|  | [optional] 
 
 ### Return type
 

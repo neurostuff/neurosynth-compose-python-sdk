@@ -32,11 +32,12 @@ class NeurovaultFileReturn(BaseModel):
     status: Optional[StrictStr] = None
     image_id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    url: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
-    __properties = ["collection_id", "exception", "traceback", "status", "image_id", "name", "id", "updated_at", "created_at", "user"]
+    __properties = ["collection_id", "exception", "traceback", "status", "image_id", "name", "url", "id", "updated_at", "created_at", "user"]
 
     class Config:
         """Pydantic configuration"""
@@ -64,6 +65,11 @@ class NeurovaultFileReturn(BaseModel):
                             "created_at",
                           },
                           exclude_none=True)
+        # set to None if collection_id (nullable) is None
+        # and __fields_set__ contains the field
+        if self.collection_id is None and "collection_id" in self.__fields_set__:
+            _dict['collection_id'] = None
+
         # set to None if exception (nullable) is None
         # and __fields_set__ contains the field
         if self.exception is None and "exception" in self.__fields_set__:
@@ -83,6 +89,11 @@ class NeurovaultFileReturn(BaseModel):
         # and __fields_set__ contains the field
         if self.name is None and "name" in self.__fields_set__:
             _dict['name'] = None
+
+        # set to None if url (nullable) is None
+        # and __fields_set__ contains the field
+        if self.url is None and "url" in self.__fields_set__:
+            _dict['url'] = None
 
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
@@ -112,6 +123,7 @@ class NeurovaultFileReturn(BaseModel):
             "status": obj.get("status"),
             "image_id": obj.get("image_id"),
             "name": obj.get("name"),
+            "url": obj.get("url"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

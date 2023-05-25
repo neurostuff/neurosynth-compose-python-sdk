@@ -29,7 +29,10 @@ class NeurostoreStudy(BaseModel):
     """
     neurostore_id: Optional[StrictStr] = None
     analyses: Optional[conlist(NeurostoreAnalysis)] = None
-    __properties = ["neurostore_id", "analyses"]
+    exception: Optional[StrictStr] = None
+    traceback: Optional[StrictStr] = None
+    status: Optional[StrictStr] = None
+    __properties = ["neurostore_id", "analyses", "exception", "traceback", "status"]
 
     class Config:
         """Pydantic configuration"""
@@ -63,6 +66,26 @@ class NeurostoreStudy(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['analyses'] = _items
+        # set to None if neurostore_id (nullable) is None
+        # and __fields_set__ contains the field
+        if self.neurostore_id is None and "neurostore_id" in self.__fields_set__:
+            _dict['neurostore_id'] = None
+
+        # set to None if exception (nullable) is None
+        # and __fields_set__ contains the field
+        if self.exception is None and "exception" in self.__fields_set__:
+            _dict['exception'] = None
+
+        # set to None if traceback (nullable) is None
+        # and __fields_set__ contains the field
+        if self.traceback is None and "traceback" in self.__fields_set__:
+            _dict['traceback'] = None
+
+        # set to None if status (nullable) is None
+        # and __fields_set__ contains the field
+        if self.status is None and "status" in self.__fields_set__:
+            _dict['status'] = None
+
         return _dict
 
     @classmethod
@@ -76,7 +99,10 @@ class NeurostoreStudy(BaseModel):
 
         _obj = NeurostoreStudy.parse_obj({
             "neurostore_id": obj.get("neurostore_id"),
-            "analyses": [NeurostoreAnalysis.from_dict(_item) for _item in obj.get("analyses")] if obj.get("analyses") is not None else None
+            "analyses": [NeurostoreAnalysis.from_dict(_item) for _item in obj.get("analyses")] if obj.get("analyses") is not None else None,
+            "exception": obj.get("exception"),
+            "traceback": obj.get("traceback"),
+            "status": obj.get("status")
         })
         return _obj
 

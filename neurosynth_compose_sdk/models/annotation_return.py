@@ -29,11 +29,12 @@ class AnnotationReturn(BaseModel):
     neurostore_id: Optional[StrictStr] = Field(None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
     studyset: Optional[StrictStr] = Field(None, description="The related cached studyset to this annotation.")
+    neurostore_url: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
-    __properties = ["neurostore_id", "snapshot", "studyset", "id", "updated_at", "created_at", "user"]
+    __properties = ["neurostore_id", "snapshot", "studyset", "neurostore_url", "id", "updated_at", "created_at", "user"]
 
     class Config:
         """Pydantic configuration"""
@@ -58,6 +59,7 @@ class AnnotationReturn(BaseModel):
         _dict = self.dict(by_alias=True,
                           exclude={
                             "studyset",
+                            "neurostore_url",
                             "updated_at",
                             "created_at",
                           },
@@ -92,6 +94,7 @@ class AnnotationReturn(BaseModel):
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
             "studyset": obj.get("studyset"),
+            "neurostore_url": obj.get("neurostore_url"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

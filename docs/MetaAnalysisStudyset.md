@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** | The id of the studyset on neurostore. | [optional] 
 **snapshot** | **object** | The snapshot of the studyset pending a successful run of the meta-analysis. | [optional] 
+**neurostore_url** | **str** |  | [optional] [readonly] 
 
 ## Example
 

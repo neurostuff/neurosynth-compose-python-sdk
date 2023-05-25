@@ -57,6 +57,26 @@ class NeurostoreAnalysis(BaseModel):
                             "neurostore_id",
                           },
                           exclude_none=True)
+        # set to None if neurostore_id (nullable) is None
+        # and __fields_set__ contains the field
+        if self.neurostore_id is None and "neurostore_id" in self.__fields_set__:
+            _dict['neurostore_id'] = None
+
+        # set to None if exception (nullable) is None
+        # and __fields_set__ contains the field
+        if self.exception is None and "exception" in self.__fields_set__:
+            _dict['exception'] = None
+
+        # set to None if traceback (nullable) is None
+        # and __fields_set__ contains the field
+        if self.traceback is None and "traceback" in self.__fields_set__:
+            _dict['traceback'] = None
+
+        # set to None if status (nullable) is None
+        # and __fields_set__ contains the field
+        if self.status is None and "status" in self.__fields_set__:
+            _dict['status'] = None
+
         return _dict
 
     @classmethod

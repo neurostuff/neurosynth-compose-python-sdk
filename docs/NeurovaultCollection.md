@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **collection_id** | **str** |  | [optional] [readonly] 
 **files** | [**NeurovaultCollectionFiles**](NeurovaultCollectionFiles.md) |  | [optional] 
-**result** | **str** |  | [optional] [readonly] 
+**url** | **str** |  | [optional] 
 
 ## Example
 

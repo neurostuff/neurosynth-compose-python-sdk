@@ -29,7 +29,8 @@ class Annotation(BaseModel):
     neurostore_id: Optional[StrictStr] = Field(None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
     studyset: Optional[StrictStr] = Field(None, description="The related cached studyset to this annotation.")
-    __properties = ["neurostore_id", "snapshot", "studyset"]
+    neurostore_url: Optional[StrictStr] = None
+    __properties = ["neurostore_id", "snapshot", "studyset", "neurostore_url"]
 
     class Config:
         """Pydantic configuration"""
@@ -54,6 +55,7 @@ class Annotation(BaseModel):
         _dict = self.dict(by_alias=True,
                           exclude={
                             "studyset",
+                            "neurostore_url",
                           },
                           exclude_none=True)
         # set to None if snapshot (nullable) is None
@@ -75,7 +77,8 @@ class Annotation(BaseModel):
         _obj = Annotation.parse_obj({
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
-            "studyset": obj.get("studyset")
+            "studyset": obj.get("studyset"),
+            "neurostore_url": obj.get("neurostore_url")
         })
         return _obj
 

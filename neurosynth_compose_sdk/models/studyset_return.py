@@ -28,11 +28,12 @@ class StudysetReturn(BaseModel):
     """
     neurostore_id: Optional[StrictStr] = Field(None, description="The id of the studyset on neurostore.")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
+    neurostore_url: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
-    __properties = ["neurostore_id", "snapshot", "id", "updated_at", "created_at", "user"]
+    __properties = ["neurostore_id", "snapshot", "neurostore_url", "id", "updated_at", "created_at", "user"]
 
     class Config:
         """Pydantic configuration"""
@@ -56,6 +57,7 @@ class StudysetReturn(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "neurostore_url",
                             "updated_at",
                             "created_at",
                           },
@@ -89,6 +91,7 @@ class StudysetReturn(BaseModel):
         _obj = StudysetReturn.parse_obj({
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
+            "neurostore_url": obj.get("neurostore_url"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

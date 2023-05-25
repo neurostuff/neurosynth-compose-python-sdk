@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** | The id of the studyset on neurostore. | [optional] 
 **snapshot** | **object** | The snapshot of the studyset pending a successful run of the meta-analysis. | [optional] 
+**neurostore_url** | **str** |  | [optional] [readonly] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

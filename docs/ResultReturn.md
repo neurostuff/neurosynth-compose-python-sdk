@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **meta_analysis_id** | **str** | the meta analysis this result was derived from. | [optional] 
 **cli_version** | **str** | version of the command-line-tool that is uploading the results.  | [optional] 
-**neurovault_collection_id** | **str** | the specific neurovault collection associated with this result. | [optional] 
+**neurovault_collection** | [**NeurovaultCollectionReturn**](NeurovaultCollectionReturn.md) |  | [optional] 
 **methods_description** | **str** | the description of the methods applied to create this result. | [optional] 
-**neurovault_images** | [**List[NeurovaultFile]**](NeurovaultFile.md) | the representation of the neurovault images associated with the result. | [optional] 
 **diagnostic_table** | **str** | a text representation of a tsv that marks the contribution of each study to each particular cluster. | [optional] 
 **cli_args** | **object** | additional parameters that were passed to the commandline tool at runtime.  | [optional] 
+**status** | **str** |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

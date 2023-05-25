@@ -6,6 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** |  | [optional] [readonly] 
 **analyses** | [**List[NeurostoreAnalysis]**](NeurostoreAnalysis.md) |  | [optional] 
+**exception** | **str** |  | [optional] 
+**traceback** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
 
 ## Example
 

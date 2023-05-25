@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | [optional] 
 **image_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**url** | **str** |  | [optional] 
 
 ## Example
 

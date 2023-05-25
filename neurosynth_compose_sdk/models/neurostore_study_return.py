@@ -29,11 +29,14 @@ class NeurostoreStudyReturn(BaseModel):
     """
     neurostore_id: Optional[StrictStr] = None
     analyses: Optional[conlist(NeurostoreAnalysis)] = None
+    exception: Optional[StrictStr] = None
+    traceback: Optional[StrictStr] = None
+    status: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
-    __properties = ["neurostore_id", "analyses", "id", "updated_at", "created_at", "user"]
+    __properties = ["neurostore_id", "analyses", "exception", "traceback", "status", "id", "updated_at", "created_at", "user"]
 
     class Config:
         """Pydantic configuration"""
@@ -69,6 +72,26 @@ class NeurostoreStudyReturn(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['analyses'] = _items
+        # set to None if neurostore_id (nullable) is None
+        # and __fields_set__ contains the field
+        if self.neurostore_id is None and "neurostore_id" in self.__fields_set__:
+            _dict['neurostore_id'] = None
+
+        # set to None if exception (nullable) is None
+        # and __fields_set__ contains the field
+        if self.exception is None and "exception" in self.__fields_set__:
+            _dict['exception'] = None
+
+        # set to None if traceback (nullable) is None
+        # and __fields_set__ contains the field
+        if self.traceback is None and "traceback" in self.__fields_set__:
+            _dict['traceback'] = None
+
+        # set to None if status (nullable) is None
+        # and __fields_set__ contains the field
+        if self.status is None and "status" in self.__fields_set__:
+            _dict['status'] = None
+
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.updated_at is None and "updated_at" in self.__fields_set__:
@@ -93,6 +116,9 @@ class NeurostoreStudyReturn(BaseModel):
         _obj = NeurostoreStudyReturn.parse_obj({
             "neurostore_id": obj.get("neurostore_id"),
             "analyses": [NeurostoreAnalysis.from_dict(_item) for _item in obj.get("analyses")] if obj.get("analyses") is not None else None,
+            "exception": obj.get("exception"),
+            "traceback": obj.get("traceback"),
+            "status": obj.get("status"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

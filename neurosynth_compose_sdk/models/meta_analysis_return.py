@@ -25,6 +25,7 @@ from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisA
 from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
 from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
+from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
 
 class MetaAnalysisReturn(BaseModel):
     """
@@ -41,19 +42,19 @@ class MetaAnalysisReturn(BaseModel):
     provenance: Optional[Dict[str, Any]] = None
     project: Optional[StrictStr] = None
     run_key: Optional[StrictStr] = Field(None, description="a special key used to upload the results of this meta analysis. Can be used as an alternative to using your auth token from login. ")
-    neurostore_analysis_id: Optional[StrictStr] = None
-    hash: Optional[StrictStr] = Field(None, description="TODO: create hash of studyset and annotation and use that for the run_key")
+    neurostore_analysis: Optional[NeurostoreAnalysis] = None
     cognitive_contrast_cogatlas: Optional[StrictStr] = None
     cognitive_contrast_cogatlas_id: Optional[StrictStr] = None
     cognitive_paradigm_cogatlas: Optional[StrictStr] = None
     cognitive_paradigm_cogatlas_id: Optional[StrictStr] = None
     cached_studyset: Optional[StrictStr] = None
     cached_annotation: Optional[StrictStr] = None
+    neurostore_url: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
-    __properties = ["specification", "studyset", "annotation", "name", "description", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis_id", "hash", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "id", "updated_at", "created_at", "user"]
+    __properties = ["specification", "studyset", "annotation", "name", "description", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user"]
 
     class Config:
         """Pydantic configuration"""
@@ -78,9 +79,9 @@ class MetaAnalysisReturn(BaseModel):
         _dict = self.dict(by_alias=True,
                           exclude={
                             "run_key",
-                            "neurostore_analysis_id",
                             "cached_studyset",
                             "cached_annotation",
+                            "neurostore_url",
                             "updated_at",
                             "created_at",
                           },
@@ -97,6 +98,9 @@ class MetaAnalysisReturn(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of results
         if self.results:
             _dict['results'] = self.results.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of neurostore_analysis
+        if self.neurostore_analysis:
+            _dict['neurostore_analysis'] = self.neurostore_analysis.to_dict()
         # set to None if name (nullable) is None
         # and __fields_set__ contains the field
         if self.name is None and "name" in self.__fields_set__:
@@ -116,16 +120,6 @@ class MetaAnalysisReturn(BaseModel):
         # and __fields_set__ contains the field
         if self.project is None and "project" in self.__fields_set__:
             _dict['project'] = None
-
-        # set to None if neurostore_analysis_id (nullable) is None
-        # and __fields_set__ contains the field
-        if self.neurostore_analysis_id is None and "neurostore_analysis_id" in self.__fields_set__:
-            _dict['neurostore_analysis_id'] = None
-
-        # set to None if hash (nullable) is None
-        # and __fields_set__ contains the field
-        if self.hash is None and "hash" in self.__fields_set__:
-            _dict['hash'] = None
 
         # set to None if cognitive_contrast_cogatlas (nullable) is None
         # and __fields_set__ contains the field
@@ -156,6 +150,11 @@ class MetaAnalysisReturn(BaseModel):
         # and __fields_set__ contains the field
         if self.cached_annotation is None and "cached_annotation" in self.__fields_set__:
             _dict['cached_annotation'] = None
+
+        # set to None if neurostore_url (nullable) is None
+        # and __fields_set__ contains the field
+        if self.neurostore_url is None and "neurostore_url" in self.__fields_set__:
+            _dict['neurostore_url'] = None
 
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
@@ -190,14 +189,14 @@ class MetaAnalysisReturn(BaseModel):
             "provenance": obj.get("provenance"),
             "project": obj.get("project"),
             "run_key": obj.get("run_key"),
-            "neurostore_analysis_id": obj.get("neurostore_analysis_id"),
-            "hash": obj.get("hash"),
+            "neurostore_analysis": NeurostoreAnalysis.from_dict(obj.get("neurostore_analysis")) if obj.get("neurostore_analysis") is not None else None,
             "cognitive_contrast_cogatlas": obj.get("cognitive_contrast_cogatlas"),
             "cognitive_contrast_cogatlas_id": obj.get("cognitive_contrast_cogatlas_id"),
             "cognitive_paradigm_cogatlas": obj.get("cognitive_paradigm_cogatlas"),
             "cognitive_paradigm_cogatlas_id": obj.get("cognitive_paradigm_cogatlas_id"),
             "cached_studyset": obj.get("cached_studyset"),
             "cached_annotation": obj.get("cached_annotation"),
+            "neurostore_url": obj.get("neurostore_url"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

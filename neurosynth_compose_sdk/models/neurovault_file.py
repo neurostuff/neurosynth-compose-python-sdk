@@ -32,7 +32,8 @@ class NeurovaultFile(BaseModel):
     status: Optional[StrictStr] = None
     image_id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    __properties = ["collection_id", "exception", "traceback", "status", "image_id", "name"]
+    url: Optional[StrictStr] = None
+    __properties = ["collection_id", "exception", "traceback", "status", "image_id", "name", "url"]
 
     class Config:
         """Pydantic configuration"""
@@ -58,6 +59,11 @@ class NeurovaultFile(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
+        # set to None if collection_id (nullable) is None
+        # and __fields_set__ contains the field
+        if self.collection_id is None and "collection_id" in self.__fields_set__:
+            _dict['collection_id'] = None
+
         # set to None if exception (nullable) is None
         # and __fields_set__ contains the field
         if self.exception is None and "exception" in self.__fields_set__:
@@ -78,6 +84,11 @@ class NeurovaultFile(BaseModel):
         if self.name is None and "name" in self.__fields_set__:
             _dict['name'] = None
 
+        # set to None if url (nullable) is None
+        # and __fields_set__ contains the field
+        if self.url is None and "url" in self.__fields_set__:
+            _dict['url'] = None
+
         return _dict
 
     @classmethod
@@ -95,7 +106,8 @@ class NeurovaultFile(BaseModel):
             "traceback": obj.get("traceback"),
             "status": obj.get("status"),
             "image_id": obj.get("image_id"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "url": obj.get("url")
         })
         return _obj
 

@@ -28,7 +28,8 @@ class Studyset(BaseModel):
     """
     neurostore_id: Optional[StrictStr] = Field(None, description="The id of the studyset on neurostore.")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
-    __properties = ["neurostore_id", "snapshot"]
+    neurostore_url: Optional[StrictStr] = None
+    __properties = ["neurostore_id", "snapshot", "neurostore_url"]
 
     class Config:
         """Pydantic configuration"""
@@ -52,6 +53,7 @@ class Studyset(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "neurostore_url",
                           },
                           exclude_none=True)
         # set to None if snapshot (nullable) is None
@@ -72,7 +74,8 @@ class Studyset(BaseModel):
 
         _obj = Studyset.parse_obj({
             "neurostore_id": obj.get("neurostore_id"),
-            "snapshot": obj.get("snapshot")
+            "snapshot": obj.get("snapshot"),
+            "neurostore_url": obj.get("neurostore_url")
         })
         return _obj
 
