@@ -2623,13 +2623,13 @@ class ComposeApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def neurovault_files_id_put(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, **kwargs) -> NeurovaultFileReturn:  # noqa: E501
+    def neurovault_files_id_put(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, url : Optional[StrictStr] = None, **kwargs) -> NeurovaultFileReturn:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_files_id_put(id, collection_id, exception, traceback, status, image_id, name, async_req=True)
+        >>> thread = api.neurovault_files_id_put(id, collection_id, exception, traceback, status, image_id, name, url, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
@@ -2646,6 +2646,8 @@ class ComposeApi(object):
         :type image_id: str
         :param name:
         :type name: str
+        :param url:
+        :type url: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -2660,16 +2662,16 @@ class ComposeApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the neurovault_files_id_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, **kwargs)  # noqa: E501
+        return self.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, url, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def neurovault_files_id_put_with_http_info(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def neurovault_files_id_put_with_http_info(self, id : StrictStr, collection_id : Optional[StrictStr] = None, exception : Optional[StrictStr] = None, traceback : Optional[StrictStr] = None, status : Optional[StrictStr] = None, image_id : Optional[StrictStr] = None, name : Optional[StrictStr] = None, url : Optional[StrictStr] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, async_req=True)
+        >>> thread = api.neurovault_files_id_put_with_http_info(id, collection_id, exception, traceback, status, image_id, name, url, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
@@ -2686,6 +2688,8 @@ class ComposeApi(object):
         :type image_id: str
         :param name:
         :type name: str
+        :param url:
+        :type url: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -2720,7 +2724,8 @@ class ComposeApi(object):
             'traceback',
             'status',
             'image_id',
-            'name'
+            'name',
+            'url'
         ]
         _all_params.extend(
             [
@@ -2776,6 +2781,9 @@ class ComposeApi(object):
 
         if _params['name']:
             _form_params.append(('name', _params['name']))
+
+        if _params['url']:
+            _form_params.append(('url', _params['url']))
 
         # process the body parameter
         _body_params = None

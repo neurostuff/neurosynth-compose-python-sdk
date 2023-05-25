@@ -29,8 +29,8 @@ class NeurovaultCollection(BaseModel):
     """
     collection_id: Optional[StrictStr] = None
     files: Optional[NeurovaultCollectionFiles] = None
-    result: Optional[StrictStr] = None
-    __properties = ["collection_id", "files", "result"]
+    url: Optional[StrictStr] = None
+    __properties = ["collection_id", "files", "url"]
 
     class Config:
         """Pydantic configuration"""
@@ -55,12 +55,21 @@ class NeurovaultCollection(BaseModel):
         _dict = self.dict(by_alias=True,
                           exclude={
                             "collection_id",
-                            "result",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of files
         if self.files:
             _dict['files'] = self.files.to_dict()
+        # set to None if collection_id (nullable) is None
+        # and __fields_set__ contains the field
+        if self.collection_id is None and "collection_id" in self.__fields_set__:
+            _dict['collection_id'] = None
+
+        # set to None if url (nullable) is None
+        # and __fields_set__ contains the field
+        if self.url is None and "url" in self.__fields_set__:
+            _dict['url'] = None
+
         return _dict
 
     @classmethod
@@ -75,7 +84,7 @@ class NeurovaultCollection(BaseModel):
         _obj = NeurovaultCollection.parse_obj({
             "collection_id": obj.get("collection_id"),
             "files": NeurovaultCollectionFiles.from_dict(obj.get("files")) if obj.get("files") is not None else None,
-            "result": obj.get("result")
+            "url": obj.get("url")
         })
         return _obj
 

@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **public** | **bool** | whether the project is public or private | [optional] 
-**neurostore_id** | **str** |  | [optional] [readonly] 
+**neurostore_study** | [**NeurostoreStudy**](NeurostoreStudy.md) |  | [optional] 
+**neurostore_url** | **str** |  | [optional] 
 
 ## Example
 

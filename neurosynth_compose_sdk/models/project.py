@@ -21,6 +21,7 @@ import json
 
 from typing import Any, Dict, Optional
 from pydantic import BaseModel, Field, StrictBool, StrictStr
+from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
 from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
 
 class Project(BaseModel):
@@ -32,8 +33,9 @@ class Project(BaseModel):
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     public: Optional[StrictBool] = Field(None, description="whether the project is public or private")
-    neurostore_id: Optional[StrictStr] = None
-    __properties = ["provenance", "meta_analyses", "name", "description", "public", "neurostore_id"]
+    neurostore_study: Optional[NeurostoreStudy] = None
+    neurostore_url: Optional[StrictStr] = None
+    __properties = ["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url"]
 
     class Config:
         """Pydantic configuration"""
@@ -57,12 +59,14 @@ class Project(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
-                            "neurostore_id",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of meta_analyses
         if self.meta_analyses:
             _dict['meta_analyses'] = self.meta_analyses.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of neurostore_study
+        if self.neurostore_study:
+            _dict['neurostore_study'] = self.neurostore_study.to_dict()
         # set to None if provenance (nullable) is None
         # and __fields_set__ contains the field
         if self.provenance is None and "provenance" in self.__fields_set__:
@@ -77,6 +81,11 @@ class Project(BaseModel):
         # and __fields_set__ contains the field
         if self.description is None and "description" in self.__fields_set__:
             _dict['description'] = None
+
+        # set to None if neurostore_url (nullable) is None
+        # and __fields_set__ contains the field
+        if self.neurostore_url is None and "neurostore_url" in self.__fields_set__:
+            _dict['neurostore_url'] = None
 
         return _dict
 
@@ -95,7 +104,8 @@ class Project(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "public": obj.get("public"),
-            "neurostore_id": obj.get("neurostore_id")
+            "neurostore_study": NeurostoreStudy.from_dict(obj.get("neurostore_study")) if obj.get("neurostore_study") is not None else None,
+            "neurostore_url": obj.get("neurostore_url")
         })
         return _obj
 

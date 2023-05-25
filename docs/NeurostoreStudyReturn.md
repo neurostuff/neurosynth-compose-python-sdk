@@ -6,6 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** |  | [optional] [readonly] 
 **analyses** | [**List[NeurostoreAnalysis]**](NeurostoreAnalysis.md) |  | [optional] 
+**exception** | **str** |  | [optional] 
+**traceback** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
