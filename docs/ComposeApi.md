@@ -470,7 +470,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **meta_analyses_id_put**
-> MetaAnalysisReturn meta_analyses_id_put(id, meta_analysis=meta_analysis)
+> MetaAnalysisReturn meta_analyses_id_put(id, meta_analyses_id_put_request=meta_analyses_id_put_request)
 
 Update a meta-analysis
 
@@ -483,7 +483,7 @@ update an existing meta-analysis (that has not yet been run)
 import time
 import os
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
+from neurosynth_compose_sdk.models.meta_analyses_id_put_request import MetaAnalysesIdPutRequest
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
@@ -509,11 +509,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
     id = 'id_example' # str | 
-    meta_analysis = neurosynth_compose_sdk.MetaAnalysis() # MetaAnalysis |  (optional)
+    meta_analyses_id_put_request = neurosynth_compose_sdk.MetaAnalysesIdPutRequest() # MetaAnalysesIdPutRequest |  (optional)
 
     try:
         # Update a meta-analysis
-        api_response = api_instance.meta_analyses_id_put(id, meta_analysis=meta_analysis)
+        api_response = api_instance.meta_analyses_id_put(id, meta_analyses_id_put_request=meta_analyses_id_put_request)
         print("The response of ComposeApi->meta_analyses_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -526,7 +526,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **meta_analysis** | [**MetaAnalysis**](MetaAnalysis.md)|  | [optional] 
+ **meta_analyses_id_put_request** | [**MetaAnalysesIdPutRequest**](MetaAnalysesIdPutRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -1617,7 +1617,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_id_put**
-> ProjectReturn projects_id_put(id, project=project)
+> ProjectReturn projects_id_put(id, projects_id_put_request=projects_id_put_request)
 
 
 
@@ -1628,8 +1628,8 @@ No authorization required
 import time
 import os
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
+from neurosynth_compose_sdk.models.projects_id_put_request import ProjectsIdPutRequest
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
@@ -1654,11 +1654,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
     id = 'id_example' # str | 
-    project = neurosynth_compose_sdk.Project() # Project |  (optional)
+    projects_id_put_request = neurosynth_compose_sdk.ProjectsIdPutRequest() # ProjectsIdPutRequest |  (optional)
 
     try:
         # 
-        api_response = api_instance.projects_id_put(id, project=project)
+        api_response = api_instance.projects_id_put(id, projects_id_put_request=projects_id_put_request)
         print("The response of ComposeApi->projects_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -1671,7 +1671,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **project** | [**Project**](Project.md)|  | [optional] 
+ **projects_id_put_request** | [**ProjectsIdPutRequest**](ProjectsIdPutRequest.md)|  | [optional] 
 
 ### Return type
 

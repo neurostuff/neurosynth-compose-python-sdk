@@ -24,6 +24,7 @@ from neurosynth_compose_sdk.models.annotation_update_all_of import AnnotationUpd
 from neurosynth_compose_sdk.models.corrector import Corrector
 from neurosynth_compose_sdk.models.estimator import Estimator
 from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response
+from neurosynth_compose_sdk.models.meta_analyses_id_put_request import MetaAnalysesIdPutRequest
 from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
@@ -47,7 +48,10 @@ from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_list import ProjectList
 from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
+from neurosynth_compose_sdk.models.projects_id_put_request import ProjectsIdPutRequest
 from neurosynth_compose_sdk.models.read_only import ReadOnly
+from neurosynth_compose_sdk.models.recreate_neurostore_analysis import RecreateNeurostoreAnalysis
+from neurosynth_compose_sdk.models.recreate_neurostore_study import RecreateNeurostoreStudy
 from neurosynth_compose_sdk.models.result import Result
 from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_list import ResultList

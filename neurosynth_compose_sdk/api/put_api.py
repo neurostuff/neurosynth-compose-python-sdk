@@ -26,12 +26,12 @@ from typing import Optional
 
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
-from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
+from neurosynth_compose_sdk.models.meta_analyses_id_put_request import MetaAnalysesIdPutRequest
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
 from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
-from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
+from neurosynth_compose_sdk.models.projects_id_put_request import ProjectsIdPutRequest
 from neurosynth_compose_sdk.models.result import Result
 from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.models.specification import Specification
@@ -218,20 +218,20 @@ class PutApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def meta_analyses_id_put(self, id : StrictStr, meta_analysis : Optional[MetaAnalysis] = None, **kwargs) -> MetaAnalysisReturn:  # noqa: E501
+    def meta_analyses_id_put(self, id : StrictStr, meta_analyses_id_put_request : Optional[MetaAnalysesIdPutRequest] = None, **kwargs) -> MetaAnalysisReturn:  # noqa: E501
         """Update a meta-analysis  # noqa: E501
 
         update an existing meta-analysis (that has not yet been run)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_id_put(id, meta_analysis, async_req=True)
+        >>> thread = api.meta_analyses_id_put(id, meta_analyses_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param meta_analysis: 
-        :type meta_analysis: MetaAnalysis
+        :param meta_analyses_id_put_request: 
+        :type meta_analyses_id_put_request: MetaAnalysesIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -246,23 +246,23 @@ class PutApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the meta_analyses_id_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.meta_analyses_id_put_with_http_info(id, meta_analysis, **kwargs)  # noqa: E501
+        return self.meta_analyses_id_put_with_http_info(id, meta_analyses_id_put_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def meta_analyses_id_put_with_http_info(self, id : StrictStr, meta_analysis : Optional[MetaAnalysis] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def meta_analyses_id_put_with_http_info(self, id : StrictStr, meta_analyses_id_put_request : Optional[MetaAnalysesIdPutRequest] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Update a meta-analysis  # noqa: E501
 
         update an existing meta-analysis (that has not yet been run)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_id_put_with_http_info(id, meta_analysis, async_req=True)
+        >>> thread = api.meta_analyses_id_put_with_http_info(id, meta_analyses_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param meta_analysis: 
-        :type meta_analysis: MetaAnalysis
+        :param meta_analyses_id_put_request: 
+        :type meta_analyses_id_put_request: MetaAnalysesIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -292,7 +292,7 @@ class PutApi(object):
 
         _all_params = [
             'id',
-            'meta_analysis'
+            'meta_analyses_id_put_request'
         ]
         _all_params.extend(
             [
@@ -333,8 +333,8 @@ class PutApi(object):
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['meta_analysis'] is not None:
-            _body_params = _params['meta_analysis']
+        if _params['meta_analyses_id_put_request'] is not None:
+            _body_params = _params['meta_analyses_id_put_request']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -865,19 +865,19 @@ class PutApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def projects_id_put(self, id : StrictStr, project : Optional[Project] = None, **kwargs) -> ProjectReturn:  # noqa: E501
+    def projects_id_put(self, id : StrictStr, projects_id_put_request : Optional[ProjectsIdPutRequest] = None, **kwargs) -> ProjectReturn:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_id_put(id, project, async_req=True)
+        >>> thread = api.projects_id_put(id, projects_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param project:
-        :type project: Project
+        :param projects_id_put_request:
+        :type projects_id_put_request: ProjectsIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -892,22 +892,22 @@ class PutApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the projects_id_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.projects_id_put_with_http_info(id, project, **kwargs)  # noqa: E501
+        return self.projects_id_put_with_http_info(id, projects_id_put_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def projects_id_put_with_http_info(self, id : StrictStr, project : Optional[Project] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def projects_id_put_with_http_info(self, id : StrictStr, projects_id_put_request : Optional[ProjectsIdPutRequest] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_id_put_with_http_info(id, project, async_req=True)
+        >>> thread = api.projects_id_put_with_http_info(id, projects_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param project:
-        :type project: Project
+        :param projects_id_put_request:
+        :type projects_id_put_request: ProjectsIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -937,7 +937,7 @@ class PutApi(object):
 
         _all_params = [
             'id',
-            'project'
+            'projects_id_put_request'
         ]
         _all_params.extend(
             [
@@ -978,8 +978,8 @@ class PutApi(object):
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['project'] is not None:
-            _body_params = _params['project']
+        if _params['projects_id_put_request'] is not None:
+            _body_params = _params['projects_id_put_request']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(

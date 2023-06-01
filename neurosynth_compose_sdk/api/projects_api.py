@@ -27,6 +27,7 @@ from typing import Optional
 from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_list import ProjectList
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
+from neurosynth_compose_sdk.models.projects_id_put_request import ProjectsIdPutRequest
 
 from neurosynth_compose_sdk.api_client import ApiClient
 from neurosynth_compose_sdk.api_response import ApiResponse
@@ -315,19 +316,19 @@ class ProjectsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def projects_id_put(self, id : StrictStr, project : Optional[Project] = None, **kwargs) -> ProjectReturn:  # noqa: E501
+    def projects_id_put(self, id : StrictStr, projects_id_put_request : Optional[ProjectsIdPutRequest] = None, **kwargs) -> ProjectReturn:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_id_put(id, project, async_req=True)
+        >>> thread = api.projects_id_put(id, projects_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param project:
-        :type project: Project
+        :param projects_id_put_request:
+        :type projects_id_put_request: ProjectsIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -342,22 +343,22 @@ class ProjectsApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the projects_id_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.projects_id_put_with_http_info(id, project, **kwargs)  # noqa: E501
+        return self.projects_id_put_with_http_info(id, projects_id_put_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def projects_id_put_with_http_info(self, id : StrictStr, project : Optional[Project] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def projects_id_put_with_http_info(self, id : StrictStr, projects_id_put_request : Optional[ProjectsIdPutRequest] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_id_put_with_http_info(id, project, async_req=True)
+        >>> thread = api.projects_id_put_with_http_info(id, projects_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param project:
-        :type project: Project
+        :param projects_id_put_request:
+        :type projects_id_put_request: ProjectsIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -387,7 +388,7 @@ class ProjectsApi(object):
 
         _all_params = [
             'id',
-            'project'
+            'projects_id_put_request'
         ]
         _all_params.extend(
             [
@@ -428,8 +429,8 @@ class ProjectsApi(object):
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['project'] is not None:
-            _body_params = _params['project']
+        if _params['projects_id_put_request'] is not None:
+            _body_params = _params['projects_id_put_request']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(

@@ -24,7 +24,7 @@ from pydantic import Field, StrictBool, StrictStr
 
 from typing import Optional
 
-from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
+from neurosynth_compose_sdk.models.meta_analyses_id_put_request import MetaAnalysesIdPutRequest
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
@@ -343,20 +343,20 @@ class MetaAnalysesApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def meta_analyses_id_put(self, id : StrictStr, meta_analysis : Optional[MetaAnalysis] = None, **kwargs) -> MetaAnalysisReturn:  # noqa: E501
+    def meta_analyses_id_put(self, id : StrictStr, meta_analyses_id_put_request : Optional[MetaAnalysesIdPutRequest] = None, **kwargs) -> MetaAnalysisReturn:  # noqa: E501
         """Update a meta-analysis  # noqa: E501
 
         update an existing meta-analysis (that has not yet been run)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_id_put(id, meta_analysis, async_req=True)
+        >>> thread = api.meta_analyses_id_put(id, meta_analyses_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param meta_analysis: 
-        :type meta_analysis: MetaAnalysis
+        :param meta_analyses_id_put_request: 
+        :type meta_analyses_id_put_request: MetaAnalysesIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -371,23 +371,23 @@ class MetaAnalysesApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the meta_analyses_id_put_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.meta_analyses_id_put_with_http_info(id, meta_analysis, **kwargs)  # noqa: E501
+        return self.meta_analyses_id_put_with_http_info(id, meta_analyses_id_put_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def meta_analyses_id_put_with_http_info(self, id : StrictStr, meta_analysis : Optional[MetaAnalysis] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def meta_analyses_id_put_with_http_info(self, id : StrictStr, meta_analyses_id_put_request : Optional[MetaAnalysesIdPutRequest] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Update a meta-analysis  # noqa: E501
 
         update an existing meta-analysis (that has not yet been run)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_id_put_with_http_info(id, meta_analysis, async_req=True)
+        >>> thread = api.meta_analyses_id_put_with_http_info(id, meta_analyses_id_put_request, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
-        :param meta_analysis: 
-        :type meta_analysis: MetaAnalysis
+        :param meta_analyses_id_put_request: 
+        :type meta_analyses_id_put_request: MetaAnalysesIdPutRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -417,7 +417,7 @@ class MetaAnalysesApi(object):
 
         _all_params = [
             'id',
-            'meta_analysis'
+            'meta_analyses_id_put_request'
         ]
         _all_params.extend(
             [
@@ -458,8 +458,8 @@ class MetaAnalysesApi(object):
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['meta_analysis'] is not None:
-            _body_params = _params['meta_analysis']
+        if _params['meta_analyses_id_put_request'] is not None:
+            _body_params = _params['meta_analyses_id_put_request']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(

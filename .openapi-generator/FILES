@@ -17,6 +17,7 @@ docs/Estimator.md
 docs/GetApi.md
 docs/MetaAnalysesApi.md
 docs/MetaAnalysesGet400Response.md
+docs/MetaAnalysesIdPutRequest.md
 docs/MetaAnalysis.md
 docs/MetaAnalysisAnnotation.md
 docs/MetaAnalysisList.md
@@ -43,8 +44,11 @@ docs/ProjectList.md
 docs/ProjectMetaAnalyses.md
 docs/ProjectReturn.md
 docs/ProjectsApi.md
+docs/ProjectsIdPutRequest.md
 docs/PutApi.md
 docs/ReadOnly.md
+docs/RecreateNeurostoreAnalysis.md
+docs/RecreateNeurostoreStudy.md
 docs/Result.md
 docs/ResultInit.md
 docs/ResultList.md
@@ -93,6 +97,7 @@ neurosynth_compose_sdk/models/annotation_update_all_of.py
 neurosynth_compose_sdk/models/corrector.py
 neurosynth_compose_sdk/models/estimator.py
 neurosynth_compose_sdk/models/meta_analyses_get400_response.py
+neurosynth_compose_sdk/models/meta_analyses_id_put_request.py
 neurosynth_compose_sdk/models/meta_analysis.py
 neurosynth_compose_sdk/models/meta_analysis_annotation.py
 neurosynth_compose_sdk/models/meta_analysis_list.py
@@ -116,7 +121,10 @@ neurosynth_compose_sdk/models/project.py
 neurosynth_compose_sdk/models/project_list.py
 neurosynth_compose_sdk/models/project_meta_analyses.py
 neurosynth_compose_sdk/models/project_return.py
+neurosynth_compose_sdk/models/projects_id_put_request.py
 neurosynth_compose_sdk/models/read_only.py
+neurosynth_compose_sdk/models/recreate_neurostore_analysis.py
+neurosynth_compose_sdk/models/recreate_neurostore_study.py
 neurosynth_compose_sdk/models/result.py
 neurosynth_compose_sdk/models/result_init.py
 neurosynth_compose_sdk/models/result_list.py
@@ -140,4 +148,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_meta_analyses_id_put_request.py
+test/test_projects_id_put_request.py
+test/test_recreate_neurostore_analysis.py
+test/test_recreate_neurostore_study.py
 tox.ini
