@@ -32,6 +32,7 @@ class ProjectReturn(BaseModel):
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
+    username: Optional[StrictStr] = None
     provenance: Optional[Dict[str, Any]] = None
     meta_analyses: Optional[ProjectMetaAnalyses] = None
     name: Optional[StrictStr] = None
@@ -39,7 +40,7 @@ class ProjectReturn(BaseModel):
     public: Optional[StrictBool] = Field(None, description="whether the project is public or private")
     neurostore_study: Optional[NeurostoreStudy] = None
     neurostore_url: Optional[StrictStr] = None
-    __properties = ["id", "updated_at", "created_at", "user", "provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url"]
+    __properties = ["id", "updated_at", "created_at", "user", "username", "provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url"]
 
     class Config:
         """Pydantic configuration"""
@@ -65,6 +66,7 @@ class ProjectReturn(BaseModel):
                           exclude={
                             "updated_at",
                             "created_at",
+                            "username",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of meta_analyses
@@ -82,6 +84,11 @@ class ProjectReturn(BaseModel):
         # and __fields_set__ contains the field
         if self.user is None and "user" in self.__fields_set__:
             _dict['user'] = None
+
+        # set to None if username (nullable) is None
+        # and __fields_set__ contains the field
+        if self.username is None and "username" in self.__fields_set__:
+            _dict['username'] = None
 
         # set to None if provenance (nullable) is None
         # and __fields_set__ contains the field
@@ -119,6 +126,7 @@ class ProjectReturn(BaseModel):
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),
             "user": obj.get("user"),
+            "username": obj.get("username"),
             "provenance": obj.get("provenance"),
             "meta_analyses": ProjectMetaAnalyses.from_dict(obj.get("meta_analyses")) if obj.get("meta_analyses") is not None else None,
             "name": obj.get("name"),

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
 **user** | **str** | Who owns the resource. | [optional] 
+**username** | **str** |  | [optional] [readonly] 
 
 ## Example
 
