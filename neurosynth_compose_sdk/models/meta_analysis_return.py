@@ -54,7 +54,8 @@ class MetaAnalysisReturn(BaseModel):
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
-    __properties = ["specification", "studyset", "annotation", "name", "description", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user"]
+    username: Optional[StrictStr] = None
+    __properties = ["specification", "studyset", "annotation", "name", "description", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 
     class Config:
         """Pydantic configuration"""
@@ -84,6 +85,7 @@ class MetaAnalysisReturn(BaseModel):
                             "neurostore_url",
                             "updated_at",
                             "created_at",
+                            "username",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of specification
@@ -166,6 +168,11 @@ class MetaAnalysisReturn(BaseModel):
         if self.user is None and "user" in self.__fields_set__:
             _dict['user'] = None
 
+        # set to None if username (nullable) is None
+        # and __fields_set__ contains the field
+        if self.username is None and "username" in self.__fields_set__:
+            _dict['username'] = None
+
         return _dict
 
     @classmethod
@@ -200,7 +207,8 @@ class MetaAnalysisReturn(BaseModel):
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),
-            "user": obj.get("user")
+            "user": obj.get("user"),
+            "username": obj.get("username")
         })
         return _obj
 
