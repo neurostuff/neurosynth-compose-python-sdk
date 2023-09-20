@@ -10,6 +10,8 @@ Method | HTTP request | Description
 [**neurostore_studies_id_put**](DefaultApi.md#neurostore_studies_id_put) | **PUT** /neurostore-studies/{id} | 
 [**neurostore_studies_post**](DefaultApi.md#neurostore_studies_post) | **POST** /neurostore-studies | 
 [**projects_id_delete**](DefaultApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
+[**studyset_references_get**](DefaultApi.md#studyset_references_get) | **GET** /studyset-references | Your GET endpoint
+[**studyset_references_id_get**](DefaultApi.md#studyset_references_id_get) | **GET** /studyset-references/{id} | Your GET endpoint
 
 
 # **meta_analyses_id_delete**
@@ -414,6 +416,132 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **studyset_references_get**
+> StudysetReferenceList studyset_references_get()
+
+Your GET endpoint
+
+
+
+### Example
+
+```python
+import time
+import os
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.DefaultApi(api_client)
+
+    try:
+        # Your GET endpoint
+        api_response = api_instance.studyset_references_get()
+        print("The response of DefaultApi->studyset_references_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->studyset_references_get: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StudysetReferenceList**](StudysetReferenceList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **studyset_references_id_get**
+> StudysetReferenceReturn studyset_references_id_get(id)
+
+Your GET endpoint
+
+### Example
+
+```python
+import time
+import os
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.DefaultApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # Your GET endpoint
+        api_response = api_instance.studyset_references_id_get(id)
+        print("The response of DefaultApi->studyset_references_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DefaultApi->studyset_references_id_get: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**StudysetReferenceReturn**](StudysetReferenceReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

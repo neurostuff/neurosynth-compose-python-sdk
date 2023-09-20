@@ -58,6 +58,10 @@ docs/SpecificationsApi.md
 docs/Studyset.md
 docs/StudysetList.md
 docs/StudysetPostBody.md
+docs/StudysetReference.md
+docs/StudysetReferenceList.md
+docs/StudysetReferenceReturn.md
+docs/StudysetReferenceSnapshotsInner.md
 docs/StudysetReturn.md
 docs/StudysetsApi.md
 docs/User.md
@@ -129,6 +133,10 @@ neurosynth_compose_sdk/models/specification_return.py
 neurosynth_compose_sdk/models/studyset.py
 neurosynth_compose_sdk/models/studyset_list.py
 neurosynth_compose_sdk/models/studyset_post_body.py
+neurosynth_compose_sdk/models/studyset_reference.py
+neurosynth_compose_sdk/models/studyset_reference_list.py
+neurosynth_compose_sdk/models/studyset_reference_return.py
+neurosynth_compose_sdk/models/studyset_reference_snapshots_inner.py
 neurosynth_compose_sdk/models/studyset_return.py
 neurosynth_compose_sdk/models/user.py
 neurosynth_compose_sdk/models/user_list.py
@@ -140,4 +148,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_studyset_reference.py
+test/test_studyset_reference_list.py
+test/test_studyset_reference_return.py
+test/test_studyset_reference_snapshots_inner.py
 tox.ini

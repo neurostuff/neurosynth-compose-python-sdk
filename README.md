@@ -127,6 +127,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**neurostore_studies_id_put**](docs/DefaultApi.md#neurostore_studies_id_put) | **PUT** /neurostore-studies/{id} | 
 *DefaultApi* | [**neurostore_studies_post**](docs/DefaultApi.md#neurostore_studies_post) | **POST** /neurostore-studies | 
 *DefaultApi* | [**projects_id_delete**](docs/DefaultApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
+*DefaultApi* | [**studyset_references_get**](docs/DefaultApi.md#studyset_references_get) | **GET** /studyset-references | Your GET endpoint
+*DefaultApi* | [**studyset_references_id_get**](docs/DefaultApi.md#studyset_references_id_get) | **GET** /studyset-references/{id} | Your GET endpoint
 *GetApi* | [**annotations_get**](docs/GetApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
 *GetApi* | [**annotations_id_get**](docs/GetApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
 *GetApi* | [**meta_analyses_get**](docs/GetApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
@@ -240,6 +242,10 @@ Class | Method | HTTP request | Description
  - [Studyset](docs/Studyset.md)
  - [StudysetList](docs/StudysetList.md)
  - [StudysetPostBody](docs/StudysetPostBody.md)
+ - [StudysetReference](docs/StudysetReference.md)
+ - [StudysetReferenceList](docs/StudysetReferenceList.md)
+ - [StudysetReferenceReturn](docs/StudysetReferenceReturn.md)
+ - [StudysetReferenceSnapshotsInner](docs/StudysetReferenceSnapshotsInner.md)
  - [StudysetReturn](docs/StudysetReturn.md)
  - [User](docs/User.md)
  - [UserList](docs/UserList.md)
