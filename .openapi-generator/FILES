@@ -148,8 +148,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_studyset_reference.py
-test/test_studyset_reference_list.py
-test/test_studyset_reference_return.py
-test/test_studyset_reference_snapshots_inner.py
 tox.ini

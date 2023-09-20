@@ -29,12 +29,13 @@ class StudysetReturn(BaseModel):
     neurostore_id: Optional[StrictStr] = Field(None, description="The id of the studyset on neurostore.")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
     neurostore_url: Optional[StrictStr] = None
+    version: Optional[StrictStr] = Field(None, description="A string representing a labeled version of this particular studyset.")
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties = ["neurostore_id", "snapshot", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
+    __properties = ["neurostore_id", "snapshot", "neurostore_url", "version", "id", "updated_at", "created_at", "user", "username"]
 
     class Config:
         """Pydantic configuration"""
@@ -69,6 +70,11 @@ class StudysetReturn(BaseModel):
         if self.snapshot is None and "snapshot" in self.__fields_set__:
             _dict['snapshot'] = None
 
+        # set to None if version (nullable) is None
+        # and __fields_set__ contains the field
+        if self.version is None and "version" in self.__fields_set__:
+            _dict['version'] = None
+
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.updated_at is None and "updated_at" in self.__fields_set__:
@@ -99,6 +105,7 @@ class StudysetReturn(BaseModel):
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
             "neurostore_url": obj.get("neurostore_url"),
+            "version": obj.get("version"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),
