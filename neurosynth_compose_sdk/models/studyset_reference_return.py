@@ -19,23 +19,21 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import Any, Dict, Optional
-from pydantic import BaseModel, Field, StrictStr
+from typing import List, Optional
+from pydantic import BaseModel, Field, StrictStr, conlist
+from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
 
-class StudysetReturn(BaseModel):
+class StudysetReferenceReturn(BaseModel):
     """
-    StudysetReturn
+    StudysetReferenceReturn
     """
-    neurostore_id: Optional[StrictStr] = Field(None, description="The id of the studyset on neurostore.")
-    snapshot: Optional[Dict[str, Any]] = Field(None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
-    neurostore_url: Optional[StrictStr] = None
-    version: Optional[StrictStr] = Field(None, description="A string representing a labeled version of this particular studyset.")
+    snapshots: Optional[conlist(StudysetReferenceSnapshotsInner)] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties = ["neurostore_id", "snapshot", "neurostore_url", "version", "id", "updated_at", "created_at", "user", "username"]
+    __properties = ["snapshots", "id", "updated_at", "created_at", "user", "username"]
 
     class Config:
         """Pydantic configuration"""
@@ -51,30 +49,26 @@ class StudysetReturn(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> StudysetReturn:
-        """Create an instance of StudysetReturn from a JSON string"""
+    def from_json(cls, json_str: str) -> StudysetReferenceReturn:
+        """Create an instance of StudysetReferenceReturn from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
-                            "neurostore_url",
                             "updated_at",
                             "created_at",
                             "username",
                           },
                           exclude_none=True)
-        # set to None if snapshot (nullable) is None
-        # and __fields_set__ contains the field
-        if self.snapshot is None and "snapshot" in self.__fields_set__:
-            _dict['snapshot'] = None
-
-        # set to None if version (nullable) is None
-        # and __fields_set__ contains the field
-        if self.version is None and "version" in self.__fields_set__:
-            _dict['version'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of each item in snapshots (list)
+        _items = []
+        if self.snapshots:
+            for _item in self.snapshots:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['snapshots'] = _items
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
         if self.updated_at is None and "updated_at" in self.__fields_set__:
@@ -93,19 +87,16 @@ class StudysetReturn(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> StudysetReturn:
-        """Create an instance of StudysetReturn from a dict"""
+    def from_dict(cls, obj: dict) -> StudysetReferenceReturn:
+        """Create an instance of StudysetReferenceReturn from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return StudysetReturn.parse_obj(obj)
+            return StudysetReferenceReturn.parse_obj(obj)
 
-        _obj = StudysetReturn.parse_obj({
-            "neurostore_id": obj.get("neurostore_id"),
-            "snapshot": obj.get("snapshot"),
-            "neurostore_url": obj.get("neurostore_url"),
-            "version": obj.get("version"),
+        _obj = StudysetReferenceReturn.parse_obj({
+            "snapshots": [StudysetReferenceSnapshotsInner.from_dict(_item) for _item in obj.get("snapshots")] if obj.get("snapshots") is not None else None,
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

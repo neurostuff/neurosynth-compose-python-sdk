@@ -88,6 +88,10 @@ from neurosynth_compose_sdk.models.specification_return import SpecificationRetu
 from neurosynth_compose_sdk.models.studyset import Studyset
 from neurosynth_compose_sdk.models.studyset_list import StudysetList
 from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
+from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
+from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
+from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
+from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
 from neurosynth_compose_sdk.models.user import User
 from neurosynth_compose_sdk.models.user_list import UserList

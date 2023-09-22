@@ -31,10 +31,10 @@ class SpecificationPostBody(BaseModel):
     type: Optional[StrictStr] = Field(None, description="the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future.")
     estimator: Optional[Estimator] = None
     mask: Optional[StrictStr] = Field(None, description="a string representing a binary nifti file to select which voxels a user wants to include in the analysis.")
-    contrast: Optional[StrictStr] = Field(None, description="underspecified selection of columns to contrast (TODO, make better).")
+    contrast: Optional[StrictStr] = Field(None, description="selection of categories in the filter column to differentiate groups, or \"neurosynth\", \"neuroquery\", or \"neurostore\" to compare to a database reference group")
     transformer: Optional[StrictStr] = Field(None, description="A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated.")
     corrector: Optional[Corrector] = None
-    filter: Optional[StrictStr] = Field(None, description="a boolean column from annotations selecting which analyses to include in the meta-analysis")
+    filter: Optional[StrictStr] = Field(None, description="a column from annotations selecting which analyses to include in the meta-analysis")
     __properties = ["type", "estimator", "mask", "contrast", "transformer", "corrector", "filter"]
 
     class Config:

@@ -29,7 +29,8 @@ class Studyset(BaseModel):
     neurostore_id: Optional[StrictStr] = Field(None, description="The id of the studyset on neurostore.")
     snapshot: Optional[Dict[str, Any]] = Field(None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
     neurostore_url: Optional[StrictStr] = None
-    __properties = ["neurostore_id", "snapshot", "neurostore_url"]
+    version: Optional[StrictStr] = Field(None, description="A string representing a labeled version of this particular studyset.")
+    __properties = ["neurostore_id", "snapshot", "neurostore_url", "version"]
 
     class Config:
         """Pydantic configuration"""
@@ -61,6 +62,11 @@ class Studyset(BaseModel):
         if self.snapshot is None and "snapshot" in self.__fields_set__:
             _dict['snapshot'] = None
 
+        # set to None if version (nullable) is None
+        # and __fields_set__ contains the field
+        if self.version is None and "version" in self.__fields_set__:
+            _dict['version'] = None
+
         return _dict
 
     @classmethod
@@ -75,7 +81,8 @@ class Studyset(BaseModel):
         _obj = Studyset.parse_obj({
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
-            "neurostore_url": obj.get("neurostore_url")
+            "neurostore_url": obj.get("neurostore_url"),
+            "version": obj.get("version")
         })
         return _obj
 
