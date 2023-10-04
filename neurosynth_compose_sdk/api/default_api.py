@@ -20,7 +20,9 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictStr
+from pydantic import Field, StrictBool, StrictStr
+
+from typing import Optional
 
 from neurosynth_compose_sdk.models.neurostore_study_list import NeurostoreStudyList
 from neurosynth_compose_sdk.models.neurostore_study_return import NeurostoreStudyReturn
@@ -856,16 +858,18 @@ class DefaultApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def studyset_references_get(self, **kwargs) -> StudysetReferenceList:  # noqa: E501
+    def studyset_references_get(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, **kwargs) -> StudysetReferenceList:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.studyset_references_get(async_req=True)
+        >>> thread = api.studyset_references_get(nested, async_req=True)
         >>> result = thread.get()
 
+        :param nested: show nested component instead of id
+        :type nested: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -880,19 +884,21 @@ class DefaultApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the studyset_references_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.studyset_references_get_with_http_info(**kwargs)  # noqa: E501
+        return self.studyset_references_get_with_http_info(nested, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def studyset_references_get_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
+    def studyset_references_get_with_http_info(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.studyset_references_get_with_http_info(async_req=True)
+        >>> thread = api.studyset_references_get_with_http_info(nested, async_req=True)
         >>> result = thread.get()
 
+        :param nested: show nested component instead of id
+        :type nested: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -921,6 +927,7 @@ class DefaultApi(object):
         _params = locals()
 
         _all_params = [
+            'nested'
         ]
         _all_params.extend(
             [
@@ -951,6 +958,9 @@ class DefaultApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('nested') is not None:  # noqa: E501
+            _query_params.append(('nested', _params['nested']))
+
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
         # process the form parameters
@@ -987,17 +997,19 @@ class DefaultApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def studyset_references_id_get(self, id : StrictStr, **kwargs) -> StudysetReferenceReturn:  # noqa: E501
+    def studyset_references_id_get(self, id : StrictStr, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, **kwargs) -> StudysetReferenceReturn:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.studyset_references_id_get(id, async_req=True)
+        >>> thread = api.studyset_references_id_get(id, nested, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
+        :param nested: show nested component instead of id
+        :type nested: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -1012,20 +1024,22 @@ class DefaultApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the studyset_references_id_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.studyset_references_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        return self.studyset_references_id_get_with_http_info(id, nested, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def studyset_references_id_get_with_http_info(self, id : StrictStr, **kwargs) -> ApiResponse:  # noqa: E501
+    def studyset_references_id_get_with_http_info(self, id : StrictStr, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.studyset_references_id_get_with_http_info(id, async_req=True)
+        >>> thread = api.studyset_references_id_get_with_http_info(id, nested, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
+        :param nested: show nested component instead of id
+        :type nested: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -1054,7 +1068,8 @@ class DefaultApi(object):
         _params = locals()
 
         _all_params = [
-            'id'
+            'id',
+            'nested'
         ]
         _all_params.extend(
             [
@@ -1088,6 +1103,9 @@ class DefaultApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('nested') is not None:  # noqa: E501
+            _query_params.append(('nested', _params['nested']))
+
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
         # process the form parameters

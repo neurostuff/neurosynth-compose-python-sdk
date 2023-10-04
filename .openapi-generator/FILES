@@ -51,6 +51,7 @@ docs/ResultList.md
 docs/ResultListResults.md
 docs/ResultReturn.md
 docs/Specification.md
+docs/SpecificationConditions.md
 docs/SpecificationList.md
 docs/SpecificationPostBody.md
 docs/SpecificationReturn.md
@@ -127,6 +128,7 @@ neurosynth_compose_sdk/models/result_list.py
 neurosynth_compose_sdk/models/result_list_results.py
 neurosynth_compose_sdk/models/result_return.py
 neurosynth_compose_sdk/models/specification.py
+neurosynth_compose_sdk/models/specification_conditions.py
 neurosynth_compose_sdk/models/specification_list.py
 neurosynth_compose_sdk/models/specification_post_body.py
 neurosynth_compose_sdk/models/specification_return.py
@@ -148,8 +150,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_studyset_reference.py
-test/test_studyset_reference_list.py
-test/test_studyset_reference_return.py
-test/test_studyset_reference_snapshots_inner.py
+test/test_specification_conditions.py
 tox.ini

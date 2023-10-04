@@ -236,6 +236,7 @@ Class | Method | HTTP request | Description
  - [ResultListResults](docs/ResultListResults.md)
  - [ResultReturn](docs/ResultReturn.md)
  - [Specification](docs/Specification.md)
+ - [SpecificationConditions](docs/SpecificationConditions.md)
  - [SpecificationList](docs/SpecificationList.md)
  - [SpecificationPostBody](docs/SpecificationPostBody.md)
  - [SpecificationReturn](docs/SpecificationReturn.md)

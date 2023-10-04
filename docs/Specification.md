@@ -8,10 +8,12 @@ Name | Type | Description | Notes
 **type** | **str** | the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future. | [optional] 
 **estimator** | [**Estimator**](Estimator.md) |  | [optional] 
 **mask** | **str** | a string representing a binary nifti file to select which voxels a user wants to include in the analysis. | [optional] 
-**contrast** | **str** | selection of categories in the filter column to differentiate groups, or \&quot;neurosynth\&quot;, \&quot;neuroquery\&quot;, or \&quot;neurostore\&quot; to compare to a database reference group | [optional] 
+**conditions** | [**SpecificationConditions**](SpecificationConditions.md) |  | [optional] 
+**weights** | **List[float]** |  | [optional] 
 **transformer** | **str** | A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated. | [optional] 
 **corrector** | [**Corrector**](Corrector.md) |  | [optional] 
 **filter** | **str** | a column from annotations selecting which analyses to include in the meta-analysis | [optional] 
+**database_studyset** | **str** |  | [optional] 
 
 ## Example
 

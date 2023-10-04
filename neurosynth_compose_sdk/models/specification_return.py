@@ -19,10 +19,11 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from typing import Optional
-from pydantic import BaseModel, Field, StrictStr
+from typing import List, Optional, Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conlist
 from neurosynth_compose_sdk.models.corrector import Corrector
 from neurosynth_compose_sdk.models.estimator import Estimator
+from neurosynth_compose_sdk.models.specification_conditions import SpecificationConditions
 
 class SpecificationReturn(BaseModel):
     """
@@ -31,16 +32,18 @@ class SpecificationReturn(BaseModel):
     type: Optional[StrictStr] = Field(None, description="the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future.")
     estimator: Optional[Estimator] = None
     mask: Optional[StrictStr] = Field(None, description="a string representing a binary nifti file to select which voxels a user wants to include in the analysis.")
-    contrast: Optional[StrictStr] = Field(None, description="selection of categories in the filter column to differentiate groups, or \"neurosynth\", \"neuroquery\", or \"neurostore\" to compare to a database reference group")
+    conditions: Optional[SpecificationConditions] = None
+    weights: Optional[conlist(Union[StrictFloat, StrictInt])] = None
     transformer: Optional[StrictStr] = Field(None, description="A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated.")
     corrector: Optional[Corrector] = None
     filter: Optional[StrictStr] = Field(None, description="a column from annotations selecting which analyses to include in the meta-analysis")
+    database_studyset: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties = ["type", "estimator", "mask", "contrast", "transformer", "corrector", "filter", "id", "updated_at", "created_at", "user", "username"]
+    __properties = ["type", "estimator", "mask", "conditions", "weights", "transformer", "corrector", "filter", "database_studyset", "id", "updated_at", "created_at", "user", "username"]
 
     class Config:
         """Pydantic configuration"""
@@ -72,6 +75,9 @@ class SpecificationReturn(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of estimator
         if self.estimator:
             _dict['estimator'] = self.estimator.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of conditions
+        if self.conditions:
+            _dict['conditions'] = self.conditions.to_dict()
         # override the default output from pydantic by calling `to_dict()` of corrector
         if self.corrector:
             _dict['corrector'] = self.corrector.to_dict()
@@ -80,10 +86,10 @@ class SpecificationReturn(BaseModel):
         if self.mask is None and "mask" in self.__fields_set__:
             _dict['mask'] = None
 
-        # set to None if contrast (nullable) is None
+        # set to None if weights (nullable) is None
         # and __fields_set__ contains the field
-        if self.contrast is None and "contrast" in self.__fields_set__:
-            _dict['contrast'] = None
+        if self.weights is None and "weights" in self.__fields_set__:
+            _dict['weights'] = None
 
         # set to None if transformer (nullable) is None
         # and __fields_set__ contains the field
@@ -99,6 +105,11 @@ class SpecificationReturn(BaseModel):
         # and __fields_set__ contains the field
         if self.filter is None and "filter" in self.__fields_set__:
             _dict['filter'] = None
+
+        # set to None if database_studyset (nullable) is None
+        # and __fields_set__ contains the field
+        if self.database_studyset is None and "database_studyset" in self.__fields_set__:
+            _dict['database_studyset'] = None
 
         # set to None if updated_at (nullable) is None
         # and __fields_set__ contains the field
@@ -130,10 +141,12 @@ class SpecificationReturn(BaseModel):
             "type": obj.get("type"),
             "estimator": Estimator.from_dict(obj.get("estimator")) if obj.get("estimator") is not None else None,
             "mask": obj.get("mask"),
-            "contrast": obj.get("contrast"),
+            "conditions": SpecificationConditions.from_dict(obj.get("conditions")) if obj.get("conditions") is not None else None,
+            "weights": obj.get("weights"),
             "transformer": obj.get("transformer"),
             "corrector": Corrector.from_dict(obj.get("corrector")) if obj.get("corrector") is not None else None,
             "filter": obj.get("filter"),
+            "database_studyset": obj.get("database_studyset"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

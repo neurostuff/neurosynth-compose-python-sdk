@@ -425,7 +425,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **studyset_references_get**
-> StudysetReferenceList studyset_references_get()
+> StudysetReferenceList studyset_references_get(nested=nested)
 
 Your GET endpoint
 
@@ -452,10 +452,11 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.DefaultApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.studyset_references_get()
+        api_response = api_instance.studyset_references_get(nested=nested)
         print("The response of DefaultApi->studyset_references_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -464,7 +465,10 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nested** | **bool**| show nested component instead of id | [optional] 
 
 ### Return type
 
@@ -487,7 +491,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **studyset_references_id_get**
-> StudysetReferenceReturn studyset_references_id_get(id)
+> StudysetReferenceReturn studyset_references_id_get(id, nested=nested)
 
 Your GET endpoint
 
@@ -513,10 +517,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.DefaultApi(api_client)
     id = 'id_example' # str | 
+    nested = True # bool | show nested component instead of id (optional)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.studyset_references_id_get(id)
+        api_response = api_instance.studyset_references_id_get(id, nested=nested)
         print("The response of DefaultApi->studyset_references_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -529,6 +534,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
+ **nested** | **bool**| show nested component instead of id | [optional] 
 
 ### Return type
 
