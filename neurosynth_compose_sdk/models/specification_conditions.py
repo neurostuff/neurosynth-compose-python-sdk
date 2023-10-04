@@ -31,7 +31,7 @@ class SpecificationConditions(BaseModel):
     selection of categories in the filter column to differentiate groups, or \"neurosynth\", \"neuroquery\", or \"neurostore\" to compare to a database reference group
     """
     # data type: List[str]
-    oneof_schema_1_validator: Optional[conlist(StrictStr)] = None
+    oneof_schema_1_validator: Optional[conlist(StrictStr, min_items=1)] = None
     # data type: List[bool]
     oneof_schema_2_validator: Optional[conlist(StrictBool)] = None
     actual_instance: Any
