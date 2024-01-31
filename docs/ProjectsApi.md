@@ -153,7 +153,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_id_get**
-> ProjectReturn projects_id_get(id)
+> ProjectReturn projects_id_get(id, info=info)
 
 Your GET endpoint
 
@@ -179,10 +179,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ProjectsApi(api_client)
     id = 'id_example' # str | 
+    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_id_get(id)
+        api_response = api_instance.projects_id_get(id, info=info)
         print("The response of ProjectsApi->projects_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -195,6 +196,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
+ **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
 
 ### Return type
 

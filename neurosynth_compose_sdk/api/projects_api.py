@@ -20,7 +20,7 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import StrictStr
+from pydantic import Field, StrictBool, StrictStr
 
 from typing import Optional
 
@@ -309,17 +309,19 @@ class ProjectsApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def projects_id_get(self, id : StrictStr, **kwargs) -> ProjectReturn:  # noqa: E501
+    def projects_id_get(self, id : StrictStr, info : Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None, **kwargs) -> ProjectReturn:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_id_get(id, async_req=True)
+        >>> thread = api.projects_id_get(id, info, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -334,20 +336,22 @@ class ProjectsApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the projects_id_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.projects_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        return self.projects_id_get_with_http_info(id, info, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def projects_id_get_with_http_info(self, id : StrictStr, **kwargs) -> ApiResponse:  # noqa: E501
+    def projects_id_get_with_http_info(self, id : StrictStr, info : Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_id_get_with_http_info(id, async_req=True)
+        >>> thread = api.projects_id_get_with_http_info(id, info, async_req=True)
         >>> result = thread.get()
 
         :param id: (required)
         :type id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -376,7 +380,8 @@ class ProjectsApi(object):
         _params = locals()
 
         _all_params = [
-            'id'
+            'id',
+            'info'
         ]
         _all_params.extend(
             [
@@ -410,6 +415,9 @@ class ProjectsApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('info') is not None:  # noqa: E501
+            _query_params.append(('info', _params['info']))
+
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
         # process the form parameters
