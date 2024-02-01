@@ -20,7 +20,7 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictStr
+from pydantic import Field, StrictBool, StrictStr, conlist
 
 from typing import Optional
 
@@ -654,18 +654,20 @@ class ComposeApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def meta_analyses_get(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, **kwargs) -> MetaAnalysisList:  # noqa: E501
+    def meta_analyses_get(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, ids : Annotated[Optional[conlist(StrictStr)], Field(description="choose the specific ids you wish to get")] = None, **kwargs) -> MetaAnalysisList:  # noqa: E501
         """GET a list of meta-analyses  # noqa: E501
 
         list all runnable specification, studyset, annotation bundles  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_get(nested, async_req=True)
+        >>> thread = api.meta_analyses_get(nested, ids, async_req=True)
         >>> result = thread.get()
 
         :param nested: show nested component instead of id
         :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -680,21 +682,23 @@ class ComposeApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the meta_analyses_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.meta_analyses_get_with_http_info(nested, **kwargs)  # noqa: E501
+        return self.meta_analyses_get_with_http_info(nested, ids, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def meta_analyses_get_with_http_info(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def meta_analyses_get_with_http_info(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, ids : Annotated[Optional[conlist(StrictStr)], Field(description="choose the specific ids you wish to get")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """GET a list of meta-analyses  # noqa: E501
 
         list all runnable specification, studyset, annotation bundles  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_get_with_http_info(nested, async_req=True)
+        >>> thread = api.meta_analyses_get_with_http_info(nested, ids, async_req=True)
         >>> result = thread.get()
 
         :param nested: show nested component instead of id
         :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -723,7 +727,8 @@ class ComposeApi(object):
         _params = locals()
 
         _all_params = [
-            'nested'
+            'nested',
+            'ids'
         ]
         _all_params.extend(
             [
@@ -756,6 +761,10 @@ class ComposeApi(object):
         _query_params = []
         if _params.get('nested') is not None:  # noqa: E501
             _query_params.append(('nested', _params['nested']))
+
+        if _params.get('ids') is not None:  # noqa: E501
+            _query_params.append(('ids', _params['ids']))
+            _collection_formats['ids'] = 'multi'
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
