@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **meta_analyses_get**
-> MetaAnalysisList meta_analyses_get(nested=nested)
+> MetaAnalysisList meta_analyses_get(nested=nested, ids=ids)
 
 GET a list of meta-analyses
 
@@ -43,10 +43,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.MetaAnalysesApi(api_client)
     nested = True # bool | show nested component instead of id (optional)
+    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
 
     try:
         # GET a list of meta-analyses
-        api_response = api_instance.meta_analyses_get(nested=nested)
+        api_response = api_instance.meta_analyses_get(nested=nested, ids=ids)
         print("The response of MetaAnalysesApi->meta_analyses_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -59,6 +60,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nested** | **bool**| show nested component instead of id | [optional] 
+ **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
 
 ### Return type
 
