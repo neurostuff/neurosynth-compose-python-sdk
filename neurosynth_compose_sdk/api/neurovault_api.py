@@ -312,7 +312,7 @@ class NeurovaultApi(object):
 
     @validate_arguments
     def neurovault_collections_id_put(self, id : StrictStr, **kwargs) -> NeurovaultCollectionReturn:  # noqa: E501
-        """  # noqa: E501
+        """Update Neurovault Collection Reference  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -340,7 +340,7 @@ class NeurovaultApi(object):
 
     @validate_arguments
     def neurovault_collections_id_put_with_http_info(self, id : StrictStr, **kwargs) -> ApiResponse:  # noqa: E501
-        """  # noqa: E501
+        """Update Neurovault Collection Reference  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

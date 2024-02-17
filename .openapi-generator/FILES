@@ -12,7 +12,7 @@ docs/AnnotationUpdateAllOf.md
 docs/AnnotationsApi.md
 docs/ComposeApi.md
 docs/Corrector.md
-docs/DefaultApi.md
+docs/DeleteApi.md
 docs/Estimator.md
 docs/GetApi.md
 docs/MetaAnalysesApi.md
@@ -26,6 +26,7 @@ docs/MetaAnalysisReturn.md
 docs/MetaAnalysisSpecification.md
 docs/MetaAnalysisStudyset.md
 docs/NeurostoreAnalysis.md
+docs/NeurostoreStudiesApi.md
 docs/NeurostoreStudy.md
 docs/NeurostoreStudyList.md
 docs/NeurostoreStudyReturn.md
@@ -63,6 +64,7 @@ docs/StudysetReference.md
 docs/StudysetReferenceList.md
 docs/StudysetReferenceReturn.md
 docs/StudysetReferenceSnapshotsInner.md
+docs/StudysetReferencesApi.md
 docs/StudysetReturn.md
 docs/StudysetsApi.md
 docs/User.md
@@ -74,14 +76,16 @@ neurosynth_compose_sdk/__init__.py
 neurosynth_compose_sdk/api/__init__.py
 neurosynth_compose_sdk/api/annotations_api.py
 neurosynth_compose_sdk/api/compose_api.py
-neurosynth_compose_sdk/api/default_api.py
+neurosynth_compose_sdk/api/delete_api.py
 neurosynth_compose_sdk/api/get_api.py
 neurosynth_compose_sdk/api/meta_analyses_api.py
+neurosynth_compose_sdk/api/neurostore_studies_api.py
 neurosynth_compose_sdk/api/neurovault_api.py
 neurosynth_compose_sdk/api/post_api.py
 neurosynth_compose_sdk/api/projects_api.py
 neurosynth_compose_sdk/api/put_api.py
 neurosynth_compose_sdk/api/specifications_api.py
+neurosynth_compose_sdk/api/studyset_references_api.py
 neurosynth_compose_sdk/api/studysets_api.py
 neurosynth_compose_sdk/api/users_api.py
 neurosynth_compose_sdk/api_client.py
@@ -150,4 +154,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_delete_api.py
+test/test_neurostore_studies_api.py
+test/test_studyset_references_api.py
 tox.ini

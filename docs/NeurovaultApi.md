@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**neurovault_collections_get**](NeurovaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Get neurovault collections
 [**neurovault_collections_id_get**](NeurovaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
-[**neurovault_collections_id_put**](NeurovaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
+[**neurovault_collections_id_put**](NeurovaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | Update Neurovault Collection Reference
 [**neurovault_collections_post**](NeurovaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | Create neurovault collection
 [**neurovault_files_get**](NeurovaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
 [**neurovault_files_id_get**](NeurovaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
@@ -138,7 +138,7 @@ No authorization required
 # **neurovault_collections_id_put**
 > NeurovaultCollectionReturn neurovault_collections_id_put(id)
 
-
+Update Neurovault Collection Reference
 
 ### Example
 
@@ -174,7 +174,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
 
     try:
-        # 
+        # Update Neurovault Collection Reference
         api_response = api_instance.neurovault_collections_id_put(id)
         print("The response of NeurovaultApi->neurovault_collections_id_put:\n")
         pprint(api_response)

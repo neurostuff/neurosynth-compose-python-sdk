@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**annotations_id_put**](PutApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
 [**meta_analyses_id_put**](PutApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
 [**meta_analysis_results_id_put**](PutApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
-[**neurovault_collections_id_put**](PutApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
+[**neurovault_collections_id_put**](PutApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | Update Neurovault Collection Reference
 [**neurovault_files_id_put**](PutApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
 [**projects_id_put**](PutApi.md#projects_id_put) | **PUT** /projects/{id} | 
 [**specifications_id_put**](PutApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 # **neurovault_collections_id_put**
 > NeurovaultCollectionReturn neurovault_collections_id_put(id)
 
-
+Update Neurovault Collection Reference
 
 ### Example
 
@@ -303,7 +303,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
 
     try:
-        # 
+        # Update Neurovault Collection Reference
         api_response = api_instance.neurovault_collections_id_put(id)
         print("The response of PutApi->neurovault_collections_id_put:\n")
         pprint(api_response)
