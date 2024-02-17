@@ -154,7 +154,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_delete_api.py
-test/test_neurostore_studies_api.py
-test/test_studyset_references_api.py
 tox.ini
