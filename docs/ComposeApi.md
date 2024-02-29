@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **meta_analyses_get**
-> MetaAnalysisList meta_analyses_get(nested=nested, ids=ids)
+> MetaAnalysisList meta_analyses_get(nested=nested, ids=ids, page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
 
 GET a list of meta-analyses
 
@@ -363,10 +363,16 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
     nested = True # bool | show nested component instead of id (optional)
     ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    name = 'name_example' # str | search the name field for a term (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    description = 'description_example' # str | search description field for a term (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
 
     try:
         # GET a list of meta-analyses
-        api_response = api_instance.meta_analyses_get(nested=nested, ids=ids)
+        api_response = api_instance.meta_analyses_get(nested=nested, ids=ids, page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
         print("The response of ComposeApi->meta_analyses_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -380,6 +386,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **nested** | **bool**| show nested component instead of id | [optional] 
  **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **name** | **str**| search the name field for a term | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **description** | **str**| search description field for a term | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
 
 ### Return type
 
@@ -1486,7 +1498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get**
-> ProjectList projects_get()
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
 
 Your GET endpoint
 
@@ -1521,10 +1533,16 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    name = 'name_example' # str | search the name field for a term (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    description = 'description_example' # str | search description field for a term (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get()
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
         print("The response of ComposeApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1533,7 +1551,15 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **name** | **str**| search the name field for a term | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **description** | **str**| search description field for a term | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
 
 ### Return type
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **projects_get**
-> ProjectList projects_get()
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
 
 Your GET endpoint
 
@@ -47,10 +47,16 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ProjectsApi(api_client)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    name = 'name_example' # str | search the name field for a term (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    description = 'description_example' # str | search description field for a term (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get()
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
         print("The response of ProjectsApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -59,7 +65,15 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **name** | **str**| search the name field for a term | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **description** | **str**| search description field for a term | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
 
 ### Return type
 
