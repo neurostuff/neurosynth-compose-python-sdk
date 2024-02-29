@@ -49,13 +49,13 @@ class ProjectsApi(object):
         self.api_client = api_client
 
     @validate_arguments
-    def projects_get(self, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, **kwargs) -> ProjectList:  # noqa: E501
+    def projects_get(self, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, desc : Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None, **kwargs) -> ProjectList:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_get(page, page_size, name, search, description, sort, async_req=True)
+        >>> thread = api.projects_get(page, page_size, name, search, description, sort, desc, async_req=True)
         >>> result = thread.get()
 
         :param page: page of results
@@ -70,6 +70,8 @@ class ProjectsApi(object):
         :type description: str
         :param sort: Parameter to sort results on
         :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -84,16 +86,16 @@ class ProjectsApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the projects_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.projects_get_with_http_info(page, page_size, name, search, description, sort, **kwargs)  # noqa: E501
+        return self.projects_get_with_http_info(page, page_size, name, search, description, sort, desc, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def projects_get_with_http_info(self, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def projects_get_with_http_info(self, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, desc : Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_get_with_http_info(page, page_size, name, search, description, sort, async_req=True)
+        >>> thread = api.projects_get_with_http_info(page, page_size, name, search, description, sort, desc, async_req=True)
         >>> result = thread.get()
 
         :param page: page of results
@@ -108,6 +110,8 @@ class ProjectsApi(object):
         :type description: str
         :param sort: Parameter to sort results on
         :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -141,7 +145,8 @@ class ProjectsApi(object):
             'name',
             'search',
             'description',
-            'sort'
+            'sort',
+            'desc'
         ]
         _all_params.extend(
             [
@@ -189,6 +194,9 @@ class ProjectsApi(object):
 
         if _params.get('sort') is not None:  # noqa: E501
             _query_params.append(('sort', _params['sort']))
+
+        if _params.get('desc') is not None:  # noqa: E501
+            _query_params.append(('desc', _params['desc']))
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))

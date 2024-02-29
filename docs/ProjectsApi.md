@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **projects_get**
-> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
 
 Your GET endpoint
 
@@ -53,10 +53,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     search = 'imagin' # str | search for entries that contain the substring (optional)
     description = 'description_example' # str | search description field for a term (optional)
     sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
         print("The response of ProjectsApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -74,6 +75,7 @@ Name | Type | Description  | Notes
  **search** | **str**| search for entries that contain the substring | [optional] 
  **description** | **str**| search description field for a term | [optional] 
  **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
 
 ### Return type
 

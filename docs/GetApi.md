@@ -154,7 +154,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **meta_analyses_get**
-> MetaAnalysisList meta_analyses_get(nested=nested, ids=ids, page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
+> MetaAnalysisList meta_analyses_get(nested=nested, ids=ids, page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
 
 GET a list of meta-analyses
 
@@ -189,10 +189,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     search = 'imagin' # str | search for entries that contain the substring (optional)
     description = 'description_example' # str | search description field for a term (optional)
     sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
 
     try:
         # GET a list of meta-analyses
-        api_response = api_instance.meta_analyses_get(nested=nested, ids=ids, page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
+        api_response = api_instance.meta_analyses_get(nested=nested, ids=ids, page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
         print("The response of GetApi->meta_analyses_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -212,6 +213,7 @@ Name | Type | Description  | Notes
  **search** | **str**| search for entries that contain the substring | [optional] 
  **description** | **str**| search description field for a term | [optional] 
  **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
 
 ### Return type
 
@@ -678,7 +680,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get**
-> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
 
 Your GET endpoint
 
@@ -719,10 +721,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     search = 'imagin' # str | search for entries that contain the substring (optional)
     description = 'description_example' # str | search description field for a term (optional)
     sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort)
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
         print("The response of GetApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -740,6 +743,7 @@ Name | Type | Description  | Notes
  **search** | **str**| search for entries that contain the substring | [optional] 
  **description** | **str**| search description field for a term | [optional] 
  **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
 
 ### Return type
 
