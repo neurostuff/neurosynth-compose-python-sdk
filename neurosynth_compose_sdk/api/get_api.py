@@ -20,7 +20,7 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictStr, conlist
+from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr
 
 from typing import Optional
 
@@ -334,20 +334,34 @@ class GetApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def meta_analyses_get(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, ids : Annotated[Optional[conlist(StrictStr)], Field(description="choose the specific ids you wish to get")] = None, **kwargs) -> MetaAnalysisList:  # noqa: E501
+    def meta_analyses_get(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, ids : Annotated[Optional[conlist(StrictStr)], Field(description="choose the specific ids you wish to get")] = None, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, desc : Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None, **kwargs) -> MetaAnalysisList:  # noqa: E501
         """GET a list of meta-analyses  # noqa: E501
 
         list all runnable specification, studyset, annotation bundles  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_get(nested, ids, async_req=True)
+        >>> thread = api.meta_analyses_get(nested, ids, page, page_size, name, search, description, sort, desc, async_req=True)
         >>> result = thread.get()
 
         :param nested: show nested component instead of id
         :type nested: bool
         :param ids: choose the specific ids you wish to get
         :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param name: search the name field for a term
+        :type name: str
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param description: search description field for a term
+        :type description: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -362,23 +376,37 @@ class GetApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the meta_analyses_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.meta_analyses_get_with_http_info(nested, ids, **kwargs)  # noqa: E501
+        return self.meta_analyses_get_with_http_info(nested, ids, page, page_size, name, search, description, sort, desc, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def meta_analyses_get_with_http_info(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, ids : Annotated[Optional[conlist(StrictStr)], Field(description="choose the specific ids you wish to get")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def meta_analyses_get_with_http_info(self, nested : Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None, ids : Annotated[Optional[conlist(StrictStr)], Field(description="choose the specific ids you wish to get")] = None, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, desc : Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """GET a list of meta-analyses  # noqa: E501
 
         list all runnable specification, studyset, annotation bundles  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.meta_analyses_get_with_http_info(nested, ids, async_req=True)
+        >>> thread = api.meta_analyses_get_with_http_info(nested, ids, page, page_size, name, search, description, sort, desc, async_req=True)
         >>> result = thread.get()
 
         :param nested: show nested component instead of id
         :type nested: bool
         :param ids: choose the specific ids you wish to get
         :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param name: search the name field for a term
+        :type name: str
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param description: search description field for a term
+        :type description: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -408,7 +436,14 @@ class GetApi(object):
 
         _all_params = [
             'nested',
-            'ids'
+            'ids',
+            'page',
+            'page_size',
+            'name',
+            'search',
+            'description',
+            'sort',
+            'desc'
         ]
         _all_params.extend(
             [
@@ -445,6 +480,27 @@ class GetApi(object):
         if _params.get('ids') is not None:  # noqa: E501
             _query_params.append(('ids', _params['ids']))
             _collection_formats['ids'] = 'multi'
+
+        if _params.get('page') is not None:  # noqa: E501
+            _query_params.append(('page', _params['page']))
+
+        if _params.get('page_size') is not None:  # noqa: E501
+            _query_params.append(('page_size', _params['page_size']))
+
+        if _params.get('name') is not None:  # noqa: E501
+            _query_params.append(('name', _params['name']))
+
+        if _params.get('search') is not None:  # noqa: E501
+            _query_params.append(('search', _params['search']))
+
+        if _params.get('description') is not None:  # noqa: E501
+            _query_params.append(('description', _params['description']))
+
+        if _params.get('sort') is not None:  # noqa: E501
+            _query_params.append(('sort', _params['sort']))
+
+        if _params.get('desc') is not None:  # noqa: E501
+            _query_params.append(('desc', _params['desc']))
 
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
@@ -1432,15 +1488,29 @@ class GetApi(object):
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def projects_get(self, **kwargs) -> ProjectList:  # noqa: E501
+    def projects_get(self, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, desc : Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None, **kwargs) -> ProjectList:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_get(async_req=True)
+        >>> thread = api.projects_get(page, page_size, name, search, description, sort, desc, async_req=True)
         >>> result = thread.get()
 
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param name: search the name field for a term
+        :type name: str
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param description: search description field for a term
+        :type description: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request. If one
@@ -1455,18 +1525,32 @@ class GetApi(object):
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             raise ValueError("Error! Please call the projects_get_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data")
-        return self.projects_get_with_http_info(**kwargs)  # noqa: E501
+        return self.projects_get_with_http_info(page, page_size, name, search, description, sort, desc, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def projects_get_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
+    def projects_get_with_http_info(self, page : Annotated[Optional[conint(strict=True, ge=0)], Field(description="page of results")] = None, page_size : Annotated[Optional[conint(strict=True, lt=30000, ge=1)], Field(description="number of elements to return on a page")] = None, name : Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None, search : Annotated[Optional[constr(strict=True, min_length=1)], Field(description="search for entries that contain the substring")] = None, description : Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None, sort : Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None, desc : Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Your GET endpoint  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.projects_get_with_http_info(async_req=True)
+        >>> thread = api.projects_get_with_http_info(page, page_size, name, search, description, sort, desc, async_req=True)
         >>> result = thread.get()
 
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param name: search the name field for a term
+        :type name: str
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param description: search description field for a term
+        :type description: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -1495,6 +1579,13 @@ class GetApi(object):
         _params = locals()
 
         _all_params = [
+            'page',
+            'page_size',
+            'name',
+            'search',
+            'description',
+            'sort',
+            'desc'
         ]
         _all_params.extend(
             [
@@ -1525,6 +1616,27 @@ class GetApi(object):
 
         # process the query parameters
         _query_params = []
+        if _params.get('page') is not None:  # noqa: E501
+            _query_params.append(('page', _params['page']))
+
+        if _params.get('page_size') is not None:  # noqa: E501
+            _query_params.append(('page_size', _params['page_size']))
+
+        if _params.get('name') is not None:  # noqa: E501
+            _query_params.append(('name', _params['name']))
+
+        if _params.get('search') is not None:  # noqa: E501
+            _query_params.append(('search', _params['search']))
+
+        if _params.get('description') is not None:  # noqa: E501
+            _query_params.append(('description', _params['description']))
+
+        if _params.get('sort') is not None:  # noqa: E501
+            _query_params.append(('sort', _params['sort']))
+
+        if _params.get('desc') is not None:  # noqa: E501
+            _query_params.append(('desc', _params['desc']))
+
         # process the header parameters
         _header_params = dict(_params.get('_headers', {}))
         # process the form parameters
