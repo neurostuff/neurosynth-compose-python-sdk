@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **projects_get**
-> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id)
 
 Your GET endpoint
 
@@ -54,10 +54,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     description = 'description_example' # str | search description field for a term (optional)
     sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
     desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
+    user_id = 'user_id_example' # str | user id you want to filter on (optional)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id)
         print("The response of ProjectsApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -76,6 +77,7 @@ Name | Type | Description  | Notes
  **description** | **str**| search description field for a term | [optional] 
  **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
  **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
+ **user_id** | **str**| user id you want to filter on | [optional] 
 
 ### Return type
 
