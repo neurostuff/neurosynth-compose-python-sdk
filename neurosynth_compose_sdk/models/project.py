@@ -35,7 +35,8 @@ class Project(BaseModel):
     public: Optional[StrictBool] = Field(None, description="whether the project is public or private")
     neurostore_study: Optional[NeurostoreStudy] = None
     neurostore_url: Optional[StrictStr] = None
-    __properties = ["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url"]
+    draft: Optional[StrictBool] = None
+    __properties = ["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url", "draft"]
 
     class Config:
         """Pydantic configuration"""
@@ -59,6 +60,7 @@ class Project(BaseModel):
         """Returns the dictionary representation of the model using alias"""
         _dict = self.dict(by_alias=True,
                           exclude={
+                            "draft",
                           },
                           exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of meta_analyses
@@ -105,7 +107,8 @@ class Project(BaseModel):
             "description": obj.get("description"),
             "public": obj.get("public"),
             "neurostore_study": NeurostoreStudy.from_dict(obj.get("neurostore_study")) if obj.get("neurostore_study") is not None else None,
-            "neurostore_url": obj.get("neurostore_url")
+            "neurostore_url": obj.get("neurostore_url"),
+            "draft": obj.get("draft")
         })
         return _obj
 

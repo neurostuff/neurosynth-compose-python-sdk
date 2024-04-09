@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **public** | **bool** | whether the project is public or private | [optional] 
 **neurostore_study** | [**NeurostoreStudy**](NeurostoreStudy.md) |  | [optional] 
 **neurostore_url** | **str** |  | [optional] 
+**draft** | **bool** |  | [optional] [readonly] 
 
 ## Example
 
