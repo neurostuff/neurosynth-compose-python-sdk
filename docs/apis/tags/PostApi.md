@@ -687,6 +687,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
             status="status_example",
         ),
         neurostore_url="neurostore_url_example",
+        draft=True,
     )
     try:
         api_response = api_instance.projects_post(

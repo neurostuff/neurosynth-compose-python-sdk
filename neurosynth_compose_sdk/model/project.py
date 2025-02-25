@@ -211,6 +211,7 @@ class Project(
                         *_args,
                         _configuration=_configuration,
                     )
+            draft = schemas.BoolSchema
             __annotations__ = {
                 "provenance": provenance,
                 "meta_analyses": meta_analyses,
@@ -219,6 +220,7 @@ class Project(
                 "public": public,
                 "neurostore_study": neurostore_study,
                 "neurostore_url": neurostore_url,
+                "draft": draft,
             }
     
     @typing.overload
@@ -243,9 +245,12 @@ class Project(
     def __getitem__(self, name: typing_extensions.Literal["neurostore_url"]) -> MetaOapg.properties.neurostore_url: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["draft"]) -> MetaOapg.properties.draft: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url", "draft", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -272,9 +277,12 @@ class Project(
     def get_item_oapg(self, name: typing_extensions.Literal["neurostore_url"]) -> typing.Union[MetaOapg.properties.neurostore_url, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["draft"]) -> typing.Union[MetaOapg.properties.draft, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url", "draft", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -288,6 +296,7 @@ class Project(
         public: typing.Union[MetaOapg.properties.public, bool, schemas.Unset] = schemas.unset,
         neurostore_study: typing.Union['NeurostoreStudy', schemas.Unset] = schemas.unset,
         neurostore_url: typing.Union[MetaOapg.properties.neurostore_url, None, str, schemas.Unset] = schemas.unset,
+        draft: typing.Union[MetaOapg.properties.draft, bool, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Project':
@@ -301,6 +310,7 @@ class Project(
             public=public,
             neurostore_study=neurostore_study,
             neurostore_url=neurostore_url,
+            draft=draft,
             _configuration=_configuration,
             **kwargs,
         )
