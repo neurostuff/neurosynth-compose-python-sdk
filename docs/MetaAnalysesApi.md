@@ -23,9 +23,8 @@ list all runnable specification, studyset, annotation bundles
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.rest import ApiException
@@ -62,7 +61,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,6 +91,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -106,9 +108,8 @@ get a meta-analysis (specification, annotation, and studyset)
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -138,7 +139,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -159,6 +162,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -177,9 +181,8 @@ update an existing meta-analysis (that has not yet been run)
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
@@ -219,7 +222,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -240,6 +245,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -260,9 +266,8 @@ create a new specification, studyset, annotation bundle
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
@@ -301,7 +306,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -321,6 +328,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -337,9 +345,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.result_list import ResultList
 from neurosynth_compose_sdk.rest import ApiException
@@ -368,7 +375,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -388,6 +397,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -401,9 +411,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -432,7 +441,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -452,6 +463,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -467,9 +479,8 @@ No authorization required
 
 * Bearer Authentication (JSON-Web-Token):
 * Api Key Authentication (upload_key):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.result import Result
 from neurosynth_compose_sdk.models.result_return import ResultReturn
@@ -515,7 +526,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -536,6 +549,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -551,9 +565,8 @@ Name | Type | Description  | Notes
 
 * Bearer Authentication (JSON-Web-Token):
 * Api Key Authentication (upload_key):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_return import ResultReturn
@@ -598,7 +611,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -618,6 +633,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | the identifier for the resource. | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **public** | **bool** | whether the project is public or private | [optional] 
 **neurostore_study** | [**NeurostoreStudy**](NeurostoreStudy.md) |  | [optional] 
 **neurostore_url** | **str** |  | [optional] 
+**draft** | **bool** |  | [optional] [readonly] 
 
 ## Example
 
@@ -27,12 +29,12 @@ json = "{}"
 # create an instance of ProjectReturn from a JSON string
 project_return_instance = ProjectReturn.from_json(json)
 # print the JSON string representation of the object
-print ProjectReturn.to_json()
+print(ProjectReturn.to_json())
 
 # convert the object into a dict
 project_return_dict = project_return_instance.to_dict()
 # create an instance of ProjectReturn from a dict
-project_return_form_dict = project_return.from_dict(project_return_dict)
+project_return_from_dict = ProjectReturn.from_dict(project_return_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

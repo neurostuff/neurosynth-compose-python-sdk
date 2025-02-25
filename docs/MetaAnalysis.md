@@ -3,6 +3,7 @@
 The combination of the specification determining what meta-analysis to run (required), the studyset to act as input to the meta-analytic algorithm (required), and the annotation to provide human readable annotations as well as acts as an optional filter on which analyses to select within the studyset (optional, but suggested).
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **specification** | [**MetaAnalysisSpecification**](MetaAnalysisSpecification.md) |  | [optional] 
@@ -35,12 +36,12 @@ json = "{}"
 # create an instance of MetaAnalysis from a JSON string
 meta_analysis_instance = MetaAnalysis.from_json(json)
 # print the JSON string representation of the object
-print MetaAnalysis.to_json()
+print(MetaAnalysis.to_json())
 
 # convert the object into a dict
 meta_analysis_dict = meta_analysis_instance.to_dict()
 # create an instance of MetaAnalysis from a dict
-meta_analysis_form_dict = meta_analysis.from_dict(meta_analysis_dict)
+meta_analysis_from_dict = MetaAnalysis.from_dict(meta_analysis_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

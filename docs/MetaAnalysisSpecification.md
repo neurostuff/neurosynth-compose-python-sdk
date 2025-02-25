@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future. | [optional] 
@@ -24,12 +25,12 @@ json = "{}"
 # create an instance of MetaAnalysisSpecification from a JSON string
 meta_analysis_specification_instance = MetaAnalysisSpecification.from_json(json)
 # print the JSON string representation of the object
-print MetaAnalysisSpecification.to_json()
+print(MetaAnalysisSpecification.to_json())
 
 # convert the object into a dict
 meta_analysis_specification_dict = meta_analysis_specification_instance.to_dict()
 # create an instance of MetaAnalysisSpecification from a dict
-meta_analysis_specification_form_dict = meta_analysis_specification.from_dict(meta_analysis_specification_dict)
+meta_analysis_specification_from_dict = MetaAnalysisSpecification.from_dict(meta_analysis_specification_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

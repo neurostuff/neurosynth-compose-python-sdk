@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** | The id of the studyset on neurostore. | [optional] 
@@ -19,12 +20,12 @@ json = "{}"
 # create an instance of Studyset from a JSON string
 studyset_instance = Studyset.from_json(json)
 # print the JSON string representation of the object
-print Studyset.to_json()
+print(Studyset.to_json())
 
 # convert the object into a dict
 studyset_dict = studyset_instance.to_dict()
 # create an instance of Studyset from a dict
-studyset_form_dict = studyset.from_dict(studyset_dict)
+studyset_from_dict = Studyset.from_dict(studyset_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

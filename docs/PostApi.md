@@ -7,8 +7,6 @@ Method | HTTP request | Description
 [**annotations_post**](PostApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
 [**meta_analyses_post**](PostApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
 [**meta_analysis_results_post**](PostApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
-[**neurovault_collections_post**](PostApi.md#neurovault_collections_post) | **POST** /neurovault-collections | Create neurovault collection
-[**neurovault_files_post**](PostApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 [**projects_post**](PostApi.md#projects_post) | **POST** /projects | 
 [**specifications_post**](PostApi.md#specifications_post) | **POST** /specifications | Create a Specification
 [**studysets_post**](PostApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
@@ -24,9 +22,8 @@ create a new serialized/referenced annotation
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
@@ -65,7 +62,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -85,6 +84,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -104,9 +104,8 @@ create a new specification, studyset, annotation bundle
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
@@ -145,7 +144,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -165,6 +166,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -183,9 +185,8 @@ Name | Type | Description  | Notes
 
 * Bearer Authentication (JSON-Web-Token):
 * Api Key Authentication (upload_key):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_return import ResultReturn
@@ -230,7 +231,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -250,155 +253,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **neurovault_collections_post**
-> neurovault_collections_post(neurovault_collection=neurovault_collection)
-
-Create neurovault collection
-
-
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-```python
-import time
-import os
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.neurovault_collection import NeurovaultCollection
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.PostApi(api_client)
-    neurovault_collection = neurosynth_compose_sdk.NeurovaultCollection() # NeurovaultCollection |  (optional)
-
-    try:
-        # Create neurovault collection
-        api_instance.neurovault_collections_post(neurovault_collection=neurovault_collection)
-    except Exception as e:
-        print("Exception when calling PostApi->neurovault_collections_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **neurovault_collection** | [**NeurovaultCollection**](NeurovaultCollection.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **neurovault_files_post**
-> NeurovaultFileReturn neurovault_files_post(neurovault_file=neurovault_file)
-
-
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-```python
-import time
-import os
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.neurovault_file import NeurovaultFile
-from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.PostApi(api_client)
-    neurovault_file = neurosynth_compose_sdk.NeurovaultFile() # NeurovaultFile |  (optional)
-
-    try:
-        # 
-        api_response = api_instance.neurovault_files_post(neurovault_file=neurovault_file)
-        print("The response of PostApi->neurovault_files_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling PostApi->neurovault_files_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **neurovault_file** | [**NeurovaultFile**](NeurovaultFile.md)|  | [optional] 
-
-### Return type
-
-[**NeurovaultFileReturn**](NeurovaultFileReturn.md)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -413,9 +268,8 @@ Name | Type | Description  | Notes
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
@@ -454,7 +308,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -474,6 +330,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -490,9 +347,8 @@ create a new meta-analysis specification
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.specification_post_body import SpecificationPostBody
 from neurosynth_compose_sdk.models.specification_return import SpecificationReturn
@@ -531,7 +387,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -551,6 +409,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -570,9 +429,8 @@ create a new serialized/referenced studyset
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
@@ -611,7 +469,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -631,6 +491,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

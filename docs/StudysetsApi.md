@@ -19,9 +19,8 @@ get a list of serialized/referenced studysets
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.studyset_list import StudysetList
 from neurosynth_compose_sdk.rest import ApiException
@@ -49,7 +48,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -66,6 +67,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -82,9 +84,8 @@ get a single serialized/referenced studyset
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -113,7 +114,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -133,6 +136,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -151,9 +155,8 @@ update an existing serialized/referenced studyset
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.studyset import Studyset
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
@@ -193,7 +196,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -214,6 +219,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -234,9 +240,8 @@ create a new serialized/referenced studyset
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
@@ -275,7 +280,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -295,6 +302,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

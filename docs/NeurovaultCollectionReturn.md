@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **collection_id** | **str** |  | [optional] [readonly] 
@@ -23,12 +24,12 @@ json = "{}"
 # create an instance of NeurovaultCollectionReturn from a JSON string
 neurovault_collection_return_instance = NeurovaultCollectionReturn.from_json(json)
 # print the JSON string representation of the object
-print NeurovaultCollectionReturn.to_json()
+print(NeurovaultCollectionReturn.to_json())
 
 # convert the object into a dict
 neurovault_collection_return_dict = neurovault_collection_return_instance.to_dict()
 # create an instance of NeurovaultCollectionReturn from a dict
-neurovault_collection_return_form_dict = neurovault_collection_return.from_dict(neurovault_collection_return_dict)
+neurovault_collection_return_from_dict = NeurovaultCollectionReturn.from_dict(neurovault_collection_return_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
