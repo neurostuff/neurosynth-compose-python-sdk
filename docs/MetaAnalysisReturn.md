@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **specification** | [**MetaAnalysisSpecification**](MetaAnalysisSpecification.md) |  | [optional] 
@@ -39,12 +40,12 @@ json = "{}"
 # create an instance of MetaAnalysisReturn from a JSON string
 meta_analysis_return_instance = MetaAnalysisReturn.from_json(json)
 # print the JSON string representation of the object
-print MetaAnalysisReturn.to_json()
+print(MetaAnalysisReturn.to_json())
 
 # convert the object into a dict
 meta_analysis_return_dict = meta_analysis_return_instance.to_dict()
 # create an instance of MetaAnalysisReturn from a dict
-meta_analysis_return_form_dict = meta_analysis_return.from_dict(meta_analysis_return_dict)
+meta_analysis_return_from_dict = MetaAnalysisReturn.from_dict(meta_analysis_return_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

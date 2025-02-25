@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future. | [optional] 
@@ -24,12 +25,12 @@ json = "{}"
 # create an instance of SpecificationPostBody from a JSON string
 specification_post_body_instance = SpecificationPostBody.from_json(json)
 # print the JSON string representation of the object
-print SpecificationPostBody.to_json()
+print(SpecificationPostBody.to_json())
 
 # convert the object into a dict
 specification_post_body_dict = specification_post_body_instance.to_dict()
 # create an instance of SpecificationPostBody from a dict
-specification_post_body_form_dict = specification_post_body.from_dict(specification_post_body_dict)
+specification_post_body_from_dict = SpecificationPostBody.from_dict(specification_post_body_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

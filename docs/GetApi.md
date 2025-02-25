@@ -10,10 +10,6 @@ Method | HTTP request | Description
 [**meta_analyses_id_get**](GetApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 [**meta_analysis_results_get**](GetApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
 [**meta_analysis_results_id_get**](GetApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
-[**neurovault_collections_get**](GetApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Get neurovault collections
-[**neurovault_collections_id_get**](GetApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
-[**neurovault_files_get**](GetApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
-[**neurovault_files_id_get**](GetApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
 [**projects_get**](GetApi.md#projects_get) | **GET** /projects | Your GET endpoint
 [**projects_id_get**](GetApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 [**specifications_get**](GetApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
@@ -31,9 +27,8 @@ get a list of serialized/referenced annotations
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.annotation_list import AnnotationList
 from neurosynth_compose_sdk.rest import ApiException
@@ -61,7 +56,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -78,6 +75,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -94,9 +92,8 @@ get a single annotation
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -125,7 +122,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -145,6 +144,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -162,9 +162,8 @@ list all runnable specification, studyset, annotation bundles
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
 from neurosynth_compose_sdk.rest import ApiException
@@ -201,7 +200,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -229,6 +230,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -245,9 +247,8 @@ get a meta-analysis (specification, annotation, and studyset)
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -277,7 +278,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -298,6 +301,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -313,9 +317,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.result_list import ResultList
 from neurosynth_compose_sdk.rest import ApiException
@@ -344,7 +347,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -364,6 +369,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -377,9 +383,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.result_return import ResultReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -408,7 +413,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -428,251 +435,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **neurovault_collections_get**
-> neurovault_collections_get()
-
-Get neurovault collections
-
-### Example
-
-```python
-import time
-import os
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.GetApi(api_client)
-
-    try:
-        # Get neurovault collections
-        api_instance.neurovault_collections_get()
-    except Exception as e:
-        print("Exception when calling GetApi->neurovault_collections_get: %s\n" % e)
-```
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **neurovault_collections_id_get**
-> NeurovaultCollectionReturn neurovault_collections_id_get(id)
-
-Your GET endpoint
-
-### Example
-
-```python
-import time
-import os
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.GetApi(api_client)
-    id = 'id_example' # str | 
-
-    try:
-        # Your GET endpoint
-        api_response = api_instance.neurovault_collections_id_get(id)
-        print("The response of GetApi->neurovault_collections_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling GetApi->neurovault_collections_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**NeurovaultCollectionReturn**](NeurovaultCollectionReturn.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **neurovault_files_get**
-> NeurovaultFileList neurovault_files_get()
-
-Your GET endpoint
-
-### Example
-
-```python
-import time
-import os
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.neurovault_file_list import NeurovaultFileList
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.GetApi(api_client)
-
-    try:
-        # Your GET endpoint
-        api_response = api_instance.neurovault_files_get()
-        print("The response of GetApi->neurovault_files_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling GetApi->neurovault_files_get: %s\n" % e)
-```
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**NeurovaultFileList**](NeurovaultFileList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **neurovault_files_id_get**
-> NeurovaultFileReturn neurovault_files_id_get(id)
-
-Your GET endpoint
-
-### Example
-
-```python
-import time
-import os
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.GetApi(api_client)
-    id = 'id_example' # str | 
-
-    try:
-        # Your GET endpoint
-        api_response = api_instance.neurovault_files_id_get(id)
-        print("The response of GetApi->neurovault_files_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling GetApi->neurovault_files_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**NeurovaultFileReturn**](NeurovaultFileReturn.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -687,9 +450,8 @@ Your GET endpoint
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.project_list import ProjectList
 from neurosynth_compose_sdk.rest import ApiException
@@ -734,7 +496,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -761,6 +525,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -774,9 +539,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -806,7 +570,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -827,6 +593,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -842,9 +609,8 @@ list of meta-analysis specifications
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.specification_list import SpecificationList
 from neurosynth_compose_sdk.rest import ApiException
@@ -872,7 +638,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -889,6 +657,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -905,9 +674,8 @@ get a meta-analysis specification
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.specification_return import SpecificationReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -936,7 +704,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -956,6 +726,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -973,9 +744,8 @@ get a list of serialized/referenced studysets
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.studyset_list import StudysetList
 from neurosynth_compose_sdk.rest import ApiException
@@ -1003,7 +773,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -1020,6 +792,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -1036,9 +809,8 @@ get a single serialized/referenced studyset
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -1067,7 +839,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1087,6 +861,7 @@ No authorization required
  - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

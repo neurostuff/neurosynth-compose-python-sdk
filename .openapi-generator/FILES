@@ -8,7 +8,6 @@ docs/AnnotationList.md
 docs/AnnotationPostBody.md
 docs/AnnotationReturn.md
 docs/AnnotationUpdate.md
-docs/AnnotationUpdateAllOf.md
 docs/AnnotationsApi.md
 docs/ComposeApi.md
 docs/Corrector.md
@@ -29,7 +28,6 @@ docs/NeurostoreAnalysis.md
 docs/NeurostoreStudy.md
 docs/NeurostoreStudyList.md
 docs/NeurostoreStudyReturn.md
-docs/NeurovaultApi.md
 docs/NeurovaultCollection.md
 docs/NeurovaultCollectionFiles.md
 docs/NeurovaultCollectionReturn.md
@@ -77,7 +75,6 @@ neurosynth_compose_sdk/api/compose_api.py
 neurosynth_compose_sdk/api/default_api.py
 neurosynth_compose_sdk/api/get_api.py
 neurosynth_compose_sdk/api/meta_analyses_api.py
-neurosynth_compose_sdk/api/neurovault_api.py
 neurosynth_compose_sdk/api/post_api.py
 neurosynth_compose_sdk/api/projects_api.py
 neurosynth_compose_sdk/api/put_api.py
@@ -94,7 +91,6 @@ neurosynth_compose_sdk/models/annotation_list.py
 neurosynth_compose_sdk/models/annotation_post_body.py
 neurosynth_compose_sdk/models/annotation_return.py
 neurosynth_compose_sdk/models/annotation_update.py
-neurosynth_compose_sdk/models/annotation_update_all_of.py
 neurosynth_compose_sdk/models/corrector.py
 neurosynth_compose_sdk/models/estimator.py
 neurosynth_compose_sdk/models/meta_analyses_get400_response.py
@@ -143,6 +139,7 @@ neurosynth_compose_sdk/models/studyset_return.py
 neurosynth_compose_sdk/models/user.py
 neurosynth_compose_sdk/models/user_list.py
 neurosynth_compose_sdk/models/user_return.py
+neurosynth_compose_sdk/py.typed
 neurosynth_compose_sdk/rest.py
 pyproject.toml
 requirements.txt

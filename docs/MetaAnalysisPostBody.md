@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **specification** | [**MetaAnalysisSpecification**](MetaAnalysisSpecification.md) |  | 
@@ -34,12 +35,12 @@ json = "{}"
 # create an instance of MetaAnalysisPostBody from a JSON string
 meta_analysis_post_body_instance = MetaAnalysisPostBody.from_json(json)
 # print the JSON string representation of the object
-print MetaAnalysisPostBody.to_json()
+print(MetaAnalysisPostBody.to_json())
 
 # convert the object into a dict
 meta_analysis_post_body_dict = meta_analysis_post_body_instance.to_dict()
 # create an instance of MetaAnalysisPostBody from a dict
-meta_analysis_post_body_form_dict = meta_analysis_post_body.from_dict(meta_analysis_post_body_dict)
+meta_analysis_post_body_from_dict = MetaAnalysisPostBody.from_dict(meta_analysis_post_body_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,6 +3,7 @@
 The view of the specification through an endpoint.
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | the type of meta-analysis being run, typically either cbma or ibma, but others may become available in the future. | [optional] 
@@ -30,12 +31,12 @@ json = "{}"
 # create an instance of SpecificationReturn from a JSON string
 specification_return_instance = SpecificationReturn.from_json(json)
 # print the JSON string representation of the object
-print SpecificationReturn.to_json()
+print(SpecificationReturn.to_json())
 
 # convert the object into a dict
 specification_return_dict = specification_return_instance.to_dict()
 # create an instance of SpecificationReturn from a dict
-specification_return_form_dict = specification_return.from_dict(specification_return_dict)
+specification_return_from_dict = SpecificationReturn.from_dict(specification_return_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
