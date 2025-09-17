@@ -149,5 +149,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_result_upload_statistical_maps.py
 tox.ini
