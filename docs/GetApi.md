@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **annotations_get**
-> AnnotationList annotations_get()
+> AnnotationList annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
 
 GET a list of annotations
 
@@ -45,10 +45,19 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.GetApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
+    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
+    user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
 
     try:
         # GET a list of annotations
-        api_response = api_instance.annotations_get()
+        api_response = api_instance.annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
         print("The response of GetApi->annotations_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -59,7 +68,18 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nested** | **bool**| show nested component instead of id | [optional] 
+ **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
+ **user_id** | **str**| user id you want to filter on | [optional] 
+ **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
 
 ### Return type
 
@@ -601,7 +621,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **specifications_get**
-> SpecificationList specifications_get()
+> SpecificationList specifications_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
 
 Get a list of Specifications
 
@@ -627,10 +647,19 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.GetApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
+    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
+    user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
 
     try:
         # Get a list of Specifications
-        api_response = api_instance.specifications_get()
+        api_response = api_instance.specifications_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
         print("The response of GetApi->specifications_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -641,7 +670,18 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nested** | **bool**| show nested component instead of id | [optional] 
+ **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
+ **user_id** | **str**| user id you want to filter on | [optional] 
+ **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
 
 ### Return type
 
@@ -736,7 +776,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **studysets_get**
-> StudysetList studysets_get()
+> StudysetList studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
 
 Get a list of Studysets
 
@@ -762,10 +802,19 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.GetApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
+    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
+    user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
 
     try:
         # Get a list of Studysets
-        api_response = api_instance.studysets_get()
+        api_response = api_instance.studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
         print("The response of GetApi->studysets_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -776,7 +825,18 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nested** | **bool**| show nested component instead of id | [optional] 
+ **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
+ **user_id** | **str**| user id you want to filter on | [optional] 
+ **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
 
 ### Return type
 

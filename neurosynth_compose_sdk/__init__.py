@@ -79,6 +79,7 @@ from neurosynth_compose_sdk.models.result_init import ResultInit
 from neurosynth_compose_sdk.models.result_list import ResultList
 from neurosynth_compose_sdk.models.result_list_results import ResultListResults
 from neurosynth_compose_sdk.models.result_return import ResultReturn
+from neurosynth_compose_sdk.models.result_upload_statistical_maps import ResultUploadStatisticalMaps
 from neurosynth_compose_sdk.models.specification import Specification
 from neurosynth_compose_sdk.models.specification_conditions import SpecificationConditions
 from neurosynth_compose_sdk.models.specification_list import SpecificationList

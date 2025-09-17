@@ -54,6 +54,15 @@ class GetApi:
     @validate_call
     def annotations_get(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -71,6 +80,24 @@ class GetApi:
 
         get a list of serialized/referenced annotations
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -94,6 +121,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._annotations_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -118,6 +154,15 @@ class GetApi:
     @validate_call
     def annotations_get_with_http_info(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -135,6 +180,24 @@ class GetApi:
 
         get a list of serialized/referenced annotations
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -158,6 +221,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._annotations_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -182,6 +254,15 @@ class GetApi:
     @validate_call
     def annotations_get_without_preload_content(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -199,6 +280,24 @@ class GetApi:
 
         get a list of serialized/referenced annotations
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -222,6 +321,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._annotations_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -241,6 +349,15 @@ class GetApi:
 
     def _annotations_get_serialize(
         self,
+        nested,
+        ids,
+        page,
+        page_size,
+        search,
+        sort,
+        desc,
+        user_id,
+        info,
         _request_auth,
         _content_type,
         _headers,
@@ -250,6 +367,7 @@ class GetApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'ids': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -263,6 +381,42 @@ class GetApi:
 
         # process the path parameters
         # process the query parameters
+        if nested is not None:
+            
+            _query_params.append(('nested', nested))
+            
+        if ids is not None:
+            
+            _query_params.append(('ids', ids))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if page_size is not None:
+            
+            _query_params.append(('page_size', page_size))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
+        if desc is not None:
+            
+            _query_params.append(('desc', desc))
+            
+        if user_id is not None:
+            
+            _query_params.append(('user_id', user_id))
+            
+        if info is not None:
+            
+            _query_params.append(('info', info))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -2426,6 +2580,15 @@ class GetApi:
     @validate_call
     def specifications_get(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2443,6 +2606,24 @@ class GetApi:
 
         list of meta-analysis specifications
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2466,6 +2647,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._specifications_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2490,6 +2680,15 @@ class GetApi:
     @validate_call
     def specifications_get_with_http_info(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2507,6 +2706,24 @@ class GetApi:
 
         list of meta-analysis specifications
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2530,6 +2747,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._specifications_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2554,6 +2780,15 @@ class GetApi:
     @validate_call
     def specifications_get_without_preload_content(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2571,6 +2806,24 @@ class GetApi:
 
         list of meta-analysis specifications
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2594,6 +2847,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._specifications_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2613,6 +2875,15 @@ class GetApi:
 
     def _specifications_get_serialize(
         self,
+        nested,
+        ids,
+        page,
+        page_size,
+        search,
+        sort,
+        desc,
+        user_id,
+        info,
         _request_auth,
         _content_type,
         _headers,
@@ -2622,6 +2893,7 @@ class GetApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'ids': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -2635,6 +2907,42 @@ class GetApi:
 
         # process the path parameters
         # process the query parameters
+        if nested is not None:
+            
+            _query_params.append(('nested', nested))
+            
+        if ids is not None:
+            
+            _query_params.append(('ids', ids))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if page_size is not None:
+            
+            _query_params.append(('page_size', page_size))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
+        if desc is not None:
+            
+            _query_params.append(('desc', desc))
+            
+        if user_id is not None:
+            
+            _query_params.append(('user_id', user_id))
+            
+        if info is not None:
+            
+            _query_params.append(('info', info))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -2942,6 +3250,15 @@ class GetApi:
     @validate_call
     def studysets_get(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2959,6 +3276,24 @@ class GetApi:
 
         get a list of serialized/referenced studysets
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2982,6 +3317,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._studysets_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3006,6 +3350,15 @@ class GetApi:
     @validate_call
     def studysets_get_with_http_info(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3023,6 +3376,24 @@ class GetApi:
 
         get a list of serialized/referenced studysets
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3046,6 +3417,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._studysets_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3070,6 +3450,15 @@ class GetApi:
     @validate_call
     def studysets_get_without_preload_content(
         self,
+        nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3087,6 +3476,24 @@ class GetApi:
 
         get a list of serialized/referenced studysets
 
+        :param nested: show nested component instead of id
+        :type nested: bool
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param info: display additional information about a nested relationship without displaying fully nested object
+        :type info: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3110,6 +3517,15 @@ class GetApi:
         """ # noqa: E501
 
         _param = self._studysets_get_serialize(
+            nested=nested,
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            search=search,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            info=info,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3129,6 +3545,15 @@ class GetApi:
 
     def _studysets_get_serialize(
         self,
+        nested,
+        ids,
+        page,
+        page_size,
+        search,
+        sort,
+        desc,
+        user_id,
+        info,
         _request_auth,
         _content_type,
         _headers,
@@ -3138,6 +3563,7 @@ class GetApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'ids': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -3151,6 +3577,42 @@ class GetApi:
 
         # process the path parameters
         # process the query parameters
+        if nested is not None:
+            
+            _query_params.append(('nested', nested))
+            
+        if ids is not None:
+            
+            _query_params.append(('ids', ids))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if page_size is not None:
+            
+            _query_params.append(('page_size', page_size))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
+        if desc is not None:
+            
+            _query_params.append(('desc', desc))
+            
+        if user_id is not None:
+            
+            _query_params.append(('user_id', user_id))
+            
+        if info is not None:
+            
+            _query_params.append(('info', info))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

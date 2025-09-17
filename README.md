@@ -68,10 +68,19 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.AnnotationsApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
+    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
+    user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
 
     try:
         # GET a list of annotations
-        api_response = api_instance.annotations_get()
+        api_response = api_instance.annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
         print("The response of AnnotationsApi->annotations_get:\n")
         pprint(api_response)
     except ApiException as e:
@@ -207,6 +216,7 @@ Class | Method | HTTP request | Description
  - [ResultList](docs/ResultList.md)
  - [ResultListResults](docs/ResultListResults.md)
  - [ResultReturn](docs/ResultReturn.md)
+ - [ResultUploadStatisticalMaps](docs/ResultUploadStatisticalMaps.md)
  - [Specification](docs/Specification.md)
  - [SpecificationConditions](docs/SpecificationConditions.md)
  - [SpecificationList](docs/SpecificationList.md)
