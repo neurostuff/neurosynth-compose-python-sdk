@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_post**
-> ProjectReturn projects_post(project=project)
+> ProjectReturn projects_post(source_id=source_id, copy_annotations=copy_annotations, project=project)
 
 
 
@@ -357,11 +357,13 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ProjectsApi(api_client)
+    source_id = 'source_id_example' # str | clone an existing project when creating a new project (optional)
+    copy_annotations = True # bool | when cloning via `source_id`, also duplicate associated annotations (optional)
     project = neurosynth_compose_sdk.Project() # Project |  (optional)
 
     try:
         # 
-        api_response = api_instance.projects_post(project=project)
+        api_response = api_instance.projects_post(source_id=source_id, copy_annotations=copy_annotations, project=project)
         print("The response of ProjectsApi->projects_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -375,6 +377,8 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **source_id** | **str**| clone an existing project when creating a new project | [optional] 
+ **copy_annotations** | **bool**| when cloning via &#x60;source_id&#x60;, also duplicate associated annotations | [optional] 
  **project** | [**Project**](Project.md)|  | [optional] 
 
 ### Return type

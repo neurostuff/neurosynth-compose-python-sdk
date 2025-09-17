@@ -1235,6 +1235,8 @@ class ProjectsApi:
     @validate_call
     def projects_post(
         self,
+        source_id: Annotated[Optional[StrictStr], Field(description="clone an existing project when creating a new project")] = None,
+        copy_annotations: Annotated[Optional[StrictBool], Field(description="when cloning via `source_id`, also duplicate associated annotations")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -1252,6 +1254,10 @@ class ProjectsApi:
         """
 
 
+        :param source_id: clone an existing project when creating a new project
+        :type source_id: str
+        :param copy_annotations: when cloning via `source_id`, also duplicate associated annotations
+        :type copy_annotations: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -1277,6 +1283,8 @@ class ProjectsApi:
         """ # noqa: E501
 
         _param = self._projects_post_serialize(
+            source_id=source_id,
+            copy_annotations=copy_annotations,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1301,6 +1309,8 @@ class ProjectsApi:
     @validate_call
     def projects_post_with_http_info(
         self,
+        source_id: Annotated[Optional[StrictStr], Field(description="clone an existing project when creating a new project")] = None,
+        copy_annotations: Annotated[Optional[StrictBool], Field(description="when cloning via `source_id`, also duplicate associated annotations")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -1318,6 +1328,10 @@ class ProjectsApi:
         """
 
 
+        :param source_id: clone an existing project when creating a new project
+        :type source_id: str
+        :param copy_annotations: when cloning via `source_id`, also duplicate associated annotations
+        :type copy_annotations: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -1343,6 +1357,8 @@ class ProjectsApi:
         """ # noqa: E501
 
         _param = self._projects_post_serialize(
+            source_id=source_id,
+            copy_annotations=copy_annotations,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1367,6 +1383,8 @@ class ProjectsApi:
     @validate_call
     def projects_post_without_preload_content(
         self,
+        source_id: Annotated[Optional[StrictStr], Field(description="clone an existing project when creating a new project")] = None,
+        copy_annotations: Annotated[Optional[StrictBool], Field(description="when cloning via `source_id`, also duplicate associated annotations")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -1384,6 +1402,10 @@ class ProjectsApi:
         """
 
 
+        :param source_id: clone an existing project when creating a new project
+        :type source_id: str
+        :param copy_annotations: when cloning via `source_id`, also duplicate associated annotations
+        :type copy_annotations: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -1409,6 +1431,8 @@ class ProjectsApi:
         """ # noqa: E501
 
         _param = self._projects_post_serialize(
+            source_id=source_id,
+            copy_annotations=copy_annotations,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1428,6 +1452,8 @@ class ProjectsApi:
 
     def _projects_post_serialize(
         self,
+        source_id,
+        copy_annotations,
         project,
         _request_auth,
         _content_type,
@@ -1451,6 +1477,14 @@ class ProjectsApi:
 
         # process the path parameters
         # process the query parameters
+        if source_id is not None:
+            
+            _query_params.append(('source_id', source_id))
+            
+        if copy_annotations is not None:
+            
+            _query_params.append(('copy_annotations', copy_annotations))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
