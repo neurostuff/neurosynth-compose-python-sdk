@@ -110,6 +110,9 @@ Class | Method | HTTP request | Description
 *ComposeApi* | [**meta_analysis_results_id_get**](docs/ComposeApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
 *ComposeApi* | [**meta_analysis_results_id_put**](docs/ComposeApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
 *ComposeApi* | [**meta_analysis_results_post**](docs/ComposeApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
+*ComposeApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](docs/ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
+*ComposeApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](docs/ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
+*ComposeApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](docs/ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
 *ComposeApi* | [**projects_get**](docs/ComposeApi.md#projects_get) | **GET** /projects | Your GET endpoint
 *ComposeApi* | [**projects_id_delete**](docs/ComposeApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
 *ComposeApi* | [**projects_id_get**](docs/ComposeApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
@@ -132,6 +135,8 @@ Class | Method | HTTP request | Description
 *GetApi* | [**meta_analyses_id_get**](docs/GetApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *GetApi* | [**meta_analysis_results_get**](docs/GetApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
 *GetApi* | [**meta_analysis_results_id_get**](docs/GetApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
+*GetApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](docs/GetApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
+*GetApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](docs/GetApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
 *GetApi* | [**projects_get**](docs/GetApi.md#projects_get) | **GET** /projects | Your GET endpoint
 *GetApi* | [**projects_id_get**](docs/GetApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 *GetApi* | [**specifications_get**](docs/GetApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
@@ -146,9 +151,13 @@ Class | Method | HTTP request | Description
 *MetaAnalysesApi* | [**meta_analysis_results_id_get**](docs/MetaAnalysesApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
 *MetaAnalysesApi* | [**meta_analysis_results_id_put**](docs/MetaAnalysesApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
 *MetaAnalysesApi* | [**meta_analysis_results_post**](docs/MetaAnalysesApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
+*MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
+*MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
+*MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
 *PostApi* | [**annotations_post**](docs/PostApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
 *PostApi* | [**meta_analyses_post**](docs/PostApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
 *PostApi* | [**meta_analysis_results_post**](docs/PostApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
+*PostApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](docs/PostApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
 *PostApi* | [**projects_post**](docs/PostApi.md#projects_post) | **POST** /projects | 
 *PostApi* | [**specifications_post**](docs/PostApi.md#specifications_post) | **POST** /specifications | Create a Specification
 *PostApi* | [**studysets_post**](docs/PostApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
@@ -189,6 +198,11 @@ Class | Method | HTTP request | Description
  - [MetaAnalysesGet400Response](docs/MetaAnalysesGet400Response.md)
  - [MetaAnalysis](docs/MetaAnalysis.md)
  - [MetaAnalysisAnnotation](docs/MetaAnalysisAnnotation.md)
+ - [MetaAnalysisJobList](docs/MetaAnalysisJobList.md)
+ - [MetaAnalysisJobListMetadata](docs/MetaAnalysisJobListMetadata.md)
+ - [MetaAnalysisJobLog](docs/MetaAnalysisJobLog.md)
+ - [MetaAnalysisJobRequest](docs/MetaAnalysisJobRequest.md)
+ - [MetaAnalysisJobResponse](docs/MetaAnalysisJobResponse.md)
  - [MetaAnalysisList](docs/MetaAnalysisList.md)
  - [MetaAnalysisPostBody](docs/MetaAnalysisPostBody.md)
  - [MetaAnalysisResults](docs/MetaAnalysisResults.md)

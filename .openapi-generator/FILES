@@ -18,6 +18,11 @@ docs/MetaAnalysesApi.md
 docs/MetaAnalysesGet400Response.md
 docs/MetaAnalysis.md
 docs/MetaAnalysisAnnotation.md
+docs/MetaAnalysisJobList.md
+docs/MetaAnalysisJobListMetadata.md
+docs/MetaAnalysisJobLog.md
+docs/MetaAnalysisJobRequest.md
+docs/MetaAnalysisJobResponse.md
 docs/MetaAnalysisList.md
 docs/MetaAnalysisPostBody.md
 docs/MetaAnalysisResults.md
@@ -97,6 +102,11 @@ neurosynth_compose_sdk/models/estimator.py
 neurosynth_compose_sdk/models/meta_analyses_get400_response.py
 neurosynth_compose_sdk/models/meta_analysis.py
 neurosynth_compose_sdk/models/meta_analysis_annotation.py
+neurosynth_compose_sdk/models/meta_analysis_job_list.py
+neurosynth_compose_sdk/models/meta_analysis_job_list_metadata.py
+neurosynth_compose_sdk/models/meta_analysis_job_log.py
+neurosynth_compose_sdk/models/meta_analysis_job_request.py
+neurosynth_compose_sdk/models/meta_analysis_job_response.py
 neurosynth_compose_sdk/models/meta_analysis_list.py
 neurosynth_compose_sdk/models/meta_analysis_post_body.py
 neurosynth_compose_sdk/models/meta_analysis_results.py
@@ -149,4 +159,9 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_meta_analysis_job_list.py
+test/test_meta_analysis_job_list_metadata.py
+test/test_meta_analysis_job_log.py
+test/test_meta_analysis_job_request.py
+test/test_meta_analysis_job_response.py
 tox.ini

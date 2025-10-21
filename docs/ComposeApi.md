@@ -16,6 +16,9 @@ Method | HTTP request | Description
 [**meta_analysis_results_id_get**](ComposeApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
 [**meta_analysis_results_id_put**](ComposeApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
 [**meta_analysis_results_post**](ComposeApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
+[**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
+[**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
+[**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
 [**projects_get**](ComposeApi.md#projects_get) | **GET** /projects | Your GET endpoint
 [**projects_id_delete**](ComposeApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
 [**projects_id_get**](ComposeApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
@@ -976,6 +979,246 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**
+> MetaAnalysisJobResponse neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get(job_id)
+
+Get status and logs for a meta-analysis job
+
+Retrieve the most recent status information and logs for a submitted job.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    job_id = 'job_id_example' # str | 
+
+    try:
+        # Get status and logs for a meta-analysis job
+        api_response = api_instance.neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get(job_id)
+        print("The response of ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **job_id** | **str**|  | 
+
+### Return type
+
+[**MetaAnalysisJobResponse**](MetaAnalysisJobResponse.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
+**502** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**
+> MetaAnalysisJobList neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get()
+
+List meta-analysis jobs for the current user
+
+Return cached job submissions associated with the authenticated user.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+
+    try:
+        # List meta-analysis jobs for the current user
+        api_response = api_instance.neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get()
+        print("The response of ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**MetaAnalysisJobList**](MetaAnalysisJobList.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**502** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**
+> MetaAnalysisJobResponse neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post(meta_analysis_job_request)
+
+Submit a meta-analysis job
+
+Submit a meta-analysis to the compose runner service.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest
+from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    meta_analysis_job_request = neurosynth_compose_sdk.MetaAnalysisJobRequest() # MetaAnalysisJobRequest | 
+
+    try:
+        # Submit a meta-analysis job
+        api_response = api_instance.neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post(meta_analysis_job_request)
+        print("The response of ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **meta_analysis_job_request** | [**MetaAnalysisJobRequest**](MetaAnalysisJobRequest.md)|  | 
+
+### Return type
+
+[**MetaAnalysisJobResponse**](MetaAnalysisJobResponse.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Job accepted |  -  |
+**401** | form when a request goes wrong |  -  |
+**403** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
+**502** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
