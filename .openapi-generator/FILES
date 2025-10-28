@@ -159,9 +159,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_meta_analysis_job_list.py
-test/test_meta_analysis_job_list_metadata.py
-test/test_meta_analysis_job_log.py
-test/test_meta_analysis_job_request.py
-test/test_meta_analysis_job_response.py
 tox.ini
