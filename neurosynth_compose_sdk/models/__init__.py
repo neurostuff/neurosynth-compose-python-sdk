@@ -13,7 +13,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from neurosynth_compose_sdk.models.annotation import Annotation
 from neurosynth_compose_sdk.models.annotation_list import AnnotationList
@@ -74,3 +73,4 @@ from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
 from neurosynth_compose_sdk.models.user import User
 from neurosynth_compose_sdk.models.user_list import UserList
 from neurosynth_compose_sdk.models.user_return import UserReturn
+

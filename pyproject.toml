@@ -1,23 +1,28 @@
-[tool.poetry]
+[project]
 name = "neurosynth_compose_sdk"
 version = "0.0.1"
 description = "Analysis Specification for Meta-analysis"
-authors = ["James D Kent <jamesdkent21@gmail.com>"]
-license = "NoLicense"
+authors = [
+  {name = "James D Kent",email = "jamesdkent21@gmail.com"},
+]
 readme = "README.md"
-repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Analysis Specification for Meta-analysis"]
-include = ["neurosynth_compose_sdk/py.typed"]
+requires-python = ">=3.9"
 
-[tool.poetry.dependencies]
-python = "^3.8"
+dependencies = [
+  "urllib3 (>=2.1.0,<3.0.0)",
+  "python-dateutil (>=2.8.2)",
+  "pydantic (>=2)",
+  "typing-extensions (>=4.7.1)",
+]
 
-urllib3 = ">= 1.25.3, < 3.0.0"
-python-dateutil = ">= 2.8.2"
-pydantic = ">= 2"
-typing-extensions = ">= 4.7.1"
+[project.urls]
+Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry]
+requires-poetry = ">=2.0"
+
+[tool.poetry.group.dev.dependencies]
 pytest = ">= 7.2.1"
 pytest-cov = ">= 2.8.1"
 tox = ">= 3.9.0"

@@ -27,7 +27,7 @@ class StudysetPostBody(BaseModel):
     """
     StudysetPostBody
     """ # noqa: E501
-    neurostore_id: StrictStr = Field(description="The id of the studyset on neurostore.")
+    neurostore_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurostore.")
     snapshot: Optional[Dict[str, Any]] = Field(default=None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
     neurostore_url: Optional[StrictStr] = None
     version: Optional[StrictStr] = Field(default=None, description="A string representing a labeled version of this particular studyset.")

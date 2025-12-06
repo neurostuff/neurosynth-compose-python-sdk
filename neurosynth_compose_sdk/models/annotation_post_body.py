@@ -27,7 +27,7 @@ class AnnotationPostBody(BaseModel):
     """
     AnnotationPostBody
     """ # noqa: E501
-    cached_studyset_id: StrictStr
+    cached_studyset_id: Optional[StrictStr] = None
     neurostore_id: Optional[StrictStr] = Field(default=None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(default=None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
     studyset: Optional[StrictStr] = Field(default=None, description="The related cached studyset to this annotation.")

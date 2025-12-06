@@ -32,13 +32,13 @@ class MetaAnalysisPostBody(BaseModel):
     """
     MetaAnalysisPostBody
     """ # noqa: E501
-    specification: MetaAnalysisSpecification
+    specification: Optional[MetaAnalysisSpecification] = None
     studyset: Optional[MetaAnalysisStudyset] = None
     annotation: Optional[MetaAnalysisAnnotation] = None
     name: Optional[StrictStr] = Field(default=None, description="Human-readable name of the meta-analysis.")
     description: Optional[StrictStr] = Field(default=None, description="Long form description of the meta-analysis.")
-    cached_studyset_id: StrictStr = Field(description="The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
-    cached_annotation_id: StrictStr = Field(description="The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
+    cached_studyset_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
+    cached_annotation_id: Optional[StrictStr] = Field(default=None, description="The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
     results: Optional[MetaAnalysisResults] = None
     provenance: Optional[Dict[str, Any]] = None
     project: Optional[StrictStr] = None
