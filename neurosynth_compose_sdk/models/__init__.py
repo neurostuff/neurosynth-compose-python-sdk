@@ -35,6 +35,7 @@ from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResu
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
 from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
+from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
 from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
 from neurosynth_compose_sdk.models.neurostore_study_list import NeurostoreStudyList
@@ -70,6 +71,9 @@ from neurosynth_compose_sdk.models.studyset_reference_list import StudysetRefere
 from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
 from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+from neurosynth_compose_sdk.models.tag import Tag
+from neurosynth_compose_sdk.models.tag_list import TagList
+from neurosynth_compose_sdk.models.tag_return import TagReturn
 from neurosynth_compose_sdk.models.user import User
 from neurosynth_compose_sdk.models.user_list import UserList
 from neurosynth_compose_sdk.models.user_return import UserReturn

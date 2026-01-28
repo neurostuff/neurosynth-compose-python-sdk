@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**projects_post**](PostApi.md#projects_post) | **POST** /projects | 
 [**specifications_post**](PostApi.md#specifications_post) | **POST** /specifications | Create a Specification
 [**studysets_post**](PostApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
+[**tags_post**](PostApi.md#tags_post) | **POST** /tags | Create a new Tag
 
 
 # **annotations_post**
@@ -586,6 +587,83 @@ Name | Type | Description  | Notes
 **400** | form when a request goes wrong |  -  |
 **422** | form when a request goes wrong |  -  |
 **500** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tags_post**
+> TagReturn tags_post(tag=tag)
+
+Create a new Tag
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.tag import Tag
+from neurosynth_compose_sdk.models.tag_return import TagReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.PostApi(api_client)
+    tag = neurosynth_compose_sdk.Tag() # Tag |  (optional)
+
+    try:
+        # Create a new Tag
+        api_response = api_instance.tags_post(tag=tag)
+        print("The response of PostApi->tags_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PostApi->tags_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tag** | [**Tag**](Tag.md)|  | [optional] 
+
+### Return type
+
+[**TagReturn**](TagReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

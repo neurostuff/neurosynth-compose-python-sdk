@@ -29,6 +29,7 @@ __all__ = [
     "PutApi",
     "SpecificationsApi",
     "StudysetsApi",
+    "TagsApi",
     "UsersApi",
     "ApiResponse",
     "ApiClient",
@@ -60,6 +61,7 @@ __all__ = [
     "MetaAnalysisReturn",
     "MetaAnalysisSpecification",
     "MetaAnalysisStudyset",
+    "MetaAnalysisTags",
     "NeurostoreAnalysis",
     "NeurostoreStudy",
     "NeurostoreStudyList",
@@ -95,6 +97,9 @@ __all__ = [
     "StudysetReferenceReturn",
     "StudysetReferenceSnapshotsInner",
     "StudysetReturn",
+    "Tag",
+    "TagList",
+    "TagReturn",
     "User",
     "UserList",
     "UserReturn",
@@ -111,6 +116,7 @@ from neurosynth_compose_sdk.api.projects_api import ProjectsApi as ProjectsApi
 from neurosynth_compose_sdk.api.put_api import PutApi as PutApi
 from neurosynth_compose_sdk.api.specifications_api import SpecificationsApi as SpecificationsApi
 from neurosynth_compose_sdk.api.studysets_api import StudysetsApi as StudysetsApi
+from neurosynth_compose_sdk.api.tags_api import TagsApi as TagsApi
 from neurosynth_compose_sdk.api.users_api import UsersApi as UsersApi
 
 # import ApiClient
@@ -146,6 +152,7 @@ from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResu
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn as MetaAnalysisReturn
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification as MetaAnalysisSpecification
 from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset as MetaAnalysisStudyset
+from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags as MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis as NeurostoreAnalysis
 from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy as NeurostoreStudy
 from neurosynth_compose_sdk.models.neurostore_study_list import NeurostoreStudyList as NeurostoreStudyList
@@ -181,6 +188,9 @@ from neurosynth_compose_sdk.models.studyset_reference_list import StudysetRefere
 from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn as StudysetReferenceReturn
 from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner as StudysetReferenceSnapshotsInner
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn as StudysetReturn
+from neurosynth_compose_sdk.models.tag import Tag as Tag
+from neurosynth_compose_sdk.models.tag_list import TagList as TagList
+from neurosynth_compose_sdk.models.tag_return import TagReturn as TagReturn
 from neurosynth_compose_sdk.models.user import User as User
 from neurosynth_compose_sdk.models.user_list import UserList as UserList
 from neurosynth_compose_sdk.models.user_return import UserReturn as UserReturn

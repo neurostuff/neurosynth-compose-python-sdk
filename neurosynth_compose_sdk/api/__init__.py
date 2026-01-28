@@ -11,5 +11,6 @@ from neurosynth_compose_sdk.api.projects_api import ProjectsApi
 from neurosynth_compose_sdk.api.put_api import PutApi
 from neurosynth_compose_sdk.api.specifications_api import SpecificationsApi
 from neurosynth_compose_sdk.api.studysets_api import StudysetsApi
+from neurosynth_compose_sdk.api.tags_api import TagsApi
 from neurosynth_compose_sdk.api.users_api import UsersApi
 

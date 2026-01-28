@@ -25,6 +25,7 @@ from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisA
 from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
 from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
+from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,6 +39,7 @@ class MetaAnalysisReturn(BaseModel):
     annotation: Optional[MetaAnalysisAnnotation] = None
     name: Optional[StrictStr] = Field(default=None, description="Human-readable name of the meta-analysis.")
     description: Optional[StrictStr] = Field(default=None, description="Long form description of the meta-analysis.")
+    tags: Optional[MetaAnalysisTags] = None
     cached_studyset_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
     cached_annotation_id: Optional[StrictStr] = Field(default=None, description="The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
     results: Optional[MetaAnalysisResults] = None
@@ -57,7 +59,7 @@ class MetaAnalysisReturn(BaseModel):
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
+    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "tags", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -121,6 +123,9 @@ class MetaAnalysisReturn(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of annotation
         if self.annotation:
             _dict['annotation'] = self.annotation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of tags
+        if self.tags:
+            _dict['tags'] = self.tags.to_dict()
         # override the default output from pydantic by calling `to_dict()` of results
         if self.results:
             _dict['results'] = self.results.to_dict()
@@ -214,6 +219,7 @@ class MetaAnalysisReturn(BaseModel):
             "annotation": MetaAnalysisAnnotation.from_dict(obj["annotation"]) if obj.get("annotation") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description"),
+            "tags": MetaAnalysisTags.from_dict(obj["tags"]) if obj.get("tags") is not None else None,
             "cached_studyset_id": obj.get("cached_studyset_id"),
             "cached_annotation_id": obj.get("cached_annotation_id"),
             "results": MetaAnalysisResults.from_dict(obj["results"]) if obj.get("results") is not None else None,

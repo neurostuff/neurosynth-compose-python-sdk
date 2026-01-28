@@ -126,6 +126,9 @@ Class | Method | HTTP request | Description
 *ComposeApi* | [**studysets_id_get**](docs/ComposeApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
 *ComposeApi* | [**studysets_id_put**](docs/ComposeApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
 *ComposeApi* | [**studysets_post**](docs/ComposeApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
+*ComposeApi* | [**tags_get**](docs/ComposeApi.md#tags_get) | **GET** /tags | Get a list of Tags
+*ComposeApi* | [**tags_id_get**](docs/ComposeApi.md#tags_id_get) | **GET** /tags/{id} | Get information about a Tag
+*ComposeApi* | [**tags_post**](docs/ComposeApi.md#tags_post) | **POST** /tags | Create a new Tag
 *DefaultApi* | [**meta_analyses_id_delete**](docs/DefaultApi.md#meta_analyses_id_delete) | **DELETE** /meta-analyses/{id} | 
 *DefaultApi* | [**studyset_references_get**](docs/DefaultApi.md#studyset_references_get) | **GET** /studyset-references | Your GET endpoint
 *DefaultApi* | [**studyset_references_id_get**](docs/DefaultApi.md#studyset_references_id_get) | **GET** /studyset-references/{id} | Your GET endpoint
@@ -143,6 +146,8 @@ Class | Method | HTTP request | Description
 *GetApi* | [**specifications_id_get**](docs/GetApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
 *GetApi* | [**studysets_get**](docs/GetApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
 *GetApi* | [**studysets_id_get**](docs/GetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
+*GetApi* | [**tags_get**](docs/GetApi.md#tags_get) | **GET** /tags | Get a list of Tags
+*GetApi* | [**tags_id_get**](docs/GetApi.md#tags_id_get) | **GET** /tags/{id} | Get information about a Tag
 *MetaAnalysesApi* | [**meta_analyses_get**](docs/MetaAnalysesApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 *MetaAnalysesApi* | [**meta_analyses_id_get**](docs/MetaAnalysesApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysesApi* | [**meta_analyses_id_put**](docs/MetaAnalysesApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
@@ -161,6 +166,7 @@ Class | Method | HTTP request | Description
 *PostApi* | [**projects_post**](docs/PostApi.md#projects_post) | **POST** /projects | 
 *PostApi* | [**specifications_post**](docs/PostApi.md#specifications_post) | **POST** /specifications | Create a Specification
 *PostApi* | [**studysets_post**](docs/PostApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
+*PostApi* | [**tags_post**](docs/PostApi.md#tags_post) | **POST** /tags | Create a new Tag
 *ProjectsApi* | [**projects_get**](docs/ProjectsApi.md#projects_get) | **GET** /projects | Your GET endpoint
 *ProjectsApi* | [**projects_id_delete**](docs/ProjectsApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
 *ProjectsApi* | [**projects_id_get**](docs/ProjectsApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
@@ -180,6 +186,9 @@ Class | Method | HTTP request | Description
 *StudysetsApi* | [**studysets_id_get**](docs/StudysetsApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
 *StudysetsApi* | [**studysets_id_put**](docs/StudysetsApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
 *StudysetsApi* | [**studysets_post**](docs/StudysetsApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
+*TagsApi* | [**tags_get**](docs/TagsApi.md#tags_get) | **GET** /tags | Get a list of Tags
+*TagsApi* | [**tags_id_get**](docs/TagsApi.md#tags_id_get) | **GET** /tags/{id} | Get information about a Tag
+*TagsApi* | [**tags_post**](docs/TagsApi.md#tags_post) | **POST** /tags | Create a new Tag
 *UsersApi* | [**users_get**](docs/UsersApi.md#users_get) | **GET** /users | GET list of Users
 *UsersApi* | [**users_id_get**](docs/UsersApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
 *UsersApi* | [**users_id_put**](docs/UsersApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
@@ -209,6 +218,7 @@ Class | Method | HTTP request | Description
  - [MetaAnalysisReturn](docs/MetaAnalysisReturn.md)
  - [MetaAnalysisSpecification](docs/MetaAnalysisSpecification.md)
  - [MetaAnalysisStudyset](docs/MetaAnalysisStudyset.md)
+ - [MetaAnalysisTags](docs/MetaAnalysisTags.md)
  - [NeurostoreAnalysis](docs/NeurostoreAnalysis.md)
  - [NeurostoreStudy](docs/NeurostoreStudy.md)
  - [NeurostoreStudyList](docs/NeurostoreStudyList.md)
@@ -244,6 +254,9 @@ Class | Method | HTTP request | Description
  - [StudysetReferenceReturn](docs/StudysetReferenceReturn.md)
  - [StudysetReferenceSnapshotsInner](docs/StudysetReferenceSnapshotsInner.md)
  - [StudysetReturn](docs/StudysetReturn.md)
+ - [Tag](docs/Tag.md)
+ - [TagList](docs/TagList.md)
+ - [TagReturn](docs/TagReturn.md)
  - [User](docs/User.md)
  - [UserList](docs/UserList.md)
  - [UserReturn](docs/UserReturn.md)

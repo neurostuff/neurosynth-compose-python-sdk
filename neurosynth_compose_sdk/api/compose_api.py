@@ -46,6 +46,9 @@ from neurosynth_compose_sdk.models.studyset import Studyset
 from neurosynth_compose_sdk.models.studyset_list import StudysetList
 from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+from neurosynth_compose_sdk.models.tag import Tag
+from neurosynth_compose_sdk.models.tag_list import TagList
+from neurosynth_compose_sdk.models.tag_return import TagReturn
 
 from neurosynth_compose_sdk.api_client import ApiClient, RequestSerialized
 from neurosynth_compose_sdk.api_response import ApiResponse
@@ -8473,6 +8476,982 @@ class ComposeApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/studysets',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def tags_get(
+        self,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="alias for search when filtering tags")] = None,
+        description: Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None,
+        group: Annotated[Optional[StrictStr], Field(description="filter tags by group")] = None,
+        official: Annotated[Optional[StrictBool], Field(description="filter tags by official flag")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> TagList:
+        """Get a list of Tags
+
+
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param name: search the name field for a term
+        :type name: str
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param filter: alias for search when filtering tags
+        :type filter: str
+        :param description: search description field for a term
+        :type description: str
+        :param group: filter tags by group
+        :type group: str
+        :param official: filter tags by official flag
+        :type official: bool
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_get_serialize(
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            name=name,
+            search=search,
+            filter=filter,
+            description=description,
+            group=group,
+            official=official,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagList",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def tags_get_with_http_info(
+        self,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="alias for search when filtering tags")] = None,
+        description: Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None,
+        group: Annotated[Optional[StrictStr], Field(description="filter tags by group")] = None,
+        official: Annotated[Optional[StrictBool], Field(description="filter tags by official flag")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[TagList]:
+        """Get a list of Tags
+
+
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param name: search the name field for a term
+        :type name: str
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param filter: alias for search when filtering tags
+        :type filter: str
+        :param description: search description field for a term
+        :type description: str
+        :param group: filter tags by group
+        :type group: str
+        :param official: filter tags by official flag
+        :type official: bool
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_get_serialize(
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            name=name,
+            search=search,
+            filter=filter,
+            description=description,
+            group=group,
+            official=official,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagList",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def tags_get_without_preload_content(
+        self,
+        ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(lt=30000, strict=True, ge=1)]], Field(description="number of elements to return on a page")] = None,
+        name: Annotated[Optional[StrictStr], Field(description="search the name field for a term")] = None,
+        search: Annotated[Optional[Annotated[str, Field(min_length=1, strict=True)]], Field(description="search for entries that contain the substring")] = None,
+        filter: Annotated[Optional[StrictStr], Field(description="alias for search when filtering tags")] = None,
+        description: Annotated[Optional[StrictStr], Field(description="search description field for a term")] = None,
+        group: Annotated[Optional[StrictStr], Field(description="filter tags by group")] = None,
+        official: Annotated[Optional[StrictBool], Field(description="filter tags by official flag")] = None,
+        sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
+        desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
+        user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get a list of Tags
+
+
+        :param ids: choose the specific ids you wish to get
+        :type ids: List[str]
+        :param page: page of results
+        :type page: int
+        :param page_size: number of elements to return on a page
+        :type page_size: int
+        :param name: search the name field for a term
+        :type name: str
+        :param search: search for entries that contain the substring
+        :type search: str
+        :param filter: alias for search when filtering tags
+        :type filter: str
+        :param description: search description field for a term
+        :type description: str
+        :param group: filter tags by group
+        :type group: str
+        :param official: filter tags by official flag
+        :type official: bool
+        :param sort: Parameter to sort results on
+        :type sort: str
+        :param desc: sort results by descending order (as opposed to ascending order)
+        :type desc: bool
+        :param user_id: user id you want to filter on
+        :type user_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_get_serialize(
+            ids=ids,
+            page=page,
+            page_size=page_size,
+            name=name,
+            search=search,
+            filter=filter,
+            description=description,
+            group=group,
+            official=official,
+            sort=sort,
+            desc=desc,
+            user_id=user_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagList",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _tags_get_serialize(
+        self,
+        ids,
+        page,
+        page_size,
+        name,
+        search,
+        filter,
+        description,
+        group,
+        official,
+        sort,
+        desc,
+        user_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'ids': 'multi',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        if ids is not None:
+            
+            _query_params.append(('ids', ids))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if page_size is not None:
+            
+            _query_params.append(('page_size', page_size))
+            
+        if name is not None:
+            
+            _query_params.append(('name', name))
+            
+        if search is not None:
+            
+            _query_params.append(('search', search))
+            
+        if filter is not None:
+            
+            _query_params.append(('filter', filter))
+            
+        if description is not None:
+            
+            _query_params.append(('description', description))
+            
+        if group is not None:
+            
+            _query_params.append(('group', group))
+            
+        if official is not None:
+            
+            _query_params.append(('official', official))
+            
+        if sort is not None:
+            
+            _query_params.append(('sort', sort))
+            
+        if desc is not None:
+            
+            _query_params.append(('desc', desc))
+            
+        if user_id is not None:
+            
+            _query_params.append(('user_id', user_id))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'JSON-Web-Token'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/tags',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def tags_id_get(
+        self,
+        id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> TagReturn:
+        """Get information about a Tag
+
+
+        :param id: (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_id_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagReturn",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def tags_id_get_with_http_info(
+        self,
+        id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[TagReturn]:
+        """Get information about a Tag
+
+
+        :param id: (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_id_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagReturn",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def tags_id_get_without_preload_content(
+        self,
+        id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get information about a Tag
+
+
+        :param id: (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_id_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagReturn",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _tags_id_get_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/tags/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def tags_post(
+        self,
+        tag: Optional[Tag] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> TagReturn:
+        """Create a new Tag
+
+
+        :param tag:
+        :type tag: Tag
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_post_serialize(
+            tag=tag,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagReturn",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def tags_post_with_http_info(
+        self,
+        tag: Optional[Tag] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[TagReturn]:
+        """Create a new Tag
+
+
+        :param tag:
+        :type tag: Tag
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_post_serialize(
+            tag=tag,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagReturn",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def tags_post_without_preload_content(
+        self,
+        tag: Optional[Tag] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Create a new Tag
+
+
+        :param tag:
+        :type tag: Tag
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._tags_post_serialize(
+            tag=tag,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "TagReturn",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _tags_post_serialize(
+        self,
+        tag,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if tag is not None:
+            _body_params = tag
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'JSON-Web-Token'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/tags',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
