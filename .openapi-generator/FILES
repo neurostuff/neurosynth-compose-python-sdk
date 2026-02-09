@@ -169,9 +169,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_meta_analysis_tags.py
-test/test_tag.py
-test/test_tag_list.py
-test/test_tag_return.py
-test/test_tags_api.py
 tox.ini
