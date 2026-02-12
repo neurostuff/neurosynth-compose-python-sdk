@@ -950,6 +950,7 @@ class ProjectsApi:
     def projects_id_put(
         self,
         id: StrictStr,
+        sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -969,6 +970,8 @@ class ProjectsApi:
 
         :param id: (required)
         :type id: str
+        :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
+        :type sync_meta_analyses_public: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -995,6 +998,7 @@ class ProjectsApi:
 
         _param = self._projects_id_put_serialize(
             id=id,
+            sync_meta_analyses_public=sync_meta_analyses_public,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1020,6 +1024,7 @@ class ProjectsApi:
     def projects_id_put_with_http_info(
         self,
         id: StrictStr,
+        sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -1039,6 +1044,8 @@ class ProjectsApi:
 
         :param id: (required)
         :type id: str
+        :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
+        :type sync_meta_analyses_public: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -1065,6 +1072,7 @@ class ProjectsApi:
 
         _param = self._projects_id_put_serialize(
             id=id,
+            sync_meta_analyses_public=sync_meta_analyses_public,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1090,6 +1098,7 @@ class ProjectsApi:
     def projects_id_put_without_preload_content(
         self,
         id: StrictStr,
+        sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -1109,6 +1118,8 @@ class ProjectsApi:
 
         :param id: (required)
         :type id: str
+        :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
+        :type sync_meta_analyses_public: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -1135,6 +1146,7 @@ class ProjectsApi:
 
         _param = self._projects_id_put_serialize(
             id=id,
+            sync_meta_analyses_public=sync_meta_analyses_public,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1155,6 +1167,7 @@ class ProjectsApi:
     def _projects_id_put_serialize(
         self,
         id,
+        sync_meta_analyses_public,
         project,
         _request_auth,
         _content_type,
@@ -1180,6 +1193,10 @@ class ProjectsApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
+        if sync_meta_analyses_public is not None:
+            
+            _query_params.append(('sync_meta_analyses_public', sync_meta_analyses_public))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

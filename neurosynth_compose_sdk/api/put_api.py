@@ -17,8 +17,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictStr
+from pydantic import Field, StrictBool, StrictStr
 from typing import Optional
+from typing_extensions import Annotated
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
 from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
@@ -946,6 +947,7 @@ class PutApi:
     def projects_id_put(
         self,
         id: StrictStr,
+        sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -965,6 +967,8 @@ class PutApi:
 
         :param id: (required)
         :type id: str
+        :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
+        :type sync_meta_analyses_public: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -991,6 +995,7 @@ class PutApi:
 
         _param = self._projects_id_put_serialize(
             id=id,
+            sync_meta_analyses_public=sync_meta_analyses_public,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1016,6 +1021,7 @@ class PutApi:
     def projects_id_put_with_http_info(
         self,
         id: StrictStr,
+        sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -1035,6 +1041,8 @@ class PutApi:
 
         :param id: (required)
         :type id: str
+        :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
+        :type sync_meta_analyses_public: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -1061,6 +1069,7 @@ class PutApi:
 
         _param = self._projects_id_put_serialize(
             id=id,
+            sync_meta_analyses_public=sync_meta_analyses_public,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1086,6 +1095,7 @@ class PutApi:
     def projects_id_put_without_preload_content(
         self,
         id: StrictStr,
+        sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -1105,6 +1115,8 @@ class PutApi:
 
         :param id: (required)
         :type id: str
+        :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
+        :type sync_meta_analyses_public: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -1131,6 +1143,7 @@ class PutApi:
 
         _param = self._projects_id_put_serialize(
             id=id,
+            sync_meta_analyses_public=sync_meta_analyses_public,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1151,6 +1164,7 @@ class PutApi:
     def _projects_id_put_serialize(
         self,
         id,
+        sync_meta_analyses_public,
         project,
         _request_auth,
         _content_type,
@@ -1176,6 +1190,10 @@ class PutApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
+        if sync_meta_analyses_public is not None:
+            
+            _query_params.append(('sync_meta_analyses_public', sync_meta_analyses_public))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

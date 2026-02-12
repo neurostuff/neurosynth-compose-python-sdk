@@ -243,7 +243,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_id_put**
-> ProjectReturn projects_id_put(id, project=project)
+> ProjectReturn projects_id_put(id, sync_meta_analyses_public=sync_meta_analyses_public, project=project)
 
 
 
@@ -279,11 +279,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ProjectsApi(api_client)
     id = 'id_example' # str | 
+    sync_meta_analyses_public = True # bool | when updating a project's public flag, also set each child meta-analysis to the same public value (optional)
     project = neurosynth_compose_sdk.Project() # Project |  (optional)
 
     try:
         # 
-        api_response = api_instance.projects_id_put(id, project=project)
+        api_response = api_instance.projects_id_put(id, sync_meta_analyses_public=sync_meta_analyses_public, project=project)
         print("The response of ProjectsApi->projects_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -298,6 +299,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
+ **sync_meta_analyses_public** | **bool**| when updating a project&#39;s public flag, also set each child meta-analysis to the same public value | [optional] 
  **project** | [**Project**](Project.md)|  | [optional] 
 
 ### Return type
