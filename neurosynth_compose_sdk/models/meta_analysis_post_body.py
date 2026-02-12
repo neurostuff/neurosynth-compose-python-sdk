@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation
 from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
@@ -38,6 +38,7 @@ class MetaAnalysisPostBody(BaseModel):
     annotation: Optional[MetaAnalysisAnnotation] = None
     name: Optional[StrictStr] = Field(default=None, description="Human-readable name of the meta-analysis.")
     description: Optional[StrictStr] = Field(default=None, description="Long form description of the meta-analysis.")
+    public: Optional[StrictBool] = Field(default=None, description="whether the meta-analysis is public or private")
     tags: Optional[MetaAnalysisTags] = None
     cached_studyset_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
     cached_annotation_id: Optional[StrictStr] = Field(default=None, description="The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
@@ -53,7 +54,7 @@ class MetaAnalysisPostBody(BaseModel):
     cached_studyset: Optional[StrictStr] = None
     cached_annotation: Optional[StrictStr] = None
     neurostore_url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "tags", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url"]
+    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "public", "tags", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -192,6 +193,7 @@ class MetaAnalysisPostBody(BaseModel):
             "annotation": MetaAnalysisAnnotation.from_dict(obj["annotation"]) if obj.get("annotation") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description"),
+            "public": obj.get("public"),
             "tags": MetaAnalysisTags.from_dict(obj["tags"]) if obj.get("tags") is not None else None,
             "cached_studyset_id": obj.get("cached_studyset_id"),
             "cached_annotation_id": obj.get("cached_annotation_id"),
