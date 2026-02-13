@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.neurovault_collection_files import NeurovaultCollectionFiles
+from neurosynth_compose_sdk.models.neurovault_collection_files_inner import NeurovaultCollectionFilesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class NeurovaultCollection(BaseModel):
     NeurovaultCollection
     """ # noqa: E501
     collection_id: Optional[StrictStr] = None
-    files: Optional[NeurovaultCollectionFiles] = None
+    files: Optional[List[NeurovaultCollectionFilesInner]] = None
     url: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["collection_id", "files", "url"]
 
@@ -74,9 +74,13 @@ class NeurovaultCollection(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of files
+        # override the default output from pydantic by calling `to_dict()` of each item in files (list)
+        _items = []
         if self.files:
-            _dict['files'] = self.files.to_dict()
+            for _item_files in self.files:
+                if _item_files:
+                    _items.append(_item_files.to_dict())
+            _dict['files'] = _items
         # set to None if collection_id (nullable) is None
         # and model_fields_set contains the field
         if self.collection_id is None and "collection_id" in self.model_fields_set:
@@ -100,7 +104,7 @@ class NeurovaultCollection(BaseModel):
 
         _obj = cls.model_validate({
             "collection_id": obj.get("collection_id"),
-            "files": NeurovaultCollectionFiles.from_dict(obj["files"]) if obj.get("files") is not None else None,
+            "files": [NeurovaultCollectionFilesInner.from_dict(_item) for _item in obj["files"]] if obj.get("files") is not None else None,
             "url": obj.get("url")
         })
         return _obj

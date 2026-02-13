@@ -21,9 +21,8 @@ Get neurovault collections
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
@@ -48,7 +47,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -65,6 +66,7 @@ No authorization required
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -78,9 +80,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -109,7 +110,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -129,6 +132,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -143,9 +147,8 @@ No authorization required
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -183,7 +186,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -203,6 +208,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -219,9 +225,8 @@ Create neurovault collection
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.neurovault_collection import NeurovaultCollection
 from neurosynth_compose_sdk.rest import ApiException
@@ -257,7 +262,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -277,6 +284,7 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -290,9 +298,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.neurovault_file_list import NeurovaultFileList
 from neurosynth_compose_sdk.rest import ApiException
@@ -320,7 +327,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -337,6 +346,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -350,9 +360,8 @@ Your GET endpoint
 
 ### Example
 
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -381,7 +390,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -401,6 +412,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -415,9 +427,8 @@ No authorization required
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
 from neurosynth_compose_sdk.rest import ApiException
@@ -462,7 +473,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -489,6 +502,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -503,9 +517,8 @@ Name | Type | Description  | Notes
 ### Example
 
 * Bearer Authentication (JSON-Web-Token):
+
 ```python
-import time
-import os
 import neurosynth_compose_sdk
 from neurosynth_compose_sdk.models.neurovault_file import NeurovaultFile
 from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
@@ -544,7 +557,9 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 ```
 
 
+
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -564,6 +579,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

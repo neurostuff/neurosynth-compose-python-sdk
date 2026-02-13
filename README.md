@@ -98,56 +98,13 @@ Class | Method | HTTP request | Description
 *AnnotationsApi* | [**annotations_id_get**](docs/AnnotationsApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
 *AnnotationsApi* | [**annotations_id_put**](docs/AnnotationsApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
 *AnnotationsApi* | [**annotations_post**](docs/AnnotationsApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
-*ComposeApi* | [**annotations_get**](docs/ComposeApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
-*ComposeApi* | [**annotations_id_get**](docs/ComposeApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
-*ComposeApi* | [**annotations_id_put**](docs/ComposeApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
-*ComposeApi* | [**annotations_post**](docs/ComposeApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
-*ComposeApi* | [**meta_analyses_get**](docs/ComposeApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
-*ComposeApi* | [**meta_analyses_id_get**](docs/ComposeApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
-*ComposeApi* | [**meta_analyses_id_put**](docs/ComposeApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
-*ComposeApi* | [**meta_analyses_post**](docs/ComposeApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
-*ComposeApi* | [**meta_analysis_results_get**](docs/ComposeApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
-*ComposeApi* | [**meta_analysis_results_id_get**](docs/ComposeApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
-*ComposeApi* | [**meta_analysis_results_id_put**](docs/ComposeApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
-*ComposeApi* | [**meta_analysis_results_post**](docs/ComposeApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
-*ComposeApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](docs/ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
-*ComposeApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](docs/ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
-*ComposeApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](docs/ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
-*ComposeApi* | [**projects_get**](docs/ComposeApi.md#projects_get) | **GET** /projects | Your GET endpoint
-*ComposeApi* | [**projects_id_delete**](docs/ComposeApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
-*ComposeApi* | [**projects_id_get**](docs/ComposeApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
-*ComposeApi* | [**projects_id_put**](docs/ComposeApi.md#projects_id_put) | **PUT** /projects/{id} | 
-*ComposeApi* | [**projects_post**](docs/ComposeApi.md#projects_post) | **POST** /projects | 
-*ComposeApi* | [**specifications_get**](docs/ComposeApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
-*ComposeApi* | [**specifications_id_get**](docs/ComposeApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
-*ComposeApi* | [**specifications_id_put**](docs/ComposeApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
-*ComposeApi* | [**specifications_post**](docs/ComposeApi.md#specifications_post) | **POST** /specifications | Create a Specification
-*ComposeApi* | [**studysets_get**](docs/ComposeApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
-*ComposeApi* | [**studysets_id_get**](docs/ComposeApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
-*ComposeApi* | [**studysets_id_put**](docs/ComposeApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
-*ComposeApi* | [**studysets_post**](docs/ComposeApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
-*ComposeApi* | [**tags_get**](docs/ComposeApi.md#tags_get) | **GET** /tags | Get a list of Tags
-*ComposeApi* | [**tags_id_get**](docs/ComposeApi.md#tags_id_get) | **GET** /tags/{id} | Get information about a Tag
-*ComposeApi* | [**tags_post**](docs/ComposeApi.md#tags_post) | **POST** /tags | Create a new Tag
 *DefaultApi* | [**meta_analyses_id_delete**](docs/DefaultApi.md#meta_analyses_id_delete) | **DELETE** /meta-analyses/{id} | 
+*DefaultApi* | [**neurostore_studies_get**](docs/DefaultApi.md#neurostore_studies_get) | **GET** /neurostore-studies | Your GET endpoint
+*DefaultApi* | [**neurostore_studies_id_get**](docs/DefaultApi.md#neurostore_studies_id_get) | **GET** /neurostore-studies/{id} | Your GET endpoint
+*DefaultApi* | [**neurostore_studies_id_put**](docs/DefaultApi.md#neurostore_studies_id_put) | **PUT** /neurostore-studies/{id} | 
+*DefaultApi* | [**neurostore_studies_post**](docs/DefaultApi.md#neurostore_studies_post) | **POST** /neurostore-studies | 
 *DefaultApi* | [**studyset_references_get**](docs/DefaultApi.md#studyset_references_get) | **GET** /studyset-references | Your GET endpoint
 *DefaultApi* | [**studyset_references_id_get**](docs/DefaultApi.md#studyset_references_id_get) | **GET** /studyset-references/{id} | Your GET endpoint
-*GetApi* | [**annotations_get**](docs/GetApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
-*GetApi* | [**annotations_id_get**](docs/GetApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
-*GetApi* | [**meta_analyses_get**](docs/GetApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
-*GetApi* | [**meta_analyses_id_get**](docs/GetApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
-*GetApi* | [**meta_analysis_results_get**](docs/GetApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
-*GetApi* | [**meta_analysis_results_id_get**](docs/GetApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
-*GetApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](docs/GetApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
-*GetApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](docs/GetApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
-*GetApi* | [**projects_get**](docs/GetApi.md#projects_get) | **GET** /projects | Your GET endpoint
-*GetApi* | [**projects_id_get**](docs/GetApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
-*GetApi* | [**specifications_get**](docs/GetApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
-*GetApi* | [**specifications_id_get**](docs/GetApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
-*GetApi* | [**studysets_get**](docs/GetApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
-*GetApi* | [**studysets_id_get**](docs/GetApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
-*GetApi* | [**tags_get**](docs/GetApi.md#tags_get) | **GET** /tags | Get a list of Tags
-*GetApi* | [**tags_id_get**](docs/GetApi.md#tags_id_get) | **GET** /tags/{id} | Get information about a Tag
 *MetaAnalysesApi* | [**meta_analyses_get**](docs/MetaAnalysesApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 *MetaAnalysesApi* | [**meta_analyses_id_get**](docs/MetaAnalysesApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysesApi* | [**meta_analyses_id_put**](docs/MetaAnalysesApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
@@ -159,25 +116,19 @@ Class | Method | HTTP request | Description
 *MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
 *MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
 *MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
-*PostApi* | [**annotations_post**](docs/PostApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
-*PostApi* | [**meta_analyses_post**](docs/PostApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
-*PostApi* | [**meta_analysis_results_post**](docs/PostApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
-*PostApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](docs/PostApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
-*PostApi* | [**projects_post**](docs/PostApi.md#projects_post) | **POST** /projects | 
-*PostApi* | [**specifications_post**](docs/PostApi.md#specifications_post) | **POST** /specifications | Create a Specification
-*PostApi* | [**studysets_post**](docs/PostApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
-*PostApi* | [**tags_post**](docs/PostApi.md#tags_post) | **POST** /tags | Create a new Tag
+*NeurovaultApi* | [**neurovault_collections_get**](docs/NeurovaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Get neurovault collections
+*NeurovaultApi* | [**neurovault_collections_id_get**](docs/NeurovaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
+*NeurovaultApi* | [**neurovault_collections_id_put**](docs/NeurovaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
+*NeurovaultApi* | [**neurovault_collections_post**](docs/NeurovaultApi.md#neurovault_collections_post) | **POST** /neurovault-collections | Create neurovault collection
+*NeurovaultApi* | [**neurovault_files_get**](docs/NeurovaultApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
+*NeurovaultApi* | [**neurovault_files_id_get**](docs/NeurovaultApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
+*NeurovaultApi* | [**neurovault_files_id_put**](docs/NeurovaultApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
+*NeurovaultApi* | [**neurovault_files_post**](docs/NeurovaultApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 *ProjectsApi* | [**projects_get**](docs/ProjectsApi.md#projects_get) | **GET** /projects | Your GET endpoint
 *ProjectsApi* | [**projects_id_delete**](docs/ProjectsApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
 *ProjectsApi* | [**projects_id_get**](docs/ProjectsApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 *ProjectsApi* | [**projects_id_put**](docs/ProjectsApi.md#projects_id_put) | **PUT** /projects/{id} | 
 *ProjectsApi* | [**projects_post**](docs/ProjectsApi.md#projects_post) | **POST** /projects | 
-*PutApi* | [**annotations_id_put**](docs/PutApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
-*PutApi* | [**meta_analyses_id_put**](docs/PutApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
-*PutApi* | [**meta_analysis_results_id_put**](docs/PutApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
-*PutApi* | [**projects_id_put**](docs/PutApi.md#projects_id_put) | **PUT** /projects/{id} | 
-*PutApi* | [**specifications_id_put**](docs/PutApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
-*PutApi* | [**studysets_id_put**](docs/PutApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
 *SpecificationsApi* | [**specifications_get**](docs/SpecificationsApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
 *SpecificationsApi* | [**specifications_id_get**](docs/SpecificationsApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
 *SpecificationsApi* | [**specifications_id_put**](docs/SpecificationsApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
@@ -224,7 +175,7 @@ Class | Method | HTTP request | Description
  - [NeurostoreStudyList](docs/NeurostoreStudyList.md)
  - [NeurostoreStudyReturn](docs/NeurostoreStudyReturn.md)
  - [NeurovaultCollection](docs/NeurovaultCollection.md)
- - [NeurovaultCollectionFiles](docs/NeurovaultCollectionFiles.md)
+ - [NeurovaultCollectionFilesInner](docs/NeurovaultCollectionFilesInner.md)
  - [NeurovaultCollectionReturn](docs/NeurovaultCollectionReturn.md)
  - [NeurovaultFile](docs/NeurovaultFile.md)
  - [NeurovaultFileList](docs/NeurovaultFileList.md)
@@ -285,3 +236,46 @@ Authentication schemes defined for the API:
 jamesdkent21@gmail.com
 
 
+
+<!-- neurostuff-sdk-helpers:start -->
+## Neurostuff SDK Helpers
+
+The generator adds two helper modules to reduce import friction:
+
+1. `sdk.py`: a single facade for endpoint groups.
+2. `auth.py`: Auth0 refresh-token exchange + automatic bearer token refresh.
+
+### Minimal usage
+
+```python
+from neurosynth_compose_sdk.sdk import SDK
+
+sdk = SDK(host="https://example.org/api", access_token="<access-token>")
+studysets_api = sdk.studysets
+result = studysets_api.studysets_get()
+```
+
+### Auth0 refresh-token usage
+
+```python
+from neurosynth_compose_sdk.sdk import SDK
+
+sdk = SDK.from_auth0_refresh_token(
+    domain="your-tenant.us.auth0.com",
+    client_id="<auth0-client-id>",
+    refresh_token="<auth0-refresh-token>",
+    audience="<optional-audience>",
+)
+
+# Access token is exchanged and refreshed automatically per request.
+users = sdk.users.users_get()
+```
+
+You can also use environment variables:
+`AUTH0_DOMAIN`, `AUTH0_CLIENT_ID`, `AUTH0_REFRESH_TOKEN`, plus optional
+`AUTH0_AUDIENCE`, `AUTH0_CLIENT_SECRET`, `AUTH0_SCOPE`.
+
+```python
+sdk = SDK.from_auth0_env(prefix="AUTH0")
+```
+<!-- neurostuff-sdk-helpers:end -->
