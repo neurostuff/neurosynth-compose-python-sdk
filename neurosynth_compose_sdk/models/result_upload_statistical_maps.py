@@ -22,18 +22,18 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-RESULTUPLOADSTATISTICALMAPS_ONE_OF_SCHEMAS = ["List[bytearray]", "bytearray"]
+RESULTUPLOADSTATISTICALMAPS_ONE_OF_SCHEMAS = ["List[bytes]", "bytes"]
 
 class ResultUploadStatisticalMaps(BaseModel):
     """
     ResultUploadStatisticalMaps
     """
-    # data type: bytearray
+    # data type: bytes
     oneof_schema_1_validator: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None
-    # data type: List[bytearray]
+    # data type: List[bytes]
     oneof_schema_2_validator: Optional[List[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]]] = None
-    actual_instance: Optional[Union[List[bytearray], bytearray]] = None
-    one_of_schemas: Set[str] = { "List[bytearray]", "bytearray" }
+    actual_instance: Optional[Union[List[bytes], bytes]] = None
+    one_of_schemas: Set[str] = { "List[bytes]", "bytes" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -56,13 +56,13 @@ class ResultUploadStatisticalMaps(BaseModel):
         instance = ResultUploadStatisticalMaps.model_construct()
         error_messages = []
         match = 0
-        # validate data type: bytearray
+        # validate data type: bytes
         try:
             instance.oneof_schema_1_validator = v
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # validate data type: List[bytearray]
+        # validate data type: List[bytes]
         try:
             instance.oneof_schema_2_validator = v
             match += 1
@@ -70,10 +70,10 @@ class ResultUploadStatisticalMaps(BaseModel):
             error_messages.append(str(e))
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in ResultUploadStatisticalMaps with oneOf schemas: List[bytearray], bytearray. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in ResultUploadStatisticalMaps with oneOf schemas: List[bytes], bytes. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in ResultUploadStatisticalMaps with oneOf schemas: List[bytearray], bytearray. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in ResultUploadStatisticalMaps with oneOf schemas: List[bytes], bytes. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -88,7 +88,7 @@ class ResultUploadStatisticalMaps(BaseModel):
         error_messages = []
         match = 0
 
-        # deserialize data into bytearray
+        # deserialize data into bytes
         try:
             # validation
             instance.oneof_schema_1_validator = json.loads(json_str)
@@ -97,7 +97,7 @@ class ResultUploadStatisticalMaps(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
-        # deserialize data into List[bytearray]
+        # deserialize data into List[bytes]
         try:
             # validation
             instance.oneof_schema_2_validator = json.loads(json_str)
@@ -109,10 +109,10 @@ class ResultUploadStatisticalMaps(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into ResultUploadStatisticalMaps with oneOf schemas: List[bytearray], bytearray. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into ResultUploadStatisticalMaps with oneOf schemas: List[bytes], bytes. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into ResultUploadStatisticalMaps with oneOf schemas: List[bytearray], bytearray. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into ResultUploadStatisticalMaps with oneOf schemas: List[bytes], bytes. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -126,7 +126,7 @@ class ResultUploadStatisticalMaps(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], List[bytearray], bytearray]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], List[bytes], bytes]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None
