@@ -1707,6 +1707,7 @@ class ComposeApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'JSON-Web-Token'
         ]
 
         return self.api_client.param_serialize(
