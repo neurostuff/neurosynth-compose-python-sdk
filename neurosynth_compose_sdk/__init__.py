@@ -46,18 +46,18 @@ __all__ = [
     "Estimator",
     "MetaAnalysesGet400Response",
     "MetaAnalysis",
-    "MetaAnalysisAnnotation",
     "MetaAnalysisJobList",
     "MetaAnalysisJobListMetadata",
     "MetaAnalysisJobLog",
     "MetaAnalysisJobRequest",
     "MetaAnalysisJobResponse",
     "MetaAnalysisList",
+    "MetaAnalysisNeurostoreAnnotation",
+    "MetaAnalysisNeurostoreStudyset",
     "MetaAnalysisPostBody",
     "MetaAnalysisResults",
     "MetaAnalysisReturn",
     "MetaAnalysisSpecification",
-    "MetaAnalysisStudyset",
     "MetaAnalysisTags",
     "NeurostoreAnalysis",
     "NeurostoreStudy",
@@ -135,18 +135,18 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.estimator import Estimator as Estimator
     from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response as MetaAnalysesGet400Response
     from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis as MetaAnalysis
-    from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation as MetaAnalysisAnnotation
     from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList as MetaAnalysisJobList
     from neurosynth_compose_sdk.models.meta_analysis_job_list_metadata import MetaAnalysisJobListMetadata as MetaAnalysisJobListMetadata
     from neurosynth_compose_sdk.models.meta_analysis_job_log import MetaAnalysisJobLog as MetaAnalysisJobLog
     from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest as MetaAnalysisJobRequest
     from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse as MetaAnalysisJobResponse
     from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList as MetaAnalysisList
+    from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation as MetaAnalysisNeurostoreAnnotation
+    from neurosynth_compose_sdk.models.meta_analysis_neurostore_studyset import MetaAnalysisNeurostoreStudyset as MetaAnalysisNeurostoreStudyset
     from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody as MetaAnalysisPostBody
     from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults as MetaAnalysisResults
     from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn as MetaAnalysisReturn
     from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification as MetaAnalysisSpecification
-    from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset as MetaAnalysisStudyset
     from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags as MetaAnalysisTags
     from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis as NeurostoreAnalysis
     from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy as NeurostoreStudy
@@ -230,18 +230,18 @@ from neurosynth_compose_sdk.models.corrector import Corrector as Corrector
 from neurosynth_compose_sdk.models.estimator import Estimator as Estimator
 from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response as MetaAnalysesGet400Response
 from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis as MetaAnalysis
-from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation as MetaAnalysisAnnotation
 from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList as MetaAnalysisJobList
 from neurosynth_compose_sdk.models.meta_analysis_job_list_metadata import MetaAnalysisJobListMetadata as MetaAnalysisJobListMetadata
 from neurosynth_compose_sdk.models.meta_analysis_job_log import MetaAnalysisJobLog as MetaAnalysisJobLog
 from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest as MetaAnalysisJobRequest
 from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse as MetaAnalysisJobResponse
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList as MetaAnalysisList
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation as MetaAnalysisNeurostoreAnnotation
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_studyset import MetaAnalysisNeurostoreStudyset as MetaAnalysisNeurostoreStudyset
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody as MetaAnalysisPostBody
 from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults as MetaAnalysisResults
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn as MetaAnalysisReturn
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification as MetaAnalysisSpecification
-from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset as MetaAnalysisStudyset
 from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags as MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis as NeurostoreAnalysis
 from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy as NeurostoreStudy

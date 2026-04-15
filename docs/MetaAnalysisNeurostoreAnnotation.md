@@ -1,6 +1,5 @@
-# Annotation
+# MetaAnalysisNeurostoreAnnotation
 
-a holder/reference to the annotation on neurostore
 
 ## Properties
 
@@ -14,19 +13,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from neurosynth_compose_sdk.models.annotation import Annotation
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of Annotation from a JSON string
-annotation_instance = Annotation.from_json(json)
+# create an instance of MetaAnalysisNeurostoreAnnotation from a JSON string
+meta_analysis_neurostore_annotation_instance = MetaAnalysisNeurostoreAnnotation.from_json(json)
 # print the JSON string representation of the object
-print(Annotation.to_json())
+print(MetaAnalysisNeurostoreAnnotation.to_json())
 
 # convert the object into a dict
-annotation_dict = annotation_instance.to_dict()
-# create an instance of Annotation from a dict
-annotation_from_dict = Annotation.from_dict(annotation_dict)
+meta_analysis_neurostore_annotation_dict = meta_analysis_neurostore_annotation_instance.to_dict()
+# create an instance of MetaAnalysisNeurostoreAnnotation from a dict
+meta_analysis_neurostore_annotation_from_dict = MetaAnalysisNeurostoreAnnotation.from_dict(meta_analysis_neurostore_annotation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -29,9 +29,9 @@ class Annotation(BaseModel):
     """ # noqa: E501
     neurostore_id: Optional[StrictStr] = Field(default=None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(default=None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
-    studyset: Optional[StrictStr] = Field(default=None, description="The related cached studyset to this annotation.")
+    snapshot_studyset: Optional[StrictStr] = Field(default=None, description="The related cached studyset to this annotation.")
     neurostore_url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "studyset", "neurostore_url"]
+    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "snapshot_studyset", "neurostore_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -67,7 +67,7 @@ class Annotation(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
-            "studyset",
+            "snapshot_studyset",
             "neurostore_url",
         ])
 
@@ -95,7 +95,7 @@ class Annotation(BaseModel):
         _obj = cls.model_validate({
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
-            "studyset": obj.get("studyset"),
+            "snapshot_studyset": obj.get("snapshot_studyset"),
             "neurostore_url": obj.get("neurostore_url")
         })
         return _obj
