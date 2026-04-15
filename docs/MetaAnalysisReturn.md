@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **provenance** | **object** |  | [optional] 
 **project** | **str** |  | [optional] 
 **run_key** | **str** | a special key used to upload the results of this meta analysis. Can be used as an alternative to using your auth token from login.  | [optional] [readonly] 
+**snapshots** | **List[object]** | Ordered history of (studyset, annotation) snapshot pairs recorded each time a MetaAnalysisResult is created. Each entry contains studyset_id, studyset_md5, annotation_id, annotation_md5, result_id, and created_at.  | [optional] [readonly] 
 **neurostore_analysis** | [**NeurostoreAnalysis**](NeurostoreAnalysis.md) |  | [optional] 
 **cognitive_contrast_cogatlas** | **str** |  | [optional] 
 **cognitive_contrast_cogatlas_id** | **str** |  | [optional] 

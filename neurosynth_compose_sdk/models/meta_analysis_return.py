@@ -47,6 +47,7 @@ class MetaAnalysisReturn(BaseModel):
     provenance: Optional[Dict[str, Any]] = None
     project: Optional[StrictStr] = None
     run_key: Optional[StrictStr] = Field(default=None, description="a special key used to upload the results of this meta analysis. Can be used as an alternative to using your auth token from login. ")
+    snapshots: Optional[List[Dict[str, Any]]] = Field(default=None, description="Ordered history of (studyset, annotation) snapshot pairs recorded each time a MetaAnalysisResult is created. Each entry contains studyset_id, studyset_md5, annotation_id, annotation_md5, result_id, and created_at. ")
     neurostore_analysis: Optional[NeurostoreAnalysis] = None
     cognitive_contrast_cogatlas: Optional[StrictStr] = None
     cognitive_contrast_cogatlas_id: Optional[StrictStr] = None
@@ -60,7 +61,7 @@ class MetaAnalysisReturn(BaseModel):
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "public", "tags", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
+    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "public", "tags", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,9 +100,11 @@ class MetaAnalysisReturn(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "run_key",
+            "snapshots",
             "cached_studyset",
             "cached_annotation",
             "neurostore_url",
@@ -152,6 +155,11 @@ class MetaAnalysisReturn(BaseModel):
         # and model_fields_set contains the field
         if self.project is None and "project" in self.model_fields_set:
             _dict['project'] = None
+
+        # set to None if snapshots (nullable) is None
+        # and model_fields_set contains the field
+        if self.snapshots is None and "snapshots" in self.model_fields_set:
+            _dict['snapshots'] = None
 
         # set to None if cognitive_contrast_cogatlas (nullable) is None
         # and model_fields_set contains the field
@@ -228,6 +236,7 @@ class MetaAnalysisReturn(BaseModel):
             "provenance": obj.get("provenance"),
             "project": obj.get("project"),
             "run_key": obj.get("run_key"),
+            "snapshots": obj.get("snapshots"),
             "neurostore_analysis": NeurostoreAnalysis.from_dict(obj["neurostore_analysis"]) if obj.get("neurostore_analysis") is not None else None,
             "cognitive_contrast_cogatlas": obj.get("cognitive_contrast_cogatlas"),
             "cognitive_contrast_cogatlas_id": obj.get("cognitive_contrast_cogatlas_id"),

@@ -109,13 +109,13 @@ Class | Method | HTTP request | Description
 *MetaAnalysesApi* | [**meta_analyses_id_get**](docs/MetaAnalysesApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysesApi* | [**meta_analyses_id_put**](docs/MetaAnalysesApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
 *MetaAnalysesApi* | [**meta_analyses_post**](docs/MetaAnalysesApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
-*MetaAnalysesApi* | [**meta_analysis_results_get**](docs/MetaAnalysesApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
-*MetaAnalysesApi* | [**meta_analysis_results_id_get**](docs/MetaAnalysesApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
-*MetaAnalysesApi* | [**meta_analysis_results_id_put**](docs/MetaAnalysesApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
-*MetaAnalysesApi* | [**meta_analysis_results_post**](docs/MetaAnalysesApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
-*MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
-*MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
-*MetaAnalysesApi* | [**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](docs/MetaAnalysesApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
+*MetaAnalysesApi* | [**meta_analysis_jobs_get**](docs/MetaAnalysesApi.md#meta_analysis_jobs_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
+*MetaAnalysesApi* | [**meta_analysis_jobs_job_id_get**](docs/MetaAnalysesApi.md#meta_analysis_jobs_job_id_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
+*MetaAnalysesApi* | [**meta_analysis_jobs_post**](docs/MetaAnalysesApi.md#meta_analysis_jobs_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
+*MetaAnalysesApi* | [**meta_analysis_results_get**](docs/MetaAnalysesApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | List meta-analysis results
+*MetaAnalysesApi* | [**meta_analysis_results_id_get**](docs/MetaAnalysesApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Get a meta-analysis result by ID
+*MetaAnalysesApi* | [**meta_analysis_results_id_put**](docs/MetaAnalysesApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | Update a meta-analysis result with files or snapshots
+*MetaAnalysesApi* | [**meta_analysis_results_post**](docs/MetaAnalysesApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | Create a new meta-analysis result
 *NeurovaultApi* | [**neurovault_collections_get**](docs/NeurovaultApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Get neurovault collections
 *NeurovaultApi* | [**neurovault_collections_id_get**](docs/NeurovaultApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
 *NeurovaultApi* | [**neurovault_collections_id_put**](docs/NeurovaultApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
