@@ -31,8 +31,8 @@ class AnnotationUpdate(BaseModel):
     snapshot: Optional[Dict[str, Any]] = Field(default=None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
     studyset: Optional[StrictStr] = Field(default=None, description="The related cached studyset to this annotation.")
     neurostore_url: Optional[StrictStr] = None
-    cached_studyset_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "studyset", "neurostore_url", "cached_studyset_id"]
+    snapshot_studyset_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "studyset", "neurostore_url", "snapshot_studyset_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +98,7 @@ class AnnotationUpdate(BaseModel):
             "snapshot": obj.get("snapshot"),
             "studyset": obj.get("studyset"),
             "neurostore_url": obj.get("neurostore_url"),
-            "cached_studyset_id": obj.get("cached_studyset_id")
+            "snapshot_studyset_id": obj.get("snapshot_studyset_id")
         })
         return _obj
 

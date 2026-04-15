@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **snapshot** | **object** | the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm | [optional] 
 **studyset** | **str** | The related cached studyset to this annotation. | [optional] [readonly] 
 **neurostore_url** | **str** |  | [optional] [readonly] 
-**cached_studyset_id** | **str** |  | [optional] 
+**snapshot_studyset_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -4,14 +4,14 @@ All URIs are relative to *https://compose.neurosynth.org/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**studysets_get**](StudysetsApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
-[**studysets_id_get**](StudysetsApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
-[**studysets_id_put**](StudysetsApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
-[**studysets_post**](StudysetsApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
+[**snapshot_studysets_get**](StudysetsApi.md#snapshot_studysets_get) | **GET** /snapshot-studysets | Get a list of Studysets
+[**snapshot_studysets_id_get**](StudysetsApi.md#snapshot_studysets_id_get) | **GET** /snapshot-studysets/{id} | Get information about a Studyset
+[**snapshot_studysets_id_put**](StudysetsApi.md#snapshot_studysets_id_put) | **PUT** /snapshot-studysets/{id} | Update a Studyset
+[**snapshot_studysets_post**](StudysetsApi.md#snapshot_studysets_post) | **POST** /snapshot-studysets | Create a new Studyset
 
 
-# **studysets_get**
-> StudysetList studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+# **snapshot_studysets_get**
+> StudysetList snapshot_studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
 
 Get a list of Studysets
 
@@ -49,11 +49,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get a list of Studysets
-        api_response = api_instance.studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
-        print("The response of StudysetsApi->studysets_get:\n")
+        api_response = api_instance.snapshot_studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+        print("The response of StudysetsApi->snapshot_studysets_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StudysetsApi->studysets_get: %s\n" % e)
+        print("Exception when calling StudysetsApi->snapshot_studysets_get: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **studysets_id_get**
-> StudysetReturn studysets_id_get(id)
+# **snapshot_studysets_id_get**
+> StudysetReturn snapshot_studysets_id_get(id)
 
 Get information about a Studyset
 
@@ -126,11 +126,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Get information about a Studyset
-        api_response = api_instance.studysets_id_get(id)
-        print("The response of StudysetsApi->studysets_id_get:\n")
+        api_response = api_instance.snapshot_studysets_id_get(id)
+        print("The response of StudysetsApi->snapshot_studysets_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StudysetsApi->studysets_id_get: %s\n" % e)
+        print("Exception when calling StudysetsApi->snapshot_studysets_id_get: %s\n" % e)
 ```
 
 
@@ -165,8 +165,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **studysets_id_put**
-> StudysetReturn studysets_id_put(id, studyset=studyset)
+# **snapshot_studysets_id_put**
+> StudysetReturn snapshot_studysets_id_put(id, studyset=studyset)
 
 Update a Studyset
 
@@ -208,11 +208,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update a Studyset
-        api_response = api_instance.studysets_id_put(id, studyset=studyset)
-        print("The response of StudysetsApi->studysets_id_put:\n")
+        api_response = api_instance.snapshot_studysets_id_put(id, studyset=studyset)
+        print("The response of StudysetsApi->snapshot_studysets_id_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StudysetsApi->studysets_id_put: %s\n" % e)
+        print("Exception when calling StudysetsApi->snapshot_studysets_id_put: %s\n" % e)
 ```
 
 
@@ -250,8 +250,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **studysets_post**
-> StudysetReturn studysets_post(studyset_post_body=studyset_post_body)
+# **snapshot_studysets_post**
+> StudysetReturn snapshot_studysets_post(studyset_post_body=studyset_post_body)
 
 Create a new Studyset
 
@@ -292,11 +292,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create a new Studyset
-        api_response = api_instance.studysets_post(studyset_post_body=studyset_post_body)
-        print("The response of StudysetsApi->studysets_post:\n")
+        api_response = api_instance.snapshot_studysets_post(studyset_post_body=studyset_post_body)
+        print("The response of StudysetsApi->snapshot_studysets_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StudysetsApi->studysets_post: %s\n" % e)
+        print("Exception when calling StudysetsApi->snapshot_studysets_post: %s\n" % e)
 ```
 
 

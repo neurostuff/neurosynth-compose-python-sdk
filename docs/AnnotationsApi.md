@@ -4,14 +4,14 @@ All URIs are relative to *https://compose.neurosynth.org/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**annotations_get**](AnnotationsApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
-[**annotations_id_get**](AnnotationsApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
-[**annotations_id_put**](AnnotationsApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
-[**annotations_post**](AnnotationsApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
+[**snapshot_annotations_get**](AnnotationsApi.md#snapshot_annotations_get) | **GET** /snapshot-annotations | GET a list of annotations
+[**snapshot_annotations_id_get**](AnnotationsApi.md#snapshot_annotations_id_get) | **GET** /snapshot-annotations/{id} | GET information about an annotation
+[**snapshot_annotations_id_put**](AnnotationsApi.md#snapshot_annotations_id_put) | **PUT** /snapshot-annotations/{id} | Update an Annotation
+[**snapshot_annotations_post**](AnnotationsApi.md#snapshot_annotations_post) | **POST** /snapshot-annotations | Create a new Annotation
 
 
-# **annotations_get**
-> AnnotationList annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+# **snapshot_annotations_get**
+> AnnotationList snapshot_annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
 
 GET a list of annotations
 
@@ -49,11 +49,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # GET a list of annotations
-        api_response = api_instance.annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
-        print("The response of AnnotationsApi->annotations_get:\n")
+        api_response = api_instance.snapshot_annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+        print("The response of AnnotationsApi->snapshot_annotations_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnotationsApi->annotations_get: %s\n" % e)
+        print("Exception when calling AnnotationsApi->snapshot_annotations_get: %s\n" % e)
 ```
 
 
@@ -95,8 +95,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **annotations_id_get**
-> AnnotationReturn annotations_id_get(id)
+# **snapshot_annotations_id_get**
+> AnnotationReturn snapshot_annotations_id_get(id)
 
 GET information about an annotation
 
@@ -126,11 +126,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # GET information about an annotation
-        api_response = api_instance.annotations_id_get(id)
-        print("The response of AnnotationsApi->annotations_id_get:\n")
+        api_response = api_instance.snapshot_annotations_id_get(id)
+        print("The response of AnnotationsApi->snapshot_annotations_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnotationsApi->annotations_id_get: %s\n" % e)
+        print("Exception when calling AnnotationsApi->snapshot_annotations_id_get: %s\n" % e)
 ```
 
 
@@ -165,8 +165,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **annotations_id_put**
-> AnnotationReturn annotations_id_put(id, annotation_update=annotation_update)
+# **snapshot_annotations_id_put**
+> AnnotationReturn snapshot_annotations_id_put(id, annotation_update=annotation_update)
 
 Update an Annotation
 
@@ -208,11 +208,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Update an Annotation
-        api_response = api_instance.annotations_id_put(id, annotation_update=annotation_update)
-        print("The response of AnnotationsApi->annotations_id_put:\n")
+        api_response = api_instance.snapshot_annotations_id_put(id, annotation_update=annotation_update)
+        print("The response of AnnotationsApi->snapshot_annotations_id_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnotationsApi->annotations_id_put: %s\n" % e)
+        print("Exception when calling AnnotationsApi->snapshot_annotations_id_put: %s\n" % e)
 ```
 
 
@@ -250,8 +250,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **annotations_post**
-> AnnotationReturn annotations_post(annotation_post_body=annotation_post_body)
+# **snapshot_annotations_post**
+> AnnotationReturn snapshot_annotations_post(annotation_post_body=annotation_post_body)
 
 Create a new Annotation
 
@@ -292,11 +292,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Create a new Annotation
-        api_response = api_instance.annotations_post(annotation_post_body=annotation_post_body)
-        print("The response of AnnotationsApi->annotations_post:\n")
+        api_response = api_instance.snapshot_annotations_post(annotation_post_body=annotation_post_body)
+        print("The response of AnnotationsApi->snapshot_annotations_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AnnotationsApi->annotations_post: %s\n" % e)
+        print("Exception when calling AnnotationsApi->snapshot_annotations_post: %s\n" % e)
 ```
 
 

@@ -28,12 +28,12 @@ class ResultInit(BaseModel):
     ResultInit
     """ # noqa: E501
     meta_analysis_id: Optional[StrictStr] = None
-    cached_studyset: Optional[Dict[str, Any]] = None
-    cached_annotation: Optional[Dict[str, Any]] = None
-    cached_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached studyset snapshot to link to this result.")
-    cached_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached annotation snapshot to link to this result.")
+    snapshot_studyset: Optional[Dict[str, Any]] = None
+    snapshot_annotation: Optional[Dict[str, Any]] = None
+    snapshot_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached studyset snapshot to link to this result.")
+    snapshot_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached annotation snapshot to link to this result.")
     cli_version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cached_studyset", "cached_annotation", "cached_studyset_id", "cached_annotation_id", "cli_version"]
+    __properties: ClassVar[List[str]] = ["meta_analysis_id", "snapshot_studyset", "snapshot_annotation", "snapshot_studyset_id", "snapshot_annotation_id", "cli_version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,10 +87,10 @@ class ResultInit(BaseModel):
 
         _obj = cls.model_validate({
             "meta_analysis_id": obj.get("meta_analysis_id"),
-            "cached_studyset": obj.get("cached_studyset"),
-            "cached_annotation": obj.get("cached_annotation"),
-            "cached_studyset_id": obj.get("cached_studyset_id"),
-            "cached_annotation_id": obj.get("cached_annotation_id"),
+            "snapshot_studyset": obj.get("snapshot_studyset"),
+            "snapshot_annotation": obj.get("snapshot_annotation"),
+            "snapshot_studyset_id": obj.get("snapshot_studyset_id"),
+            "snapshot_annotation_id": obj.get("snapshot_annotation_id"),
             "cli_version": obj.get("cli_version")
         })
         return _obj

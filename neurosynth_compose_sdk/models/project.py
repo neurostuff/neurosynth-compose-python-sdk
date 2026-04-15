@@ -33,11 +33,13 @@ class Project(BaseModel):
     meta_analyses: Optional[ProjectMetaAnalyses] = None
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    neurostore_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of the project’s linked Neurostore studyset reference.")
+    neurostore_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of the project’s linked Neurostore annotation reference.")
     public: Optional[StrictBool] = Field(default=None, description="whether the project is public or private")
     neurostore_study: Optional[NeurostoreStudy] = None
     neurostore_url: Optional[StrictStr] = None
     draft: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["provenance", "meta_analyses", "name", "description", "public", "neurostore_study", "neurostore_url", "draft"]
+    __properties: ClassVar[List[str]] = ["provenance", "meta_analyses", "name", "description", "neurostore_studyset_id", "neurostore_annotation_id", "public", "neurostore_study", "neurostore_url", "draft"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,6 +103,16 @@ class Project(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
+        # set to None if neurostore_studyset_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.neurostore_studyset_id is None and "neurostore_studyset_id" in self.model_fields_set:
+            _dict['neurostore_studyset_id'] = None
+
+        # set to None if neurostore_annotation_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.neurostore_annotation_id is None and "neurostore_annotation_id" in self.model_fields_set:
+            _dict['neurostore_annotation_id'] = None
+
         # set to None if neurostore_url (nullable) is None
         # and model_fields_set contains the field
         if self.neurostore_url is None and "neurostore_url" in self.model_fields_set:
@@ -122,6 +134,8 @@ class Project(BaseModel):
             "meta_analyses": ProjectMetaAnalyses.from_dict(obj["meta_analyses"]) if obj.get("meta_analyses") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description"),
+            "neurostore_studyset_id": obj.get("neurostore_studyset_id"),
+            "neurostore_annotation_id": obj.get("neurostore_annotation_id"),
             "public": obj.get("public"),
             "neurostore_study": NeurostoreStudy.from_dict(obj["neurostore_study"]) if obj.get("neurostore_study") is not None else None,
             "neurostore_url": obj.get("neurostore_url"),

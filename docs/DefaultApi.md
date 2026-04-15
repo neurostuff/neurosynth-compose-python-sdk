@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**neurostore_studies_id_get**](DefaultApi.md#neurostore_studies_id_get) | **GET** /neurostore-studies/{id} | Your GET endpoint
 [**neurostore_studies_id_put**](DefaultApi.md#neurostore_studies_id_put) | **PUT** /neurostore-studies/{id} | 
 [**neurostore_studies_post**](DefaultApi.md#neurostore_studies_post) | **POST** /neurostore-studies | 
-[**studyset_references_get**](DefaultApi.md#studyset_references_get) | **GET** /studyset-references | Your GET endpoint
-[**studyset_references_id_get**](DefaultApi.md#studyset_references_id_get) | **GET** /studyset-references/{id} | Your GET endpoint
+[**neurostore_studysets_get**](DefaultApi.md#neurostore_studysets_get) | **GET** /neurostore-studysets | Your GET endpoint
+[**neurostore_studysets_id_get**](DefaultApi.md#neurostore_studysets_id_get) | **GET** /neurostore-studysets/{id} | Your GET endpoint
 
 
 # **meta_analyses_id_delete**
@@ -362,8 +362,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **studyset_references_get**
-> StudysetReferenceList studyset_references_get(nested=nested)
+# **neurostore_studysets_get**
+> StudysetReferenceList neurostore_studysets_get(nested=nested)
 
 Your GET endpoint
 
@@ -393,11 +393,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Your GET endpoint
-        api_response = api_instance.studyset_references_get(nested=nested)
-        print("The response of DefaultApi->studyset_references_get:\n")
+        api_response = api_instance.neurostore_studysets_get(nested=nested)
+        print("The response of DefaultApi->neurostore_studysets_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->studyset_references_get: %s\n" % e)
+        print("Exception when calling DefaultApi->neurostore_studysets_get: %s\n" % e)
 ```
 
 
@@ -430,8 +430,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **studyset_references_id_get**
-> StudysetReferenceReturn studyset_references_id_get(id, nested=nested)
+# **neurostore_studysets_id_get**
+> StudysetReferenceReturn neurostore_studysets_id_get(id, nested=nested)
 
 Your GET endpoint
 
@@ -460,11 +460,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
     try:
         # Your GET endpoint
-        api_response = api_instance.studyset_references_id_get(id, nested=nested)
-        print("The response of DefaultApi->studyset_references_id_get:\n")
+        api_response = api_instance.neurostore_studysets_id_get(id, nested=nested)
+        print("The response of DefaultApi->neurostore_studysets_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->studyset_references_id_get: %s\n" % e)
+        print("Exception when calling DefaultApi->neurostore_studysets_id_get: %s\n" % e)
 ```
 
 

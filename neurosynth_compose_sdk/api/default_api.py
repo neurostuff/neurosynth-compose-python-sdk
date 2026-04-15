@@ -1321,7 +1321,7 @@ class DefaultApi:
 
 
     @validate_call
-    def studyset_references_get(
+    def neurostore_studysets_get(
         self,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
         _request_timeout: Union[
@@ -1365,7 +1365,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._studyset_references_get_serialize(
+        _param = self._neurostore_studysets_get_serialize(
             nested=nested,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1388,7 +1388,7 @@ class DefaultApi:
 
 
     @validate_call
-    def studyset_references_get_with_http_info(
+    def neurostore_studysets_get_with_http_info(
         self,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
         _request_timeout: Union[
@@ -1432,7 +1432,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._studyset_references_get_serialize(
+        _param = self._neurostore_studysets_get_serialize(
             nested=nested,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1455,7 +1455,7 @@ class DefaultApi:
 
 
     @validate_call
-    def studyset_references_get_without_preload_content(
+    def neurostore_studysets_get_without_preload_content(
         self,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
         _request_timeout: Union[
@@ -1499,7 +1499,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._studyset_references_get_serialize(
+        _param = self._neurostore_studysets_get_serialize(
             nested=nested,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1517,7 +1517,7 @@ class DefaultApi:
         return response_data.response
 
 
-    def _studyset_references_get_serialize(
+    def _neurostore_studysets_get_serialize(
         self,
         nested,
         _request_auth,
@@ -1566,7 +1566,7 @@ class DefaultApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/studyset-references',
+            resource_path='/neurostore-studysets',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1583,7 +1583,7 @@ class DefaultApi:
 
 
     @validate_call
-    def studyset_references_id_get(
+    def neurostore_studysets_id_get(
         self,
         id: StrictStr,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
@@ -1629,7 +1629,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._studyset_references_id_get_serialize(
+        _param = self._neurostore_studysets_id_get_serialize(
             id=id,
             nested=nested,
             _request_auth=_request_auth,
@@ -1653,7 +1653,7 @@ class DefaultApi:
 
 
     @validate_call
-    def studyset_references_id_get_with_http_info(
+    def neurostore_studysets_id_get_with_http_info(
         self,
         id: StrictStr,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
@@ -1699,7 +1699,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._studyset_references_id_get_serialize(
+        _param = self._neurostore_studysets_id_get_serialize(
             id=id,
             nested=nested,
             _request_auth=_request_auth,
@@ -1723,7 +1723,7 @@ class DefaultApi:
 
 
     @validate_call
-    def studyset_references_id_get_without_preload_content(
+    def neurostore_studysets_id_get_without_preload_content(
         self,
         id: StrictStr,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
@@ -1769,7 +1769,7 @@ class DefaultApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._studyset_references_id_get_serialize(
+        _param = self._neurostore_studysets_id_get_serialize(
             id=id,
             nested=nested,
             _request_auth=_request_auth,
@@ -1788,7 +1788,7 @@ class DefaultApi:
         return response_data.response
 
 
-    def _studyset_references_id_get_serialize(
+    def _neurostore_studysets_id_get_serialize(
         self,
         id,
         nested,
@@ -1840,7 +1840,7 @@ class DefaultApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/studyset-references/{id}',
+            resource_path='/neurostore-studysets/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
