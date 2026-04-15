@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **diagnostic_table** | **str** | a text representation of a tsv that marks the contribution of each study to each particular cluster. | [optional] 
 **cli_args** | **object** | additional parameters that were passed to the commandline tool at runtime.  | [optional] 
 **status** | **str** |  | [optional] 
-**studyset_snapshot** | **object** | JSON payload accepted for snapshot updates via PUT. | [optional] 
-**annotation_snapshot** | **object** | JSON payload accepted for snapshot updates via PUT. | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
 **user** | **str** | Who owns the resource. | [optional] 
 **username** | **str** |  | [optional] [readonly] 
+**cached_studyset_id** | **str** |  | [optional] [readonly] 
+**cached_annotation_id** | **str** |  | [optional] [readonly] 
 
 ## Example
 

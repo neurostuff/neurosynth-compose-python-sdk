@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,12 @@ class ResultInit(BaseModel):
     ResultInit
     """ # noqa: E501
     meta_analysis_id: Optional[StrictStr] = None
-    studyset_snapshot: Optional[Dict[str, Any]] = None
-    annotation_snapshot: Optional[Dict[str, Any]] = None
+    cached_studyset: Optional[Dict[str, Any]] = None
+    cached_annotation: Optional[Dict[str, Any]] = None
+    cached_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached studyset snapshot to link to this result.")
+    cached_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached annotation snapshot to link to this result.")
     cli_version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "studyset_snapshot", "annotation_snapshot", "cli_version"]
+    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cached_studyset", "cached_annotation", "cached_studyset_id", "cached_annotation_id", "cli_version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,8 +87,10 @@ class ResultInit(BaseModel):
 
         _obj = cls.model_validate({
             "meta_analysis_id": obj.get("meta_analysis_id"),
-            "studyset_snapshot": obj.get("studyset_snapshot"),
-            "annotation_snapshot": obj.get("annotation_snapshot"),
+            "cached_studyset": obj.get("cached_studyset"),
+            "cached_annotation": obj.get("cached_annotation"),
+            "cached_studyset_id": obj.get("cached_studyset_id"),
+            "cached_annotation_id": obj.get("cached_annotation_id"),
             "cli_version": obj.get("cli_version")
         })
         return _obj

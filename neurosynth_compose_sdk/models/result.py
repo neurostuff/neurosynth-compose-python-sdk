@@ -35,9 +35,7 @@ class Result(BaseModel):
     diagnostic_table: Optional[StrictStr] = Field(default=None, description="a text representation of a tsv that marks the contribution of each study to each particular cluster.")
     cli_args: Optional[Dict[str, Any]] = Field(default=None, description="additional parameters that were passed to the commandline tool at runtime. ")
     status: Optional[StrictStr] = None
-    studyset_snapshot: Optional[Dict[str, Any]] = Field(default=None, description="JSON payload accepted for snapshot updates via PUT.")
-    annotation_snapshot: Optional[Dict[str, Any]] = Field(default=None, description="JSON payload accepted for snapshot updates via PUT.")
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "studyset_snapshot", "annotation_snapshot"]
+    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,9 +122,7 @@ class Result(BaseModel):
             "methods_description": obj.get("methods_description"),
             "diagnostic_table": obj.get("diagnostic_table"),
             "cli_args": obj.get("cli_args"),
-            "status": obj.get("status"),
-            "studyset_snapshot": obj.get("studyset_snapshot"),
-            "annotation_snapshot": obj.get("annotation_snapshot")
+            "status": obj.get("status")
         })
         return _obj
 

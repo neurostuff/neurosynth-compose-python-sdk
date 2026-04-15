@@ -41,8 +41,6 @@ class MetaAnalysisReturn(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="Long form description of the meta-analysis.")
     public: Optional[StrictBool] = Field(default=None, description="whether the meta-analysis is public or private")
     tags: Optional[MetaAnalysisTags] = None
-    cached_studyset_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
-    cached_annotation_id: Optional[StrictStr] = Field(default=None, description="The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
     results: Optional[MetaAnalysisResults] = None
     provenance: Optional[Dict[str, Any]] = None
     project: Optional[StrictStr] = None
@@ -53,15 +51,13 @@ class MetaAnalysisReturn(BaseModel):
     cognitive_contrast_cogatlas_id: Optional[StrictStr] = None
     cognitive_paradigm_cogatlas: Optional[StrictStr] = None
     cognitive_paradigm_cogatlas_id: Optional[StrictStr] = None
-    cached_studyset: Optional[StrictStr] = None
-    cached_annotation: Optional[StrictStr] = None
     neurostore_url: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "public", "tags", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
+    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "public", "tags", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,14 +95,10 @@ class MetaAnalysisReturn(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "run_key",
             "snapshots",
-            "cached_studyset",
-            "cached_annotation",
             "neurostore_url",
             "updated_at",
             "created_at",
@@ -181,16 +173,6 @@ class MetaAnalysisReturn(BaseModel):
         if self.cognitive_paradigm_cogatlas_id is None and "cognitive_paradigm_cogatlas_id" in self.model_fields_set:
             _dict['cognitive_paradigm_cogatlas_id'] = None
 
-        # set to None if cached_studyset (nullable) is None
-        # and model_fields_set contains the field
-        if self.cached_studyset is None and "cached_studyset" in self.model_fields_set:
-            _dict['cached_studyset'] = None
-
-        # set to None if cached_annotation (nullable) is None
-        # and model_fields_set contains the field
-        if self.cached_annotation is None and "cached_annotation" in self.model_fields_set:
-            _dict['cached_annotation'] = None
-
         # set to None if neurostore_url (nullable) is None
         # and model_fields_set contains the field
         if self.neurostore_url is None and "neurostore_url" in self.model_fields_set:
@@ -230,8 +212,6 @@ class MetaAnalysisReturn(BaseModel):
             "description": obj.get("description"),
             "public": obj.get("public"),
             "tags": MetaAnalysisTags.from_dict(obj["tags"]) if obj.get("tags") is not None else None,
-            "cached_studyset_id": obj.get("cached_studyset_id"),
-            "cached_annotation_id": obj.get("cached_annotation_id"),
             "results": MetaAnalysisResults.from_dict(obj["results"]) if obj.get("results") is not None else None,
             "provenance": obj.get("provenance"),
             "project": obj.get("project"),
@@ -242,8 +222,6 @@ class MetaAnalysisReturn(BaseModel):
             "cognitive_contrast_cogatlas_id": obj.get("cognitive_contrast_cogatlas_id"),
             "cognitive_paradigm_cogatlas": obj.get("cognitive_paradigm_cogatlas"),
             "cognitive_paradigm_cogatlas_id": obj.get("cognitive_paradigm_cogatlas_id"),
-            "cached_studyset": obj.get("cached_studyset"),
-            "cached_annotation": obj.get("cached_annotation"),
             "neurostore_url": obj.get("neurostore_url"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),

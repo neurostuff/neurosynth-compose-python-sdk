@@ -36,14 +36,14 @@ class ResultReturn(BaseModel):
     diagnostic_table: Optional[StrictStr] = Field(default=None, description="a text representation of a tsv that marks the contribution of each study to each particular cluster.")
     cli_args: Optional[Dict[str, Any]] = Field(default=None, description="additional parameters that were passed to the commandline tool at runtime. ")
     status: Optional[StrictStr] = None
-    studyset_snapshot: Optional[Dict[str, Any]] = Field(default=None, description="JSON payload accepted for snapshot updates via PUT.")
-    annotation_snapshot: Optional[Dict[str, Any]] = Field(default=None, description="JSON payload accepted for snapshot updates via PUT.")
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "studyset_snapshot", "annotation_snapshot", "id", "updated_at", "created_at", "user", "username"]
+    cached_studyset_id: Optional[StrictStr] = None
+    cached_annotation_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "id", "updated_at", "created_at", "user", "username", "cached_studyset_id", "cached_annotation_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,11 +78,15 @@ class ResultReturn(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "updated_at",
             "created_at",
             "username",
+            "cached_studyset_id",
+            "cached_annotation_id",
         ])
 
         _dict = self.model_dump(
@@ -133,6 +137,16 @@ class ResultReturn(BaseModel):
         if self.username is None and "username" in self.model_fields_set:
             _dict['username'] = None
 
+        # set to None if cached_studyset_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.cached_studyset_id is None and "cached_studyset_id" in self.model_fields_set:
+            _dict['cached_studyset_id'] = None
+
+        # set to None if cached_annotation_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.cached_annotation_id is None and "cached_annotation_id" in self.model_fields_set:
+            _dict['cached_annotation_id'] = None
+
         return _dict
 
     @classmethod
@@ -152,13 +166,13 @@ class ResultReturn(BaseModel):
             "diagnostic_table": obj.get("diagnostic_table"),
             "cli_args": obj.get("cli_args"),
             "status": obj.get("status"),
-            "studyset_snapshot": obj.get("studyset_snapshot"),
-            "annotation_snapshot": obj.get("annotation_snapshot"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),
             "user": obj.get("user"),
-            "username": obj.get("username")
+            "username": obj.get("username"),
+            "cached_studyset_id": obj.get("cached_studyset_id"),
+            "cached_annotation_id": obj.get("cached_annotation_id")
         })
         return _obj
 
