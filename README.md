@@ -99,12 +99,13 @@ Class | Method | HTTP request | Description
 *AnnotationsApi* | [**snapshot_annotations_id_put**](docs/AnnotationsApi.md#snapshot_annotations_id_put) | **PUT** /snapshot-annotations/{id} | Update an Annotation
 *AnnotationsApi* | [**snapshot_annotations_post**](docs/AnnotationsApi.md#snapshot_annotations_post) | **POST** /snapshot-annotations | Create a new Annotation
 *DefaultApi* | [**meta_analyses_id_delete**](docs/DefaultApi.md#meta_analyses_id_delete) | **DELETE** /meta-analyses/{id} | 
+*DefaultApi* | [**neurostore_annotations_id_get**](docs/DefaultApi.md#neurostore_annotations_id_get) | **GET** /neurostore-annotations/{id} | Get a Neurostore annotation reference by Neurostore ID
 *DefaultApi* | [**neurostore_studies_get**](docs/DefaultApi.md#neurostore_studies_get) | **GET** /neurostore-studies | Your GET endpoint
 *DefaultApi* | [**neurostore_studies_id_get**](docs/DefaultApi.md#neurostore_studies_id_get) | **GET** /neurostore-studies/{id} | Your GET endpoint
 *DefaultApi* | [**neurostore_studies_id_put**](docs/DefaultApi.md#neurostore_studies_id_put) | **PUT** /neurostore-studies/{id} | 
 *DefaultApi* | [**neurostore_studies_post**](docs/DefaultApi.md#neurostore_studies_post) | **POST** /neurostore-studies | 
-*DefaultApi* | [**neurostore_studysets_get**](docs/DefaultApi.md#neurostore_studysets_get) | **GET** /neurostore-studysets | Your GET endpoint
-*DefaultApi* | [**neurostore_studysets_id_get**](docs/DefaultApi.md#neurostore_studysets_id_get) | **GET** /neurostore-studysets/{id} | Your GET endpoint
+*DefaultApi* | [**neurostore_studysets_get**](docs/DefaultApi.md#neurostore_studysets_get) | **GET** /neurostore-studysets | List Neurostore studyset references
+*DefaultApi* | [**neurostore_studysets_id_get**](docs/DefaultApi.md#neurostore_studysets_id_get) | **GET** /neurostore-studysets/{id} | Get a Neurostore studyset reference by Neurostore ID
 *MetaAnalysesApi* | [**meta_analyses_get**](docs/MetaAnalysesApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 *MetaAnalysesApi* | [**meta_analyses_id_get**](docs/MetaAnalysesApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 *MetaAnalysesApi* | [**meta_analyses_id_put**](docs/MetaAnalysesApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
@@ -151,6 +152,7 @@ Class | Method | HTTP request | Description
  - [Annotation](docs/Annotation.md)
  - [AnnotationList](docs/AnnotationList.md)
  - [AnnotationPostBody](docs/AnnotationPostBody.md)
+ - [AnnotationReferenceReturn](docs/AnnotationReferenceReturn.md)
  - [AnnotationReturn](docs/AnnotationReturn.md)
  - [AnnotationUpdate](docs/AnnotationUpdate.md)
  - [Corrector](docs/Corrector.md)
@@ -203,8 +205,9 @@ Class | Method | HTTP request | Description
  - [StudysetReference](docs/StudysetReference.md)
  - [StudysetReferenceList](docs/StudysetReferenceList.md)
  - [StudysetReferenceReturn](docs/StudysetReferenceReturn.md)
- - [StudysetReferenceSnapshotsInner](docs/StudysetReferenceSnapshotsInner.md)
+ - [StudysetReferenceStudysetsInner](docs/StudysetReferenceStudysetsInner.md)
  - [StudysetReturn](docs/StudysetReturn.md)
+ - [StudysetSnapshotSummary](docs/StudysetSnapshotSummary.md)
  - [Tag](docs/Tag.md)
  - [TagList](docs/TagList.md)
  - [TagReturn](docs/TagReturn.md)

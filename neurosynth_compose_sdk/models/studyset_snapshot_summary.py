@@ -18,18 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
-class StudysetReference(BaseModel):
+class StudysetSnapshotSummary(BaseModel):
     """
-    StudysetReference
+    StudysetSnapshotSummary
     """ # noqa: E501
-    studysets: Optional[List[StudysetReferenceStudysetsInner]] = None
-    __properties: ClassVar[List[str]] = ["studysets"]
+    id: Optional[StrictStr] = Field(default=None, description="Compose snapshot studyset identifier.")
+    md5: Optional[StrictStr] = Field(default=None, description="Canonical md5 hash of the snapshot payload.")
+    __properties: ClassVar[List[str]] = ["id", "md5"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +49,7 @@ class StudysetReference(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of StudysetReference from a JSON string"""
+        """Create an instance of StudysetSnapshotSummary from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,18 +70,16 @@ class StudysetReference(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in studysets (list)
-        _items = []
-        if self.studysets:
-            for _item_studysets in self.studysets:
-                if _item_studysets:
-                    _items.append(_item_studysets.to_dict())
-            _dict['studysets'] = _items
+        # set to None if md5 (nullable) is None
+        # and model_fields_set contains the field
+        if self.md5 is None and "md5" in self.model_fields_set:
+            _dict['md5'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of StudysetReference from a dict"""
+        """Create an instance of StudysetSnapshotSummary from a dict"""
         if obj is None:
             return None
 
@@ -89,7 +87,8 @@ class StudysetReference(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "studysets": [StudysetReferenceStudysetsInner.from_dict(_item) for _item in obj["studysets"]] if obj.get("studysets") is not None else None
+            "id": obj.get("id"),
+            "md5": obj.get("md5")
         })
         return _obj
 

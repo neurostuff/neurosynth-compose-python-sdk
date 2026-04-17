@@ -21,21 +21,19 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
-class StudysetReferenceReturn(BaseModel):
+class AnnotationReferenceReturn(BaseModel):
     """
-    StudysetReferenceReturn
+    AnnotationReferenceReturn
     """ # noqa: E501
-    studysets: Optional[List[StudysetReferenceStudysetsInner]] = None
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["studysets", "id", "updated_at", "created_at", "user", "username"]
+    __properties: ClassVar[List[str]] = ["id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +53,7 @@ class StudysetReferenceReturn(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of StudysetReferenceReturn from a JSON string"""
+        """Create an instance of AnnotationReferenceReturn from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -82,13 +80,6 @@ class StudysetReferenceReturn(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in studysets (list)
-        _items = []
-        if self.studysets:
-            for _item_studysets in self.studysets:
-                if _item_studysets:
-                    _items.append(_item_studysets.to_dict())
-            _dict['studysets'] = _items
         # set to None if updated_at (nullable) is None
         # and model_fields_set contains the field
         if self.updated_at is None and "updated_at" in self.model_fields_set:
@@ -108,7 +99,7 @@ class StudysetReferenceReturn(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of StudysetReferenceReturn from a dict"""
+        """Create an instance of AnnotationReferenceReturn from a dict"""
         if obj is None:
             return None
 
@@ -116,7 +107,6 @@ class StudysetReferenceReturn(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "studysets": [StudysetReferenceStudysetsInner.from_dict(_item) for _item in obj["studysets"]] if obj.get("studysets") is not None else None,
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

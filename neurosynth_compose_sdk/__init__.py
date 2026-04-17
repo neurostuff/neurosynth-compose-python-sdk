@@ -40,6 +40,7 @@ __all__ = [
     "Annotation",
     "AnnotationList",
     "AnnotationPostBody",
+    "AnnotationReferenceReturn",
     "AnnotationReturn",
     "AnnotationUpdate",
     "Corrector",
@@ -92,8 +93,9 @@ __all__ = [
     "StudysetReference",
     "StudysetReferenceList",
     "StudysetReferenceReturn",
-    "StudysetReferenceSnapshotsInner",
+    "StudysetReferenceStudysetsInner",
     "StudysetReturn",
+    "StudysetSnapshotSummary",
     "Tag",
     "TagList",
     "TagReturn",
@@ -129,6 +131,7 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.annotation import Annotation as Annotation
     from neurosynth_compose_sdk.models.annotation_list import AnnotationList as AnnotationList
     from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody as AnnotationPostBody
+    from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn as AnnotationReferenceReturn
     from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn as AnnotationReturn
     from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate as AnnotationUpdate
     from neurosynth_compose_sdk.models.corrector import Corrector as Corrector
@@ -181,8 +184,9 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.studyset_reference import StudysetReference as StudysetReference
     from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList as StudysetReferenceList
     from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn as StudysetReferenceReturn
-    from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner as StudysetReferenceSnapshotsInner
+    from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner as StudysetReferenceStudysetsInner
     from neurosynth_compose_sdk.models.studyset_return import StudysetReturn as StudysetReturn
+    from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary as StudysetSnapshotSummary
     from neurosynth_compose_sdk.models.tag import Tag as Tag
     from neurosynth_compose_sdk.models.tag_list import TagList as TagList
     from neurosynth_compose_sdk.models.tag_return import TagReturn as TagReturn
@@ -224,6 +228,7 @@ from neurosynth_compose_sdk.exceptions import ApiException as ApiException
 from neurosynth_compose_sdk.models.annotation import Annotation as Annotation
 from neurosynth_compose_sdk.models.annotation_list import AnnotationList as AnnotationList
 from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody as AnnotationPostBody
+from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn as AnnotationReferenceReturn
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn as AnnotationReturn
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate as AnnotationUpdate
 from neurosynth_compose_sdk.models.corrector import Corrector as Corrector
@@ -276,8 +281,9 @@ from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody as
 from neurosynth_compose_sdk.models.studyset_reference import StudysetReference as StudysetReference
 from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList as StudysetReferenceList
 from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn as StudysetReferenceReturn
-from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner as StudysetReferenceSnapshotsInner
+from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner as StudysetReferenceStudysetsInner
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn as StudysetReturn
+from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary as StudysetSnapshotSummary
 from neurosynth_compose_sdk.models.tag import Tag as Tag
 from neurosynth_compose_sdk.models.tag_list import TagList as TagList
 from neurosynth_compose_sdk.models.tag_return import TagReturn as TagReturn

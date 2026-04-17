@@ -6,6 +6,7 @@ README.md
 docs/Annotation.md
 docs/AnnotationList.md
 docs/AnnotationPostBody.md
+docs/AnnotationReferenceReturn.md
 docs/AnnotationReturn.md
 docs/AnnotationUpdate.md
 docs/AnnotationsApi.md
@@ -64,8 +65,9 @@ docs/StudysetPostBody.md
 docs/StudysetReference.md
 docs/StudysetReferenceList.md
 docs/StudysetReferenceReturn.md
-docs/StudysetReferenceSnapshotsInner.md
+docs/StudysetReferenceStudysetsInner.md
 docs/StudysetReturn.md
+docs/StudysetSnapshotSummary.md
 docs/StudysetsApi.md
 docs/Tag.md
 docs/TagList.md
@@ -95,6 +97,7 @@ neurosynth_compose_sdk/models/__init__.py
 neurosynth_compose_sdk/models/annotation.py
 neurosynth_compose_sdk/models/annotation_list.py
 neurosynth_compose_sdk/models/annotation_post_body.py
+neurosynth_compose_sdk/models/annotation_reference_return.py
 neurosynth_compose_sdk/models/annotation_return.py
 neurosynth_compose_sdk/models/annotation_update.py
 neurosynth_compose_sdk/models/corrector.py
@@ -147,8 +150,9 @@ neurosynth_compose_sdk/models/studyset_post_body.py
 neurosynth_compose_sdk/models/studyset_reference.py
 neurosynth_compose_sdk/models/studyset_reference_list.py
 neurosynth_compose_sdk/models/studyset_reference_return.py
-neurosynth_compose_sdk/models/studyset_reference_snapshots_inner.py
+neurosynth_compose_sdk/models/studyset_reference_studysets_inner.py
 neurosynth_compose_sdk/models/studyset_return.py
+neurosynth_compose_sdk/models/studyset_snapshot_summary.py
 neurosynth_compose_sdk/models/tag.py
 neurosynth_compose_sdk/models/tag_list.py
 neurosynth_compose_sdk/models/tag_return.py
@@ -163,6 +167,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_meta_analysis_neurostore_annotation.py
-test/test_meta_analysis_neurostore_studyset.py
+test/test_annotation_reference_return.py
+test/test_studyset_reference_studysets_inner.py
+test/test_studyset_snapshot_summary.py
 tox.ini

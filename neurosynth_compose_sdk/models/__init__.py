@@ -18,6 +18,7 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.annotation import Annotation
     from neurosynth_compose_sdk.models.annotation_list import AnnotationList
     from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
+    from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
     from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
     from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
     from neurosynth_compose_sdk.models.corrector import Corrector
@@ -70,8 +71,9 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
     from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
     from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
-    from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
+    from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
     from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+    from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
     from neurosynth_compose_sdk.models.tag import Tag
     from neurosynth_compose_sdk.models.tag_list import TagList
     from neurosynth_compose_sdk.models.tag_return import TagReturn
@@ -89,6 +91,7 @@ else:
 from neurosynth_compose_sdk.models.annotation import Annotation
 from neurosynth_compose_sdk.models.annotation_list import AnnotationList
 from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
+from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
 from neurosynth_compose_sdk.models.corrector import Corrector
@@ -141,8 +144,9 @@ from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
 from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
 from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
-from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
+from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from neurosynth_compose_sdk.models.tag import Tag
 from neurosynth_compose_sdk.models.tag_list import TagList
 from neurosynth_compose_sdk.models.tag_return import TagReturn
