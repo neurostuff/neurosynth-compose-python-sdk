@@ -21,6 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,12 +29,13 @@ class AnnotationReferenceReturn(BaseModel):
     """
     AnnotationReferenceReturn
     """ # noqa: E501
+    annotations: Optional[List[AnnotationSnapshotSummary]] = None
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "updated_at", "created_at", "user", "username"]
+    __properties: ClassVar[List[str]] = ["annotations", "id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,6 +82,13 @@ class AnnotationReferenceReturn(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
+        _items = []
+        if self.annotations:
+            for _item_annotations in self.annotations:
+                if _item_annotations:
+                    _items.append(_item_annotations.to_dict())
+            _dict['annotations'] = _items
         # set to None if updated_at (nullable) is None
         # and model_fields_set contains the field
         if self.updated_at is None and "updated_at" in self.model_fields_set:
@@ -107,6 +116,7 @@ class AnnotationReferenceReturn(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "annotations": [AnnotationSnapshotSummary.from_dict(_item) for _item in obj["annotations"]] if obj.get("annotations") is not None else None,
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),

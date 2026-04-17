@@ -18,8 +18,10 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.annotation import Annotation
     from neurosynth_compose_sdk.models.annotation_list import AnnotationList
     from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
+    from neurosynth_compose_sdk.models.annotation_reference import AnnotationReference
     from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
     from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
+    from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
     from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
     from neurosynth_compose_sdk.models.corrector import Corrector
     from neurosynth_compose_sdk.models.estimator import Estimator
@@ -71,7 +73,6 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
     from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
     from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
-    from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
     from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
     from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
     from neurosynth_compose_sdk.models.tag import Tag
@@ -91,8 +92,10 @@ else:
 from neurosynth_compose_sdk.models.annotation import Annotation
 from neurosynth_compose_sdk.models.annotation_list import AnnotationList
 from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
+from neurosynth_compose_sdk.models.annotation_reference import AnnotationReference
 from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
 from neurosynth_compose_sdk.models.corrector import Corrector
 from neurosynth_compose_sdk.models.estimator import Estimator
@@ -144,7 +147,6 @@ from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
 from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
 from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
-from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
 from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from neurosynth_compose_sdk.models.tag import Tag

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**studysets** | [**List[StudysetReferenceStudysetsInner]**](StudysetReferenceStudysetsInner.md) |  | [optional] 
+**studysets** | [**List[StudysetSnapshotSummary]**](StudysetSnapshotSummary.md) |  | [optional] 
 
 ## Example
 

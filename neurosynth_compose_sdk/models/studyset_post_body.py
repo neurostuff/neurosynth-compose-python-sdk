@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,9 +30,10 @@ class StudysetPostBody(BaseModel):
     """ # noqa: E501
     neurostore_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurostore.")
     snapshot: Optional[Dict[str, Any]] = Field(default=None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
+    annotations: Optional[List[AnnotationSnapshotSummary]] = Field(default=None, description="Compact summaries of cached annotations paired with this studyset snapshot.")
     neurostore_url: Optional[StrictStr] = None
     version: Optional[StrictStr] = Field(default=None, description="A string representing a labeled version of this particular studyset.")
-    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "neurostore_url", "version"]
+    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "annotations", "neurostore_url", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,6 +76,13 @@ class StudysetPostBody(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
+        _items = []
+        if self.annotations:
+            for _item_annotations in self.annotations:
+                if _item_annotations:
+                    _items.append(_item_annotations.to_dict())
+            _dict['annotations'] = _items
         # set to None if snapshot (nullable) is None
         # and model_fields_set contains the field
         if self.snapshot is None and "snapshot" in self.model_fields_set:
@@ -98,6 +107,7 @@ class StudysetPostBody(BaseModel):
         _obj = cls.model_validate({
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
+            "annotations": [AnnotationSnapshotSummary.from_dict(_item) for _item in obj["annotations"]] if obj.get("annotations") is not None else None,
             "neurostore_url": obj.get("neurostore_url"),
             "version": obj.get("version")
         })

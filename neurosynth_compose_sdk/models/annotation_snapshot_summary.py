@@ -20,20 +20,16 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Studyset(BaseModel):
+class AnnotationSnapshotSummary(BaseModel):
     """
-    Studyset
+    AnnotationSnapshotSummary
     """ # noqa: E501
-    neurostore_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurostore.")
-    snapshot: Optional[Dict[str, Any]] = Field(default=None, description="The snapshot of the studyset pending a successful run of the meta-analysis.")
-    annotations: Optional[List[AnnotationSnapshotSummary]] = Field(default=None, description="Compact summaries of cached annotations paired with this studyset snapshot.")
-    neurostore_url: Optional[StrictStr] = None
-    version: Optional[StrictStr] = Field(default=None, description="A string representing a labeled version of this particular studyset.")
-    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "annotations", "neurostore_url", "version"]
+    id: Optional[StrictStr] = Field(default=None, description="Compose snapshot annotation identifier.")
+    md5: Optional[StrictStr] = Field(default=None, description="Canonical md5 hash of the snapshot payload.")
+    __properties: ClassVar[List[str]] = ["id", "md5"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +49,7 @@ class Studyset(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Studyset from a JSON string"""
+        """Create an instance of AnnotationSnapshotSummary from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -65,10 +61,8 @@ class Studyset(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
-            "neurostore_url",
         ])
 
         _dict = self.model_dump(
@@ -76,28 +70,16 @@ class Studyset(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
-        _items = []
-        if self.annotations:
-            for _item_annotations in self.annotations:
-                if _item_annotations:
-                    _items.append(_item_annotations.to_dict())
-            _dict['annotations'] = _items
-        # set to None if snapshot (nullable) is None
+        # set to None if md5 (nullable) is None
         # and model_fields_set contains the field
-        if self.snapshot is None and "snapshot" in self.model_fields_set:
-            _dict['snapshot'] = None
-
-        # set to None if version (nullable) is None
-        # and model_fields_set contains the field
-        if self.version is None and "version" in self.model_fields_set:
-            _dict['version'] = None
+        if self.md5 is None and "md5" in self.model_fields_set:
+            _dict['md5'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Studyset from a dict"""
+        """Create an instance of AnnotationSnapshotSummary from a dict"""
         if obj is None:
             return None
 
@@ -105,11 +87,8 @@ class Studyset(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "neurostore_id": obj.get("neurostore_id"),
-            "snapshot": obj.get("snapshot"),
-            "annotations": [AnnotationSnapshotSummary.from_dict(_item) for _item in obj["annotations"]] if obj.get("annotations") is not None else None,
-            "neurostore_url": obj.get("neurostore_url"),
-            "version": obj.get("version")
+            "id": obj.get("id"),
+            "md5": obj.get("md5")
         })
         return _obj
 

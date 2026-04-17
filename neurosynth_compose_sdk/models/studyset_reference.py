@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
+from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class StudysetReference(BaseModel):
     """
     StudysetReference
     """ # noqa: E501
-    studysets: Optional[List[StudysetReferenceStudysetsInner]] = None
+    studysets: Optional[List[StudysetSnapshotSummary]] = None
     __properties: ClassVar[List[str]] = ["studysets"]
 
     model_config = ConfigDict(
@@ -89,7 +89,7 @@ class StudysetReference(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "studysets": [StudysetReferenceStudysetsInner.from_dict(_item) for _item in obj["studysets"]] if obj.get("studysets") is not None else None
+            "studysets": [StudysetSnapshotSummary.from_dict(_item) for _item in obj["studysets"]] if obj.get("studysets") is not None else None
         })
         return _obj
 

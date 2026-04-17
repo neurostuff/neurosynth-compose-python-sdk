@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **neurostore_id** | **str** | The id of the studyset on neurostore. | [optional] 
 **snapshot** | **object** | The snapshot of the studyset pending a successful run of the meta-analysis. | [optional] 
+**annotations** | [**List[AnnotationSnapshotSummary]**](AnnotationSnapshotSummary.md) | Compact summaries of cached annotations paired with this studyset snapshot. | [optional] 
 **neurostore_url** | **str** |  | [optional] [readonly] 
 **version** | **str** | A string representing a labeled version of this particular studyset. | [optional] 
 

@@ -314,7 +314,7 @@ class DefaultApi:
     ) -> AnnotationReferenceReturn:
         """Get a Neurostore annotation reference by Neurostore ID
 
-        Resolve a Neurostore annotation reference using the same ID exposed by the Neurostore API.
+        Resolve a Neurostore annotation reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
 
         :param id: (required)
         :type id: str
@@ -381,7 +381,7 @@ class DefaultApi:
     ) -> ApiResponse[AnnotationReferenceReturn]:
         """Get a Neurostore annotation reference by Neurostore ID
 
-        Resolve a Neurostore annotation reference using the same ID exposed by the Neurostore API.
+        Resolve a Neurostore annotation reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
 
         :param id: (required)
         :type id: str
@@ -448,7 +448,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Get a Neurostore annotation reference by Neurostore ID
 
-        Resolve a Neurostore annotation reference using the same ID exposed by the Neurostore API.
+        Resolve a Neurostore annotation reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
 
         :param id: (required)
         :type id: str
@@ -1600,7 +1600,7 @@ class DefaultApi:
     ) -> StudysetReferenceList:
         """List Neurostore studyset references
 
-        List reference rows keyed by the actual Neurostore studyset ID.
+        List reference rows keyed by the actual Neurostore studyset ID, including compact snapshot summaries.
 
         :param nested: show nested component instead of id
         :type nested: bool
@@ -1667,7 +1667,7 @@ class DefaultApi:
     ) -> ApiResponse[StudysetReferenceList]:
         """List Neurostore studyset references
 
-        List reference rows keyed by the actual Neurostore studyset ID.
+        List reference rows keyed by the actual Neurostore studyset ID, including compact snapshot summaries.
 
         :param nested: show nested component instead of id
         :type nested: bool
@@ -1734,7 +1734,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """List Neurostore studyset references
 
-        List reference rows keyed by the actual Neurostore studyset ID.
+        List reference rows keyed by the actual Neurostore studyset ID, including compact snapshot summaries.
 
         :param nested: show nested component instead of id
         :type nested: bool
@@ -1863,7 +1863,7 @@ class DefaultApi:
     ) -> StudysetReferenceReturn:
         """Get a Neurostore studyset reference by Neurostore ID
 
-        Resolve a Neurostore studyset reference using the same ID exposed by the Neurostore API. By default, this returns each linked snapshot with its compose snapshot ID and md5.
+        Resolve a Neurostore studyset reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
 
         :param id: (required)
         :type id: str
@@ -1934,7 +1934,7 @@ class DefaultApi:
     ) -> ApiResponse[StudysetReferenceReturn]:
         """Get a Neurostore studyset reference by Neurostore ID
 
-        Resolve a Neurostore studyset reference using the same ID exposed by the Neurostore API. By default, this returns each linked snapshot with its compose snapshot ID and md5.
+        Resolve a Neurostore studyset reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
 
         :param id: (required)
         :type id: str
@@ -2005,7 +2005,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Get a Neurostore studyset reference by Neurostore ID
 
-        Resolve a Neurostore studyset reference using the same ID exposed by the Neurostore API. By default, this returns each linked snapshot with its compose snapshot ID and md5.
+        Resolve a Neurostore studyset reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
 
         :param id: (required)
         :type id: str

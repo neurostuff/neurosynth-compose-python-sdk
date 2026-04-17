@@ -21,7 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.studyset_reference_studysets_inner import StudysetReferenceStudysetsInner
+from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class StudysetReferenceReturn(BaseModel):
     """
     StudysetReferenceReturn
     """ # noqa: E501
-    studysets: Optional[List[StudysetReferenceStudysetsInner]] = None
+    studysets: Optional[List[StudysetSnapshotSummary]] = None
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
@@ -116,7 +116,7 @@ class StudysetReferenceReturn(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "studysets": [StudysetReferenceStudysetsInner.from_dict(_item) for _item in obj["studysets"]] if obj.get("studysets") is not None else None,
+            "studysets": [StudysetSnapshotSummary.from_dict(_item) for _item in obj["studysets"]] if obj.get("studysets") is not None else None,
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),
