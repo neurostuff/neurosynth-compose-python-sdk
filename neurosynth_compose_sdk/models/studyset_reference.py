@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
+from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +28,8 @@ class StudysetReference(BaseModel):
     """
     StudysetReference
     """ # noqa: E501
-    snapshots: Optional[List[StudysetReferenceSnapshotsInner]] = None
-    __properties: ClassVar[List[str]] = ["snapshots"]
+    studysets: Optional[List[StudysetSnapshotSummary]] = None
+    __properties: ClassVar[List[str]] = ["studysets"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -70,13 +70,13 @@ class StudysetReference(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in snapshots (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in studysets (list)
         _items = []
-        if self.snapshots:
-            for _item_snapshots in self.snapshots:
-                if _item_snapshots:
-                    _items.append(_item_snapshots.to_dict())
-            _dict['snapshots'] = _items
+        if self.studysets:
+            for _item_studysets in self.studysets:
+                if _item_studysets:
+                    _items.append(_item_studysets.to_dict())
+            _dict['studysets'] = _items
         return _dict
 
     @classmethod
@@ -89,7 +89,7 @@ class StudysetReference(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "snapshots": [StudysetReferenceSnapshotsInner.from_dict(_item) for _item in obj["snapshots"]] if obj.get("snapshots") is not None else None
+            "studysets": [StudysetSnapshotSummary.from_dict(_item) for _item in obj["studysets"]] if obj.get("studysets") is not None else None
         })
         return _obj
 

@@ -18,24 +18,27 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.annotation import Annotation
     from neurosynth_compose_sdk.models.annotation_list import AnnotationList
     from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
+    from neurosynth_compose_sdk.models.annotation_reference import AnnotationReference
+    from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
     from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
+    from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
     from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
     from neurosynth_compose_sdk.models.corrector import Corrector
     from neurosynth_compose_sdk.models.estimator import Estimator
     from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response
     from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
-    from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation
     from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList
     from neurosynth_compose_sdk.models.meta_analysis_job_list_metadata import MetaAnalysisJobListMetadata
     from neurosynth_compose_sdk.models.meta_analysis_job_log import MetaAnalysisJobLog
     from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest
     from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
     from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
+    from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation
+    from neurosynth_compose_sdk.models.meta_analysis_neurostore_studyset import MetaAnalysisNeurostoreStudyset
     from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
     from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
     from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
     from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
-    from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
     from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
     from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
     from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
@@ -70,8 +73,8 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
     from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
     from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
-    from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
     from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+    from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
     from neurosynth_compose_sdk.models.tag import Tag
     from neurosynth_compose_sdk.models.tag_list import TagList
     from neurosynth_compose_sdk.models.tag_return import TagReturn
@@ -89,24 +92,27 @@ else:
 from neurosynth_compose_sdk.models.annotation import Annotation
 from neurosynth_compose_sdk.models.annotation_list import AnnotationList
 from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
+from neurosynth_compose_sdk.models.annotation_reference import AnnotationReference
+from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
 from neurosynth_compose_sdk.models.corrector import Corrector
 from neurosynth_compose_sdk.models.estimator import Estimator
 from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response
 from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
-from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation
 from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList
 from neurosynth_compose_sdk.models.meta_analysis_job_list_metadata import MetaAnalysisJobListMetadata
 from neurosynth_compose_sdk.models.meta_analysis_job_log import MetaAnalysisJobLog
 from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest
 from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
 from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_studyset import MetaAnalysisNeurostoreStudyset
 from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
 from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
 from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
-from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
 from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
 from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
@@ -141,8 +147,8 @@ from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
 from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
 from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
 from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
-from neurosynth_compose_sdk.models.studyset_reference_snapshots_inner import StudysetReferenceSnapshotsInner
 from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from neurosynth_compose_sdk.models.tag import Tag
 from neurosynth_compose_sdk.models.tag_list import TagList
 from neurosynth_compose_sdk.models.tag_return import TagReturn

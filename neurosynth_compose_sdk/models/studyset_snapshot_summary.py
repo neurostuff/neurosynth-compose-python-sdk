@@ -23,17 +23,13 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ResultInit(BaseModel):
+class StudysetSnapshotSummary(BaseModel):
     """
-    ResultInit
+    StudysetSnapshotSummary
     """ # noqa: E501
-    meta_analysis_id: Optional[StrictStr] = None
-    snapshot_studyset: Optional[Dict[str, Any]] = None
-    snapshot_annotation: Optional[Dict[str, Any]] = None
-    snapshot_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached studyset snapshot to link to this result.")
-    snapshot_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached annotation snapshot to link to this result.")
-    cli_version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "snapshot_studyset", "snapshot_annotation", "snapshot_studyset_id", "snapshot_annotation_id", "cli_version"]
+    id: Optional[StrictStr] = Field(default=None, description="Compose snapshot studyset identifier.")
+    md5: Optional[StrictStr] = Field(default=None, description="Canonical md5 hash of the snapshot payload.")
+    __properties: ClassVar[List[str]] = ["id", "md5"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +49,7 @@ class ResultInit(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ResultInit from a JSON string"""
+        """Create an instance of StudysetSnapshotSummary from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,11 +70,16 @@ class ResultInit(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if md5 (nullable) is None
+        # and model_fields_set contains the field
+        if self.md5 is None and "md5" in self.model_fields_set:
+            _dict['md5'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ResultInit from a dict"""
+        """Create an instance of StudysetSnapshotSummary from a dict"""
         if obj is None:
             return None
 
@@ -86,12 +87,8 @@ class ResultInit(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "meta_analysis_id": obj.get("meta_analysis_id"),
-            "snapshot_studyset": obj.get("snapshot_studyset"),
-            "snapshot_annotation": obj.get("snapshot_annotation"),
-            "snapshot_studyset_id": obj.get("snapshot_studyset_id"),
-            "snapshot_annotation_id": obj.get("snapshot_annotation_id"),
-            "cli_version": obj.get("cli_version")
+            "id": obj.get("id"),
+            "md5": obj.get("md5")
         })
         return _obj
 

@@ -1,11 +1,11 @@
-# StudysetReferenceReturn
+# AnnotationReferenceReturn
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**studysets** | [**List[StudysetSnapshotSummary]**](StudysetSnapshotSummary.md) |  | [optional] 
+**annotations** | [**List[AnnotationSnapshotSummary]**](AnnotationSnapshotSummary.md) |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
@@ -15,19 +15,19 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
+from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of StudysetReferenceReturn from a JSON string
-studyset_reference_return_instance = StudysetReferenceReturn.from_json(json)
+# create an instance of AnnotationReferenceReturn from a JSON string
+annotation_reference_return_instance = AnnotationReferenceReturn.from_json(json)
 # print the JSON string representation of the object
-print(StudysetReferenceReturn.to_json())
+print(AnnotationReferenceReturn.to_json())
 
 # convert the object into a dict
-studyset_reference_return_dict = studyset_reference_return_instance.to_dict()
-# create an instance of StudysetReferenceReturn from a dict
-studyset_reference_return_from_dict = StudysetReferenceReturn.from_dict(studyset_reference_return_dict)
+annotation_reference_return_dict = annotation_reference_return_instance.to_dict()
+# create an instance of AnnotationReferenceReturn from a dict
+annotation_reference_return_from_dict = AnnotationReferenceReturn.from_dict(annotation_reference_return_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

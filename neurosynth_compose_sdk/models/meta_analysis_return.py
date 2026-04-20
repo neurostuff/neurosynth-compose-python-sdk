@@ -21,10 +21,10 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_studyset import MetaAnalysisNeurostoreStudyset
 from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
-from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
 from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
 from typing import Optional, Set
@@ -35,8 +35,8 @@ class MetaAnalysisReturn(BaseModel):
     MetaAnalysisReturn
     """ # noqa: E501
     specification: Optional[MetaAnalysisSpecification] = None
-    studyset: Optional[MetaAnalysisStudyset] = None
-    annotation: Optional[MetaAnalysisAnnotation] = None
+    neurostore_studyset: Optional[MetaAnalysisNeurostoreStudyset] = None
+    neurostore_annotation: Optional[MetaAnalysisNeurostoreAnnotation] = None
     name: Optional[StrictStr] = Field(default=None, description="Human-readable name of the meta-analysis.")
     description: Optional[StrictStr] = Field(default=None, description="Long form description of the meta-analysis.")
     public: Optional[StrictBool] = Field(default=None, description="whether the meta-analysis is public or private")
@@ -57,7 +57,7 @@ class MetaAnalysisReturn(BaseModel):
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "public", "tags", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
+    __properties: ClassVar[List[str]] = ["specification", "neurostore_studyset", "neurostore_annotation", "name", "description", "public", "tags", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,12 +113,12 @@ class MetaAnalysisReturn(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of specification
         if self.specification:
             _dict['specification'] = self.specification.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of studyset
-        if self.studyset:
-            _dict['studyset'] = self.studyset.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of annotation
-        if self.annotation:
-            _dict['annotation'] = self.annotation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of neurostore_studyset
+        if self.neurostore_studyset:
+            _dict['neurostore_studyset'] = self.neurostore_studyset.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of neurostore_annotation
+        if self.neurostore_annotation:
+            _dict['neurostore_annotation'] = self.neurostore_annotation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of tags
         if self.tags:
             _dict['tags'] = self.tags.to_dict()
@@ -206,8 +206,8 @@ class MetaAnalysisReturn(BaseModel):
 
         _obj = cls.model_validate({
             "specification": MetaAnalysisSpecification.from_dict(obj["specification"]) if obj.get("specification") is not None else None,
-            "studyset": MetaAnalysisStudyset.from_dict(obj["studyset"]) if obj.get("studyset") is not None else None,
-            "annotation": MetaAnalysisAnnotation.from_dict(obj["annotation"]) if obj.get("annotation") is not None else None,
+            "neurostore_studyset": MetaAnalysisNeurostoreStudyset.from_dict(obj["neurostore_studyset"]) if obj.get("neurostore_studyset") is not None else None,
+            "neurostore_annotation": MetaAnalysisNeurostoreAnnotation.from_dict(obj["neurostore_annotation"]) if obj.get("neurostore_annotation") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description"),
             "public": obj.get("public"),

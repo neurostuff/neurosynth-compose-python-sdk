@@ -7,8 +7,8 @@ The combination of the specification determining what meta-analysis to run (requ
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **specification** | [**MetaAnalysisSpecification**](MetaAnalysisSpecification.md) |  | [optional] 
-**studyset** | [**MetaAnalysisStudyset**](MetaAnalysisStudyset.md) |  | [optional] 
-**annotation** | [**MetaAnalysisAnnotation**](MetaAnalysisAnnotation.md) |  | [optional] 
+**neurostore_studyset** | [**MetaAnalysisNeurostoreStudyset**](MetaAnalysisNeurostoreStudyset.md) |  | [optional] 
+**neurostore_annotation** | [**MetaAnalysisNeurostoreAnnotation**](MetaAnalysisNeurostoreAnnotation.md) |  | [optional] 
 **name** | **str** | Human-readable name of the meta-analysis. | [optional] 
 **description** | **str** | Long form description of the meta-analysis. | [optional] 
 **public** | **bool** | whether the meta-analysis is public or private | [optional] 

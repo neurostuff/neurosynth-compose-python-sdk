@@ -44,7 +44,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_get(
+    def snapshot_annotations_get(
         self,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
         ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
@@ -112,7 +112,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_get_serialize(
+        _param = self._snapshot_annotations_get_serialize(
             nested=nested,
             ids=ids,
             page=page,
@@ -144,7 +144,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_get_with_http_info(
+    def snapshot_annotations_get_with_http_info(
         self,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
         ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
@@ -212,7 +212,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_get_serialize(
+        _param = self._snapshot_annotations_get_serialize(
             nested=nested,
             ids=ids,
             page=page,
@@ -244,7 +244,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_get_without_preload_content(
+    def snapshot_annotations_get_without_preload_content(
         self,
         nested: Annotated[Optional[StrictBool], Field(description="show nested component instead of id")] = None,
         ids: Annotated[Optional[List[StrictStr]], Field(description="choose the specific ids you wish to get")] = None,
@@ -312,7 +312,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_get_serialize(
+        _param = self._snapshot_annotations_get_serialize(
             nested=nested,
             ids=ids,
             page=page,
@@ -339,7 +339,7 @@ class AnnotationsApi:
         return response_data.response
 
 
-    def _annotations_get_serialize(
+    def _snapshot_annotations_get_serialize(
         self,
         nested,
         ids,
@@ -430,7 +430,7 @@ class AnnotationsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/annotations',
+            resource_path='/snapshot-annotations',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -447,7 +447,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_id_get(
+    def snapshot_annotations_id_get(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -491,7 +491,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_id_get_serialize(
+        _param = self._snapshot_annotations_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -516,7 +516,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_id_get_with_http_info(
+    def snapshot_annotations_id_get_with_http_info(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -560,7 +560,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_id_get_serialize(
+        _param = self._snapshot_annotations_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -585,7 +585,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_id_get_without_preload_content(
+    def snapshot_annotations_id_get_without_preload_content(
         self,
         id: StrictStr,
         _request_timeout: Union[
@@ -629,7 +629,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_id_get_serialize(
+        _param = self._snapshot_annotations_id_get_serialize(
             id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -649,7 +649,7 @@ class AnnotationsApi:
         return response_data.response
 
 
-    def _annotations_id_get_serialize(
+    def _snapshot_annotations_id_get_serialize(
         self,
         id,
         _request_auth,
@@ -697,7 +697,7 @@ class AnnotationsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/annotations/{id}',
+            resource_path='/snapshot-annotations/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -714,7 +714,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_id_put(
+    def snapshot_annotations_id_put(
         self,
         id: StrictStr,
         annotation_update: Optional[AnnotationUpdate] = None,
@@ -761,7 +761,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_id_put_serialize(
+        _param = self._snapshot_annotations_id_put_serialize(
             id=id,
             annotation_update=annotation_update,
             _request_auth=_request_auth,
@@ -789,7 +789,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_id_put_with_http_info(
+    def snapshot_annotations_id_put_with_http_info(
         self,
         id: StrictStr,
         annotation_update: Optional[AnnotationUpdate] = None,
@@ -836,7 +836,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_id_put_serialize(
+        _param = self._snapshot_annotations_id_put_serialize(
             id=id,
             annotation_update=annotation_update,
             _request_auth=_request_auth,
@@ -864,7 +864,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_id_put_without_preload_content(
+    def snapshot_annotations_id_put_without_preload_content(
         self,
         id: StrictStr,
         annotation_update: Optional[AnnotationUpdate] = None,
@@ -911,7 +911,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_id_put_serialize(
+        _param = self._snapshot_annotations_id_put_serialize(
             id=id,
             annotation_update=annotation_update,
             _request_auth=_request_auth,
@@ -934,7 +934,7 @@ class AnnotationsApi:
         return response_data.response
 
 
-    def _annotations_id_put_serialize(
+    def _snapshot_annotations_id_put_serialize(
         self,
         id,
         annotation_update,
@@ -999,7 +999,7 @@ class AnnotationsApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/annotations/{id}',
+            resource_path='/snapshot-annotations/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1016,7 +1016,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_post(
+    def snapshot_annotations_post(
         self,
         annotation_post_body: Optional[AnnotationPostBody] = None,
         _request_timeout: Union[
@@ -1060,7 +1060,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_post_serialize(
+        _param = self._snapshot_annotations_post_serialize(
             annotation_post_body=annotation_post_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1086,7 +1086,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_post_with_http_info(
+    def snapshot_annotations_post_with_http_info(
         self,
         annotation_post_body: Optional[AnnotationPostBody] = None,
         _request_timeout: Union[
@@ -1130,7 +1130,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_post_serialize(
+        _param = self._snapshot_annotations_post_serialize(
             annotation_post_body=annotation_post_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1156,7 +1156,7 @@ class AnnotationsApi:
 
 
     @validate_call
-    def annotations_post_without_preload_content(
+    def snapshot_annotations_post_without_preload_content(
         self,
         annotation_post_body: Optional[AnnotationPostBody] = None,
         _request_timeout: Union[
@@ -1200,7 +1200,7 @@ class AnnotationsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._annotations_post_serialize(
+        _param = self._snapshot_annotations_post_serialize(
             annotation_post_body=annotation_post_body,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1221,7 +1221,7 @@ class AnnotationsApi:
         return response_data.response
 
 
-    def _annotations_post_serialize(
+    def _snapshot_annotations_post_serialize(
         self,
         annotation_post_body,
         _request_auth,
@@ -1283,7 +1283,7 @@ class AnnotationsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/annotations',
+            resource_path='/snapshot-annotations',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

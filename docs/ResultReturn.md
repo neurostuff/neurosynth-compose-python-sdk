@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
 **user** | **str** | Who owns the resource. | [optional] 
 **username** | **str** |  | [optional] [readonly] 
-**cached_studyset_id** | **str** |  | [optional] [readonly] 
-**cached_annotation_id** | **str** |  | [optional] [readonly] 
+**snapshot_studyset_id** | **str** |  | [optional] [readonly] 
+**snapshot_annotation_id** | **str** |  | [optional] [readonly] 
 
 ## Example
 

@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,10 +30,10 @@ class AnnotationUpdate(BaseModel):
     """ # noqa: E501
     neurostore_id: Optional[StrictStr] = Field(default=None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(default=None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
-    studyset: Optional[StrictStr] = Field(default=None, description="The related cached studyset to this annotation.")
+    snapshot_studyset: Optional[StudysetSnapshotSummary] = None
     neurostore_url: Optional[StrictStr] = None
-    cached_studyset_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "studyset", "neurostore_url", "cached_studyset_id"]
+    snapshot_studyset_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "snapshot_studyset", "neurostore_url", "snapshot_studyset_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -65,10 +66,8 @@ class AnnotationUpdate(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
-            "studyset",
             "neurostore_url",
         ])
 
@@ -77,6 +76,9 @@ class AnnotationUpdate(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of snapshot_studyset
+        if self.snapshot_studyset:
+            _dict['snapshot_studyset'] = self.snapshot_studyset.to_dict()
         # set to None if snapshot (nullable) is None
         # and model_fields_set contains the field
         if self.snapshot is None and "snapshot" in self.model_fields_set:
@@ -96,9 +98,9 @@ class AnnotationUpdate(BaseModel):
         _obj = cls.model_validate({
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
-            "studyset": obj.get("studyset"),
+            "snapshot_studyset": StudysetSnapshotSummary.from_dict(obj["snapshot_studyset"]) if obj.get("snapshot_studyset") is not None else None,
             "neurostore_url": obj.get("neurostore_url"),
-            "cached_studyset_id": obj.get("cached_studyset_id")
+            "snapshot_studyset_id": obj.get("snapshot_studyset_id")
         })
         return _obj
 

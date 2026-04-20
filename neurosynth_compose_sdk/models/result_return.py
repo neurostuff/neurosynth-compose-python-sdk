@@ -41,9 +41,9 @@ class ResultReturn(BaseModel):
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    cached_studyset_id: Optional[StrictStr] = None
-    cached_annotation_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "id", "updated_at", "created_at", "user", "username", "cached_studyset_id", "cached_annotation_id"]
+    snapshot_studyset_id: Optional[StrictStr] = None
+    snapshot_annotation_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "id", "updated_at", "created_at", "user", "username", "snapshot_studyset_id", "snapshot_annotation_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,8 +85,8 @@ class ResultReturn(BaseModel):
             "updated_at",
             "created_at",
             "username",
-            "cached_studyset_id",
-            "cached_annotation_id",
+            "snapshot_studyset_id",
+            "snapshot_annotation_id",
         ])
 
         _dict = self.model_dump(
@@ -137,15 +137,15 @@ class ResultReturn(BaseModel):
         if self.username is None and "username" in self.model_fields_set:
             _dict['username'] = None
 
-        # set to None if cached_studyset_id (nullable) is None
+        # set to None if snapshot_studyset_id (nullable) is None
         # and model_fields_set contains the field
-        if self.cached_studyset_id is None and "cached_studyset_id" in self.model_fields_set:
-            _dict['cached_studyset_id'] = None
+        if self.snapshot_studyset_id is None and "snapshot_studyset_id" in self.model_fields_set:
+            _dict['snapshot_studyset_id'] = None
 
-        # set to None if cached_annotation_id (nullable) is None
+        # set to None if snapshot_annotation_id (nullable) is None
         # and model_fields_set contains the field
-        if self.cached_annotation_id is None and "cached_annotation_id" in self.model_fields_set:
-            _dict['cached_annotation_id'] = None
+        if self.snapshot_annotation_id is None and "snapshot_annotation_id" in self.model_fields_set:
+            _dict['snapshot_annotation_id'] = None
 
         return _dict
 
@@ -171,8 +171,8 @@ class ResultReturn(BaseModel):
             "created_at": obj.get("created_at"),
             "user": obj.get("user"),
             "username": obj.get("username"),
-            "cached_studyset_id": obj.get("cached_studyset_id"),
-            "cached_annotation_id": obj.get("cached_annotation_id")
+            "snapshot_studyset_id": obj.get("snapshot_studyset_id"),
+            "snapshot_annotation_id": obj.get("snapshot_annotation_id")
         })
         return _obj
 

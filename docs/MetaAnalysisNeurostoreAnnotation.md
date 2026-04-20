@@ -1,4 +1,4 @@
-# AnnotationUpdate
+# MetaAnalysisNeurostoreAnnotation
 
 
 ## Properties
@@ -9,24 +9,23 @@ Name | Type | Description | Notes
 **snapshot** | **object** | the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm | [optional] 
 **snapshot_studyset** | [**StudysetSnapshotSummary**](StudysetSnapshotSummary.md) |  | [optional] 
 **neurostore_url** | **str** |  | [optional] [readonly] 
-**snapshot_studyset_id** | **str** |  | [optional] 
 
 ## Example
 
 ```python
-from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
+from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of AnnotationUpdate from a JSON string
-annotation_update_instance = AnnotationUpdate.from_json(json)
+# create an instance of MetaAnalysisNeurostoreAnnotation from a JSON string
+meta_analysis_neurostore_annotation_instance = MetaAnalysisNeurostoreAnnotation.from_json(json)
 # print the JSON string representation of the object
-print(AnnotationUpdate.to_json())
+print(MetaAnalysisNeurostoreAnnotation.to_json())
 
 # convert the object into a dict
-annotation_update_dict = annotation_update_instance.to_dict()
-# create an instance of AnnotationUpdate from a dict
-annotation_update_from_dict = AnnotationUpdate.from_dict(annotation_update_dict)
+meta_analysis_neurostore_annotation_dict = meta_analysis_neurostore_annotation_instance.to_dict()
+# create an instance of MetaAnalysisNeurostoreAnnotation from a dict
+meta_analysis_neurostore_annotation_from_dict = MetaAnalysisNeurostoreAnnotation.from_dict(meta_analysis_neurostore_annotation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

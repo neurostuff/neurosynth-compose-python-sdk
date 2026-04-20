@@ -18,22 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ResultInit(BaseModel):
+class AnnotationReference(BaseModel):
     """
-    ResultInit
+    A lightweight reference keyed by the Neurostore annotation ID.
     """ # noqa: E501
-    meta_analysis_id: Optional[StrictStr] = None
-    snapshot_studyset: Optional[Dict[str, Any]] = None
-    snapshot_annotation: Optional[Dict[str, Any]] = None
-    snapshot_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached studyset snapshot to link to this result.")
-    snapshot_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of an existing cached annotation snapshot to link to this result.")
-    cli_version: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "snapshot_studyset", "snapshot_annotation", "snapshot_studyset_id", "snapshot_annotation_id", "cli_version"]
+    annotations: Optional[List[AnnotationSnapshotSummary]] = None
+    __properties: ClassVar[List[str]] = ["annotations"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +49,7 @@ class ResultInit(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ResultInit from a JSON string"""
+        """Create an instance of AnnotationReference from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,11 +70,18 @@ class ResultInit(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
+        _items = []
+        if self.annotations:
+            for _item_annotations in self.annotations:
+                if _item_annotations:
+                    _items.append(_item_annotations.to_dict())
+            _dict['annotations'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ResultInit from a dict"""
+        """Create an instance of AnnotationReference from a dict"""
         if obj is None:
             return None
 
@@ -86,12 +89,7 @@ class ResultInit(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "meta_analysis_id": obj.get("meta_analysis_id"),
-            "snapshot_studyset": obj.get("snapshot_studyset"),
-            "snapshot_annotation": obj.get("snapshot_annotation"),
-            "snapshot_studyset_id": obj.get("snapshot_studyset_id"),
-            "snapshot_annotation_id": obj.get("snapshot_annotation_id"),
-            "cli_version": obj.get("cli_version")
+            "annotations": [AnnotationSnapshotSummary.from_dict(_item) for _item in obj["annotations"]] if obj.get("annotations") is not None else None
         })
         return _obj
 
