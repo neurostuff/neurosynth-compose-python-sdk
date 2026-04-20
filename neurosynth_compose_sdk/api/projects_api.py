@@ -53,6 +53,7 @@ class ProjectsApi:
         sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
         desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -85,6 +86,8 @@ class ProjectsApi:
         :type desc: bool
         :param user_id: user id you want to filter on
         :type user_id: str
+        :param include_provenance: include the project provenance payload in project responses
+        :type include_provenance: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -116,6 +119,7 @@ class ProjectsApi:
             sort=sort,
             desc=desc,
             user_id=user_id,
+            include_provenance=include_provenance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -147,6 +151,7 @@ class ProjectsApi:
         sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
         desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -179,6 +184,8 @@ class ProjectsApi:
         :type desc: bool
         :param user_id: user id you want to filter on
         :type user_id: str
+        :param include_provenance: include the project provenance payload in project responses
+        :type include_provenance: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -210,6 +217,7 @@ class ProjectsApi:
             sort=sort,
             desc=desc,
             user_id=user_id,
+            include_provenance=include_provenance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -241,6 +249,7 @@ class ProjectsApi:
         sort: Annotated[Optional[StrictStr], Field(description="Parameter to sort results on")] = None,
         desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
+        include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -273,6 +282,8 @@ class ProjectsApi:
         :type desc: bool
         :param user_id: user id you want to filter on
         :type user_id: str
+        :param include_provenance: include the project provenance payload in project responses
+        :type include_provenance: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -304,6 +315,7 @@ class ProjectsApi:
             sort=sort,
             desc=desc,
             user_id=user_id,
+            include_provenance=include_provenance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -330,6 +342,7 @@ class ProjectsApi:
         sort,
         desc,
         user_id,
+        include_provenance,
         _request_auth,
         _content_type,
         _headers,
@@ -383,6 +396,10 @@ class ProjectsApi:
         if user_id is not None:
             
             _query_params.append(('user_id', user_id))
+            
+        if include_provenance is not None:
+            
+            _query_params.append(('include_provenance', include_provenance))
             
         # process the header parameters
         # process the form parameters
@@ -677,6 +694,7 @@ class ProjectsApi:
         self,
         id: StrictStr,
         info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
+        include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -697,6 +715,8 @@ class ProjectsApi:
         :type id: str
         :param info: display additional information about a nested relationship without displaying fully nested object
         :type info: bool
+        :param include_provenance: include the project provenance payload in project responses
+        :type include_provenance: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -722,6 +742,7 @@ class ProjectsApi:
         _param = self._projects_id_get_serialize(
             id=id,
             info=info,
+            include_provenance=include_provenance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -747,6 +768,7 @@ class ProjectsApi:
         self,
         id: StrictStr,
         info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
+        include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -767,6 +789,8 @@ class ProjectsApi:
         :type id: str
         :param info: display additional information about a nested relationship without displaying fully nested object
         :type info: bool
+        :param include_provenance: include the project provenance payload in project responses
+        :type include_provenance: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -792,6 +816,7 @@ class ProjectsApi:
         _param = self._projects_id_get_serialize(
             id=id,
             info=info,
+            include_provenance=include_provenance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -817,6 +842,7 @@ class ProjectsApi:
         self,
         id: StrictStr,
         info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
+        include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -837,6 +863,8 @@ class ProjectsApi:
         :type id: str
         :param info: display additional information about a nested relationship without displaying fully nested object
         :type info: bool
+        :param include_provenance: include the project provenance payload in project responses
+        :type include_provenance: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -862,6 +890,7 @@ class ProjectsApi:
         _param = self._projects_id_get_serialize(
             id=id,
             info=info,
+            include_provenance=include_provenance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -882,6 +911,7 @@ class ProjectsApi:
         self,
         id,
         info,
+        include_provenance,
         _request_auth,
         _content_type,
         _headers,
@@ -909,6 +939,10 @@ class ProjectsApi:
         if info is not None:
             
             _query_params.append(('info', info))
+            
+        if include_provenance is not None:
+            
+            _query_params.append(('include_provenance', include_provenance))
             
         # process the header parameters
         # process the form parameters

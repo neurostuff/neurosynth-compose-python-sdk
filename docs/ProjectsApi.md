@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **projects_get**
-> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id)
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance)
 
 Your GET endpoint
 
@@ -54,10 +54,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
     desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
     user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    include_provenance = True # bool | include the project provenance payload in project responses (optional) (default to True)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id)
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance)
         print("The response of ProjectsApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -79,6 +80,7 @@ Name | Type | Description  | Notes
  **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
  **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
  **user_id** | **str**| user id you want to filter on | [optional] 
+ **include_provenance** | **bool**| include the project provenance payload in project responses | [optional] [default to True]
 
 ### Return type
 
@@ -175,7 +177,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_id_get**
-> ProjectReturn projects_id_get(id, info=info)
+> ProjectReturn projects_id_get(id, info=info, include_provenance=include_provenance)
 
 Your GET endpoint
 
@@ -201,10 +203,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = neurosynth_compose_sdk.ProjectsApi(api_client)
     id = 'id_example' # str | 
     info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
+    include_provenance = True # bool | include the project provenance payload in project responses (optional) (default to True)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_id_get(id, info=info)
+        api_response = api_instance.projects_id_get(id, info=info, include_provenance=include_provenance)
         print("The response of ProjectsApi->projects_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -220,6 +223,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
  **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
+ **include_provenance** | **bool**| include the project provenance payload in project responses | [optional] [default to True]
 
 ### Return type
 

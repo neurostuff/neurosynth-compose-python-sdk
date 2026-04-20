@@ -169,10 +169,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_annotation_reference.py
-test/test_annotation_reference_return.py
-test/test_annotation_snapshot_summary.py
-test/test_meta_analysis_neurostore_annotation.py
-test/test_meta_analysis_neurostore_studyset.py
-test/test_studyset_snapshot_summary.py
 tox.ini
