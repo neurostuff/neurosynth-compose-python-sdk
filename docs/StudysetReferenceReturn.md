@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**studysets** | [**List[StudysetSnapshotSummary]**](StudysetSnapshotSummary.md) |  | [optional] 
+**snapshots** | [**List[StudysetReferenceSnapshotsInner]**](StudysetReferenceSnapshotsInner.md) |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

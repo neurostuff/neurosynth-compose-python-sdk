@@ -20,10 +20,10 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation
-from neurosynth_compose_sdk.models.meta_analysis_neurostore_studyset import MetaAnalysisNeurostoreStudyset
+from neurosynth_compose_sdk.models.meta_analysis_annotation import MetaAnalysisAnnotation
 from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
 from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
+from neurosynth_compose_sdk.models.meta_analysis_studyset import MetaAnalysisStudyset
 from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
 from typing import Optional, Set
@@ -34,24 +34,27 @@ class MetaAnalysis(BaseModel):
     The combination of the specification determining what meta-analysis to run (required), the studyset to act as input to the meta-analytic algorithm (required), and the annotation to provide human readable annotations as well as acts as an optional filter on which analyses to select within the studyset (optional, but suggested).
     """ # noqa: E501
     specification: Optional[MetaAnalysisSpecification] = None
-    neurostore_studyset: Optional[MetaAnalysisNeurostoreStudyset] = None
-    neurostore_annotation: Optional[MetaAnalysisNeurostoreAnnotation] = None
+    studyset: Optional[MetaAnalysisStudyset] = None
+    annotation: Optional[MetaAnalysisAnnotation] = None
     name: Optional[StrictStr] = Field(default=None, description="Human-readable name of the meta-analysis.")
     description: Optional[StrictStr] = Field(default=None, description="Long form description of the meta-analysis.")
     public: Optional[StrictBool] = Field(default=None, description="whether the meta-analysis is public or private")
     tags: Optional[MetaAnalysisTags] = None
+    cached_studyset_id: Optional[StrictStr] = Field(default=None, description="The id of the studyset on neurosynth-compose (as opposed to the id of the studyset on neurostore). Multiple snapshots of the studyset can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
+    cached_annotation_id: Optional[StrictStr] = Field(default=None, description="The id of the annotation on neurosynth-compose (as opposed to the id of the annotation on neurostore). Multiple snapshots of the annotation can be stored on neurosynth-compose so knowing which snapshot is being referenced is necessary.")
     results: Optional[MetaAnalysisResults] = None
     provenance: Optional[Dict[str, Any]] = None
     project: Optional[StrictStr] = None
     run_key: Optional[StrictStr] = Field(default=None, description="a special key used to upload the results of this meta analysis. Can be used as an alternative to using your auth token from login. ")
-    snapshots: Optional[List[Dict[str, Any]]] = Field(default=None, description="Ordered history of (studyset, annotation) snapshot pairs recorded each time a MetaAnalysisResult is created. Each entry contains studyset_id, studyset_md5, annotation_id, annotation_md5, result_id, and created_at. ")
     neurostore_analysis: Optional[NeurostoreAnalysis] = None
     cognitive_contrast_cogatlas: Optional[StrictStr] = None
     cognitive_contrast_cogatlas_id: Optional[StrictStr] = None
     cognitive_paradigm_cogatlas: Optional[StrictStr] = None
     cognitive_paradigm_cogatlas_id: Optional[StrictStr] = None
+    cached_studyset: Optional[StrictStr] = None
+    cached_annotation: Optional[StrictStr] = None
     neurostore_url: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["specification", "neurostore_studyset", "neurostore_annotation", "name", "description", "public", "tags", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "neurostore_url"]
+    __properties: ClassVar[List[str]] = ["specification", "studyset", "annotation", "name", "description", "public", "tags", "cached_studyset_id", "cached_annotation_id", "results", "provenance", "project", "run_key", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "cached_studyset", "cached_annotation", "neurostore_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,10 +89,12 @@ class MetaAnalysis(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "run_key",
-            "snapshots",
+            "cached_studyset",
+            "cached_annotation",
             "neurostore_url",
         ])
 
@@ -101,12 +106,12 @@ class MetaAnalysis(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of specification
         if self.specification:
             _dict['specification'] = self.specification.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of neurostore_studyset
-        if self.neurostore_studyset:
-            _dict['neurostore_studyset'] = self.neurostore_studyset.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of neurostore_annotation
-        if self.neurostore_annotation:
-            _dict['neurostore_annotation'] = self.neurostore_annotation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of studyset
+        if self.studyset:
+            _dict['studyset'] = self.studyset.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of annotation
+        if self.annotation:
+            _dict['annotation'] = self.annotation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of tags
         if self.tags:
             _dict['tags'] = self.tags.to_dict()
@@ -136,11 +141,6 @@ class MetaAnalysis(BaseModel):
         if self.project is None and "project" in self.model_fields_set:
             _dict['project'] = None
 
-        # set to None if snapshots (nullable) is None
-        # and model_fields_set contains the field
-        if self.snapshots is None and "snapshots" in self.model_fields_set:
-            _dict['snapshots'] = None
-
         # set to None if cognitive_contrast_cogatlas (nullable) is None
         # and model_fields_set contains the field
         if self.cognitive_contrast_cogatlas is None and "cognitive_contrast_cogatlas" in self.model_fields_set:
@@ -161,6 +161,16 @@ class MetaAnalysis(BaseModel):
         if self.cognitive_paradigm_cogatlas_id is None and "cognitive_paradigm_cogatlas_id" in self.model_fields_set:
             _dict['cognitive_paradigm_cogatlas_id'] = None
 
+        # set to None if cached_studyset (nullable) is None
+        # and model_fields_set contains the field
+        if self.cached_studyset is None and "cached_studyset" in self.model_fields_set:
+            _dict['cached_studyset'] = None
+
+        # set to None if cached_annotation (nullable) is None
+        # and model_fields_set contains the field
+        if self.cached_annotation is None and "cached_annotation" in self.model_fields_set:
+            _dict['cached_annotation'] = None
+
         # set to None if neurostore_url (nullable) is None
         # and model_fields_set contains the field
         if self.neurostore_url is None and "neurostore_url" in self.model_fields_set:
@@ -179,22 +189,25 @@ class MetaAnalysis(BaseModel):
 
         _obj = cls.model_validate({
             "specification": MetaAnalysisSpecification.from_dict(obj["specification"]) if obj.get("specification") is not None else None,
-            "neurostore_studyset": MetaAnalysisNeurostoreStudyset.from_dict(obj["neurostore_studyset"]) if obj.get("neurostore_studyset") is not None else None,
-            "neurostore_annotation": MetaAnalysisNeurostoreAnnotation.from_dict(obj["neurostore_annotation"]) if obj.get("neurostore_annotation") is not None else None,
+            "studyset": MetaAnalysisStudyset.from_dict(obj["studyset"]) if obj.get("studyset") is not None else None,
+            "annotation": MetaAnalysisAnnotation.from_dict(obj["annotation"]) if obj.get("annotation") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description"),
             "public": obj.get("public"),
             "tags": MetaAnalysisTags.from_dict(obj["tags"]) if obj.get("tags") is not None else None,
+            "cached_studyset_id": obj.get("cached_studyset_id"),
+            "cached_annotation_id": obj.get("cached_annotation_id"),
             "results": MetaAnalysisResults.from_dict(obj["results"]) if obj.get("results") is not None else None,
             "provenance": obj.get("provenance"),
             "project": obj.get("project"),
             "run_key": obj.get("run_key"),
-            "snapshots": obj.get("snapshots"),
             "neurostore_analysis": NeurostoreAnalysis.from_dict(obj["neurostore_analysis"]) if obj.get("neurostore_analysis") is not None else None,
             "cognitive_contrast_cogatlas": obj.get("cognitive_contrast_cogatlas"),
             "cognitive_contrast_cogatlas_id": obj.get("cognitive_contrast_cogatlas_id"),
             "cognitive_paradigm_cogatlas": obj.get("cognitive_paradigm_cogatlas"),
             "cognitive_paradigm_cogatlas_id": obj.get("cognitive_paradigm_cogatlas_id"),
+            "cached_studyset": obj.get("cached_studyset"),
+            "cached_annotation": obj.get("cached_annotation"),
             "neurostore_url": obj.get("neurostore_url")
         })
         return _obj

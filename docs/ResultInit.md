@@ -6,10 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **meta_analysis_id** | **str** |  | [optional] 
-**snapshot_studyset** | **object** |  | [optional] 
-**snapshot_annotation** | **object** |  | [optional] 
-**snapshot_studyset_id** | **str** | ID of an existing cached studyset snapshot to link to this result. | [optional] 
-**snapshot_annotation_id** | **str** | ID of an existing cached annotation snapshot to link to this result. | [optional] 
+**studyset_snapshot** | **object** |  | [optional] 
+**annotation_snapshot** | **object** |  | [optional] 
 **cli_version** | **str** |  | [optional] 
 
 ## Example

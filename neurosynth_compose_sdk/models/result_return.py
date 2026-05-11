@@ -41,9 +41,7 @@ class ResultReturn(BaseModel):
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    snapshot_studyset_id: Optional[StrictStr] = None
-    snapshot_annotation_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "id", "updated_at", "created_at", "user", "username", "snapshot_studyset_id", "snapshot_annotation_id"]
+    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,15 +76,11 @@ class ResultReturn(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "updated_at",
             "created_at",
             "username",
-            "snapshot_studyset_id",
-            "snapshot_annotation_id",
         ])
 
         _dict = self.model_dump(
@@ -137,16 +131,6 @@ class ResultReturn(BaseModel):
         if self.username is None and "username" in self.model_fields_set:
             _dict['username'] = None
 
-        # set to None if snapshot_studyset_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.snapshot_studyset_id is None and "snapshot_studyset_id" in self.model_fields_set:
-            _dict['snapshot_studyset_id'] = None
-
-        # set to None if snapshot_annotation_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.snapshot_annotation_id is None and "snapshot_annotation_id" in self.model_fields_set:
-            _dict['snapshot_annotation_id'] = None
-
         return _dict
 
     @classmethod
@@ -170,9 +154,7 @@ class ResultReturn(BaseModel):
             "updated_at": obj.get("updated_at"),
             "created_at": obj.get("created_at"),
             "user": obj.get("user"),
-            "username": obj.get("username"),
-            "snapshot_studyset_id": obj.get("snapshot_studyset_id"),
-            "snapshot_annotation_id": obj.get("snapshot_annotation_id")
+            "username": obj.get("username")
         })
         return _obj
 

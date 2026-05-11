@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**snapshot_studyset_id** | **str** |  | [optional] 
+**cached_studyset_id** | **str** |  | [optional] 
 **neurostore_id** | **str** | the id of the annotation on neurostore | [optional] 
 **snapshot** | **object** | the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm | [optional] 
-**snapshot_studyset** | [**StudysetSnapshotSummary**](StudysetSnapshotSummary.md) |  | [optional] 
+**studyset** | **str** | The related cached studyset to this annotation. | [optional] [readonly] 
 **neurostore_url** | **str** |  | [optional] [readonly] 
 
 ## Example

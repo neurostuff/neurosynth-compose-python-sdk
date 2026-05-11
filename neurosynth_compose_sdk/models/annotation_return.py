@@ -21,7 +21,6 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,14 +30,14 @@ class AnnotationReturn(BaseModel):
     """ # noqa: E501
     neurostore_id: Optional[StrictStr] = Field(default=None, description="the id of the annotation on neurostore")
     snapshot: Optional[Dict[str, Any]] = Field(default=None, description="the snapshot taken of the annotation pending a successful run of the meta-analytic algorithm")
-    snapshot_studyset: Optional[StudysetSnapshotSummary] = None
+    studyset: Optional[StrictStr] = Field(default=None, description="The related cached studyset to this annotation.")
     neurostore_url: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
     user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
     username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "snapshot_studyset", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
+    __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "studyset", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,8 +73,10 @@ class AnnotationReturn(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
+            "studyset",
             "neurostore_url",
             "updated_at",
             "created_at",
@@ -87,9 +88,6 @@ class AnnotationReturn(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of snapshot_studyset
-        if self.snapshot_studyset:
-            _dict['snapshot_studyset'] = self.snapshot_studyset.to_dict()
         # set to None if snapshot (nullable) is None
         # and model_fields_set contains the field
         if self.snapshot is None and "snapshot" in self.model_fields_set:
@@ -124,7 +122,7 @@ class AnnotationReturn(BaseModel):
         _obj = cls.model_validate({
             "neurostore_id": obj.get("neurostore_id"),
             "snapshot": obj.get("snapshot"),
-            "snapshot_studyset": StudysetSnapshotSummary.from_dict(obj["snapshot_studyset"]) if obj.get("snapshot_studyset") is not None else None,
+            "studyset": obj.get("studyset"),
             "neurostore_url": obj.get("neurostore_url"),
             "id": obj.get("id"),
             "updated_at": obj.get("updated_at"),
