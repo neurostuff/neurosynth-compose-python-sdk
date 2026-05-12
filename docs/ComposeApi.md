@@ -761,7 +761,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **meta_analysis_results_id_put**
-> ResultReturn meta_analysis_results_id_put(id, result=result)
+> ResultReturn meta_analysis_results_id_put(id, statistical_maps=statistical_maps, cluster_tables=cluster_tables, diagnostic_tables=diagnostic_tables, method_description=method_description, snapshot_studyset=snapshot_studyset, snapshot_annotation=snapshot_annotation)
 
 Update a meta-analysis result with files or snapshots
 
@@ -772,8 +772,8 @@ Update a meta-analysis result with files or snapshots
 
 ```python
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.result import Result
 from neurosynth_compose_sdk.models.result_return import ResultReturn
+from neurosynth_compose_sdk.models.result_upload_statistical_maps import ResultUploadStatisticalMaps
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
@@ -804,11 +804,16 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
     id = 'id_example' # str | 
-    result = neurosynth_compose_sdk.Result() # Result |  (optional)
+    statistical_maps = neurosynth_compose_sdk.ResultUploadStatisticalMaps() # ResultUploadStatisticalMaps |  (optional)
+    cluster_tables = neurosynth_compose_sdk.ResultUploadStatisticalMaps() # ResultUploadStatisticalMaps |  (optional)
+    diagnostic_tables = neurosynth_compose_sdk.ResultUploadStatisticalMaps() # ResultUploadStatisticalMaps |  (optional)
+    method_description = 'method_description_example' # str |  (optional)
+    snapshot_studyset = 'snapshot_studyset_example' # str | JSON-encoded studyset snapshot payload, optionally provided in multipart form. (optional)
+    snapshot_annotation = 'snapshot_annotation_example' # str | JSON-encoded annotation snapshot payload, optionally provided in multipart form. (optional)
 
     try:
         # Update a meta-analysis result with files or snapshots
-        api_response = api_instance.meta_analysis_results_id_put(id, result=result)
+        api_response = api_instance.meta_analysis_results_id_put(id, statistical_maps=statistical_maps, cluster_tables=cluster_tables, diagnostic_tables=diagnostic_tables, method_description=method_description, snapshot_studyset=snapshot_studyset, snapshot_annotation=snapshot_annotation)
         print("The response of ComposeApi->meta_analysis_results_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -823,7 +828,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
- **result** | [**Result**](Result.md)|  | [optional] 
+ **statistical_maps** | [**ResultUploadStatisticalMaps**](ResultUploadStatisticalMaps.md)|  | [optional] 
+ **cluster_tables** | [**ResultUploadStatisticalMaps**](ResultUploadStatisticalMaps.md)|  | [optional] 
+ **diagnostic_tables** | [**ResultUploadStatisticalMaps**](ResultUploadStatisticalMaps.md)|  | [optional] 
+ **method_description** | **str**|  | [optional] 
+ **snapshot_studyset** | **str**| JSON-encoded studyset snapshot payload, optionally provided in multipart form. | [optional] 
+ **snapshot_annotation** | **str**| JSON-encoded annotation snapshot payload, optionally provided in multipart form. | [optional] 
 
 ### Return type
 
@@ -835,7 +845,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, multipart/form-data
+ - **Content-Type**: multipart/form-data, application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1670,7 +1680,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **neurovault_files_id_put**
-> NeurovaultFileReturn neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url)
+> NeurovaultFileReturn neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url, file=file)
 
 
 
@@ -1712,10 +1722,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     image_id = 'image_id_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     url = 'url_example' # str |  (optional)
+    file = None # bytearray |  (optional)
 
     try:
         # 
-        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url)
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url, file=file)
         print("The response of ComposeApi->neurovault_files_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -1737,6 +1748,7 @@ Name | Type | Description  | Notes
  **image_id** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **url** | **str**|  | [optional] 
+ **file** | **bytearray**|  | [optional] 
 
 ### Return type
 
