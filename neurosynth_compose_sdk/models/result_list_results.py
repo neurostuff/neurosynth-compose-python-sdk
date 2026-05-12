@@ -20,7 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Any, List, Optional
 from typing_extensions import Annotated
 from neurosynth_compose_sdk.models.result_return import ResultReturn
-from pydantic import StrictStr, Field
+from pydantic import StrictStr, Field, model_validator
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
@@ -52,6 +52,39 @@ class ResultListResults(BaseModel):
             super().__init__(actual_instance=args[0])
         else:
             super().__init__(**kwargs)
+
+    def __iter__(self):
+        if self.actual_instance is not None and hasattr(self.actual_instance, '__iter__'):
+            return iter(self.actual_instance)
+        raise TypeError(f"'{type(self.actual_instance).__name__}' object is not iterable")
+
+    def __len__(self):
+        if self.actual_instance is not None and hasattr(self.actual_instance, '__len__'):
+            return len(self.actual_instance)
+        raise TypeError(f"object of type '{type(self.actual_instance).__name__}' has no len()")
+
+    def __getitem__(self, key):
+        if self.actual_instance is not None and hasattr(self.actual_instance, '__getitem__'):
+            return self.actual_instance[key]
+        raise TypeError(f"'{type(self.actual_instance).__name__}' object is not subscriptable")
+
+    def __getattr__(self, name):
+        # Fall through attribute access to actual_instance for non-pydantic fields
+        if name not in ('actual_instance', 'one_of_schemas', 'model_fields', 'model_config') and not name.startswith('_'):
+            actual = object.__getattribute__(self, 'actual_instance')
+            if actual is not None and hasattr(actual, name):
+                return getattr(actual, name)
+        raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+
+    @model_validator(mode='before')
+    @classmethod
+    def _coerce_actual_instance(cls, v):
+        # Allow construction from a raw value (list, str, dict representing the wrapped type)
+        if isinstance(v, dict) and 'actual_instance' in v:
+            return v
+        if not isinstance(v, cls):
+            return {'actual_instance': v}
+        return v
 
     @field_validator('actual_instance')
     def actual_instance_must_validate_oneof(cls, v):
