@@ -87,11 +87,7 @@ class MetaAnalysis(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         """
-        excluded_fields: Set[str] = set([
-            "run_key",
-            "snapshots",
-            "neurostore_url",
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -99,22 +95,22 @@ class MetaAnalysis(BaseModel):
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of specification
-        if self.specification:
+        if self.specification is not None:
             _dict['specification'] = self.specification.to_dict()
         # override the default output from pydantic by calling `to_dict()` of neurostore_studyset
-        if self.neurostore_studyset:
+        if self.neurostore_studyset is not None:
             _dict['neurostore_studyset'] = self.neurostore_studyset.to_dict()
         # override the default output from pydantic by calling `to_dict()` of neurostore_annotation
-        if self.neurostore_annotation:
+        if self.neurostore_annotation is not None:
             _dict['neurostore_annotation'] = self.neurostore_annotation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of tags
-        if self.tags:
+        if self.tags is not None:
             _dict['tags'] = self.tags.to_dict()
         # override the default output from pydantic by calling `to_dict()` of results
-        if self.results:
+        if self.results is not None:
             _dict['results'] = self.results.to_dict()
         # override the default output from pydantic by calling `to_dict()` of neurostore_analysis
-        if self.neurostore_analysis:
+        if self.neurostore_analysis is not None:
             _dict['neurostore_analysis'] = self.neurostore_analysis.to_dict()
         # set to None if name (nullable) is None
         # and model_fields_set contains the field

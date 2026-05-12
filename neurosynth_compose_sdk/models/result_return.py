@@ -81,13 +81,7 @@ class ResultReturn(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         """
-        excluded_fields: Set[str] = set([
-            "updated_at",
-            "created_at",
-            "username",
-            "snapshot_studyset_id",
-            "snapshot_annotation_id",
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -95,7 +89,7 @@ class ResultReturn(BaseModel):
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of neurovault_collection
-        if self.neurovault_collection:
+        if self.neurovault_collection is not None:
             _dict['neurovault_collection'] = self.neurovault_collection.to_dict()
         # set to None if cli_version (nullable) is None
         # and model_fields_set contains the field

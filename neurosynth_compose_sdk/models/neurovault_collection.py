@@ -65,9 +65,7 @@ class NeurovaultCollection(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         """
-        excluded_fields: Set[str] = set([
-            "collection_id",
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -76,9 +74,9 @@ class NeurovaultCollection(BaseModel):
         )
         # override the default output from pydantic by calling `to_dict()` of each item in files (list)
         _items = []
-        if self.files:
+        if self.files is not None:
             for _item_files in self.files:
-                if _item_files:
+                if _item_files is not None:
                     _items.append(_item_files.to_dict())
             _dict['files'] = _items
         # set to None if collection_id (nullable) is None

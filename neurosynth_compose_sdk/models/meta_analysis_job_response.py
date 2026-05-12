@@ -74,8 +74,7 @@ class MetaAnalysisJobResponse(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
-        excluded_fields: Set[str] = set([
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -84,9 +83,9 @@ class MetaAnalysisJobResponse(BaseModel):
         )
         # override the default output from pydantic by calling `to_dict()` of each item in logs (list)
         _items = []
-        if self.logs:
+        if self.logs is not None:
             for _item_logs in self.logs:
-                if _item_logs:
+                if _item_logs is not None:
                     _items.append(_item_logs.to_dict())
             _dict['logs'] = _items
         # set to None if status_url (nullable) is None

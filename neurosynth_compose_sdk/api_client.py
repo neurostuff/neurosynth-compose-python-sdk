@@ -327,10 +327,12 @@ class ApiClient:
                     data=return_data,
                 )
 
+        raw_headers = response_data.getheaders()
+        headers = dict(raw_headers) if raw_headers is not None else None
         return ApiResponse(
             status_code = response_data.status,
             data = return_data,
-            headers = response_data.getheaders(),
+            headers = headers,
             raw_data = response_data.data
         )
 

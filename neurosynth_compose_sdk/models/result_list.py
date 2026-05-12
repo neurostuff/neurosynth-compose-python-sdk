@@ -63,8 +63,7 @@ class ResultList(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
-        excluded_fields: Set[str] = set([
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -72,7 +71,7 @@ class ResultList(BaseModel):
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of results
-        if self.results:
+        if self.results is not None:
             _dict['results'] = self.results.to_dict()
         return _dict
 

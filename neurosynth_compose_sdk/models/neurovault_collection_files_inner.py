@@ -163,6 +163,8 @@ class NeurovaultCollectionFilesInner(BaseModel):
 
         if hasattr(self.actual_instance, "to_dict") and callable(self.actual_instance.to_dict):
             return self.actual_instance.to_dict()
+        elif isinstance(self.actual_instance, list):
+            return [item.to_dict() if hasattr(item, "to_dict") else item for item in self.actual_instance]
         else:
             # primitive type
             return self.actual_instance

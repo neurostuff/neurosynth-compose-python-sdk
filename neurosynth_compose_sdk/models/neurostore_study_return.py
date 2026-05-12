@@ -76,12 +76,7 @@ class NeurostoreStudyReturn(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         """
-        excluded_fields: Set[str] = set([
-            "neurostore_id",
-            "updated_at",
-            "created_at",
-            "username",
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -90,9 +85,9 @@ class NeurostoreStudyReturn(BaseModel):
         )
         # override the default output from pydantic by calling `to_dict()` of each item in analyses (list)
         _items = []
-        if self.analyses:
+        if self.analyses is not None:
             for _item_analyses in self.analyses:
-                if _item_analyses:
+                if _item_analyses is not None:
                     _items.append(_item_analyses.to_dict())
             _dict['analyses'] = _items
         # set to None if neurostore_id (nullable) is None

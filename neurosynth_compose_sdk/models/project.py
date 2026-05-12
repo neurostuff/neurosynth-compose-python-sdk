@@ -73,9 +73,7 @@ class Project(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         """
-        excluded_fields: Set[str] = set([
-            "draft",
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -83,10 +81,10 @@ class Project(BaseModel):
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of meta_analyses
-        if self.meta_analyses:
+        if self.meta_analyses is not None:
             _dict['meta_analyses'] = self.meta_analyses.to_dict()
         # override the default output from pydantic by calling `to_dict()` of neurostore_study
-        if self.neurostore_study:
+        if self.neurostore_study is not None:
             _dict['neurostore_study'] = self.neurostore_study.to_dict()
         # set to None if provenance (nullable) is None
         # and model_fields_set contains the field

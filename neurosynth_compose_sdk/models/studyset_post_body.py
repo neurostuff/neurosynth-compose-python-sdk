@@ -67,9 +67,7 @@ class StudysetPostBody(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         """
-        excluded_fields: Set[str] = set([
-            "neurostore_url",
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -78,9 +76,9 @@ class StudysetPostBody(BaseModel):
         )
         # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
         _items = []
-        if self.annotations:
+        if self.annotations is not None:
             for _item_annotations in self.annotations:
-                if _item_annotations:
+                if _item_annotations is not None:
                     _items.append(_item_annotations.to_dict())
             _dict['annotations'] = _items
         # set to None if snapshot (nullable) is None

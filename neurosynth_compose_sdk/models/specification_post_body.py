@@ -72,8 +72,7 @@ class SpecificationPostBody(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
-        excluded_fields: Set[str] = set([
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -81,13 +80,13 @@ class SpecificationPostBody(BaseModel):
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of estimator
-        if self.estimator:
+        if self.estimator is not None:
             _dict['estimator'] = self.estimator.to_dict()
         # override the default output from pydantic by calling `to_dict()` of conditions
-        if self.conditions:
+        if self.conditions is not None:
             _dict['conditions'] = self.conditions.to_dict()
         # override the default output from pydantic by calling `to_dict()` of corrector
-        if self.corrector:
+        if self.corrector is not None:
             _dict['corrector'] = self.corrector.to_dict()
         # set to None if mask (nullable) is None
         # and model_fields_set contains the field

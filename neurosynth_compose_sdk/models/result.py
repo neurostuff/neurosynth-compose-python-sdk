@@ -68,8 +68,7 @@ class Result(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
-        excluded_fields: Set[str] = set([
-        ])
+        excluded_fields: Set[str] = set([])
 
         _dict = self.model_dump(
             by_alias=True,
@@ -77,7 +76,7 @@ class Result(BaseModel):
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of neurovault_collection
-        if self.neurovault_collection:
+        if self.neurovault_collection is not None:
             _dict['neurovault_collection'] = self.neurovault_collection.to_dict()
         # set to None if cli_version (nullable) is None
         # and model_fields_set contains the field
