@@ -4,360 +4,55 @@ All URIs are relative to *https://compose.neurosynth.org/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**annotations_get**](ComposeApi.md#annotations_get) | **GET** /annotations | GET a list of annotations
-[**annotations_id_get**](ComposeApi.md#annotations_id_get) | **GET** /annotations/{id} | GET information about an annotation
-[**annotations_id_put**](ComposeApi.md#annotations_id_put) | **PUT** /annotations/{id} | Update an Annotation
-[**annotations_post**](ComposeApi.md#annotations_post) | **POST** /annotations | Create a new Annotation
 [**meta_analyses_get**](ComposeApi.md#meta_analyses_get) | **GET** /meta-analyses | GET a list of meta-analyses
 [**meta_analyses_id_get**](ComposeApi.md#meta_analyses_id_get) | **GET** /meta-analyses/{id} | GET meta-analysis information
 [**meta_analyses_id_put**](ComposeApi.md#meta_analyses_id_put) | **PUT** /meta-analyses/{id} | Update a meta-analysis
 [**meta_analyses_post**](ComposeApi.md#meta_analyses_post) | **POST** /meta-analyses | Create a new meta-analysis
-[**meta_analysis_results_get**](ComposeApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | Your GET endpoint
-[**meta_analysis_results_id_get**](ComposeApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Your GET endpoint
-[**meta_analysis_results_id_put**](ComposeApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | 
-[**meta_analysis_results_post**](ComposeApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | 
-[**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**](ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
-[**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**](ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
-[**neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**](ComposeApi.md#neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
+[**meta_analysis_jobs_get**](ComposeApi.md#meta_analysis_jobs_get) | **GET** /meta-analysis-jobs | List meta-analysis jobs for the current user
+[**meta_analysis_jobs_job_id_get**](ComposeApi.md#meta_analysis_jobs_job_id_get) | **GET** /meta-analysis-jobs/{job_id} | Get status and logs for a meta-analysis job
+[**meta_analysis_jobs_post**](ComposeApi.md#meta_analysis_jobs_post) | **POST** /meta-analysis-jobs | Submit a meta-analysis job
+[**meta_analysis_results_get**](ComposeApi.md#meta_analysis_results_get) | **GET** /meta-analysis-results | List meta-analysis results
+[**meta_analysis_results_id_get**](ComposeApi.md#meta_analysis_results_id_get) | **GET** /meta-analysis-results/{id} | Get a meta-analysis result by ID
+[**meta_analysis_results_id_put**](ComposeApi.md#meta_analysis_results_id_put) | **PUT** /meta-analysis-results/{id} | Update a meta-analysis result with files or snapshots
+[**meta_analysis_results_post**](ComposeApi.md#meta_analysis_results_post) | **POST** /meta-analysis-results | Create a new meta-analysis result
+[**neurostore_annotations_id_get**](ComposeApi.md#neurostore_annotations_id_get) | **GET** /neurostore-annotations/{id} | Get a Neurostore annotation reference by Neurostore ID
+[**neurostore_studies_get**](ComposeApi.md#neurostore_studies_get) | **GET** /neurostore-studies | Your GET endpoint
+[**neurostore_studies_id_get**](ComposeApi.md#neurostore_studies_id_get) | **GET** /neurostore-studies/{id} | Your GET endpoint
+[**neurostore_studysets_get**](ComposeApi.md#neurostore_studysets_get) | **GET** /neurostore-studysets | List Neurostore studyset references
+[**neurostore_studysets_id_get**](ComposeApi.md#neurostore_studysets_id_get) | **GET** /neurostore-studysets/{id} | Get a Neurostore studyset reference by Neurostore ID
+[**neurovault_collections_get**](ComposeApi.md#neurovault_collections_get) | **GET** /neurovault-collections | Get neurovault collections
+[**neurovault_collections_id_get**](ComposeApi.md#neurovault_collections_id_get) | **GET** /neurovault-collections/{id} | Your GET endpoint
+[**neurovault_collections_id_put**](ComposeApi.md#neurovault_collections_id_put) | **PUT** /neurovault-collections/{id} | 
+[**neurovault_collections_post**](ComposeApi.md#neurovault_collections_post) | **POST** /neurovault-collections | Create neurovault collection
+[**neurovault_files_get**](ComposeApi.md#neurovault_files_get) | **GET** /neurovault-files | Your GET endpoint
+[**neurovault_files_id_get**](ComposeApi.md#neurovault_files_id_get) | **GET** /neurovault-files/{id} | Your GET endpoint
+[**neurovault_files_id_put**](ComposeApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
+[**neurovault_files_post**](ComposeApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 [**projects_get**](ComposeApi.md#projects_get) | **GET** /projects | Your GET endpoint
 [**projects_id_delete**](ComposeApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
 [**projects_id_get**](ComposeApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 [**projects_id_put**](ComposeApi.md#projects_id_put) | **PUT** /projects/{id} | 
 [**projects_post**](ComposeApi.md#projects_post) | **POST** /projects | 
+[**snapshot_annotations_get**](ComposeApi.md#snapshot_annotations_get) | **GET** /snapshot-annotations | GET a list of annotations
+[**snapshot_annotations_id_get**](ComposeApi.md#snapshot_annotations_id_get) | **GET** /snapshot-annotations/{id} | GET information about an annotation
+[**snapshot_annotations_id_put**](ComposeApi.md#snapshot_annotations_id_put) | **PUT** /snapshot-annotations/{id} | Update an Annotation
+[**snapshot_annotations_post**](ComposeApi.md#snapshot_annotations_post) | **POST** /snapshot-annotations | Create a new Annotation
+[**snapshot_studysets_get**](ComposeApi.md#snapshot_studysets_get) | **GET** /snapshot-studysets | Get a list of Studysets
+[**snapshot_studysets_id_get**](ComposeApi.md#snapshot_studysets_id_get) | **GET** /snapshot-studysets/{id} | Get information about a Studyset
+[**snapshot_studysets_id_put**](ComposeApi.md#snapshot_studysets_id_put) | **PUT** /snapshot-studysets/{id} | Update a Studyset
+[**snapshot_studysets_post**](ComposeApi.md#snapshot_studysets_post) | **POST** /snapshot-studysets | Create a new Studyset
 [**specifications_get**](ComposeApi.md#specifications_get) | **GET** /specifications | Get a list of Specifications
 [**specifications_id_get**](ComposeApi.md#specifications_id_get) | **GET** /specifications/{id} | Get information about a Specification
 [**specifications_id_put**](ComposeApi.md#specifications_id_put) | **PUT** /specifications/{id} | Update Meta-Analysis specification
 [**specifications_post**](ComposeApi.md#specifications_post) | **POST** /specifications | Create a Specification
-[**studysets_get**](ComposeApi.md#studysets_get) | **GET** /studysets | Get a list of Studysets
-[**studysets_id_get**](ComposeApi.md#studysets_id_get) | **GET** /studysets/{id} | Get information about a Studyset
-[**studysets_id_put**](ComposeApi.md#studysets_id_put) | **PUT** /studysets/{id} | Update a Studyset
-[**studysets_post**](ComposeApi.md#studysets_post) | **POST** /studysets | Create a new Studyset
 [**tags_get**](ComposeApi.md#tags_get) | **GET** /tags | Get a list of Tags
 [**tags_id_get**](ComposeApi.md#tags_id_get) | **GET** /tags/{id} | Get information about a Tag
 [**tags_post**](ComposeApi.md#tags_post) | **POST** /tags | Create a new Tag
+[**users_get**](ComposeApi.md#users_get) | **GET** /users | GET list of Users
+[**users_id_get**](ComposeApi.md#users_id_get) | **GET** /users/{id} | Get User Info by User ID
+[**users_id_put**](ComposeApi.md#users_id_put) | **PUT** /users/{id} | Update User Information
+[**users_post**](ComposeApi.md#users_post) | **POST** /users | Create A New User
 
-
-# **annotations_get**
-> AnnotationList annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
-
-GET a list of annotations
-
-get a list of serialized/referenced annotations
-
-### Example
-
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.annotation_list import AnnotationList
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    nested = True # bool | show nested component instead of id (optional)
-    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
-    page = 56 # int | page of results (optional)
-    page_size = 56 # int | number of elements to return on a page (optional)
-    search = 'imagin' # str | search for entries that contain the substring (optional)
-    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
-    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
-    user_id = 'user_id_example' # str | user id you want to filter on (optional)
-    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
-
-    try:
-        # GET a list of annotations
-        api_response = api_instance.annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
-        print("The response of ComposeApi->annotations_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->annotations_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **nested** | **bool**| show nested component instead of id | [optional] 
- **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
- **page** | **int**| page of results | [optional] 
- **page_size** | **int**| number of elements to return on a page | [optional] 
- **search** | **str**| search for entries that contain the substring | [optional] 
- **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
- **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
- **user_id** | **str**| user id you want to filter on | [optional] 
- **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
-
-### Return type
-
-[**AnnotationList**](AnnotationList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **annotations_id_get**
-> AnnotationReturn annotations_id_get(id)
-
-GET information about an annotation
-
-get a single annotation
-
-### Example
-
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    id = 'id_example' # str | 
-
-    try:
-        # GET information about an annotation
-        api_response = api_instance.annotations_id_get(id)
-        print("The response of ComposeApi->annotations_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->annotations_id_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**AnnotationReturn**](AnnotationReturn.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | form when a request goes wrong |  -  |
-**404** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **annotations_id_put**
-> AnnotationReturn annotations_id_put(id, annotation_update=annotation_update)
-
-Update an Annotation
-
-update an existing annotation
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
-from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    id = 'id_example' # str | 
-    annotation_update = neurosynth_compose_sdk.AnnotationUpdate() # AnnotationUpdate |  (optional)
-
-    try:
-        # Update an Annotation
-        api_response = api_instance.annotations_id_put(id, annotation_update=annotation_update)
-        print("The response of ComposeApi->annotations_id_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->annotations_id_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **annotation_update** | [**AnnotationUpdate**](AnnotationUpdate.md)|  | [optional] 
-
-### Return type
-
-[**AnnotationReturn**](AnnotationReturn.md)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
-**401** | form when a request goes wrong |  -  |
-**404** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **annotations_post**
-> AnnotationReturn annotations_post(annotation_post_body=annotation_post_body)
-
-Create a new Annotation
-
-create a new serialized/referenced annotation
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
-from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    annotation_post_body = neurosynth_compose_sdk.AnnotationPostBody() # AnnotationPostBody |  (optional)
-
-    try:
-        # Create a new Annotation
-        api_response = api_instance.annotations_post(annotation_post_body=annotation_post_body)
-        print("The response of ComposeApi->annotations_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->annotations_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **annotation_post_body** | [**AnnotationPostBody**](AnnotationPostBody.md)|  | [optional] 
-
-### Return type
-
-[**AnnotationReturn**](AnnotationReturn.md)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
-**500** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **meta_analyses_get**
 > MetaAnalysisList meta_analyses_get(nested=nested, ids=ids, page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc)
@@ -693,10 +388,250 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **meta_analysis_jobs_get**
+> MetaAnalysisJobList meta_analysis_jobs_get()
+
+List meta-analysis jobs for the current user
+
+Return cached job submissions associated with the authenticated user.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+
+    try:
+        # List meta-analysis jobs for the current user
+        api_response = api_instance.meta_analysis_jobs_get()
+        print("The response of ComposeApi->meta_analysis_jobs_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->meta_analysis_jobs_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**MetaAnalysisJobList**](MetaAnalysisJobList.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**502** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **meta_analysis_jobs_job_id_get**
+> MetaAnalysisJobResponse meta_analysis_jobs_job_id_get(job_id)
+
+Get status and logs for a meta-analysis job
+
+Retrieve the most recent status information and logs for a submitted job.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    job_id = 'job_id_example' # str | 
+
+    try:
+        # Get status and logs for a meta-analysis job
+        api_response = api_instance.meta_analysis_jobs_job_id_get(job_id)
+        print("The response of ComposeApi->meta_analysis_jobs_job_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->meta_analysis_jobs_job_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **job_id** | **str**|  | 
+
+### Return type
+
+[**MetaAnalysisJobResponse**](MetaAnalysisJobResponse.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
+**502** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **meta_analysis_jobs_post**
+> MetaAnalysisJobResponse meta_analysis_jobs_post(meta_analysis_job_request)
+
+Submit a meta-analysis job
+
+Submit a meta-analysis to the compose runner service.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest
+from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    meta_analysis_job_request = neurosynth_compose_sdk.MetaAnalysisJobRequest() # MetaAnalysisJobRequest | 
+
+    try:
+        # Submit a meta-analysis job
+        api_response = api_instance.meta_analysis_jobs_post(meta_analysis_job_request)
+        print("The response of ComposeApi->meta_analysis_jobs_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->meta_analysis_jobs_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **meta_analysis_job_request** | [**MetaAnalysisJobRequest**](MetaAnalysisJobRequest.md)|  | 
+
+### Return type
+
+[**MetaAnalysisJobResponse**](MetaAnalysisJobResponse.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Job accepted |  -  |
+**401** | form when a request goes wrong |  -  |
+**403** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
+**502** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **meta_analysis_results_get**
 > ResultList meta_analysis_results_get(meta_analysis_id=meta_analysis_id)
 
-Your GET endpoint
+List meta-analysis results
 
 ### Example
 
@@ -721,7 +656,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     meta_analysis_id = 'meta_analysis_id_example' # str | search for results with this meta-analysis id (optional)
 
     try:
-        # Your GET endpoint
+        # List meta-analysis results
         api_response = api_instance.meta_analysis_results_get(meta_analysis_id=meta_analysis_id)
         print("The response of ComposeApi->meta_analysis_results_get:\n")
         pprint(api_response)
@@ -762,7 +697,7 @@ No authorization required
 # **meta_analysis_results_id_get**
 > ResultReturn meta_analysis_results_id_get(id)
 
-Your GET endpoint
+Get a meta-analysis result by ID
 
 ### Example
 
@@ -787,7 +722,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
 
     try:
-        # Your GET endpoint
+        # Get a meta-analysis result by ID
         api_response = api_instance.meta_analysis_results_id_get(id)
         print("The response of ComposeApi->meta_analysis_results_id_get:\n")
         pprint(api_response)
@@ -828,7 +763,7 @@ No authorization required
 # **meta_analysis_results_id_put**
 > ResultReturn meta_analysis_results_id_put(id, result=result)
 
-
+Update a meta-analysis result with files or snapshots
 
 ### Example
 
@@ -872,7 +807,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     result = neurosynth_compose_sdk.Result() # Result |  (optional)
 
     try:
-        # 
+        # Update a meta-analysis result with files or snapshots
         api_response = api_instance.meta_analysis_results_id_put(id, result=result)
         print("The response of ComposeApi->meta_analysis_results_id_put:\n")
         pprint(api_response)
@@ -914,7 +849,7 @@ Name | Type | Description  | Notes
 # **meta_analysis_results_post**
 > ResultReturn meta_analysis_results_post(result_init=result_init)
 
-
+Create a new meta-analysis result
 
 ### Example
 
@@ -957,7 +892,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     result_init = neurosynth_compose_sdk.ResultInit() # ResultInit |  (optional)
 
     try:
-        # 
+        # Create a new meta-analysis result
         api_response = api_instance.meta_analysis_results_post(result_init=result_init)
         print("The response of ComposeApi->meta_analysis_results_post:\n")
         pprint(api_response)
@@ -995,20 +930,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get**
-> MetaAnalysisJobResponse neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get(job_id)
+# **neurostore_annotations_id_get**
+> AnnotationReferenceReturn neurostore_annotations_id_get(id)
 
-Get status and logs for a meta-analysis job
+Get a Neurostore annotation reference by Neurostore ID
 
-Retrieve the most recent status information and logs for a submitted job.
+Resolve a Neurostore annotation reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
 
 ### Example
 
-* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
+from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
@@ -1018,29 +952,20 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    job_id = 'job_id_example' # str | 
+    id = 'id_example' # str | 
 
     try:
-        # Get status and logs for a meta-analysis job
-        api_response = api_instance.neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get(job_id)
-        print("The response of ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get:\n")
+        # Get a Neurostore annotation reference by Neurostore ID
+        api_response = api_instance.neurostore_annotations_id_get(id)
+        print("The response of ComposeApi->neurostore_annotations_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_job_resource_get: %s\n" % e)
+        print("Exception when calling ComposeApi->neurostore_annotations_id_get: %s\n" % e)
 ```
 
 
@@ -1050,46 +975,40 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job_id** | **str**|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
-[**MetaAnalysisJobResponse**](MetaAnalysisJobResponse.md)
+[**AnnotationReferenceReturn**](AnnotationReferenceReturn.md)
 
 ### Authorization
 
-[JSON-Web-Token](../README.md#JSON-Web-Token)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**401** | form when a request goes wrong |  -  |
-**404** | form when a request goes wrong |  -  |
-**502** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get**
-> MetaAnalysisJobList neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get()
+# **neurostore_studies_get**
+> NeurostoreStudyList neurostore_studies_get()
 
-List meta-analysis jobs for the current user
-
-Return cached job submissions associated with the authenticated user.
+Your GET endpoint
 
 ### Example
 
-* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList
+from neurosynth_compose_sdk.models.neurostore_study_list import NeurostoreStudyList
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
@@ -1099,15 +1018,6 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1115,12 +1025,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
 
     try:
-        # List meta-analysis jobs for the current user
-        api_response = api_instance.neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get()
-        print("The response of ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get:\n")
+        # Your GET endpoint
+        api_response = api_instance.neurostore_studies_get()
+        print("The response of ComposeApi->neurostore_studies_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_get: %s\n" % e)
+        print("Exception when calling ComposeApi->neurostore_studies_get: %s\n" % e)
 ```
 
 
@@ -1131,33 +1041,358 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MetaAnalysisJobList**](MetaAnalysisJobList.md)
+[**NeurostoreStudyList**](NeurostoreStudyList.md)
 
 ### Authorization
 
-[JSON-Web-Token](../README.md#JSON-Web-Token)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
-**401** | form when a request goes wrong |  -  |
-**502** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post**
-> MetaAnalysisJobResponse neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post(meta_analysis_job_request)
+# **neurostore_studies_id_get**
+> NeurostoreStudyReturn neurostore_studies_id_get(id)
 
-Submit a meta-analysis job
+Your GET endpoint
 
-Submit a meta-analysis to the compose runner service.
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.neurostore_study_return import NeurostoreStudyReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # Your GET endpoint
+        api_response = api_instance.neurostore_studies_id_get(id)
+        print("The response of ComposeApi->neurostore_studies_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurostore_studies_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**NeurostoreStudyReturn**](NeurostoreStudyReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurostore_studysets_get**
+> StudysetReferenceList neurostore_studysets_get(nested=nested)
+
+List Neurostore studyset references
+
+List reference rows keyed by the actual Neurostore studyset ID, including compact snapshot summaries.
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
+
+    try:
+        # List Neurostore studyset references
+        api_response = api_instance.neurostore_studysets_get(nested=nested)
+        print("The response of ComposeApi->neurostore_studysets_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurostore_studysets_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nested** | **bool**| show nested component instead of id | [optional] 
+
+### Return type
+
+[**StudysetReferenceList**](StudysetReferenceList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurostore_studysets_id_get**
+> StudysetReferenceReturn neurostore_studysets_id_get(id, nested=nested)
+
+Get a Neurostore studyset reference by Neurostore ID
+
+Resolve a Neurostore studyset reference using the same ID exposed by the Neurostore API, including each linked snapshot's compose ID and md5.
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+    nested = True # bool | show nested component instead of id (optional)
+
+    try:
+        # Get a Neurostore studyset reference by Neurostore ID
+        api_response = api_instance.neurostore_studysets_id_get(id, nested=nested)
+        print("The response of ComposeApi->neurostore_studysets_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurostore_studysets_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **nested** | **bool**| show nested component instead of id | [optional] 
+
+### Return type
+
+[**StudysetReferenceReturn**](StudysetReferenceReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_collections_get**
+> neurovault_collections_get()
+
+Get neurovault collections
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+
+    try:
+        # Get neurovault collections
+        api_instance.neurovault_collections_get()
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurovault_collections_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_collections_id_get**
+> NeurovaultCollectionReturn neurovault_collections_id_get(id)
+
+Your GET endpoint
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # Your GET endpoint
+        api_response = api_instance.neurovault_collections_id_get(id)
+        print("The response of ComposeApi->neurovault_collections_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurovault_collections_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**NeurovaultCollectionReturn**](NeurovaultCollectionReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_collections_id_put**
+> NeurovaultCollectionReturn neurovault_collections_id_put(id)
+
+
 
 ### Example
 
@@ -1165,8 +1400,7 @@ Submit a meta-analysis to the compose runner service.
 
 ```python
 import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest
-from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
+from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
 from neurosynth_compose_sdk.rest import ApiException
 from pprint import pprint
 
@@ -1190,15 +1424,15 @@ configuration = neurosynth_compose_sdk.Configuration(
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    meta_analysis_job_request = neurosynth_compose_sdk.MetaAnalysisJobRequest() # MetaAnalysisJobRequest | 
+    id = 'id_example' # str | 
 
     try:
-        # Submit a meta-analysis job
-        api_response = api_instance.neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post(meta_analysis_job_request)
-        print("The response of ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post:\n")
+        # 
+        api_response = api_instance.neurovault_collections_id_put(id)
+        print("The response of ComposeApi->neurovault_collections_id_put:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ComposeApi->neurosynth_compose_resources_meta_analysis_jobs_meta_analysis_jobs_resource_post: %s\n" % e)
+        print("Exception when calling ComposeApi->neurovault_collections_id_put: %s\n" % e)
 ```
 
 
@@ -1208,11 +1442,87 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **meta_analysis_job_request** | [**MetaAnalysisJobRequest**](MetaAnalysisJobRequest.md)|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
-[**MetaAnalysisJobResponse**](MetaAnalysisJobResponse.md)
+[**NeurovaultCollectionReturn**](NeurovaultCollectionReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_collections_post**
+> neurovault_collections_post(neurovault_collection=neurovault_collection)
+
+Create neurovault collection
+
+
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.neurovault_collection import NeurovaultCollection
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    neurovault_collection = neurosynth_compose_sdk.NeurovaultCollection() # NeurovaultCollection |  (optional)
+
+    try:
+        # Create neurovault collection
+        api_instance.neurovault_collections_post(neurovault_collection=neurovault_collection)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurovault_collections_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **neurovault_collection** | [**NeurovaultCollection**](NeurovaultCollection.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -1221,22 +1531,313 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json, application/problem+json
+ - **Accept**: Not defined
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Job accepted |  -  |
-**401** | form when a request goes wrong |  -  |
-**403** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
-**502** | form when a request goes wrong |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_files_get**
+> NeurovaultFileList neurovault_files_get()
+
+Your GET endpoint
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.neurovault_file_list import NeurovaultFileList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+
+    try:
+        # Your GET endpoint
+        api_response = api_instance.neurovault_files_get()
+        print("The response of ComposeApi->neurovault_files_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurovault_files_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**NeurovaultFileList**](NeurovaultFileList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_files_id_get**
+> NeurovaultFileReturn neurovault_files_id_get(id)
+
+Your GET endpoint
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # Your GET endpoint
+        api_response = api_instance.neurovault_files_id_get(id)
+        print("The response of ComposeApi->neurovault_files_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurovault_files_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**NeurovaultFileReturn**](NeurovaultFileReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_files_id_put**
+> NeurovaultFileReturn neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url)
+
+
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+    collection_id = 'collection_id_example' # str |  (optional)
+    exception = 'exception_example' # str |  (optional)
+    traceback = 'traceback_example' # str |  (optional)
+    status = 'status_example' # str |  (optional)
+    image_id = 'image_id_example' # str |  (optional)
+    name = 'name_example' # str |  (optional)
+    url = 'url_example' # str |  (optional)
+
+    try:
+        # 
+        api_response = api_instance.neurovault_files_id_put(id, collection_id=collection_id, exception=exception, traceback=traceback, status=status, image_id=image_id, name=name, url=url)
+        print("The response of ComposeApi->neurovault_files_id_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurovault_files_id_put: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **collection_id** | **str**|  | [optional] 
+ **exception** | **str**|  | [optional] 
+ **traceback** | **str**|  | [optional] 
+ **status** | **str**|  | [optional] 
+ **image_id** | **str**|  | [optional] 
+ **name** | **str**|  | [optional] 
+ **url** | **str**|  | [optional] 
+
+### Return type
+
+[**NeurovaultFileReturn**](NeurovaultFileReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neurovault_files_post**
+> NeurovaultFileReturn neurovault_files_post(neurovault_file=neurovault_file)
+
+
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.neurovault_file import NeurovaultFile
+from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    neurovault_file = neurosynth_compose_sdk.NeurovaultFile() # NeurovaultFile |  (optional)
+
+    try:
+        # 
+        api_response = api_instance.neurovault_files_post(neurovault_file=neurovault_file)
+        print("The response of ComposeApi->neurovault_files_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->neurovault_files_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **neurovault_file** | [**NeurovaultFile**](NeurovaultFile.md)|  | [optional] 
+
+### Return type
+
+[**NeurovaultFileReturn**](NeurovaultFileReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get**
-> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id)
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance)
 
 Your GET endpoint
 
@@ -1278,10 +1879,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
     desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
     user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    include_provenance = True # bool | include the project provenance payload in project responses (optional) (default to True)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id)
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance)
         print("The response of ComposeApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1303,6 +1905,7 @@ Name | Type | Description  | Notes
  **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
  **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
  **user_id** | **str**| user id you want to filter on | [optional] 
+ **include_provenance** | **bool**| include the project provenance payload in project responses | [optional] [default to True]
 
 ### Return type
 
@@ -1399,7 +2002,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_id_get**
-> ProjectReturn projects_id_get(id, info=info)
+> ProjectReturn projects_id_get(id, info=info, include_provenance=include_provenance)
 
 Your GET endpoint
 
@@ -1425,10 +2028,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
     id = 'id_example' # str | 
     info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
+    include_provenance = True # bool | include the project provenance payload in project responses (optional) (default to True)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_id_get(id, info=info)
+        api_response = api_instance.projects_id_get(id, info=info, include_provenance=include_provenance)
         print("The response of ComposeApi->projects_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1444,6 +2048,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
  **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
+ **include_provenance** | **bool**| include the project provenance payload in project responses | [optional] [default to True]
 
 ### Return type
 
@@ -1625,6 +2230,650 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_annotations_get**
+> AnnotationList snapshot_annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+
+GET a list of annotations
+
+get a list of serialized/referenced annotations
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.annotation_list import AnnotationList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
+    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
+    user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
+
+    try:
+        # GET a list of annotations
+        api_response = api_instance.snapshot_annotations_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+        print("The response of ComposeApi->snapshot_annotations_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_annotations_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nested** | **bool**| show nested component instead of id | [optional] 
+ **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
+ **user_id** | **str**| user id you want to filter on | [optional] 
+ **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
+
+### Return type
+
+[**AnnotationList**](AnnotationList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_annotations_id_get**
+> AnnotationReturn snapshot_annotations_id_get(id)
+
+GET information about an annotation
+
+get a single annotation
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # GET information about an annotation
+        api_response = api_instance.snapshot_annotations_id_get(id)
+        print("The response of ComposeApi->snapshot_annotations_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_annotations_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**AnnotationReturn**](AnnotationReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_annotations_id_put**
+> AnnotationReturn snapshot_annotations_id_put(id, annotation_update=annotation_update)
+
+Update an Annotation
+
+update an existing annotation
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+    annotation_update = neurosynth_compose_sdk.AnnotationUpdate() # AnnotationUpdate |  (optional)
+
+    try:
+        # Update an Annotation
+        api_response = api_instance.snapshot_annotations_id_put(id, annotation_update=annotation_update)
+        print("The response of ComposeApi->snapshot_annotations_id_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_annotations_id_put: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **annotation_update** | [**AnnotationUpdate**](AnnotationUpdate.md)|  | [optional] 
+
+### Return type
+
+[**AnnotationReturn**](AnnotationReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_annotations_post**
+> AnnotationReturn snapshot_annotations_post(annotation_post_body=annotation_post_body)
+
+Create a new Annotation
+
+create a new serialized/referenced annotation
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
+from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    annotation_post_body = neurosynth_compose_sdk.AnnotationPostBody() # AnnotationPostBody |  (optional)
+
+    try:
+        # Create a new Annotation
+        api_response = api_instance.snapshot_annotations_post(annotation_post_body=annotation_post_body)
+        print("The response of ComposeApi->snapshot_annotations_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_annotations_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **annotation_post_body** | [**AnnotationPostBody**](AnnotationPostBody.md)|  | [optional] 
+
+### Return type
+
+[**AnnotationReturn**](AnnotationReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
+**500** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_studysets_get**
+> StudysetList snapshot_studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+
+Get a list of Studysets
+
+get a list of serialized/referenced studysets
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset_list import StudysetList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    nested = True # bool | show nested component instead of id (optional)
+    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 56 # int | number of elements to return on a page (optional)
+    search = 'imagin' # str | search for entries that contain the substring (optional)
+    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
+    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
+    user_id = 'user_id_example' # str | user id you want to filter on (optional)
+    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
+
+    try:
+        # Get a list of Studysets
+        api_response = api_instance.snapshot_studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
+        print("The response of ComposeApi->snapshot_studysets_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_studysets_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nested** | **bool**| show nested component instead of id | [optional] 
+ **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of elements to return on a page | [optional] 
+ **search** | **str**| search for entries that contain the substring | [optional] 
+ **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
+ **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
+ **user_id** | **str**| user id you want to filter on | [optional] 
+ **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
+
+### Return type
+
+[**StudysetList**](StudysetList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_studysets_id_get**
+> StudysetReturn snapshot_studysets_id_get(id)
+
+Get information about a Studyset
+
+get a single serialized/referenced studyset
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # Get information about a Studyset
+        api_response = api_instance.snapshot_studysets_id_get(id)
+        print("The response of ComposeApi->snapshot_studysets_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_studysets_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**StudysetReturn**](StudysetReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_studysets_id_put**
+> StudysetReturn snapshot_studysets_id_put(id, studyset=studyset)
+
+Update a Studyset
+
+update an existing serialized/referenced studyset
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset import Studyset
+from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+    studyset = neurosynth_compose_sdk.Studyset() # Studyset |  (optional)
+
+    try:
+        # Update a Studyset
+        api_response = api_instance.snapshot_studysets_id_put(id, studyset=studyset)
+        print("The response of ComposeApi->snapshot_studysets_id_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_studysets_id_put: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **studyset** | [**Studyset**](Studyset.md)|  | [optional] 
+
+### Return type
+
+[**StudysetReturn**](StudysetReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | form when a request goes wrong |  -  |
+**404** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **snapshot_studysets_post**
+> StudysetReturn snapshot_studysets_post(studyset_post_body=studyset_post_body)
+
+Create a new Studyset
+
+create a new serialized/referenced studyset
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
+from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    studyset_post_body = neurosynth_compose_sdk.StudysetPostBody() # StudysetPostBody |  (optional)
+
+    try:
+        # Create a new Studyset
+        api_response = api_instance.snapshot_studysets_post(studyset_post_body=studyset_post_body)
+        print("The response of ComposeApi->snapshot_studysets_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->snapshot_studysets_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **studyset_post_body** | [**StudysetPostBody**](StudysetPostBody.md)|  | [optional] 
+
+### Return type
+
+[**StudysetReturn**](StudysetReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | form when a request goes wrong |  -  |
+**422** | form when a request goes wrong |  -  |
+**500** | form when a request goes wrong |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1950,328 +3199,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **studysets_get**
-> StudysetList studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
-
-Get a list of Studysets
-
-get a list of serialized/referenced studysets
-
-### Example
-
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.studyset_list import StudysetList
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    nested = True # bool | show nested component instead of id (optional)
-    ids = ['ids_example'] # List[str] | choose the specific ids you wish to get (optional)
-    page = 56 # int | page of results (optional)
-    page_size = 56 # int | number of elements to return on a page (optional)
-    search = 'imagin' # str | search for entries that contain the substring (optional)
-    sort = 'created_at' # str | Parameter to sort results on (optional) (default to 'created_at')
-    desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
-    user_id = 'user_id_example' # str | user id you want to filter on (optional)
-    info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
-
-    try:
-        # Get a list of Studysets
-        api_response = api_instance.studysets_get(nested=nested, ids=ids, page=page, page_size=page_size, search=search, sort=sort, desc=desc, user_id=user_id, info=info)
-        print("The response of ComposeApi->studysets_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->studysets_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **nested** | **bool**| show nested component instead of id | [optional] 
- **ids** | [**List[str]**](str.md)| choose the specific ids you wish to get | [optional] 
- **page** | **int**| page of results | [optional] 
- **page_size** | **int**| number of elements to return on a page | [optional] 
- **search** | **str**| search for entries that contain the substring | [optional] 
- **sort** | **str**| Parameter to sort results on | [optional] [default to &#39;created_at&#39;]
- **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
- **user_id** | **str**| user id you want to filter on | [optional] 
- **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
-
-### Return type
-
-[**StudysetList**](StudysetList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **studysets_id_get**
-> StudysetReturn studysets_id_get(id)
-
-Get information about a Studyset
-
-get a single serialized/referenced studyset
-
-### Example
-
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    id = 'id_example' # str | 
-
-    try:
-        # Get information about a Studyset
-        api_response = api_instance.studysets_id_get(id)
-        print("The response of ComposeApi->studysets_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->studysets_id_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
-
-### Return type
-
-[**StudysetReturn**](StudysetReturn.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | form when a request goes wrong |  -  |
-**404** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **studysets_id_put**
-> StudysetReturn studysets_id_put(id, studyset=studyset)
-
-Update a Studyset
-
-update an existing serialized/referenced studyset
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.studyset import Studyset
-from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    id = 'id_example' # str | 
-    studyset = neurosynth_compose_sdk.Studyset() # Studyset |  (optional)
-
-    try:
-        # Update a Studyset
-        api_response = api_instance.studysets_id_put(id, studyset=studyset)
-        print("The response of ComposeApi->studysets_id_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->studysets_id_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
- **studyset** | [**Studyset**](Studyset.md)|  | [optional] 
-
-### Return type
-
-[**StudysetReturn**](StudysetReturn.md)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | form when a request goes wrong |  -  |
-**404** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **studysets_post**
-> StudysetReturn studysets_post(studyset_post_body=studyset_post_body)
-
-Create a new Studyset
-
-create a new serialized/referenced studyset
-
-### Example
-
-* Bearer Authentication (JSON-Web-Token):
-
-```python
-import neurosynth_compose_sdk
-from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
-from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
-from neurosynth_compose_sdk.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://compose.neurosynth.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = neurosynth_compose_sdk.Configuration(
-    host = "https://compose.neurosynth.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: JSON-Web-Token
-configuration = neurosynth_compose_sdk.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
-    studyset_post_body = neurosynth_compose_sdk.StudysetPostBody() # StudysetPostBody |  (optional)
-
-    try:
-        # Create a new Studyset
-        api_response = api_instance.studysets_post(studyset_post_body=studyset_post_body)
-        print("The response of ComposeApi->studysets_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ComposeApi->studysets_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **studyset_post_body** | [**StudysetPostBody**](StudysetPostBody.md)|  | [optional] 
-
-### Return type
-
-[**StudysetReturn**](StudysetReturn.md)
-
-### Authorization
-
-[JSON-Web-Token](../README.md#JSON-Web-Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | form when a request goes wrong |  -  |
-**422** | form when a request goes wrong |  -  |
-**500** | form when a request goes wrong |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **tags_get**
 > TagList tags_get(ids=ids, page=page, page_size=page_size, name=name, search=search, filter=filter, description=description, group=group, official=official, sort=sort, desc=desc, user_id=user_id)
 
@@ -2495,6 +3422,298 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TagReturn**](TagReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_get**
+> UserList users_get()
+
+GET list of Users
+
+List all users
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.user_list import UserList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+
+    try:
+        # GET list of Users
+        api_response = api_instance.users_get()
+        print("The response of ComposeApi->users_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->users_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserList**](UserList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_id_get**
+> UserReturn users_id_get(id)
+
+Get User Info by User ID
+
+Retrieve the information of the user with the matching user ID.
+
+### Example
+
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.user_return import UserReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # Get User Info by User ID
+        api_response = api_instance.users_id_get(id)
+        print("The response of ComposeApi->users_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->users_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**UserReturn**](UserReturn.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_id_put**
+> UserReturn users_id_put(id, user=user)
+
+Update User Information
+
+update information about a user
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.user import User
+from neurosynth_compose_sdk.models.user_return import UserReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+    user = neurosynth_compose_sdk.User() # User |  (optional)
+
+    try:
+        # Update User Information
+        api_response = api_instance.users_id_put(id, user=user)
+        print("The response of ComposeApi->users_id_put:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->users_id_put: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **user** | [**User**](User.md)|  | [optional] 
+
+### Return type
+
+[**UserReturn**](UserReturn.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **users_post**
+> UserReturn users_post(user=user)
+
+Create A New User
+
+create a single user
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.user import User
+from neurosynth_compose_sdk.models.user_return import UserReturn
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    user = neurosynth_compose_sdk.User() # User |  (optional)
+
+    try:
+        # Create A New User
+        api_response = api_instance.users_post(user=user)
+        print("The response of ComposeApi->users_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->users_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user** | [**User**](User.md)|  | [optional] 
+
+### Return type
+
+[**UserReturn**](UserReturn.md)
 
 ### Authorization
 

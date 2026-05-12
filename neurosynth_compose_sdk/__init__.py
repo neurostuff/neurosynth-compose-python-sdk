@@ -19,15 +19,8 @@ __version__ = "0.0.1"
 
 # Define package exports
 __all__ = [
-    "AnnotationsApi",
+    "ComposeApi",
     "DefaultApi",
-    "MetaAnalysesApi",
-    "NeurovaultApi",
-    "ProjectsApi",
-    "SpecificationsApi",
-    "StudysetsApi",
-    "TagsApi",
-    "UsersApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -107,15 +100,8 @@ __all__ = [
 
 if __import__("typing").TYPE_CHECKING:
     # import apis into sdk package
-    from neurosynth_compose_sdk.api.annotations_api import AnnotationsApi as AnnotationsApi
+    from neurosynth_compose_sdk.api.compose_api import ComposeApi as ComposeApi
     from neurosynth_compose_sdk.api.default_api import DefaultApi as DefaultApi
-    from neurosynth_compose_sdk.api.meta_analyses_api import MetaAnalysesApi as MetaAnalysesApi
-    from neurosynth_compose_sdk.api.neurovault_api import NeurovaultApi as NeurovaultApi
-    from neurosynth_compose_sdk.api.projects_api import ProjectsApi as ProjectsApi
-    from neurosynth_compose_sdk.api.specifications_api import SpecificationsApi as SpecificationsApi
-    from neurosynth_compose_sdk.api.studysets_api import StudysetsApi as StudysetsApi
-    from neurosynth_compose_sdk.api.tags_api import TagsApi as TagsApi
-    from neurosynth_compose_sdk.api.users_api import UsersApi as UsersApi
     
     # import ApiClient
     from neurosynth_compose_sdk.api_response import ApiResponse as ApiResponse
@@ -205,15 +191,8 @@ else:
             ("__version__", __version__),
             ("__all__", __all__),
             """# import apis into sdk package
-from neurosynth_compose_sdk.api.annotations_api import AnnotationsApi as AnnotationsApi
+from neurosynth_compose_sdk.api.compose_api import ComposeApi as ComposeApi
 from neurosynth_compose_sdk.api.default_api import DefaultApi as DefaultApi
-from neurosynth_compose_sdk.api.meta_analyses_api import MetaAnalysesApi as MetaAnalysesApi
-from neurosynth_compose_sdk.api.neurovault_api import NeurovaultApi as NeurovaultApi
-from neurosynth_compose_sdk.api.projects_api import ProjectsApi as ProjectsApi
-from neurosynth_compose_sdk.api.specifications_api import SpecificationsApi as SpecificationsApi
-from neurosynth_compose_sdk.api.studysets_api import StudysetsApi as StudysetsApi
-from neurosynth_compose_sdk.api.tags_api import TagsApi as TagsApi
-from neurosynth_compose_sdk.api.users_api import UsersApi as UsersApi
 
 # import ApiClient
 from neurosynth_compose_sdk.api_response import ApiResponse as ApiResponse
