@@ -1,6 +1,6 @@
 [project]
 name = "neurosynth_compose_sdk"
-version = "1.1"
+version = "1.2"
 description = "Analysis Specification for Meta-analysis"
 authors = [
   {name = "James D Kent",email = "jamesdkent21@gmail.com"},
