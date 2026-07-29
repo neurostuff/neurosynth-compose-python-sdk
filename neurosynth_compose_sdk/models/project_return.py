@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
 from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
@@ -39,13 +39,24 @@ class ProjectReturn(BaseModel):
     meta_analyses: Optional[ProjectMetaAnalyses] = None
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
+    type: Optional[StrictStr] = None
     neurostore_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of the project’s linked Neurostore studyset reference.")
     neurostore_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of the project’s linked Neurostore annotation reference.")
     public: Optional[StrictBool] = Field(default=None, description="whether the project is public or private")
     neurostore_study: Optional[NeurostoreStudy] = None
     neurostore_url: Optional[StrictStr] = None
     draft: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["id", "updated_at", "created_at", "user", "username", "provenance", "meta_analyses", "name", "description", "neurostore_studyset_id", "neurostore_annotation_id", "public", "neurostore_study", "neurostore_url", "draft"]
+    __properties: ClassVar[List[str]] = ["id", "updated_at", "created_at", "user", "username", "provenance", "meta_analyses", "name", "description", "type", "neurostore_studyset_id", "neurostore_annotation_id", "public", "neurostore_study", "neurostore_url", "draft"]
+
+    @field_validator('type')
+    def type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['CBMA', 'IBMA']):
+            raise ValueError("must be one of enum values ('CBMA', 'IBMA')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -161,6 +172,7 @@ class ProjectReturn(BaseModel):
             "meta_analyses": ProjectMetaAnalyses.from_dict(obj["meta_analyses"]) if obj.get("meta_analyses") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description"),
+            "type": obj.get("type"),
             "neurostore_studyset_id": obj.get("neurostore_studyset_id"),
             "neurostore_annotation_id": obj.get("neurostore_annotation_id"),
             "public": obj.get("public"),

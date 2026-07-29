@@ -40,6 +40,7 @@ class TestProject(unittest.TestCase):
                 meta_analyses = None,
                 name = '',
                 description = '',
+                type = 'CBMA',
                 neurostore_studyset_id = '',
                 neurostore_annotation_id = '',
                 public = True,
