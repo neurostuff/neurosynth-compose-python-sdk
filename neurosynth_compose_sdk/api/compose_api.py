@@ -2689,7 +2689,8 @@ class ComposeApi:
         statistical_maps: Optional[ResultUploadStatisticalMaps] = None,
         cluster_tables: Optional[ResultUploadStatisticalMaps] = None,
         diagnostic_tables: Optional[ResultUploadStatisticalMaps] = None,
-        method_description: Optional[StrictStr] = None,
+        method_description: Annotated[Optional[StrictStr], Field(description="the description of the methods applied to create this result.")] = None,
+        method_references: Annotated[Optional[StrictStr], Field(description="BibTeX-formatted references cited by method_description. ")] = None,
         snapshot_studyset: Annotated[Optional[StrictStr], Field(description="JSON-encoded studyset snapshot payload, optionally provided in multipart form.")] = None,
         snapshot_annotation: Annotated[Optional[StrictStr], Field(description="JSON-encoded annotation snapshot payload, optionally provided in multipart form.")] = None,
         _request_timeout: Union[
@@ -2716,8 +2717,10 @@ class ComposeApi:
         :type cluster_tables: ResultUploadStatisticalMaps
         :param diagnostic_tables:
         :type diagnostic_tables: ResultUploadStatisticalMaps
-        :param method_description:
+        :param method_description: the description of the methods applied to create this result.
         :type method_description: str
+        :param method_references: BibTeX-formatted references cited by method_description. 
+        :type method_references: str
         :param snapshot_studyset: JSON-encoded studyset snapshot payload, optionally provided in multipart form.
         :type snapshot_studyset: str
         :param snapshot_annotation: JSON-encoded annotation snapshot payload, optionally provided in multipart form.
@@ -2750,6 +2753,7 @@ class ComposeApi:
             cluster_tables=cluster_tables,
             diagnostic_tables=diagnostic_tables,
             method_description=method_description,
+            method_references=method_references,
             snapshot_studyset=snapshot_studyset,
             snapshot_annotation=snapshot_annotation,
             _request_auth=_request_auth,
@@ -2779,7 +2783,8 @@ class ComposeApi:
         statistical_maps: Optional[ResultUploadStatisticalMaps] = None,
         cluster_tables: Optional[ResultUploadStatisticalMaps] = None,
         diagnostic_tables: Optional[ResultUploadStatisticalMaps] = None,
-        method_description: Optional[StrictStr] = None,
+        method_description: Annotated[Optional[StrictStr], Field(description="the description of the methods applied to create this result.")] = None,
+        method_references: Annotated[Optional[StrictStr], Field(description="BibTeX-formatted references cited by method_description. ")] = None,
         snapshot_studyset: Annotated[Optional[StrictStr], Field(description="JSON-encoded studyset snapshot payload, optionally provided in multipart form.")] = None,
         snapshot_annotation: Annotated[Optional[StrictStr], Field(description="JSON-encoded annotation snapshot payload, optionally provided in multipart form.")] = None,
         _request_timeout: Union[
@@ -2806,8 +2811,10 @@ class ComposeApi:
         :type cluster_tables: ResultUploadStatisticalMaps
         :param diagnostic_tables:
         :type diagnostic_tables: ResultUploadStatisticalMaps
-        :param method_description:
+        :param method_description: the description of the methods applied to create this result.
         :type method_description: str
+        :param method_references: BibTeX-formatted references cited by method_description. 
+        :type method_references: str
         :param snapshot_studyset: JSON-encoded studyset snapshot payload, optionally provided in multipart form.
         :type snapshot_studyset: str
         :param snapshot_annotation: JSON-encoded annotation snapshot payload, optionally provided in multipart form.
@@ -2840,6 +2847,7 @@ class ComposeApi:
             cluster_tables=cluster_tables,
             diagnostic_tables=diagnostic_tables,
             method_description=method_description,
+            method_references=method_references,
             snapshot_studyset=snapshot_studyset,
             snapshot_annotation=snapshot_annotation,
             _request_auth=_request_auth,
@@ -2869,7 +2877,8 @@ class ComposeApi:
         statistical_maps: Optional[ResultUploadStatisticalMaps] = None,
         cluster_tables: Optional[ResultUploadStatisticalMaps] = None,
         diagnostic_tables: Optional[ResultUploadStatisticalMaps] = None,
-        method_description: Optional[StrictStr] = None,
+        method_description: Annotated[Optional[StrictStr], Field(description="the description of the methods applied to create this result.")] = None,
+        method_references: Annotated[Optional[StrictStr], Field(description="BibTeX-formatted references cited by method_description. ")] = None,
         snapshot_studyset: Annotated[Optional[StrictStr], Field(description="JSON-encoded studyset snapshot payload, optionally provided in multipart form.")] = None,
         snapshot_annotation: Annotated[Optional[StrictStr], Field(description="JSON-encoded annotation snapshot payload, optionally provided in multipart form.")] = None,
         _request_timeout: Union[
@@ -2896,8 +2905,10 @@ class ComposeApi:
         :type cluster_tables: ResultUploadStatisticalMaps
         :param diagnostic_tables:
         :type diagnostic_tables: ResultUploadStatisticalMaps
-        :param method_description:
+        :param method_description: the description of the methods applied to create this result.
         :type method_description: str
+        :param method_references: BibTeX-formatted references cited by method_description. 
+        :type method_references: str
         :param snapshot_studyset: JSON-encoded studyset snapshot payload, optionally provided in multipart form.
         :type snapshot_studyset: str
         :param snapshot_annotation: JSON-encoded annotation snapshot payload, optionally provided in multipart form.
@@ -2930,6 +2941,7 @@ class ComposeApi:
             cluster_tables=cluster_tables,
             diagnostic_tables=diagnostic_tables,
             method_description=method_description,
+            method_references=method_references,
             snapshot_studyset=snapshot_studyset,
             snapshot_annotation=snapshot_annotation,
             _request_auth=_request_auth,
@@ -2955,6 +2967,7 @@ class ComposeApi:
         cluster_tables,
         diagnostic_tables,
         method_description,
+        method_references,
         snapshot_studyset,
         snapshot_annotation,
         _request_auth,
@@ -2991,6 +3004,8 @@ class ComposeApi:
             _form_params.append(('diagnostic_tables', diagnostic_tables))
         if method_description is not None:
             _form_params.append(('method_description', method_description))
+        if method_references is not None:
+            _form_params.append(('method_references', method_references))
         if snapshot_studyset is not None:
             _form_params.append(('snapshot_studyset', snapshot_studyset))
         if snapshot_annotation is not None:

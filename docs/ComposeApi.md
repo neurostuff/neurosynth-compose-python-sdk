@@ -761,7 +761,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **meta_analysis_results_id_put**
-> ResultReturn meta_analysis_results_id_put(id, statistical_maps=statistical_maps, cluster_tables=cluster_tables, diagnostic_tables=diagnostic_tables, method_description=method_description, snapshot_studyset=snapshot_studyset, snapshot_annotation=snapshot_annotation)
+> ResultReturn meta_analysis_results_id_put(id, statistical_maps=statistical_maps, cluster_tables=cluster_tables, diagnostic_tables=diagnostic_tables, method_description=method_description, method_references=method_references, snapshot_studyset=snapshot_studyset, snapshot_annotation=snapshot_annotation)
 
 Update a meta-analysis result with files or snapshots
 
@@ -807,13 +807,14 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     statistical_maps = neurosynth_compose_sdk.ResultUploadStatisticalMaps() # ResultUploadStatisticalMaps |  (optional)
     cluster_tables = neurosynth_compose_sdk.ResultUploadStatisticalMaps() # ResultUploadStatisticalMaps |  (optional)
     diagnostic_tables = neurosynth_compose_sdk.ResultUploadStatisticalMaps() # ResultUploadStatisticalMaps |  (optional)
-    method_description = 'method_description_example' # str |  (optional)
+    method_description = 'method_description_example' # str | the description of the methods applied to create this result. (optional)
+    method_references = 'method_references_example' # str | BibTeX-formatted references cited by method_description.  (optional)
     snapshot_studyset = 'snapshot_studyset_example' # str | JSON-encoded studyset snapshot payload, optionally provided in multipart form. (optional)
     snapshot_annotation = 'snapshot_annotation_example' # str | JSON-encoded annotation snapshot payload, optionally provided in multipart form. (optional)
 
     try:
         # Update a meta-analysis result with files or snapshots
-        api_response = api_instance.meta_analysis_results_id_put(id, statistical_maps=statistical_maps, cluster_tables=cluster_tables, diagnostic_tables=diagnostic_tables, method_description=method_description, snapshot_studyset=snapshot_studyset, snapshot_annotation=snapshot_annotation)
+        api_response = api_instance.meta_analysis_results_id_put(id, statistical_maps=statistical_maps, cluster_tables=cluster_tables, diagnostic_tables=diagnostic_tables, method_description=method_description, method_references=method_references, snapshot_studyset=snapshot_studyset, snapshot_annotation=snapshot_annotation)
         print("The response of ComposeApi->meta_analysis_results_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -831,7 +832,8 @@ Name | Type | Description  | Notes
  **statistical_maps** | [**ResultUploadStatisticalMaps**](ResultUploadStatisticalMaps.md)|  | [optional] 
  **cluster_tables** | [**ResultUploadStatisticalMaps**](ResultUploadStatisticalMaps.md)|  | [optional] 
  **diagnostic_tables** | [**ResultUploadStatisticalMaps**](ResultUploadStatisticalMaps.md)|  | [optional] 
- **method_description** | **str**|  | [optional] 
+ **method_description** | **str**| the description of the methods applied to create this result. | [optional] 
+ **method_references** | **str**| BibTeX-formatted references cited by method_description.  | [optional] 
  **snapshot_studyset** | **str**| JSON-encoded studyset snapshot payload, optionally provided in multipart form. | [optional] 
  **snapshot_annotation** | **str**| JSON-encoded annotation snapshot payload, optionally provided in multipart form. | [optional] 
 

@@ -32,7 +32,8 @@ class ResultReturn(BaseModel):
     meta_analysis_id: Optional[StrictStr] = Field(default=None, description="the meta analysis this result was derived from.")
     cli_version: Optional[StrictStr] = Field(default=None, description="version of the command-line-tool that is uploading the results. ")
     neurovault_collection: Optional[NeurovaultCollectionReturn] = None
-    methods_description: Optional[StrictStr] = Field(default=None, description="the description of the methods applied to create this result.")
+    method_description: Optional[StrictStr] = Field(default=None, description="the description of the methods applied to create this result.")
+    method_references: Optional[StrictStr] = Field(default=None, description="BibTeX-formatted references cited by method_description. ")
     diagnostic_table: Optional[StrictStr] = Field(default=None, description="a text representation of a tsv that marks the contribution of each study to each particular cluster.")
     cli_args: Optional[Dict[str, Any]] = Field(default=None, description="additional parameters that were passed to the commandline tool at runtime. ")
     status: Optional[StrictStr] = None
@@ -43,7 +44,7 @@ class ResultReturn(BaseModel):
     username: Optional[StrictStr] = None
     snapshot_studyset_id: Optional[StrictStr] = None
     snapshot_annotation_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "methods_description", "diagnostic_table", "cli_args", "status", "id", "updated_at", "created_at", "user", "username", "snapshot_studyset_id", "snapshot_annotation_id"]
+    __properties: ClassVar[List[str]] = ["meta_analysis_id", "cli_version", "neurovault_collection", "method_description", "method_references", "diagnostic_table", "cli_args", "status", "id", "updated_at", "created_at", "user", "username", "snapshot_studyset_id", "snapshot_annotation_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,10 +97,15 @@ class ResultReturn(BaseModel):
         if self.cli_version is None and "cli_version" in self.model_fields_set:
             _dict['cli_version'] = None
 
-        # set to None if methods_description (nullable) is None
+        # set to None if method_description (nullable) is None
         # and model_fields_set contains the field
-        if self.methods_description is None and "methods_description" in self.model_fields_set:
-            _dict['methods_description'] = None
+        if self.method_description is None and "method_description" in self.model_fields_set:
+            _dict['method_description'] = None
+
+        # set to None if method_references (nullable) is None
+        # and model_fields_set contains the field
+        if self.method_references is None and "method_references" in self.model_fields_set:
+            _dict['method_references'] = None
 
         # set to None if diagnostic_table (nullable) is None
         # and model_fields_set contains the field
@@ -156,7 +162,8 @@ class ResultReturn(BaseModel):
             "meta_analysis_id": obj.get("meta_analysis_id"),
             "cli_version": obj.get("cli_version"),
             "neurovault_collection": NeurovaultCollectionReturn.from_dict(obj["neurovault_collection"]) if obj.get("neurovault_collection") is not None else None,
-            "methods_description": obj.get("methods_description"),
+            "method_description": obj.get("method_description"),
+            "method_references": obj.get("method_references"),
             "diagnostic_table": obj.get("diagnostic_table"),
             "cli_args": obj.get("cli_args"),
             "status": obj.get("status"),
