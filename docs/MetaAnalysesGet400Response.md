@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **status** | **int** |  | [optional] 
 **title** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
+**request_id** | **str** | Correlation id for the failing request. Matches the X-Request-ID response header and the server&#39;s error log. | [optional] 
+**timestamp** | **datetime** | When the error was produced, ISO 8601. | [optional] 
 
 ## Example
 
