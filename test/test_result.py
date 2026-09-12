@@ -39,8 +39,7 @@ class TestResult(unittest.TestCase):
                 meta_analysis_id = '',
                 cli_version = '',
                 neurovault_collection = None,
-                method_description = '',
-                method_references = '',
+                methods_description = '',
                 diagnostic_table = '',
                 cli_args = None,
                 status = ''
