@@ -22,6 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_
 from typing import Any, ClassVar, Dict, List, Optional
 from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
 from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
+from neurosynth_compose_sdk.models.project_tags import ProjectTags
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,11 +37,12 @@ class Project(BaseModel):
     type: Optional[StrictStr] = None
     neurostore_studyset_id: Optional[StrictStr] = Field(default=None, description="ID of the project’s linked Neurostore studyset reference.")
     neurostore_annotation_id: Optional[StrictStr] = Field(default=None, description="ID of the project’s linked Neurostore annotation reference.")
+    tags: Optional[ProjectTags] = None
     public: Optional[StrictBool] = Field(default=None, description="whether the project is public or private")
     neurostore_study: Optional[NeurostoreStudy] = None
     neurostore_url: Optional[StrictStr] = None
     draft: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["provenance", "meta_analyses", "name", "description", "type", "neurostore_studyset_id", "neurostore_annotation_id", "public", "neurostore_study", "neurostore_url", "draft"]
+    __properties: ClassVar[List[str]] = ["provenance", "meta_analyses", "name", "description", "type", "neurostore_studyset_id", "neurostore_annotation_id", "tags", "public", "neurostore_study", "neurostore_url", "draft"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -94,6 +96,9 @@ class Project(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of meta_analyses
         if self.meta_analyses is not None:
             _dict['meta_analyses'] = self.meta_analyses.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of tags
+        if self.tags is not None:
+            _dict['tags'] = self.tags.to_dict()
         # override the default output from pydantic by calling `to_dict()` of neurostore_study
         if self.neurostore_study is not None:
             _dict['neurostore_study'] = self.neurostore_study.to_dict()
@@ -146,6 +151,7 @@ class Project(BaseModel):
             "type": obj.get("type"),
             "neurostore_studyset_id": obj.get("neurostore_studyset_id"),
             "neurostore_annotation_id": obj.get("neurostore_annotation_id"),
+            "tags": ProjectTags.from_dict(obj["tags"]) if obj.get("tags") is not None else None,
             "public": obj.get("public"),
             "neurostore_study": NeurostoreStudy.from_dict(obj["neurostore_study"]) if obj.get("neurostore_study") is not None else None,
             "neurostore_url": obj.get("neurostore_url"),

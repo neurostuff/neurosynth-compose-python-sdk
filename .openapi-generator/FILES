@@ -45,6 +45,7 @@ docs/Project.md
 docs/ProjectList.md
 docs/ProjectMetaAnalyses.md
 docs/ProjectReturn.md
+docs/ProjectTags.md
 docs/ReadOnly.md
 docs/Result.md
 docs/ResultInit.md
@@ -121,6 +122,7 @@ neurosynth_compose_sdk/models/project.py
 neurosynth_compose_sdk/models/project_list.py
 neurosynth_compose_sdk/models/project_meta_analyses.py
 neurosynth_compose_sdk/models/project_return.py
+neurosynth_compose_sdk/models/project_tags.py
 neurosynth_compose_sdk/models/read_only.py
 neurosynth_compose_sdk/models/result.py
 neurosynth_compose_sdk/models/result_init.py
@@ -197,6 +199,7 @@ test/test_project.py
 test/test_project_list.py
 test/test_project_meta_analyses.py
 test/test_project_return.py
+test/test_project_tags.py
 test/test_read_only.py
 test/test_result.py
 test/test_result_init.py

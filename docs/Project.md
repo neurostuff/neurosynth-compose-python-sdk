@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] 
 **neurostore_studyset_id** | **str** | ID of the project’s linked Neurostore studyset reference. | [optional] 
 **neurostore_annotation_id** | **str** | ID of the project’s linked Neurostore annotation reference. | [optional] 
+**tags** | [**ProjectTags**](ProjectTags.md) |  | [optional] 
 **public** | **bool** | whether the project is public or private | [optional] 
 **neurostore_study** | [**NeurostoreStudy**](NeurostoreStudy.md) |  | [optional] 
 **neurostore_url** | **str** |  | [optional] 

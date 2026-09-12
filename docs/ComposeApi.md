@@ -1851,7 +1851,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_get**
-> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance)
+> ProjectList projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance, tag=tag, exclude_tag=exclude_tag)
 
 Your GET endpoint
 
@@ -1894,10 +1894,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     desc = True # bool | sort results by descending order (as opposed to ascending order) (optional)
     user_id = 'user_id_example' # str | user id you want to filter on (optional)
     include_provenance = True # bool | include the project provenance payload in project responses (optional) (default to True)
+    tag = ['tag_example'] # List[str] | only return projects carrying every one of these tag names (case-insensitive) (optional)
+    exclude_tag = ['exclude_tag_example'] # List[str] | drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away (optional)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance)
+        api_response = api_instance.projects_get(page=page, page_size=page_size, name=name, search=search, description=description, sort=sort, desc=desc, user_id=user_id, include_provenance=include_provenance, tag=tag, exclude_tag=exclude_tag)
         print("The response of ComposeApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1920,6 +1922,8 @@ Name | Type | Description  | Notes
  **desc** | **bool**| sort results by descending order (as opposed to ascending order) | [optional] 
  **user_id** | **str**| user id you want to filter on | [optional] 
  **include_provenance** | **bool**| include the project provenance payload in project responses | [optional] [default to True]
+ **tag** | [**List[str]**](str.md)| only return projects carrying every one of these tag names (case-insensitive) | [optional] 
+ **exclude_tag** | [**List[str]**](str.md)| drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away | [optional] 
 
 ### Return type
 
