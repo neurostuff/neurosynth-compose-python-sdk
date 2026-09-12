@@ -70,6 +70,7 @@ __all__ = [
     "ProjectList",
     "ProjectMetaAnalyses",
     "ProjectReturn",
+    "ProjectTags",
     "ReadOnly",
     "Result",
     "ResultInit",
@@ -155,6 +156,7 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.project_list import ProjectList as ProjectList
     from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses as ProjectMetaAnalyses
     from neurosynth_compose_sdk.models.project_return import ProjectReturn as ProjectReturn
+    from neurosynth_compose_sdk.models.project_tags import ProjectTags as ProjectTags
     from neurosynth_compose_sdk.models.read_only import ReadOnly as ReadOnly
     from neurosynth_compose_sdk.models.result import Result as Result
     from neurosynth_compose_sdk.models.result_init import ResultInit as ResultInit
@@ -246,6 +248,7 @@ from neurosynth_compose_sdk.models.project import Project as Project
 from neurosynth_compose_sdk.models.project_list import ProjectList as ProjectList
 from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses as ProjectMetaAnalyses
 from neurosynth_compose_sdk.models.project_return import ProjectReturn as ProjectReturn
+from neurosynth_compose_sdk.models.project_tags import ProjectTags as ProjectTags
 from neurosynth_compose_sdk.models.read_only import ReadOnly as ReadOnly
 from neurosynth_compose_sdk.models.result import Result as Result
 from neurosynth_compose_sdk.models.result_init import ResultInit as ResultInit

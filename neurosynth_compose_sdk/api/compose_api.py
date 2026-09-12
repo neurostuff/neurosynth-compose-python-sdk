@@ -6820,6 +6820,8 @@ class ComposeApi:
         desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
         include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
+        tag: Annotated[Optional[List[StrictStr]], Field(description="only return projects carrying every one of these tag names (case-insensitive)")] = None,
+        exclude_tag: Annotated[Optional[List[StrictStr]], Field(description="drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6854,6 +6856,10 @@ class ComposeApi:
         :type user_id: str
         :param include_provenance: include the project provenance payload in project responses
         :type include_provenance: bool
+        :param tag: only return projects carrying every one of these tag names (case-insensitive)
+        :type tag: List[str]
+        :param exclude_tag: drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away
+        :type exclude_tag: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6886,6 +6892,8 @@ class ComposeApi:
             desc=desc,
             user_id=user_id,
             include_provenance=include_provenance,
+            tag=tag,
+            exclude_tag=exclude_tag,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6918,6 +6926,8 @@ class ComposeApi:
         desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
         include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
+        tag: Annotated[Optional[List[StrictStr]], Field(description="only return projects carrying every one of these tag names (case-insensitive)")] = None,
+        exclude_tag: Annotated[Optional[List[StrictStr]], Field(description="drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6952,6 +6962,10 @@ class ComposeApi:
         :type user_id: str
         :param include_provenance: include the project provenance payload in project responses
         :type include_provenance: bool
+        :param tag: only return projects carrying every one of these tag names (case-insensitive)
+        :type tag: List[str]
+        :param exclude_tag: drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away
+        :type exclude_tag: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6984,6 +6998,8 @@ class ComposeApi:
             desc=desc,
             user_id=user_id,
             include_provenance=include_provenance,
+            tag=tag,
+            exclude_tag=exclude_tag,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7016,6 +7032,8 @@ class ComposeApi:
         desc: Annotated[Optional[StrictBool], Field(description="sort results by descending order (as opposed to ascending order)")] = None,
         user_id: Annotated[Optional[StrictStr], Field(description="user id you want to filter on")] = None,
         include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
+        tag: Annotated[Optional[List[StrictStr]], Field(description="only return projects carrying every one of these tag names (case-insensitive)")] = None,
+        exclude_tag: Annotated[Optional[List[StrictStr]], Field(description="drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7050,6 +7068,10 @@ class ComposeApi:
         :type user_id: str
         :param include_provenance: include the project provenance payload in project responses
         :type include_provenance: bool
+        :param tag: only return projects carrying every one of these tag names (case-insensitive)
+        :type tag: List[str]
+        :param exclude_tag: drop projects carrying any of these tag names (case-insensitive); use this to hide projects a user has tagged away
+        :type exclude_tag: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7082,6 +7104,8 @@ class ComposeApi:
             desc=desc,
             user_id=user_id,
             include_provenance=include_provenance,
+            tag=tag,
+            exclude_tag=exclude_tag,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7109,6 +7133,8 @@ class ComposeApi:
         desc,
         user_id,
         include_provenance,
+        tag,
+        exclude_tag,
         _request_auth,
         _content_type,
         _headers,
@@ -7118,6 +7144,8 @@ class ComposeApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'tag': 'csv',
+            'exclude_tag': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -7166,6 +7194,14 @@ class ComposeApi:
         if include_provenance is not None:
             
             _query_params.append(('include_provenance', include_provenance))
+            
+        if tag is not None:
+            
+            _query_params.append(('tag', tag))
+            
+        if exclude_tag is not None:
+            
+            _query_params.append(('exclude_tag', exclude_tag))
             
         # process the header parameters
         # process the form parameters

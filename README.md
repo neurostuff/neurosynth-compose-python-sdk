@@ -198,6 +198,7 @@ Class | Method | HTTP request | Description
  - [ProjectList](docs/ProjectList.md)
  - [ProjectMetaAnalyses](docs/ProjectMetaAnalyses.md)
  - [ProjectReturn](docs/ProjectReturn.md)
+ - [ProjectTags](docs/ProjectTags.md)
  - [ReadOnly](docs/ReadOnly.md)
  - [Result](docs/Result.md)
  - [ResultInit](docs/ResultInit.md)

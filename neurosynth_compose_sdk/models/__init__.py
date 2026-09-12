@@ -55,6 +55,7 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.project_list import ProjectList
     from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
     from neurosynth_compose_sdk.models.project_return import ProjectReturn
+    from neurosynth_compose_sdk.models.project_tags import ProjectTags
     from neurosynth_compose_sdk.models.read_only import ReadOnly
     from neurosynth_compose_sdk.models.result import Result
     from neurosynth_compose_sdk.models.result_init import ResultInit
@@ -129,6 +130,7 @@ from neurosynth_compose_sdk.models.project import Project
 from neurosynth_compose_sdk.models.project_list import ProjectList
 from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
 from neurosynth_compose_sdk.models.project_return import ProjectReturn
+from neurosynth_compose_sdk.models.project_tags import ProjectTags
 from neurosynth_compose_sdk.models.read_only import ReadOnly
 from neurosynth_compose_sdk.models.result import Result
 from neurosynth_compose_sdk.models.result_init import ResultInit

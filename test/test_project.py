@@ -43,6 +43,7 @@ class TestProject(unittest.TestCase):
                 type = 'CBMA',
                 neurostore_studyset_id = '',
                 neurostore_annotation_id = '',
+                tags = None,
                 public = True,
                 neurostore_study = neurosynth_compose_sdk.models.neurostore_study.neurostore-study(
                     neurostore_id = '', 
