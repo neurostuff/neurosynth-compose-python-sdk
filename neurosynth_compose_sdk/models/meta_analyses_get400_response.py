@@ -18,7 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +32,9 @@ class MetaAnalysesGet400Response(BaseModel):
     status: Optional[StrictInt] = None
     title: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["detail", "status", "title", "type"]
+    request_id: Optional[StrictStr] = Field(default=None, description="Correlation id for the failing request. Matches the X-Request-ID response header and the server's error log.")
+    timestamp: Optional[datetime] = Field(default=None, description="When the error was produced, ISO 8601.")
+    __properties: ClassVar[List[str]] = ["detail", "status", "title", "type", "request_id", "timestamp"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +89,9 @@ class MetaAnalysesGet400Response(BaseModel):
             "detail": obj.get("detail"),
             "status": obj.get("status"),
             "title": obj.get("title"),
-            "type": obj.get("type")
+            "type": obj.get("type"),
+            "request_id": obj.get("request_id"),
+            "timestamp": obj.get("timestamp")
         })
         return _obj
 

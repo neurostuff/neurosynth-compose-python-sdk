@@ -39,7 +39,9 @@ class TestMetaAnalysesGet400Response(unittest.TestCase):
                 detail = '',
                 status = 56,
                 title = '',
-                type = ''
+                type = '',
+                request_id = '9e5898042dbe4148',
+                timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return MetaAnalysesGet400Response(
