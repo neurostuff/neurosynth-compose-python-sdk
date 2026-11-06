@@ -37,7 +37,7 @@ class TestResultList(unittest.TestCase):
         if include_optional:
             return ResultList(
                 results = None,
-                metadata = neurosynth_compose_sdk.models.metadata.metadata()
+                metadata = { }
             )
         else:
             return ResultList(

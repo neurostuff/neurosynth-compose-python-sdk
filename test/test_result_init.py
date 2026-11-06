@@ -37,8 +37,8 @@ class TestResultInit(unittest.TestCase):
         if include_optional:
             return ResultInit(
                 meta_analysis_id = '',
-                snapshot_studyset = None,
-                snapshot_annotation = None,
+                snapshot_studyset = { },
+                snapshot_annotation = { },
                 snapshot_studyset_id = '',
                 snapshot_annotation_id = '',
                 cli_version = ''

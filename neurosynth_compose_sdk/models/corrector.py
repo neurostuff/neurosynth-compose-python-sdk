@@ -23,17 +23,19 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class Corrector(BaseModel):
     """
     The function/class applying statistical adjustments to the output of the meta-analysis (optional).
     """ # noqa: E501
-    type: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="the name of the function/class performing the correction. For example FWECorrector from NiMARE would be valid.")
+    type: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="the name of the function/class performing the correction. For example FWECorrector from NiMARE would be valid.", json_schema_extra={"examples": ["FWECorrector"]})
     args: Optional[Dict[str, Any]] = Field(default=None, description="key word arguments passed to the corrector to modidy default functionality, such as number of iterations, or the particular method of correction being applied.")
     __properties: ClassVar[List[str]] = ["type", "args"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -45,8 +47,7 @@ class Corrector(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

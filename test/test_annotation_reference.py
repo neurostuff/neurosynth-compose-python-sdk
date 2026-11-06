@@ -37,7 +37,7 @@ class TestAnnotationReference(unittest.TestCase):
         if include_optional:
             return AnnotationReference(
                 annotations = [
-                    neurosynth_compose_sdk.models.annotation_snapshot_summary.annotation-snapshot-summary(
+                    neurosynth_compose_sdk.models.annotation_snapshot_summary.AnnotationSnapshotSummary(
                         id = '', 
                         md5 = '', )
                     ]

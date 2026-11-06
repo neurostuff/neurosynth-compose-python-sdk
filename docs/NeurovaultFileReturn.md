@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **image_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
-**file** | **bytearray** |  | [optional] 
+**file** | **bytes** |  | [optional] 
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 

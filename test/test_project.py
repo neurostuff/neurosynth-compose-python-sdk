@@ -36,7 +36,7 @@ class TestProject(unittest.TestCase):
         model = Project()
         if include_optional:
             return Project(
-                provenance = None,
+                provenance = { },
                 meta_analyses = None,
                 name = '',
                 description = '',
@@ -45,10 +45,10 @@ class TestProject(unittest.TestCase):
                 neurostore_annotation_id = '',
                 tags = None,
                 public = True,
-                neurostore_study = neurosynth_compose_sdk.models.neurostore_study.neurostore-study(
+                neurostore_study = neurosynth_compose_sdk.models.neurostore_study.NeurostoreStudy(
                     neurostore_id = '', 
                     analyses = [
-                        neurosynth_compose_sdk.models.neurostore_analysis.neurostore-analysis(
+                        neurosynth_compose_sdk.models.neurostore_analysis.NeurostoreAnalysis(
                             neurostore_id = '', 
                             exception = '', 
                             traceback = '', 

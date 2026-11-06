@@ -37,8 +37,8 @@ class TestMetaAnalysisNeurostoreAnnotation(unittest.TestCase):
         if include_optional:
             return MetaAnalysisNeurostoreAnnotation(
                 neurostore_id = '',
-                snapshot = neurosynth_compose_sdk.models.snapshot.snapshot(),
-                snapshot_studyset = neurosynth_compose_sdk.models.studyset_snapshot_summary.studyset-snapshot-summary(
+                snapshot = { },
+                snapshot_studyset = neurosynth_compose_sdk.models.studyset_snapshot_summary.StudysetSnapshotSummary(
                     id = '', 
                     md5 = '', ),
                 neurostore_url = ''

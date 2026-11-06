@@ -37,7 +37,7 @@ class TestMetaAnalysisJobList(unittest.TestCase):
         if include_optional:
             return MetaAnalysisJobList(
                 results = [
-                    neurosynth_compose_sdk.models.meta_analysis_job_response.meta-analysis-job-response(
+                    neurosynth_compose_sdk.models.meta_analysis_job_response.MetaAnalysisJobResponse(
                         job_id = '', 
                         meta_analysis_id = '', 
                         artifact_prefix = '', 
@@ -48,14 +48,14 @@ class TestMetaAnalysisJobList(unittest.TestCase):
                         start_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         output = { }, 
                         logs = [
-                            neurosynth_compose_sdk.models.meta_analysis_job_log.meta-analysis-job-log(
+                            neurosynth_compose_sdk.models.meta_analysis_job_log.MetaAnalysisJobLog(
                                 timestamp = 1.337, 
                                 message = '', )
                             ], 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ],
-                metadata = neurosynth_compose_sdk.models.meta_analysis_job_list_metadata.meta_analysis_job_list_metadata(
+                metadata = neurosynth_compose_sdk.models.meta_analysis_job_list_metadata.MetaAnalysisJobListMetadata(
                     count = 56, )
             )
         else:

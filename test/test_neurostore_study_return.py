@@ -38,7 +38,7 @@ class TestNeurostoreStudyReturn(unittest.TestCase):
             return NeurostoreStudyReturn(
                 neurostore_id = '',
                 analyses = [
-                    neurosynth_compose_sdk.models.neurostore_analysis.neurostore-analysis(
+                    neurosynth_compose_sdk.models.neurostore_analysis.NeurostoreAnalysis(
                         neurostore_id = '', 
                         exception = '', 
                         traceback = '', 

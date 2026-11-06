@@ -42,7 +42,7 @@ class TestResult(unittest.TestCase):
                 method_description = '',
                 method_references = '',
                 diagnostic_table = '',
-                cli_args = None,
+                cli_args = { },
                 status = ''
             )
         else:

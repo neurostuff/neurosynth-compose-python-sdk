@@ -37,18 +37,18 @@ class TestSpecificationReturn(unittest.TestCase):
         if include_optional:
             return SpecificationReturn(
                 type = '',
-                estimator = neurosynth_compose_sdk.models.estimator.estimator(
+                estimator = neurosynth_compose_sdk.models.estimator.Estimator(
                     type = 'MKDADensity', 
-                    args = neurosynth_compose_sdk.models.args.args(), ),
+                    args = { }, ),
                 mask = '',
                 conditions = None,
                 weights = [
                     1.337
                     ],
                 transformer = '',
-                corrector = neurosynth_compose_sdk.models.corrector.corrector(
+                corrector = neurosynth_compose_sdk.models.corrector.Corrector(
                     type = 'FWECorrector', 
-                    args = neurosynth_compose_sdk.models.args.args(), ),
+                    args = { }, ),
                 filter = '',
                 database_studyset = 'neurostore',
                 id = '',

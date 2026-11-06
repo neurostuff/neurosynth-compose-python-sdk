@@ -39,7 +39,7 @@ class TestProjectList(unittest.TestCase):
                 results = [
                     null
                     ],
-                metadata = neurosynth_compose_sdk.models.metadata.metadata()
+                metadata = { }
             )
         else:
             return ProjectList(

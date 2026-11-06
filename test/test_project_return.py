@@ -41,7 +41,7 @@ class TestProjectReturn(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 user = '',
                 username = '',
-                provenance = neurosynth_compose_sdk.models.provenance.provenance(),
+                provenance = { },
                 meta_analyses = None,
                 name = '',
                 description = '',
@@ -50,10 +50,10 @@ class TestProjectReturn(unittest.TestCase):
                 neurostore_annotation_id = '',
                 tags = None,
                 public = True,
-                neurostore_study = neurosynth_compose_sdk.models.neurostore_study.neurostore-study(
+                neurostore_study = neurosynth_compose_sdk.models.neurostore_study.NeurostoreStudy(
                     neurostore_id = '', 
                     analyses = [
-                        neurosynth_compose_sdk.models.neurostore_analysis.neurostore-analysis(
+                        neurosynth_compose_sdk.models.neurostore_analysis.NeurostoreAnalysis(
                             neurostore_id = '', 
                             exception = '', 
                             traceback = '', 

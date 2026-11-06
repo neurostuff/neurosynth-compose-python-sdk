@@ -28,6 +28,7 @@ from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
 from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class MetaAnalysisPostBody(BaseModel):
     """
@@ -54,7 +55,8 @@ class MetaAnalysisPostBody(BaseModel):
     __properties: ClassVar[List[str]] = ["specification", "neurostore_studyset", "neurostore_annotation", "name", "description", "public", "tags", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "neurostore_url"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -66,8 +68,7 @@ class MetaAnalysisPostBody(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

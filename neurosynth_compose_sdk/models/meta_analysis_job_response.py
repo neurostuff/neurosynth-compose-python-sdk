@@ -24,6 +24,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from neurosynth_compose_sdk.models.meta_analysis_job_log import MetaAnalysisJobLog
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class MetaAnalysisJobResponse(BaseModel):
     """
@@ -44,7 +45,8 @@ class MetaAnalysisJobResponse(BaseModel):
     __properties: ClassVar[List[str]] = ["job_id", "meta_analysis_id", "artifact_prefix", "status", "status_url", "environment", "no_upload", "start_time", "output", "logs", "created_at", "updated_at"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -56,8 +58,7 @@ class MetaAnalysisJobResponse(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -85,8 +86,7 @@ class MetaAnalysisJobResponse(BaseModel):
         _items = []
         if self.logs is not None:
             for _item_logs in self.logs:
-                if _item_logs is not None:
-                    _items.append(_item_logs.to_dict())
+                _items.append(_item_logs.to_dict() if _item_logs is not None else None)
             _dict['logs'] = _items
         # set to None if status_url (nullable) is None
         # and model_fields_set contains the field

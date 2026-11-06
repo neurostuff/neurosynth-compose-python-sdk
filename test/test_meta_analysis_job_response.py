@@ -46,7 +46,7 @@ class TestMetaAnalysisJobResponse(unittest.TestCase):
                 start_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 output = { },
                 logs = [
-                    neurosynth_compose_sdk.models.meta_analysis_job_log.meta-analysis-job-log(
+                    neurosynth_compose_sdk.models.meta_analysis_job_log.MetaAnalysisJobLog(
                         timestamp = 1.337, 
                         message = '', )
                     ],

@@ -37,7 +37,7 @@ class TestEstimator(unittest.TestCase):
         if include_optional:
             return Estimator(
                 type = 'MKDADensity',
-                args = neurosynth_compose_sdk.models.args.args()
+                args = { }
             )
         else:
             return Estimator(

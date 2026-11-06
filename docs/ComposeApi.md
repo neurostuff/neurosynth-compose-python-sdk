@@ -1844,7 +1844,7 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     image_id = 'image_id_example' # str |  (optional)
     name = 'name_example' # str |  (optional)
     url = 'url_example' # str |  (optional)
-    file = None # bytearray |  (optional)
+    file = None # bytes |  (optional)
 
     try:
         # 
@@ -1870,7 +1870,7 @@ Name | Type | Description  | Notes
  **image_id** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **url** | **str**|  | [optional] 
- **file** | **bytearray**|  | [optional] 
+ **file** | **bytes**|  | [optional] 
 
 ### Return type
 
