@@ -44,13 +44,13 @@ class TestMetaAnalysisReturn(unittest.TestCase):
                 public = True,
                 tags = None,
                 results = None,
-                provenance = neurosynth_compose_sdk.models.provenance.provenance(),
+                provenance = { },
                 project = '',
                 run_key = '',
                 snapshots = [
-                    None
+                    { }
                     ],
-                neurostore_analysis = neurosynth_compose_sdk.models.neurostore_analysis.neurostore-analysis(
+                neurostore_analysis = neurosynth_compose_sdk.models.neurostore_analysis.NeurostoreAnalysis(
                     neurostore_id = '', 
                     exception = '', 
                     traceback = '', 

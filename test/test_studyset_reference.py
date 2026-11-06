@@ -37,7 +37,7 @@ class TestStudysetReference(unittest.TestCase):
         if include_optional:
             return StudysetReference(
                 studysets = [
-                    neurosynth_compose_sdk.models.studyset_snapshot_summary.studyset-snapshot-summary(
+                    neurosynth_compose_sdk.models.studyset_snapshot_summary.StudysetSnapshotSummary(
                         id = '', 
                         md5 = '', )
                     ]

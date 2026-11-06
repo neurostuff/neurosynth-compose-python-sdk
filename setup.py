@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     Analysis Specification for Meta-analysis
 
@@ -25,11 +23,10 @@ NAME = "neurosynth-compose-sdk"
 VERSION = "1.2"
 PYTHON_REQUIRES = ">= 3.11"
 REQUIRES = [
-    "urllib3 >= 2.1.0, < 3.0.0",
+    "urllib3 >= 2.7.0, < 3.0.0",
     "python-dateutil >= 2.8.2",
-    "pydantic >= 2",
+    "pydantic >= 2.11",
     "typing-extensions >= 4.7.1",
-    "lazy-imports >= 1, < 2",
 ]
 
 setup(

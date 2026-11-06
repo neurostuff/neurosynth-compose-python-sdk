@@ -13,7 +13,79 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-if __import__("typing").TYPE_CHECKING:
+__all__ = [
+    "Annotation",
+    "AnnotationList",
+    "AnnotationPostBody",
+    "AnnotationReference",
+    "AnnotationReferenceReturn",
+    "AnnotationReturn",
+    "AnnotationSnapshotSummary",
+    "AnnotationUpdate",
+    "Corrector",
+    "Estimator",
+    "MetaAnalysesGet400Response",
+    "MetaAnalysis",
+    "MetaAnalysisJobList",
+    "MetaAnalysisJobListMetadata",
+    "MetaAnalysisJobLog",
+    "MetaAnalysisJobRequest",
+    "MetaAnalysisJobResponse",
+    "MetaAnalysisList",
+    "MetaAnalysisNeurostoreAnnotation",
+    "MetaAnalysisNeurostoreStudyset",
+    "MetaAnalysisPostBody",
+    "MetaAnalysisResults",
+    "MetaAnalysisReturn",
+    "MetaAnalysisSpecification",
+    "MetaAnalysisTags",
+    "NeurostoreAnalysis",
+    "NeurostoreStudy",
+    "NeurostoreStudyList",
+    "NeurostoreStudyReturn",
+    "NeurovaultCollection",
+    "NeurovaultCollectionFilesInner",
+    "NeurovaultCollectionReturn",
+    "NeurovaultFile",
+    "NeurovaultFileList",
+    "NeurovaultFileReturn",
+    "NeurovaultList",
+    "Project",
+    "ProjectList",
+    "ProjectMetaAnalyses",
+    "ProjectReturn",
+    "ProjectTags",
+    "ReadOnly",
+    "Result",
+    "ResultInit",
+    "ResultList",
+    "ResultListResults",
+    "ResultReturn",
+    "ResultUploadStatisticalMaps",
+    "Specification",
+    "SpecificationConditions",
+    "SpecificationList",
+    "SpecificationPostBody",
+    "SpecificationReturn",
+    "Studyset",
+    "StudysetList",
+    "StudysetPostBody",
+    "StudysetReference",
+    "StudysetReferenceList",
+    "StudysetReferenceReturn",
+    "StudysetReturn",
+    "StudysetSnapshotSummary",
+    "Tag",
+    "TagList",
+    "TagReturn",
+    "User",
+    "UserList",
+    "UserReturn",
+]
+
+import typing as _typing
+
+if _typing.TYPE_CHECKING:
     # import models into model package
     from neurosynth_compose_sdk.models.annotation import Annotation
     from neurosynth_compose_sdk.models.annotation_list import AnnotationList
@@ -84,82 +156,84 @@ if __import__("typing").TYPE_CHECKING:
     from neurosynth_compose_sdk.models.user_return import UserReturn
     
 else:
-    from lazy_imports import LazyModule, as_package, load
+    from importlib import import_module
 
-    load(
-        LazyModule(
-            *as_package(__file__),
-            """# import models into model package
-from neurosynth_compose_sdk.models.annotation import Annotation
-from neurosynth_compose_sdk.models.annotation_list import AnnotationList
-from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBody
-from neurosynth_compose_sdk.models.annotation_reference import AnnotationReference
-from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
-from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
-from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
-from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
-from neurosynth_compose_sdk.models.corrector import Corrector
-from neurosynth_compose_sdk.models.estimator import Estimator
-from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response
-from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
-from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList
-from neurosynth_compose_sdk.models.meta_analysis_job_list_metadata import MetaAnalysisJobListMetadata
-from neurosynth_compose_sdk.models.meta_analysis_job_log import MetaAnalysisJobLog
-from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest
-from neurosynth_compose_sdk.models.meta_analysis_job_response import MetaAnalysisJobResponse
-from neurosynth_compose_sdk.models.meta_analysis_list import MetaAnalysisList
-from neurosynth_compose_sdk.models.meta_analysis_neurostore_annotation import MetaAnalysisNeurostoreAnnotation
-from neurosynth_compose_sdk.models.meta_analysis_neurostore_studyset import MetaAnalysisNeurostoreStudyset
-from neurosynth_compose_sdk.models.meta_analysis_post_body import MetaAnalysisPostBody
-from neurosynth_compose_sdk.models.meta_analysis_results import MetaAnalysisResults
-from neurosynth_compose_sdk.models.meta_analysis_return import MetaAnalysisReturn
-from neurosynth_compose_sdk.models.meta_analysis_specification import MetaAnalysisSpecification
-from neurosynth_compose_sdk.models.meta_analysis_tags import MetaAnalysisTags
-from neurosynth_compose_sdk.models.neurostore_analysis import NeurostoreAnalysis
-from neurosynth_compose_sdk.models.neurostore_study import NeurostoreStudy
-from neurosynth_compose_sdk.models.neurostore_study_list import NeurostoreStudyList
-from neurosynth_compose_sdk.models.neurostore_study_return import NeurostoreStudyReturn
-from neurosynth_compose_sdk.models.neurovault_collection import NeurovaultCollection
-from neurosynth_compose_sdk.models.neurovault_collection_files_inner import NeurovaultCollectionFilesInner
-from neurosynth_compose_sdk.models.neurovault_collection_return import NeurovaultCollectionReturn
-from neurosynth_compose_sdk.models.neurovault_file import NeurovaultFile
-from neurosynth_compose_sdk.models.neurovault_file_list import NeurovaultFileList
-from neurosynth_compose_sdk.models.neurovault_file_return import NeurovaultFileReturn
-from neurosynth_compose_sdk.models.neurovault_list import NeurovaultList
-from neurosynth_compose_sdk.models.project import Project
-from neurosynth_compose_sdk.models.project_list import ProjectList
-from neurosynth_compose_sdk.models.project_meta_analyses import ProjectMetaAnalyses
-from neurosynth_compose_sdk.models.project_return import ProjectReturn
-from neurosynth_compose_sdk.models.project_tags import ProjectTags
-from neurosynth_compose_sdk.models.read_only import ReadOnly
-from neurosynth_compose_sdk.models.result import Result
-from neurosynth_compose_sdk.models.result_init import ResultInit
-from neurosynth_compose_sdk.models.result_list import ResultList
-from neurosynth_compose_sdk.models.result_list_results import ResultListResults
-from neurosynth_compose_sdk.models.result_return import ResultReturn
-from neurosynth_compose_sdk.models.result_upload_statistical_maps import ResultUploadStatisticalMaps
-from neurosynth_compose_sdk.models.specification import Specification
-from neurosynth_compose_sdk.models.specification_conditions import SpecificationConditions
-from neurosynth_compose_sdk.models.specification_list import SpecificationList
-from neurosynth_compose_sdk.models.specification_post_body import SpecificationPostBody
-from neurosynth_compose_sdk.models.specification_return import SpecificationReturn
-from neurosynth_compose_sdk.models.studyset import Studyset
-from neurosynth_compose_sdk.models.studyset_list import StudysetList
-from neurosynth_compose_sdk.models.studyset_post_body import StudysetPostBody
-from neurosynth_compose_sdk.models.studyset_reference import StudysetReference
-from neurosynth_compose_sdk.models.studyset_reference_list import StudysetReferenceList
-from neurosynth_compose_sdk.models.studyset_reference_return import StudysetReferenceReturn
-from neurosynth_compose_sdk.models.studyset_return import StudysetReturn
-from neurosynth_compose_sdk.models.studyset_snapshot_summary import StudysetSnapshotSummary
-from neurosynth_compose_sdk.models.tag import Tag
-from neurosynth_compose_sdk.models.tag_list import TagList
-from neurosynth_compose_sdk.models.tag_return import TagReturn
-from neurosynth_compose_sdk.models.user import User
-from neurosynth_compose_sdk.models.user_list import UserList
-from neurosynth_compose_sdk.models.user_return import UserReturn
+    _exports = {
+        "Annotation": ".annotation",
+        "AnnotationList": ".annotation_list",
+        "AnnotationPostBody": ".annotation_post_body",
+        "AnnotationReference": ".annotation_reference",
+        "AnnotationReferenceReturn": ".annotation_reference_return",
+        "AnnotationReturn": ".annotation_return",
+        "AnnotationSnapshotSummary": ".annotation_snapshot_summary",
+        "AnnotationUpdate": ".annotation_update",
+        "Corrector": ".corrector",
+        "Estimator": ".estimator",
+        "MetaAnalysesGet400Response": ".meta_analyses_get400_response",
+        "MetaAnalysis": ".meta_analysis",
+        "MetaAnalysisJobList": ".meta_analysis_job_list",
+        "MetaAnalysisJobListMetadata": ".meta_analysis_job_list_metadata",
+        "MetaAnalysisJobLog": ".meta_analysis_job_log",
+        "MetaAnalysisJobRequest": ".meta_analysis_job_request",
+        "MetaAnalysisJobResponse": ".meta_analysis_job_response",
+        "MetaAnalysisList": ".meta_analysis_list",
+        "MetaAnalysisNeurostoreAnnotation": ".meta_analysis_neurostore_annotation",
+        "MetaAnalysisNeurostoreStudyset": ".meta_analysis_neurostore_studyset",
+        "MetaAnalysisPostBody": ".meta_analysis_post_body",
+        "MetaAnalysisResults": ".meta_analysis_results",
+        "MetaAnalysisReturn": ".meta_analysis_return",
+        "MetaAnalysisSpecification": ".meta_analysis_specification",
+        "MetaAnalysisTags": ".meta_analysis_tags",
+        "NeurostoreAnalysis": ".neurostore_analysis",
+        "NeurostoreStudy": ".neurostore_study",
+        "NeurostoreStudyList": ".neurostore_study_list",
+        "NeurostoreStudyReturn": ".neurostore_study_return",
+        "NeurovaultCollection": ".neurovault_collection",
+        "NeurovaultCollectionFilesInner": ".neurovault_collection_files_inner",
+        "NeurovaultCollectionReturn": ".neurovault_collection_return",
+        "NeurovaultFile": ".neurovault_file",
+        "NeurovaultFileList": ".neurovault_file_list",
+        "NeurovaultFileReturn": ".neurovault_file_return",
+        "NeurovaultList": ".neurovault_list",
+        "Project": ".project",
+        "ProjectList": ".project_list",
+        "ProjectMetaAnalyses": ".project_meta_analyses",
+        "ProjectReturn": ".project_return",
+        "ProjectTags": ".project_tags",
+        "ReadOnly": ".read_only",
+        "Result": ".result",
+        "ResultInit": ".result_init",
+        "ResultList": ".result_list",
+        "ResultListResults": ".result_list_results",
+        "ResultReturn": ".result_return",
+        "ResultUploadStatisticalMaps": ".result_upload_statistical_maps",
+        "Specification": ".specification",
+        "SpecificationConditions": ".specification_conditions",
+        "SpecificationList": ".specification_list",
+        "SpecificationPostBody": ".specification_post_body",
+        "SpecificationReturn": ".specification_return",
+        "Studyset": ".studyset",
+        "StudysetList": ".studyset_list",
+        "StudysetPostBody": ".studyset_post_body",
+        "StudysetReference": ".studyset_reference",
+        "StudysetReferenceList": ".studyset_reference_list",
+        "StudysetReferenceReturn": ".studyset_reference_return",
+        "StudysetReturn": ".studyset_return",
+        "StudysetSnapshotSummary": ".studyset_snapshot_summary",
+        "Tag": ".tag",
+        "TagList": ".tag_list",
+        "TagReturn": ".tag_return",
+        "User": ".user",
+        "UserList": ".user_list",
+        "UserReturn": ".user_return",
+    }
 
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )
+    def __getattr__(name: str) -> object:
+        if (module_name := _exports.get(name)) is None:
+            raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+        value = getattr(import_module(module_name, __name__), name)
+        globals()[name] = value
+        return value
+
+    def __dir__() -> list[str]:
+        return sorted(globals().keys() | _exports.keys())

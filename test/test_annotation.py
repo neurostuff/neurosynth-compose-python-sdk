@@ -37,8 +37,8 @@ class TestAnnotation(unittest.TestCase):
         if include_optional:
             return Annotation(
                 neurostore_id = '',
-                snapshot = None,
-                snapshot_studyset = neurosynth_compose_sdk.models.studyset_snapshot_summary.studyset-snapshot-summary(
+                snapshot = { },
+                snapshot_studyset = neurosynth_compose_sdk.models.studyset_snapshot_summary.StudysetSnapshotSummary(
                     id = '', 
                     md5 = '', ),
                 neurostore_url = ''

@@ -25,6 +25,7 @@ from neurosynth_compose_sdk.models.estimator import Estimator
 from neurosynth_compose_sdk.models.specification_conditions import SpecificationConditions
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class SpecificationPostBody(BaseModel):
     """
@@ -38,11 +39,12 @@ class SpecificationPostBody(BaseModel):
     transformer: Optional[StrictStr] = Field(default=None, description="A transformation applied to column(s) (e.g., binarize based on a threshold). This is likely to become deprecated.")
     corrector: Optional[Corrector] = None
     filter: Optional[StrictStr] = Field(default=None, description="a column from annotations selecting which analyses to include in the meta-analysis")
-    database_studyset: Optional[StrictStr] = None
+    database_studyset: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["neurostore"]})
     __properties: ClassVar[List[str]] = ["type", "estimator", "mask", "conditions", "weights", "transformer", "corrector", "filter", "database_studyset"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -54,8 +56,7 @@ class SpecificationPostBody(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

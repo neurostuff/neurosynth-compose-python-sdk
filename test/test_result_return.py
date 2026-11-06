@@ -42,7 +42,7 @@ class TestResultReturn(unittest.TestCase):
                 method_description = '',
                 method_references = '',
                 diagnostic_table = '',
-                cli_args = neurosynth_compose_sdk.models.cli_args.cli_args(),
+                cli_args = { },
                 status = '',
                 id = '',
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),

@@ -37,7 +37,7 @@ class TestCorrector(unittest.TestCase):
         if include_optional:
             return Corrector(
                 type = 'FWECorrector',
-                args = neurosynth_compose_sdk.models.args.args()
+                args = { }
             )
         else:
             return Corrector(

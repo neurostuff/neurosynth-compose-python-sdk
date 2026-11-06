@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class MetaAnalysesGet400Response(BaseModel):
     """
@@ -32,12 +33,13 @@ class MetaAnalysesGet400Response(BaseModel):
     status: Optional[StrictInt] = None
     title: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    request_id: Optional[StrictStr] = Field(default=None, description="Correlation id for the failing request. Matches the X-Request-ID response header and the server's error log.")
+    request_id: Optional[StrictStr] = Field(default=None, description="Correlation id for the failing request. Matches the X-Request-ID response header and the server's error log.", json_schema_extra={"examples": ["9e5898042dbe4148"]})
     timestamp: Optional[datetime] = Field(default=None, description="When the error was produced, ISO 8601.")
     __properties: ClassVar[List[str]] = ["detail", "status", "title", "type", "request_id", "timestamp"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -49,8 +51,7 @@ class MetaAnalysesGet400Response(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
