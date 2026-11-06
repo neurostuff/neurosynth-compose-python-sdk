@@ -23,7 +23,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # http://pypi.python.org/pypi/setuptools
 NAME = "neurosynth-compose-sdk"
 VERSION = "1.2"
-PYTHON_REQUIRES = ">= 3.9"
+PYTHON_REQUIRES = ">= 3.10"
 REQUIRES = [
     "urllib3 >= 2.1.0, < 3.0.0",
     "python-dateutil >= 2.8.2",
