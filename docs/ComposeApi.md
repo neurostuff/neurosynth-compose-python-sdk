@@ -158,6 +158,7 @@ get a meta-analysis (specification, annotation, and studyset)
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -171,6 +172,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -204,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -635,6 +645,7 @@ List meta-analysis results
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -648,6 +659,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -679,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -701,6 +721,7 @@ Get a meta-analysis result by ID
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -714,6 +735,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -745,7 +775,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -951,6 +981,7 @@ Resolve a Neurostore annotation reference using the same ID exposed by the Neuro
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -964,6 +995,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -995,7 +1035,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1017,6 +1057,7 @@ Your GET endpoint
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1030,6 +1071,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1057,7 +1107,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1079,6 +1129,7 @@ Your GET endpoint
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1092,6 +1143,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1123,7 +1183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1147,6 +1207,7 @@ List reference rows keyed by the actual Neurostore studyset ID, including compac
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1160,6 +1221,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1191,7 +1261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1215,6 +1285,7 @@ Resolve a Neurostore studyset reference using the same ID exposed by the Neurost
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1228,6 +1299,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1261,7 +1341,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1283,6 +1363,7 @@ Get neurovault collections
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1295,6 +1376,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1320,7 +1410,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1342,6 +1432,7 @@ Your GET endpoint
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1355,6 +1446,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1386,7 +1486,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1560,6 +1660,7 @@ Your GET endpoint
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1573,6 +1674,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1600,7 +1710,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -1622,6 +1732,7 @@ Your GET endpoint
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -1635,6 +1746,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -1666,7 +1786,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -2026,6 +2146,7 @@ Your GET endpoint
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -2039,6 +2160,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -2074,7 +2204,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -2260,6 +2390,7 @@ get a list of serialized/referenced annotations
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -2273,6 +2404,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -2320,7 +2460,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -2345,6 +2485,7 @@ get a single annotation
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -2358,6 +2499,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -2389,7 +2539,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -2582,6 +2732,7 @@ get a list of serialized/referenced studysets
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -2595,6 +2746,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -2642,7 +2802,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -2667,6 +2827,7 @@ get a single serialized/referenced studyset
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -2680,6 +2841,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -2711,7 +2881,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -2904,6 +3074,7 @@ list of meta-analysis specifications
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -2917,6 +3088,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -2964,7 +3144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -2989,6 +3169,7 @@ get a meta-analysis specification
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -3002,6 +3183,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -3033,7 +3223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -3322,6 +3512,7 @@ Get information about a Tag
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -3335,6 +3526,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -3366,7 +3566,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -3467,6 +3667,7 @@ List all users
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -3480,6 +3681,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -3507,7 +3717,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 
@@ -3531,6 +3741,7 @@ Retrieve the information of the user with the matching user ID.
 
 ### Example
 
+* Bearer Authentication (JSON-Web-Token):
 
 ```python
 import neurosynth_compose_sdk
@@ -3544,6 +3755,15 @@ configuration = neurosynth_compose_sdk.Configuration(
     host = "https://compose.neurosynth.org/api"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
@@ -3575,7 +3795,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JSON-Web-Token](../README.md#JSON-Web-Token)
 
 ### HTTP request headers
 

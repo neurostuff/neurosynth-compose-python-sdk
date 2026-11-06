@@ -55,7 +55,7 @@ class MetaAnalysisReturn(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
-    user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
+    user: Optional[StrictStr] = Field(default=None, description="The owner's Auth0 id, served only to the owner; null for anyone else, who sees `username`.")
     username: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["specification", "neurostore_studyset", "neurostore_annotation", "name", "description", "public", "tags", "results", "provenance", "project", "run_key", "snapshots", "neurostore_analysis", "cognitive_contrast_cogatlas", "cognitive_contrast_cogatlas_id", "cognitive_paradigm_cogatlas", "cognitive_paradigm_cogatlas_id", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 

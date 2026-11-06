@@ -28,11 +28,11 @@ class UserReturn(BaseModel):
     """
     UserReturn
     """ # noqa: E501
-    external_id: Optional[StrictStr] = None
+    external_id: Optional[StrictStr] = Field(default=None, description="The user's Auth0 id, served only to that user; null for anyone else.")
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
-    user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
+    user: Optional[StrictStr] = Field(default=None, description="The owner's Auth0 id, served only to the owner; null for anyone else, who sees `username`.")
     username: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["external_id", "id", "updated_at", "created_at", "user", "username"]
 
@@ -77,6 +77,11 @@ class UserReturn(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if external_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.external_id is None and "external_id" in self.model_fields_set:
+            _dict['external_id'] = None
+
         # set to None if updated_at (nullable) is None
         # and model_fields_set contains the field
         if self.updated_at is None and "updated_at" in self.model_fields_set:

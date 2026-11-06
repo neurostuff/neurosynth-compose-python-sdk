@@ -36,7 +36,7 @@ class AnnotationReturn(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="the identifier for the resource.")
     updated_at: Optional[datetime] = Field(default=None, description="when the resource was last modified.")
     created_at: Optional[datetime] = Field(default=None, description="When the resource was created.")
-    user: Optional[StrictStr] = Field(default=None, description="Who owns the resource.")
+    user: Optional[StrictStr] = Field(default=None, description="The owner's Auth0 id, served only to the owner; null for anyone else, who sees `username`.")
     username: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["neurostore_id", "snapshot", "snapshot_studyset", "neurostore_url", "id", "updated_at", "created_at", "user", "username"]
 
