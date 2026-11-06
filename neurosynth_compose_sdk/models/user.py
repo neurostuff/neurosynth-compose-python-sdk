@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class User(BaseModel):
     """
     attributes of the user object
     """ # noqa: E501
-    external_id: Optional[StrictStr] = None
+    external_id: Optional[StrictStr] = Field(default=None, description="The user's Auth0 id, served only to that user; null for anyone else.")
     __properties: ClassVar[List[str]] = ["external_id"]
 
     model_config = ConfigDict(
@@ -68,6 +68,11 @@ class User(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if external_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.external_id is None and "external_id" in self.model_fields_set:
+            _dict['external_id'] = None
+
         return _dict
 
     @classmethod

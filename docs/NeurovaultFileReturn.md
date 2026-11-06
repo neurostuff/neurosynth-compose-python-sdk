@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **id** | **str** | the identifier for the resource. | [optional] 
 **updated_at** | **datetime** | when the resource was last modified. | [optional] [readonly] 
 **created_at** | **datetime** | When the resource was created. | [optional] [readonly] 
-**user** | **str** | Who owns the resource. | [optional] 
+**user** | **str** | The owner&#39;s Auth0 id, served only to the owner; null for anyone else, who sees &#x60;username&#x60;. | [optional] 
 **username** | **str** |  | [optional] [readonly] 
 
 ## Example
