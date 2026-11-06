@@ -6,7 +6,7 @@ attributes of the user object
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**external_id** | **str** |  | [optional] 
+**external_id** | **str** | The user&#39;s Auth0 id, served only to that user; null for anyone else. | [optional] 
 
 ## Example
 
