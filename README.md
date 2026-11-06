@@ -33,14 +33,11 @@ Then import the package:
 import neurosynth_compose_sdk
 ```
 
-### Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+### From a local checkout
 
 ```sh
-python setup.py install --user
+pip install .
 ```
-(or `sudo python setup.py install` to install the package for all users)
 
 Then import the package:
 ```python
