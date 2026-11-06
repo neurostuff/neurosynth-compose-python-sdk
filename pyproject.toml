@@ -7,7 +7,7 @@ authors = [
 ]
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Analysis Specification for Meta-analysis"]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 
 dependencies = [
   "urllib3 (>=2.1.0,<3.0.0)",
