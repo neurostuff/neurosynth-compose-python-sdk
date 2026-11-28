@@ -29,6 +29,9 @@ Method | HTTP request | Description
 [**neurovault_files_id_put**](ComposeApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
 [**neurovault_files_post**](ComposeApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 [**projects_get**](ComposeApi.md#projects_get) | **GET** /projects | Your GET endpoint
+[**projects_id_curation_stubs_get**](ComposeApi.md#projects_id_curation_stubs_get) | **GET** /projects/{id}/curation-stubs | List a project&#39;s curation stubs
+[**projects_id_curation_stubs_post**](ComposeApi.md#projects_id_curation_stubs_post) | **POST** /projects/{id}/curation-stubs | Change a project&#39;s curation stubs
+[**projects_id_curation_summary_get**](ComposeApi.md#projects_id_curation_summary_get) | **GET** /projects/{id}/curation-summary | Count a project&#39;s curation stubs
 [**projects_id_delete**](ComposeApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
 [**projects_id_get**](ComposeApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 [**projects_id_put**](ComposeApi.md#projects_id_put) | **PUT** /projects/{id} | 
@@ -2066,6 +2069,257 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **projects_id_curation_stubs_get**
+> CurationStubList projects_id_curation_stubs_get(id, column_id=column_id, page=page, page_size=page_size)
+
+List a project's curation stubs
+
+One page of the project's curation stubs, ordered by column and then by each stub's place in its column. Each `stub` is the object the project's provenance holds in `curationMetadata.columns[].stubStudies`.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.curation_stub_list import CurationStubList
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+    column_id = 'column_id_example' # str | only stubs in this curation column (optional)
+    page = 56 # int | page of results (optional)
+    page_size = 100 # int | number of stubs to return on a page (optional) (default to 100)
+
+    try:
+        # List a project's curation stubs
+        api_response = api_instance.projects_id_curation_stubs_get(id, column_id=column_id, page=page, page_size=page_size)
+        print("The response of ComposeApi->projects_id_curation_stubs_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->projects_id_curation_stubs_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **column_id** | **str**| only stubs in this curation column | [optional] 
+ **page** | **int**| page of results | [optional] 
+ **page_size** | **int**| number of stubs to return on a page | [optional] [default to 100]
+
+### Return type
+
+[**CurationStubList**](CurationStubList.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **projects_id_curation_stubs_post**
+> CurationChangesetResult projects_id_curation_stubs_post(id, curation_changeset=curation_changeset)
+
+Change a project's curation stubs
+
+Applies a changeset in one transaction, in this order: `remove`, `add`, `update`, `move`. Only the stubs named change; the project's other provenance stays as it is. The project's `updated_at` changes and is returned.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.curation_changeset import CurationChangeset
+from neurosynth_compose_sdk.models.curation_changeset_result import CurationChangesetResult
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+    curation_changeset = neurosynth_compose_sdk.CurationChangeset() # CurationChangeset |  (optional)
+
+    try:
+        # Change a project's curation stubs
+        api_response = api_instance.projects_id_curation_stubs_post(id, curation_changeset=curation_changeset)
+        print("The response of ComposeApi->projects_id_curation_stubs_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->projects_id_curation_stubs_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **curation_changeset** | [**CurationChangeset**](CurationChangeset.md)|  | [optional] 
+
+### Return type
+
+[**CurationChangesetResult**](CurationChangesetResult.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+**403** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+**404** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+**409** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+**413** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+**422** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **projects_id_curation_summary_get**
+> CurationSummary projects_id_curation_summary_get(id)
+
+Count a project's curation stubs
+
+For each curation column, in board order: how many stubs it holds, and how many of them carry each exclusion tag id and each tag id.
+
+### Example
+
+* Bearer Authentication (JSON-Web-Token):
+
+```python
+import neurosynth_compose_sdk
+from neurosynth_compose_sdk.models.curation_summary import CurationSummary
+from neurosynth_compose_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://compose.neurosynth.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = neurosynth_compose_sdk.Configuration(
+    host = "https://compose.neurosynth.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: JSON-Web-Token
+configuration = neurosynth_compose_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
+    id = 'id_example' # str | 
+
+    try:
+        # Count a project's curation stubs
+        api_response = api_instance.projects_id_curation_summary_get(id)
+        print("The response of ComposeApi->projects_id_curation_summary_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ComposeApi->projects_id_curation_summary_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+
+### Return type
+
+[**CurationSummary**](CurationSummary.md)
+
+### Authorization
+
+[JSON-Web-Token](../README.md#JSON-Web-Token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | form when a request goes wrong |  * X-Request-ID -  <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **projects_id_delete**
 > projects_id_delete(id)
 
@@ -2140,7 +2394,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_id_get**
-> ProjectReturn projects_id_get(id, info=info, include_provenance=include_provenance)
+> ProjectReturn projects_id_get(id, info=info, include_provenance=include_provenance, include_stubs=include_stubs)
 
 Your GET endpoint
 
@@ -2177,10 +2431,11 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     id = 'id_example' # str | 
     info = True # bool | display additional information about a nested relationship without displaying fully nested object (optional)
     include_provenance = True # bool | include the project provenance payload in project responses (optional) (default to True)
+    include_stubs = True # bool | include each curation column's `stubStudies` in the provenance; when false the key is left out and stubs are read from `/projects/{id}/curation-stubs` (optional) (default to True)
 
     try:
         # Your GET endpoint
-        api_response = api_instance.projects_id_get(id, info=info, include_provenance=include_provenance)
+        api_response = api_instance.projects_id_get(id, info=info, include_provenance=include_provenance, include_stubs=include_stubs)
         print("The response of ComposeApi->projects_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -2197,6 +2452,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **info** | **bool**| display additional information about a nested relationship without displaying fully nested object | [optional] 
  **include_provenance** | **bool**| include the project provenance payload in project responses | [optional] [default to True]
+ **include_stubs** | **bool**| include each curation column&#39;s &#x60;stubStudies&#x60; in the provenance; when false the key is left out and stubs are read from &#x60;/projects/{id}/curation-stubs&#x60; | [optional] [default to True]
 
 ### Return type
 
@@ -2220,7 +2476,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **projects_id_put**
-> ProjectReturn projects_id_put(id, sync_meta_analyses_public=sync_meta_analyses_public, project=project)
+> ProjectReturn projects_id_put(id, sync_meta_analyses_public=sync_meta_analyses_public, keep_stubs=keep_stubs, project=project)
 
 
 
@@ -2257,11 +2513,12 @@ with neurosynth_compose_sdk.ApiClient(configuration) as api_client:
     api_instance = neurosynth_compose_sdk.ComposeApi(api_client)
     id = 'id_example' # str | 
     sync_meta_analyses_public = True # bool | when updating a project's public flag, also set each child meta-analysis to the same public value (optional)
+    keep_stubs = False # bool | ignore `stubStudies` in the provenance sent and keep the project's stored stubs; removing a column that still holds stubs is refused (409) (optional) (default to False)
     project = neurosynth_compose_sdk.Project() # Project |  (optional)
 
     try:
         # 
-        api_response = api_instance.projects_id_put(id, sync_meta_analyses_public=sync_meta_analyses_public, project=project)
+        api_response = api_instance.projects_id_put(id, sync_meta_analyses_public=sync_meta_analyses_public, keep_stubs=keep_stubs, project=project)
         print("The response of ComposeApi->projects_id_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -2277,6 +2534,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**|  | 
  **sync_meta_analyses_public** | **bool**| when updating a project&#39;s public flag, also set each child meta-analysis to the same public value | [optional] 
+ **keep_stubs** | **bool**| ignore &#x60;stubStudies&#x60; in the provenance sent and keep the project&#39;s stored stubs; removing a column that still holds stubs is refused (409) | [optional] [default to False]
  **project** | [**Project**](Project.md)|  | [optional] 
 
 ### Return type

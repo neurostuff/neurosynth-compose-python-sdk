@@ -202,6 +202,27 @@ class TestComposeApi(unittest.TestCase):
         """
         pass
 
+    def test_projects_id_curation_stubs_get(self) -> None:
+        """Test case for projects_id_curation_stubs_get
+
+        List a project's curation stubs
+        """
+        pass
+
+    def test_projects_id_curation_stubs_post(self) -> None:
+        """Test case for projects_id_curation_stubs_post
+
+        Change a project's curation stubs
+        """
+        pass
+
+    def test_projects_id_curation_summary_get(self) -> None:
+        """Test case for projects_id_curation_summary_get
+
+        Count a project's curation stubs
+        """
+        pass
+
     def test_projects_id_delete(self) -> None:
         """Test case for projects_id_delete
 

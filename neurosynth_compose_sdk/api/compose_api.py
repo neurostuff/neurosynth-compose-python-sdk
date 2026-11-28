@@ -24,6 +24,10 @@ from neurosynth_compose_sdk.models.annotation_post_body import AnnotationPostBod
 from neurosynth_compose_sdk.models.annotation_reference_return import AnnotationReferenceReturn
 from neurosynth_compose_sdk.models.annotation_return import AnnotationReturn
 from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
+from neurosynth_compose_sdk.models.curation_changeset import CurationChangeset
+from neurosynth_compose_sdk.models.curation_changeset_result import CurationChangesetResult
+from neurosynth_compose_sdk.models.curation_stub_list import CurationStubList
+from neurosynth_compose_sdk.models.curation_summary import CurationSummary
 from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
 from neurosynth_compose_sdk.models.meta_analysis_job_list import MetaAnalysisJobList
 from neurosynth_compose_sdk.models.meta_analysis_job_request import MetaAnalysisJobRequest
@@ -7252,6 +7256,895 @@ class ComposeApi:
 
 
     @validate_call
+    def projects_id_curation_stubs_get(
+        self,
+        id: StrictStr,
+        column_id: Annotated[Optional[StrictStr], Field(description="only stubs in this curation column")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="number of stubs to return on a page")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> CurationStubList:
+        """List a project's curation stubs
+
+        One page of the project's curation stubs, ordered by column and then by each stub's place in its column. Each `stub` is the object the project's provenance holds in `curationMetadata.columns[].stubStudies`.
+
+        :param id: (required)
+        :type id: str
+        :param column_id: only stubs in this curation column
+        :type column_id: str
+        :param page: page of results
+        :type page: int
+        :param page_size: number of stubs to return on a page
+        :type page_size: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_stubs_get_serialize(
+            id=id,
+            column_id=column_id,
+            page=page,
+            page_size=page_size,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationStubList",
+            '404': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def projects_id_curation_stubs_get_with_http_info(
+        self,
+        id: StrictStr,
+        column_id: Annotated[Optional[StrictStr], Field(description="only stubs in this curation column")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="number of stubs to return on a page")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[CurationStubList]:
+        """List a project's curation stubs
+
+        One page of the project's curation stubs, ordered by column and then by each stub's place in its column. Each `stub` is the object the project's provenance holds in `curationMetadata.columns[].stubStudies`.
+
+        :param id: (required)
+        :type id: str
+        :param column_id: only stubs in this curation column
+        :type column_id: str
+        :param page: page of results
+        :type page: int
+        :param page_size: number of stubs to return on a page
+        :type page_size: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_stubs_get_serialize(
+            id=id,
+            column_id=column_id,
+            page=page,
+            page_size=page_size,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationStubList",
+            '404': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def projects_id_curation_stubs_get_without_preload_content(
+        self,
+        id: StrictStr,
+        column_id: Annotated[Optional[StrictStr], Field(description="only stubs in this curation column")] = None,
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="page of results")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="number of stubs to return on a page")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """List a project's curation stubs
+
+        One page of the project's curation stubs, ordered by column and then by each stub's place in its column. Each `stub` is the object the project's provenance holds in `curationMetadata.columns[].stubStudies`.
+
+        :param id: (required)
+        :type id: str
+        :param column_id: only stubs in this curation column
+        :type column_id: str
+        :param page: page of results
+        :type page: int
+        :param page_size: number of stubs to return on a page
+        :type page_size: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_stubs_get_serialize(
+            id=id,
+            column_id=column_id,
+            page=page,
+            page_size=page_size,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationStubList",
+            '404': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _projects_id_curation_stubs_get_serialize(
+        self,
+        id,
+        column_id,
+        page,
+        page_size,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Any] = self.api_client._merge_headers(_headers)
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        if column_id is not None:
+            
+            _query_params.append(('column_id', column_id))
+            
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if page_size is not None:
+            
+            _query_params.append(('page_size', page_size))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if not any(key.lower() == 'accept' for key in _header_params):
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json', 
+                    'application/problem+json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'JSON-Web-Token'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/projects/{id}/curation-stubs',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def projects_id_curation_stubs_post(
+        self,
+        id: StrictStr,
+        curation_changeset: Optional[CurationChangeset] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> CurationChangesetResult:
+        """Change a project's curation stubs
+
+        Applies a changeset in one transaction, in this order: `remove`, `add`, `update`, `move`. Only the stubs named change; the project's other provenance stays as it is. The project's `updated_at` changes and is returned.
+
+        :param id: (required)
+        :type id: str
+        :param curation_changeset:
+        :type curation_changeset: CurationChangeset
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_stubs_post_serialize(
+            id=id,
+            curation_changeset=curation_changeset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationChangesetResult",
+            '401': "MetaAnalysesGet400Response",
+            '403': "MetaAnalysesGet400Response",
+            '404': "MetaAnalysesGet400Response",
+            '409': "MetaAnalysesGet400Response",
+            '413': "MetaAnalysesGet400Response",
+            '422': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def projects_id_curation_stubs_post_with_http_info(
+        self,
+        id: StrictStr,
+        curation_changeset: Optional[CurationChangeset] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[CurationChangesetResult]:
+        """Change a project's curation stubs
+
+        Applies a changeset in one transaction, in this order: `remove`, `add`, `update`, `move`. Only the stubs named change; the project's other provenance stays as it is. The project's `updated_at` changes and is returned.
+
+        :param id: (required)
+        :type id: str
+        :param curation_changeset:
+        :type curation_changeset: CurationChangeset
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_stubs_post_serialize(
+            id=id,
+            curation_changeset=curation_changeset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationChangesetResult",
+            '401': "MetaAnalysesGet400Response",
+            '403': "MetaAnalysesGet400Response",
+            '404': "MetaAnalysesGet400Response",
+            '409': "MetaAnalysesGet400Response",
+            '413': "MetaAnalysesGet400Response",
+            '422': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def projects_id_curation_stubs_post_without_preload_content(
+        self,
+        id: StrictStr,
+        curation_changeset: Optional[CurationChangeset] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Change a project's curation stubs
+
+        Applies a changeset in one transaction, in this order: `remove`, `add`, `update`, `move`. Only the stubs named change; the project's other provenance stays as it is. The project's `updated_at` changes and is returned.
+
+        :param id: (required)
+        :type id: str
+        :param curation_changeset:
+        :type curation_changeset: CurationChangeset
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_stubs_post_serialize(
+            id=id,
+            curation_changeset=curation_changeset,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationChangesetResult",
+            '401': "MetaAnalysesGet400Response",
+            '403': "MetaAnalysesGet400Response",
+            '404': "MetaAnalysesGet400Response",
+            '409': "MetaAnalysesGet400Response",
+            '413': "MetaAnalysesGet400Response",
+            '422': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _projects_id_curation_stubs_post_serialize(
+        self,
+        id,
+        curation_changeset,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Any] = self.api_client._merge_headers(_headers)
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if curation_changeset is not None:
+            _body_params = curation_changeset
+
+
+        # set the HTTP header `Accept`
+        if not any(key.lower() == 'accept' for key in _header_params):
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json', 
+                    'application/problem+json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            self.api_client._set_header(_header_params, 'Content-Type', _content_type)
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                self.api_client._set_header(_header_params, 'Content-Type', _default_content_type)
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'JSON-Web-Token'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/projects/{id}/curation-stubs',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def projects_id_curation_summary_get(
+        self,
+        id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> CurationSummary:
+        """Count a project's curation stubs
+
+        For each curation column, in board order: how many stubs it holds, and how many of them carry each exclusion tag id and each tag id.
+
+        :param id: (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_summary_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationSummary",
+            '404': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def projects_id_curation_summary_get_with_http_info(
+        self,
+        id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[CurationSummary]:
+        """Count a project's curation stubs
+
+        For each curation column, in board order: how many stubs it holds, and how many of them carry each exclusion tag id and each tag id.
+
+        :param id: (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_summary_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationSummary",
+            '404': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def projects_id_curation_summary_get_without_preload_content(
+        self,
+        id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Count a project's curation stubs
+
+        For each curation column, in board order: how many stubs it holds, and how many of them carry each exclusion tag id and each tag id.
+
+        :param id: (required)
+        :type id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._projects_id_curation_summary_get_serialize(
+            id=id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CurationSummary",
+            '404': "MetaAnalysesGet400Response",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _projects_id_curation_summary_get_serialize(
+        self,
+        id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Any] = self.api_client._merge_headers(_headers)
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if not any(key.lower() == 'accept' for key in _header_params):
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json', 
+                    'application/problem+json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'JSON-Web-Token'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/projects/{id}/curation-summary',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def projects_id_delete(
         self,
         id: StrictStr,
@@ -7508,6 +8401,7 @@ class ComposeApi:
         id: StrictStr,
         info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
+        include_stubs: Annotated[Optional[StrictBool], Field(description="include each curation column's `stubStudies` in the provenance; when false the key is left out and stubs are read from `/projects/{id}/curation-stubs`")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7530,6 +8424,8 @@ class ComposeApi:
         :type info: bool
         :param include_provenance: include the project provenance payload in project responses
         :type include_provenance: bool
+        :param include_stubs: include each curation column's `stubStudies` in the provenance; when false the key is left out and stubs are read from `/projects/{id}/curation-stubs`
+        :type include_stubs: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7556,6 +8452,7 @@ class ComposeApi:
             id=id,
             info=info,
             include_provenance=include_provenance,
+            include_stubs=include_stubs,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7582,6 +8479,7 @@ class ComposeApi:
         id: StrictStr,
         info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
+        include_stubs: Annotated[Optional[StrictBool], Field(description="include each curation column's `stubStudies` in the provenance; when false the key is left out and stubs are read from `/projects/{id}/curation-stubs`")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7604,6 +8502,8 @@ class ComposeApi:
         :type info: bool
         :param include_provenance: include the project provenance payload in project responses
         :type include_provenance: bool
+        :param include_stubs: include each curation column's `stubStudies` in the provenance; when false the key is left out and stubs are read from `/projects/{id}/curation-stubs`
+        :type include_stubs: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7630,6 +8530,7 @@ class ComposeApi:
             id=id,
             info=info,
             include_provenance=include_provenance,
+            include_stubs=include_stubs,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7656,6 +8557,7 @@ class ComposeApi:
         id: StrictStr,
         info: Annotated[Optional[StrictBool], Field(description="display additional information about a nested relationship without displaying fully nested object")] = None,
         include_provenance: Annotated[Optional[StrictBool], Field(description="include the project provenance payload in project responses")] = None,
+        include_stubs: Annotated[Optional[StrictBool], Field(description="include each curation column's `stubStudies` in the provenance; when false the key is left out and stubs are read from `/projects/{id}/curation-stubs`")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7678,6 +8580,8 @@ class ComposeApi:
         :type info: bool
         :param include_provenance: include the project provenance payload in project responses
         :type include_provenance: bool
+        :param include_stubs: include each curation column's `stubStudies` in the provenance; when false the key is left out and stubs are read from `/projects/{id}/curation-stubs`
+        :type include_stubs: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7704,6 +8608,7 @@ class ComposeApi:
             id=id,
             info=info,
             include_provenance=include_provenance,
+            include_stubs=include_stubs,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7725,6 +8630,7 @@ class ComposeApi:
         id,
         info,
         include_provenance,
+        include_stubs,
         _request_auth,
         _content_type,
         _headers,
@@ -7756,6 +8662,10 @@ class ComposeApi:
         if include_provenance is not None:
             
             _query_params.append(('include_provenance', include_provenance))
+            
+        if include_stubs is not None:
+            
+            _query_params.append(('include_stubs', include_stubs))
             
         # process the header parameters
         # process the form parameters
@@ -7799,6 +8709,7 @@ class ComposeApi:
         self,
         id: StrictStr,
         sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
+        keep_stubs: Annotated[Optional[StrictBool], Field(description="ignore `stubStudies` in the provenance sent and keep the project's stored stubs; removing a column that still holds stubs is refused (409)")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -7820,6 +8731,8 @@ class ComposeApi:
         :type id: str
         :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
         :type sync_meta_analyses_public: bool
+        :param keep_stubs: ignore `stubStudies` in the provenance sent and keep the project's stored stubs; removing a column that still holds stubs is refused (409)
+        :type keep_stubs: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -7847,6 +8760,7 @@ class ComposeApi:
         _param = self._projects_id_put_serialize(
             id=id,
             sync_meta_analyses_public=sync_meta_analyses_public,
+            keep_stubs=keep_stubs,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7873,6 +8787,7 @@ class ComposeApi:
         self,
         id: StrictStr,
         sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
+        keep_stubs: Annotated[Optional[StrictBool], Field(description="ignore `stubStudies` in the provenance sent and keep the project's stored stubs; removing a column that still holds stubs is refused (409)")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -7894,6 +8809,8 @@ class ComposeApi:
         :type id: str
         :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
         :type sync_meta_analyses_public: bool
+        :param keep_stubs: ignore `stubStudies` in the provenance sent and keep the project's stored stubs; removing a column that still holds stubs is refused (409)
+        :type keep_stubs: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -7921,6 +8838,7 @@ class ComposeApi:
         _param = self._projects_id_put_serialize(
             id=id,
             sync_meta_analyses_public=sync_meta_analyses_public,
+            keep_stubs=keep_stubs,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7947,6 +8865,7 @@ class ComposeApi:
         self,
         id: StrictStr,
         sync_meta_analyses_public: Annotated[Optional[StrictBool], Field(description="when updating a project's public flag, also set each child meta-analysis to the same public value")] = None,
+        keep_stubs: Annotated[Optional[StrictBool], Field(description="ignore `stubStudies` in the provenance sent and keep the project's stored stubs; removing a column that still holds stubs is refused (409)")] = None,
         project: Optional[Project] = None,
         _request_timeout: Union[
             None,
@@ -7968,6 +8887,8 @@ class ComposeApi:
         :type id: str
         :param sync_meta_analyses_public: when updating a project's public flag, also set each child meta-analysis to the same public value
         :type sync_meta_analyses_public: bool
+        :param keep_stubs: ignore `stubStudies` in the provenance sent and keep the project's stored stubs; removing a column that still holds stubs is refused (409)
+        :type keep_stubs: bool
         :param project:
         :type project: Project
         :param _request_timeout: timeout setting for this request. If one
@@ -7995,6 +8916,7 @@ class ComposeApi:
         _param = self._projects_id_put_serialize(
             id=id,
             sync_meta_analyses_public=sync_meta_analyses_public,
+            keep_stubs=keep_stubs,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -8016,6 +8938,7 @@ class ComposeApi:
         self,
         id,
         sync_meta_analyses_public,
+        keep_stubs,
         project,
         _request_auth,
         _content_type,
@@ -8044,6 +8967,10 @@ class ComposeApi:
         if sync_meta_analyses_public is not None:
             
             _query_params.append(('sync_meta_analyses_public', sync_meta_analyses_public))
+            
+        if keep_stubs is not None:
+            
+            _query_params.append(('keep_stubs', keep_stubs))
             
         # process the header parameters
         # process the form parameters

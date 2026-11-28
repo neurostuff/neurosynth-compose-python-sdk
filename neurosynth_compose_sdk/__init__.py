@@ -39,6 +39,15 @@ __all__ = [
     "AnnotationSnapshotSummary",
     "AnnotationUpdate",
     "Corrector",
+    "CurationChangeset",
+    "CurationChangesetAddInner",
+    "CurationChangesetMoveInner",
+    "CurationChangesetResult",
+    "CurationStub",
+    "CurationStubList",
+    "CurationStubListResultsInner",
+    "CurationSummary",
+    "CurationSummaryColumnsInner",
     "Estimator",
     "MetaAnalysesGet400Response",
     "MetaAnalysis",
@@ -127,6 +136,15 @@ if _typing.TYPE_CHECKING:
     from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary as AnnotationSnapshotSummary
     from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate as AnnotationUpdate
     from neurosynth_compose_sdk.models.corrector import Corrector as Corrector
+    from neurosynth_compose_sdk.models.curation_changeset import CurationChangeset as CurationChangeset
+    from neurosynth_compose_sdk.models.curation_changeset_add_inner import CurationChangesetAddInner as CurationChangesetAddInner
+    from neurosynth_compose_sdk.models.curation_changeset_move_inner import CurationChangesetMoveInner as CurationChangesetMoveInner
+    from neurosynth_compose_sdk.models.curation_changeset_result import CurationChangesetResult as CurationChangesetResult
+    from neurosynth_compose_sdk.models.curation_stub import CurationStub as CurationStub
+    from neurosynth_compose_sdk.models.curation_stub_list import CurationStubList as CurationStubList
+    from neurosynth_compose_sdk.models.curation_stub_list_results_inner import CurationStubListResultsInner as CurationStubListResultsInner
+    from neurosynth_compose_sdk.models.curation_summary import CurationSummary as CurationSummary
+    from neurosynth_compose_sdk.models.curation_summary_columns_inner import CurationSummaryColumnsInner as CurationSummaryColumnsInner
     from neurosynth_compose_sdk.models.estimator import Estimator as Estimator
     from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response as MetaAnalysesGet400Response
     from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis as MetaAnalysis
@@ -210,6 +228,15 @@ else:
         "AnnotationSnapshotSummary": ".models.annotation_snapshot_summary",
         "AnnotationUpdate": ".models.annotation_update",
         "Corrector": ".models.corrector",
+        "CurationChangeset": ".models.curation_changeset",
+        "CurationChangesetAddInner": ".models.curation_changeset_add_inner",
+        "CurationChangesetMoveInner": ".models.curation_changeset_move_inner",
+        "CurationChangesetResult": ".models.curation_changeset_result",
+        "CurationStub": ".models.curation_stub",
+        "CurationStubList": ".models.curation_stub_list",
+        "CurationStubListResultsInner": ".models.curation_stub_list_results_inner",
+        "CurationSummary": ".models.curation_summary",
+        "CurationSummaryColumnsInner": ".models.curation_summary_columns_inner",
         "Estimator": ".models.estimator",
         "MetaAnalysesGet400Response": ".models.meta_analyses_get400_response",
         "MetaAnalysis": ".models.meta_analysis",

@@ -130,6 +130,9 @@ Class | Method | HTTP request | Description
 *ComposeApi* | [**neurovault_files_id_put**](docs/ComposeApi.md#neurovault_files_id_put) | **PUT** /neurovault-files/{id} | 
 *ComposeApi* | [**neurovault_files_post**](docs/ComposeApi.md#neurovault_files_post) | **POST** /neurovault-files | 
 *ComposeApi* | [**projects_get**](docs/ComposeApi.md#projects_get) | **GET** /projects | Your GET endpoint
+*ComposeApi* | [**projects_id_curation_stubs_get**](docs/ComposeApi.md#projects_id_curation_stubs_get) | **GET** /projects/{id}/curation-stubs | List a project&#39;s curation stubs
+*ComposeApi* | [**projects_id_curation_stubs_post**](docs/ComposeApi.md#projects_id_curation_stubs_post) | **POST** /projects/{id}/curation-stubs | Change a project&#39;s curation stubs
+*ComposeApi* | [**projects_id_curation_summary_get**](docs/ComposeApi.md#projects_id_curation_summary_get) | **GET** /projects/{id}/curation-summary | Count a project&#39;s curation stubs
 *ComposeApi* | [**projects_id_delete**](docs/ComposeApi.md#projects_id_delete) | **DELETE** /projects/{id} | 
 *ComposeApi* | [**projects_id_get**](docs/ComposeApi.md#projects_id_get) | **GET** /projects/{id} | Your GET endpoint
 *ComposeApi* | [**projects_id_put**](docs/ComposeApi.md#projects_id_put) | **PUT** /projects/{id} | 
@@ -169,6 +172,15 @@ Class | Method | HTTP request | Description
  - [AnnotationSnapshotSummary](docs/AnnotationSnapshotSummary.md)
  - [AnnotationUpdate](docs/AnnotationUpdate.md)
  - [Corrector](docs/Corrector.md)
+ - [CurationChangeset](docs/CurationChangeset.md)
+ - [CurationChangesetAddInner](docs/CurationChangesetAddInner.md)
+ - [CurationChangesetMoveInner](docs/CurationChangesetMoveInner.md)
+ - [CurationChangesetResult](docs/CurationChangesetResult.md)
+ - [CurationStub](docs/CurationStub.md)
+ - [CurationStubList](docs/CurationStubList.md)
+ - [CurationStubListResultsInner](docs/CurationStubListResultsInner.md)
+ - [CurationSummary](docs/CurationSummary.md)
+ - [CurationSummaryColumnsInner](docs/CurationSummaryColumnsInner.md)
  - [Estimator](docs/Estimator.md)
  - [MetaAnalysesGet400Response](docs/MetaAnalysesGet400Response.md)
  - [MetaAnalysis](docs/MetaAnalysis.md)

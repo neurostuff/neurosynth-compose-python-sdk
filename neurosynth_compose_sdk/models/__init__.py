@@ -23,6 +23,15 @@ __all__ = [
     "AnnotationSnapshotSummary",
     "AnnotationUpdate",
     "Corrector",
+    "CurationChangeset",
+    "CurationChangesetAddInner",
+    "CurationChangesetMoveInner",
+    "CurationChangesetResult",
+    "CurationStub",
+    "CurationStubList",
+    "CurationStubListResultsInner",
+    "CurationSummary",
+    "CurationSummaryColumnsInner",
     "Estimator",
     "MetaAnalysesGet400Response",
     "MetaAnalysis",
@@ -96,6 +105,15 @@ if _typing.TYPE_CHECKING:
     from neurosynth_compose_sdk.models.annotation_snapshot_summary import AnnotationSnapshotSummary
     from neurosynth_compose_sdk.models.annotation_update import AnnotationUpdate
     from neurosynth_compose_sdk.models.corrector import Corrector
+    from neurosynth_compose_sdk.models.curation_changeset import CurationChangeset
+    from neurosynth_compose_sdk.models.curation_changeset_add_inner import CurationChangesetAddInner
+    from neurosynth_compose_sdk.models.curation_changeset_move_inner import CurationChangesetMoveInner
+    from neurosynth_compose_sdk.models.curation_changeset_result import CurationChangesetResult
+    from neurosynth_compose_sdk.models.curation_stub import CurationStub
+    from neurosynth_compose_sdk.models.curation_stub_list import CurationStubList
+    from neurosynth_compose_sdk.models.curation_stub_list_results_inner import CurationStubListResultsInner
+    from neurosynth_compose_sdk.models.curation_summary import CurationSummary
+    from neurosynth_compose_sdk.models.curation_summary_columns_inner import CurationSummaryColumnsInner
     from neurosynth_compose_sdk.models.estimator import Estimator
     from neurosynth_compose_sdk.models.meta_analyses_get400_response import MetaAnalysesGet400Response
     from neurosynth_compose_sdk.models.meta_analysis import MetaAnalysis
@@ -168,6 +186,15 @@ else:
         "AnnotationSnapshotSummary": ".annotation_snapshot_summary",
         "AnnotationUpdate": ".annotation_update",
         "Corrector": ".corrector",
+        "CurationChangeset": ".curation_changeset",
+        "CurationChangesetAddInner": ".curation_changeset_add_inner",
+        "CurationChangesetMoveInner": ".curation_changeset_move_inner",
+        "CurationChangesetResult": ".curation_changeset_result",
+        "CurationStub": ".curation_stub",
+        "CurationStubList": ".curation_stub_list",
+        "CurationStubListResultsInner": ".curation_stub_list_results_inner",
+        "CurationSummary": ".curation_summary",
+        "CurationSummaryColumnsInner": ".curation_summary_columns_inner",
         "Estimator": ".estimator",
         "MetaAnalysesGet400Response": ".meta_analyses_get400_response",
         "MetaAnalysis": ".meta_analysis",
